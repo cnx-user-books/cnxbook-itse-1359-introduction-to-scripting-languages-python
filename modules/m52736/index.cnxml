@@ -1,0 +1,3036 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2245-Color-Explanation of the HSV Color Space</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52736</md:content-id>
+  <md:title>Itse1359-2245-Color-Explanation of the HSV Color Space</md:title>
+  <md:abstract>This module explains the HSV color space.</md:abstract>
+  <md:uuid>ea766a81-5b15-4254-bb5b-6be0f1de28a5</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="What_you_have_learned">
+
+What you have learned
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="What_you_will_learn">
+
+What you will learn
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1003">
+<link id="a1003" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion">
+
+Discussion
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_RGB_color_space">
+
+The RGB color space
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_HSV_color_space">
+
+The HSV color space
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="Specifying_a_color_in_the_RGB_color_space">
+
+Specifying a color in the RGB color space
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Specifying_a_color_in_the_HSV_color_space">
+
+Specifying a color in the HSV color space
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="A_description_of_hue">
+
+A description of Hue
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="A_description_of_saturation">
+
+A description of Saturation
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="A_description_of_Value_or_Brightness">
+
+A description of Value or Brightness
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="The_cylindrical_model">
+
+The cylindrical model
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="The_available_colors">
+
+The available colors
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Hue_angles_and_associated_names">
+
+Hue angles and associated names
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Determining_the_Hue_of_a_color">
+
+Determining the Hue of a color
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Determining_the_Saturation_of_a_color">
+
+Determining the Saturation of a color
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="Lets_reiterate">
+
+Let's reiterate
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="Lets_talk_some_more_about_Value">
+
+Let's talk some more about Value
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="A_vertical_slice_through_the_center">
+
+A vertical slice through the center
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1021">
+<link id="a1021" target-id="Experiment_with_a_color_picker">
+
+Experiment with a color picker
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="The_main_elements_of_the_color_picker">
+
+The main elements of the color picker
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="Instructions_for_using_the_color_picker">
+
+Instructions for using the color picker
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1024">
+<link id="a1024" target-id="Interesting_experiments">
+
+Interesting experiments
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+				
+
+<item id="li1025">
+
+				
+
+<link id="a1025" target-id="Hold_Hue_and_Saturation_constant_and_vary_Brightness">
+
+Hold Hue and Saturation constant and vary Brightness
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1026">
+
+				
+
+<link id="a1026" target-id="Hold_Hue_and_Brightness_constant_and_vary_Saturation">
+
+Hold Hue and Brightness constant and vary Saturation
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1027">
+
+				
+
+<link id="a1027" target-id="Hold_Saturation_and_Brightness_constant_and_vary_Hue">
+
+Hold Saturation and Brightness constant and vary Hue
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="The_HSL_color_space">
+
+The HSL color space
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1029">
+<link id="a1029" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="What_you_have_learned" effect="bold">
+
+What you have learned
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+You have learned quite a lot so far including how to visualize the RGB color 
+space as a 3D cube positioned at the origin of 3D 
+Red, Green, and Blue axes .
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="What_you_will_learn" effect="bold">
+
+What you will learn
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+Unlike most modules in this collection, this module won't explain program 
+code. Instead, it will concentrate on concepts involving the RGB and HSV color 
+spaces. Program code involving the HSV color space will be explained in a 
+future module.
+
+</para>
+
+
+
+
+<para id="p1003">
+You will learn about the HSV color space along with learning about the 
+relationship between the RGB color space and the HSV color space. You 
+will learn also how to visualize the HSV color space as a 3D cylinder.
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1004">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1008" list-type="bulleted">
+
+
+
+<item id="li1030">
+<link id="a1030" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Top surface of an HSV color cylinder.
+
+</item>
+
+
+
+
+<item id="li1031">
+<link id="a1031" target-id="Figure_2">
+
+Figure 2.
+
+</link>
+
+ HSV cylinder surface at V = 60. 
+
+</item>
+
+
+
+
+<item id="li1032">
+<link id="a1032" target-id="Figure_3">
+
+Figure 3.
+
+</link>
+
+ HSV cylinder surface at V = 30. 
+
+</item>
+
+
+
+
+<item id="li1033">
+<link id="a1033" target-id="Figure_4">
+
+Figure 4.
+
+</link>
+
+ Exposed face from a vertical slice through the center. 
+
+</item>
+
+
+
+
+<item id="li1034">
+<link id="a1034" target-id="Figure_5">
+
+Figure 5.
+
+</link>
+
+ An online ColorPicker. 
+
+</item>
+
+
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Discussion" effect="bold">
+
+Discussion
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1005">
+In an earlier module, you learned about the RGB color space and learned how 
+to visualize that color space using a 3D color cube.
+
+</para>
+
+
+
+
+<para id="p1006">
+Near the end of that module, I told you that although the RGB system 
+for managing color data is mathematically and arithmetically straightforward, 
+and is reasonably efficient computationally, not everyone is happy with the RGB 
+color space. In 
+particular, many people with an artistic bent say that it is not intuitive and 
+that it does not represent 
+color in the same way that people perceive color.
+
+</para>
+
+
+
+
+<para id="p1007">
+Numerous attempts have been made to resolve that issue by defining 
+alternative ways to manage and manipulate digital color data. Two of those alternative 
+approaches are supported by 
+
+<emphasis id="strong1001" effect="bold">
+pygame
+
+</emphasis>
+: HSV and HSL. I will explain 
+the HSV color space in this module and show how you can visualize it as 
+a 3D cylinder.
+
+</para>
+
+
+
+
+<para id="p1008">
+Before getting into the details, I recommend that you 
+also study the material on the following two websites concurrently with your study of 
+this module:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1035">
+
+	
+
+<link id="a1035" url="http://learn.leighcotnoir.com/artspeak/elements-color/primary-colors/">
+
+Primary Colors of Light and Pigment
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1036">
+
+	
+
+<link id="a1036" url="http://learn.leighcotnoir.com/artspeak/elements-color/hue-value-saturation/">
+
+Hue, Value, Saturation
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="The_RGB_color_space" effect="bold">
+
+The RGB color space
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+Particularly interesting is the last sentence in the following paragraph that 
+was taken from 	
+
+<link id="a1037" url="http://learn.leighcotnoir.com/artspeak/elements-color/primary-colors/">
+
+Primary Colors of Light and Pigment
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+"Different wavelengths of light are perceived as different colors. For example, light with a wavelength of about 400 nm is seen as violet, and light with a wavelength of about 700 nm is seen as red. However, it is not typical to see light of a single wavelength. 
+	
+
+<emphasis id="em1001" effect="italics">
+You are able to perceive all colors because there are three sets of cones in your eyes - one set that is most sensitive to red light, another that is most sensitive to green light, and a third that is most sensitive to blue light.
+
+</emphasis>
+"
+
+</quote>
+
+
+
+
+<para id="p1010">
+This physical characteristic of the human eye links us directly back to the RGB color space, and 
+	
+
+<link id="a1038" url="http://learn.leighcotnoir.com/artspeak/elements-color/primary-colors/">
+
+Primary Colors of Light and Pigment
+
+</link>
+
+ should help to reinforce what you learned in the earlier module regarding 
+the RGB color space. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_HSV_color_space" effect="bold">
+
+The HSV color space
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+In addition to the HSV color space, there is also a color space called the 
+
+
+<emphasis id="strong1002" effect="bold">
+HSB
+
+</emphasis>
+ color space that substitutes the word 
+
+
+<emphasis id="em1002" effect="italics">
+Brightness
+
+</emphasis>
+ for the word 
+
+<emphasis id="em1003" effect="italics">
+Value
+
+</emphasis>
+. As near as I can tell, the two are mathematically 
+identical. I prefer the word Brightness over the word Value because I believe it 
+better describes its purpose. Also the word value is a common word in computer 
+programming and multiple usage of the word for different purposes can lead to 
+confusion, particularly when trying to write about two different meanings of the 
+same word in the same article. 
+
+<emphasis id="strong1003" effect="bold">
+Pygame
+
+</emphasis>
+ purports to support 
+HSV and does not purport to support HSB. On the other hand, we will be using a 
+color picker in this module that uses HSB in place of HSV. Given all of the 
+above, I will use the terms HSV and HSB interchangeably in this module.
+
+</para>
+
+
+
+
+<para id="p1012">
+I couldn't possibly do a better job of introducing the various technical 
+aspects of HSV than
+	that provided by the author in
+	
+
+<link id="a1039" url="http://learn.leighcotnoir.com/artspeak/elements-color/hue-value-saturation/">
+
+Hue, Value, Saturation
+
+</link>
+
+, so I won't 
+even try. However, I will depart from 
+that explanation in one minor respect. The author of that article describes the 
+HSV color space as a cone. I will describe it as a cylinder instead of a cone. 
+The end result is the same but I believe that cylinder is the better 
+description. 
+
+<emphasis id="em1004" effect="italics">
+(A cylinder is also easier to model in a computer program.)
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="Specifying_a_color_in_the_RGB_color_space" effect="bold">
+
+Specifying a color in 
+the RGB color space
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1013">
+You specify a color in the RGB color space by specifying three 
+values: Red, Green, and Blue. As you learned in an earlier module, you can think of 
+the three values as the coordinates of a point in a 3D space. You 
+can also think of that point as a point on the surface or inside of a 3D cube with dimensions of 256 units along each edge.
+
+</para>
+
+
+
+
+<para id="p1014">
+All three values use the same scale. 
+Depending on the software you are using, the range of the values will typically be expressed as:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1037">
+0 to 255 for computer geeks like myself.
+
+</item>
+
+
+	
+
+<item id="li1038">
+0 to 100 percent for those who like to work in percentages.
+
+</item>
+
+
+	
+
+<item id="li1039">
+0.0 to 1.0 for those who like to work with decimal values.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1015">
+Ultimately it doesn't matter which scale is used as long as the scale is used 
+consistently and it is supported by the software being used.
+
+</para>
+
+
+
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="Specifying_a_color_in_the_HSV_color_space" effect="bold">
+
+Specifying a color in 
+the HSV color space
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1016">
+Colors in the HSV color space are also specified by three values but they 
+don't all have the same units. In the HSV color space:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1040">
+H is for Hue: 0 to 359 degrees
+
+</item>
+
+
+	
+
+<item id="li1041">
+S is for Saturation: 0 to 100 percent
+
+</item>
+
+
+	
+
+<item id="li1042">
+V is for Value: 0 to 100 percent
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1017">
+As I indicated earlier, some people believe that these 
+three values are more intuitive and also do a better job of specifying color in 
+the way that people perceive color. There are pros and cons to this. For 
+example, just about everyone knows what I am talking about when I use the words 
+Red, Green, and Blue. However, without the kind of training that you are 
+receiving here, very few people without artistic training know what I am talking 
+about when I use the words Hue and Saturation. The same is true for the use of 
+the word Value in regards to color.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="A_description_of_hue" effect="bold">
+
+A description of Hue
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1018">
+The author of 
+	
+
+<link id="a1040" url="http://learn.leighcotnoir.com/artspeak/elements-color/hue-value-saturation/">
+
+Hue, Value, Saturation
+
+</link>
+
+ provides a description of 
+Hue and I 
+encourage you to read it. I will also provide a description in my own words in hopes that 
+will help you wrap your mind around this concept.
+
+</para>
+
+
+
+
+<para id="p1019">
+In my words, Hue is a color 
+
+<emphasis id="em1005" effect="italics">
+(expressed as an angle)
+
+</emphasis>
+ that can be 
+created by adding no more than two of the additive primary colors, Red, Green, 
+and Blue in some amounts. The value of at least one of the primary colors will 
+be zero for any value of Hue.
+
+</para>
+
+
+
+
+<para id="p1020">
+<emphasis id="The_colors_at_some_Hue_values_have_names_such_as" effect="bold">
+
+The colors at some 
+Hue values have names like
+
+</emphasis>
+
+:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1043">
+Red - 0 degrees - 3 o'clock 
+
+<emphasis id="em1006" effect="italics">
+(also 360 degrees on some systems)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1044">
+Yellow - 60 degrees - 5 o'clock
+
+</item>
+
+
+	
+
+<item id="li1045">
+Green - 120 degrees - 7 o'clock
+
+</item>
+
+
+	
+
+<item id="li1046">
+Cyan - 180 degrees - 9 o'clock
+
+</item>
+
+
+	
+
+<item id="li1047">
+Blue - 240 degrees - 11 o'clock
+
+</item>
+
+
+	
+
+<item id="li1048">
+Magenta - 300 degrees - 1 o'clock
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1021">
+The colors at other Hue values may also have names such as some of the 
+names listed 
+
+<link id="a1041" url="http://www.colorpicker.com/color-chart/">
+
+here
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1022">
+Hue is specified as an angle between 0 and 359 
+degrees and is not specified as the name of a color. However, if you are 
+developing an HSV color from scratch, it helps to know how those angle values 
+relate to color. The names of the colors at 
+equal Hue intervals of 60 degrees beginning with zero are given in the
+
+
+<link id="a1042" target-id="The_colors_at_some_Hue_values_have_names_such_as">
+
+above
+
+</link>
+
+ list. From 
+that, you might surmise, for example, that the color orange has an angle 
+somewhere between 0 degrees (
+
+<emphasis id="em1007" effect="italics">
+Red)
+
+</emphasis>
+ and 60 degrees 
+
+<emphasis id="em1008" effect="italics">
+(Yellow)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="A_description_of_saturation" effect="bold">
+
+A description of Saturation
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+I will also provide a description of Saturation in my own words. If a color 
+contains only one or two of the additive primary colors and the other primary 
+color(s) has a value of zero, it is fully saturated. 
+
+<emphasis id="em1009" effect="italics">
+(It has a Saturation value 
+of 100.)
+
+</emphasis>
+ If the color contains equal amounts of all three additive 
+primary colors, it is totally unsaturated and has a Saturation value of zero. In that 
+case, it will likely be perceived by a human observer as white, some shade of 
+gray, or black.
+
+</para>
+
+
+
+
+<para id="p1024">
+If the color contains a mixture of all three primary colors in any amounts, 
+The saturation value will be less than 100.
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="A_description_of_Value_or_Brightness" effect="bold">
+
+A description of Value or Brightness
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1025">
+In general, given any color, the color can be made darker or brighter by multiplying the 
+Red, Green, and Blue color values by the same multiplicative factor provided 
+that you don't cause the value of any color value to exceed 255. If you 
+multiply by a factor less than 1.0, you decrease the 
+
+<emphasis id="em1010" effect="italics">
+Value
+
+</emphasis>
+ or the 
+
+<emphasis id="em1011" effect="italics">
+Brightness
+
+</emphasis>
+. If 
+you multiply by a factor greater than 1.0, you increase the Value or Brightness. 
+
+
+</para>
+
+
+
+
+<para id="p1026">
+For example, if any color component has a value of 255, the Value or 
+Brightness is 100. If all color components have a value of 0, the Value or 
+Brightness is 0. If the largest color component has a value of 128, the Value or 
+Brightness is 50.
+
+</para>
+
+
+
+
+<para id="p1027">
+Thus, the Value or Brightness of a color can range from 0 
+
+<emphasis id="em1012" effect="italics">
+(black)
+
+</emphasis>
+ at the low 
+end to 100 
+
+<emphasis id="em1013" effect="italics">
+(brightest)
+
+</emphasis>
+ at the high end. 
+
+<emphasis id="em1014" effect="italics">
+(White is brighter, has a 
+greater Value, than black.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21005">
+<title>
+<emphasis id="The_cylindrical_model" effect="bold">
+
+The cylindrical model
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31006">
+<title>
+<emphasis id="The_available_colors" effect="bold">
+
+The available colors
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1028">
+Now I am going to introduce you to a cylindrical model that can be used to 
+envision HSV or HSB. Assume that you are looking down on the top of an HSV 
+cylinder. 
+
+<link id="a1043" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows what you would see. It is the top surface of an HSV color 
+cylinder.
+
+</para>
+
+
+
+
+
+<para id="p1029">
+<emphasis id="strong1004" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Top surface of an HSV color cylinder.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1030">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2245-bb.jpg" width="207" height="234"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1031">
+What you see in 
+
+<link id="a1044" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ are all of the colors that are available for Value or 
+Brightness equal to 100. You have access to all the colors shown in 
+
+<link id="a1045" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ 
+plus 100 darker versions of those colors.
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Hue_angles_and_associated_names" effect="bold">
+
+Hue angles and associated names
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+Now assume that you push a pin into the center of the circle in 
+
+
+<link id="a1046" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ and 
+attach a very thin, very straight, and very strong wire to the pin so that it 
+rotates around the center like the hour hand on a clock. 
+
+</para>
+
+
+
+
+<para id="p1033">
+Assume that you position the wire so that it is extends from the center to the 
+Red edge on the right at 3 o'clock. That would represent a 
+Hue of zero degrees. If you rotate the wire clockwise so as to align it with 
+the Yellow 
+
+<emphasis id="em1015" effect="italics">
+(5 o'clock)
+
+</emphasis>
+, that would represent a Hue of 60 degrees. The color of the Hue for a particular 
+Hue angle from zero to 359 degrees is the color under the wire where the wire 
+intersects the edge of the circle. The angles and names for six well-known Hue 
+values were listed 
+
+<link id="a1047" target-id="The_colors_at_some_Hue_values_have_names_such_as">
+
+
+above
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1034">
+All of the colors around the edge of the circle can be created through the 
+addition of only two of the additive primary colors in differing amounts. 
+
+<emphasis id="em1016" effect="italics">
+
+(For 0, 120, and 240 degrees, only one primary color has a non-zero value.)
+
+</emphasis>
+ For the top surface with a Value of 100 
+shown in 
+
+
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the color 
+combination for every Hue angle has one primary color with a value of 255.
+
+</para>
+
+
+
+
+<para id="p1035">
+The named primary and secondary Hue colors occur every 60 
+degrees. The other Hue colors fall in between those angles.
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Determining_the_Hue_of_a_color" effect="bold">
+
+Determining the Hue of a color
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+If you pick a point anywhere on the surface shown in 
+
+<link id="a1049" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the Hue of the 
+color can be determined by rotating the wire so that it intersects that point and 
+then reading the angle of the wire clockwise relative to 3 o'clock. The Hue values range from 0 to 359 degrees. Clockwise rotation 
+results in increasing positive Hue angles. 
+
+<emphasis id="em1017" effect="italics">
+(An angle of 360 
+degrees is the same as an angle of zero degrees.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Determining_the_Saturation_of_a_color" effect="bold">
+
+Determining the Saturation 
+of a color
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1037">
+Now that you understand Hue, let's discuss Saturation. Saturation is the 
+distance from the center of the circle to a point somewhere inside of or on the 
+edge of the circle shown in 
+
+<link id="a1050" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Maximum 
+Saturation of 100 occurs at the edge of the circle. Therefore, the distance from 
+the center to any point in the circle would be between 0 and 100. That distance 
+would be the saturation of the color represented by that point. 
+
+</para>
+
+
+
+
+<para id="p1038">
+For example, for a Hue of 90, I would describe the color with a Saturation of 
+50 to be a yellowish green in 
+
+<link id="a1051" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The point 
+representing that color lies half way between the center and the edge of 
+
+<link id="a1052" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ 
+at the 6 o'clock angle.
+
+</para>
+
+
+
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="Lets_reiterate" effect="bold">
+
+Let's reiterate
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+<link id="a1053" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows the top surface for an HSV cylinder for a Value of 100. 
+You can get the Hue of a color by 
+reading the angle from the 3 o'clock position to a line from the center 
+intersecting the point representing the color. You can get the Saturation by measuring the 
+distance from the center to the point. Given those two values along with a known 
+Value of 100, you have everything you need to 
+describe the color at the point on the top surface in HSV color space. 
+
+<emphasis id="em1018" effect="italics">
+(You 
+can read more about this in one of my earlier publications
+
+
+<link id="a1054" url="http://legacy.cnx.org/content/m45595/latest/Java355.htm">
+
+here
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1040">
+All of the colors at the edge of the circle are created by 
+adding no more than two of the additive primary colors: Red, Green, and Blue. All of the 
+colors on the edge are fully saturated. 
+
+<emphasis id="em1019" effect="italics">
+(The value of Saturation at the edge 
+is 100.)
+
+</emphasis>
+ The white dot at the center of the 
+circle consists of the addition of maximum values of all three primary colors. 
+The color white is totally unsaturated. 
+
+<emphasis id="em1020" effect="italics">
+(The value of Saturation at the 
+center is 0.)
+
+</emphasis>
+ All of the other colors on the surface 
+are partially saturated and can contain a mixture of all three primary colors.
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Lets_talk_some_more_about_Value" effect="bold">
+
+Let's talk some more about Value
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1041">
+The top surface of the cylinder 
+shown in 
+
+<link id="a1055" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ represents a Value of 100. The bottom surface represents a Value of zero. 
+
+<emphasis id="em1021" effect="italics">
+
+(It is totally black, so I won't bother showing it.)
+
+</emphasis>
+ If we were to slice 
+through the cylinder 60-percent of the way up from the bottom, we would 
+expose a surface with a Value of 60. That surface is shown in 
+
+<link id="a1056" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1042">
+<emphasis id="strong1005" effect="bold">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2.
+
+</emphasis>
+
+ HSV cylinder surface at V = 60.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1043">
+<media id="media1001" alt="missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-2245-bc.jpg" width="207" height="234"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1044">
+If you select a point at the same location in 
+
+<link id="a1057" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ as in 
+
+<link id="a1058" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, it would have the 
+same Hue and the same Saturation, but it would have a Value of 60 instead of a 
+Value of 100. It would simply 
+be a darker version of the color that you selected in 
+
+<link id="a1059" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+<emphasis id="em1022" effect="italics">
+(Now you 
+know one of the reasons that I prefer the term Brightness over the term Value. It is more 
+descriptive of the physical process.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1045">
+Let's look at one more slice through the cylinder at a Value of 30 as shown 
+in 
+
+<link id="a1060" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. As you can see, the colors here are well on their way to becoming 
+so dark as to be black.
+
+</para>
+
+
+
+
+
+<para id="p1046">
+<emphasis id="strong1006" effect="bold">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3.
+
+</emphasis>
+
+ HSV cylinder surface at V = 30.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1047">
+<media id="media1002" alt="missing image" display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/1359-2245-bd.jpg" width="207" height="234"/>
+</media>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="A_vertical_slice_through_the_center" effect="bold">
+
+A vertical slice through the 
+center
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1048">
+Now let's slice our cylinder one more time in a different way. Assume that we slice 
+straight down through the cylinder along a line at 60 degrees, separating the 
+cylinder into two halves, and then look at 
+the exposed face of one half of the cylinder from a position that previously was the Green area in 
+
+<link id="a1061" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+
+
+
+<emphasis id="em1023" effect="italics">
+(120 degrees or 7 o'clock)
+
+</emphasis>
+. That line would go through 
+Yellow on the lower right and would 
+go through Blue on the upper left in 
+
+<link id="a1062" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The exposed face would look something like 
+
+
+<link id="a1063" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1049">
+<emphasis id="strong1007" effect="bold">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4.
+
+</emphasis>
+
+ Exposed face from a vertical slice through the 
+center.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1050">
+<media id="media1003" alt="missing image" display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/1359-2245-be.jpg" width="207" height="134"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1051">
+The top edge of the image in 
+
+<link id="a1064" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ represents the top of the cylinder and 
+the bottom edge represents the bottom of the cylinder. A long thin vertical 
+spike driven straight down at the center of 
+
+<link id="a1065" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ would represent a vertical 
+center line and would separate the image in 
+
+<link id="a1066" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ into two halves. That 
+vertical center line would go through white at the top, gray in the middle and 
+black at the bottom. 
+
+</para>
+
+
+
+
+<para id="p1052">
+The Yellow color at the upper right corner of 
+
+<link id="a1067" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ is the same as 
+the color at the edge of the circle at 60 degrees in 
+
+<link id="a1068" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The Blue color at 
+the upper left corner in 
+
+<link id="a1069" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ is the same as the color at the edge of the circle at 
+240 degrees in 
+
+<link id="a1070" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1053">
+A point somewhere in the right half of 
+
+<link id="a1071" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ would have a Hue of 60 
+degrees, a Saturation equal to the absolute 
+
+<emphasis id="em1024" effect="italics">
+(unsigned)
+
+</emphasis>
+ distance from the 
+vertical center line of 
+
+<link id="a1072" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, 
+and a Value or Brightness equal to distance from the bottom of Figure 
+4.
+
+</para>
+
+
+
+
+<para id="p1054">
+Similarly, a point somewhere in the left half of 
+
+<link id="a1073" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ would have a Hue of 
+240 degrees, a Saturation equal to the absolute distance from the vertical center line, and a 
+Value equal to the distance from the bottom.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Experiment_with_a_color_picker" effect="bold">
+
+Experiment with a color picker
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+Let's approach this from another viewpoint. Open the
+
+
+<link id="a1074" url="http://www.colorpicker.com/">
+
+ColorPicker
+
+</link>
+
+ web page in your browser. Unless the 
+content of the page has changed, you should see the online color picker 
+shown in 
+
+<link id="a1075" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. 
+
+<emphasis id="em1025" effect="italics">
+(Note that the colors may be different from those shown 
+in 
+
+<link id="a1076" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ when the page opens in your browser.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1056">
+<emphasis id="strong1008" effect="bold">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5.
+
+</emphasis>
+
+ An online ColorPicker.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1057">
+<media id="media1004" alt="missing image" display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/1359-2245-bf.jpg" width="590" height="632"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<section id="h31013">
+<title>
+<emphasis id="The_main_elements_of_the_color_picker" effect="bold">
+
+The main elements of the 
+color picker
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1058">
+There are four main elements to the color picker:
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1049">
+A large colored square on the left that has a small circular cursor that can be used 
+	to select a color within the square.
+
+</item>
+
+
+	
+
+<item id="li1050">
+A multi-colored vertical bar on the right with a slider indicated by pointers on each 
+	side of the bar.
+
+</item>
+
+
+	
+
+<item id="li1051">
+A small square in the upper right that shows the color selected by the 
+	cursor in the large square.
+
+</item>
+
+
+	
+
+<item id="li1052">
+A group of six text boxes labeled
+
+<list id="ul1014" list-type="bulleted">
+
+		
+
+<item id="li1053">
+H:
+
+</item>
+
+
+		
+
+<item id="li1054">
+S:
+
+</item>
+
+
+		
+
+<item id="li1055">
+B:
+
+</item>
+
+
+		
+
+<item id="li1056">
+R:
+
+</item>
+
+
+		
+
+<item id="li1057">
+G:
+
+</item>
+
+
+		
+
+<item id="li1058">
+B:
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1059">
+The top three text boxes are intended to represent the H, S, and B values in 
+an HSB color space 
+
+<emphasis id="em1026" effect="italics">
+(as opposed to an HSV color space)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1060">
+The bottom three text boxes are intended to represent the R, G, and B values 
+in an RGB color space.
+
+</para>
+
+
+
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="Instructions_for_using_the_color_picker" effect="bold">
+
+Instructions for using the 
+color picker
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1061">
+Enter 60 into the topmost text box for Hue. Drag the cursor to 
+the upper-right corner of the large square as shown in 
+
+<link id="a1077" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ or enter a 0 in the 
+text box labeled S for Saturation and enter 100 in the text box labeled B for 
+Brightness. 
+
+</para>
+
+
+
+
+<para id="p1062">
+Note that there are two text boxes labeled B. One 
+stands for Brightness, as in HSB and the other stands for Blue as in RGB. 
+
+<emphasis id="em1027" effect="italics">
+
+(Maybe that is why some people prefer HSV over HSB - to avoid confusion between 
+the two uses of the letter B.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1063">
+Now compare the large square with the right half of 
+
+<link id="a1078" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. They should be 
+the same except that the version in 
+
+<link id="a1079" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ is much larger. This tells us that 
+the large square in the color picker represents the right half of a vertical 
+slice in an HSB cylinder along a line given by a specific Hue in degrees.
+
+</para>
+
+
+
+
+<para id="p1064">
+Now enter 240 in the text box for Hue. What you see should be a mirror image 
+of the left half of 
+
+<link id="a1080" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1065">
+You may have noticed that the slider to the left of the text boxes moved when you entered a value in the text box for Hue. You can also move 
+that slider up and down manually. Moving it up and down is equivalent to 
+rotating my hypothetical wire in 
+
+<link id="a1081" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ and then slicing down through the 
+cylinder along the wire to expose the face. 
+
+</para>
+
+
+
+
+<para id="p1066">
+The colored vertical bar next to the 
+text boxes in the color picker is analogous to the edge of the circle in Figure 
+1. You can select a Hue by moving the slider up and down. The lowest position of 
+the slider represents a Hue of 0 degrees. The highest position of the square 
+represents 360 degrees, which is the same as 0 degrees. If you manually drag the 
+slider to the top, a 0 appears in the Hue box and the slider stays at the top. 
+However, if you enter 360 in the Hue box, the slider automatically moves to the 
+bottom and the value in the Hue box changes to 0.
+
+</para>
+
+
+
+
+<para id="p1067">
+Once you select a Hue, you can move the cursor horizontally 
+to select a value for Saturation. You can move the cursor up and 
+down to select a value for Brightness.
+
+</para>
+
+
+
+
+<para id="p1068">
+As you move the slider up and down and/or move the cursor back and 
+forth and up and down, the numbers in the text boxes change to indicate the HSB 
+values and the RGB values for the color specified by the combined positions of the cursor 
+and the slider. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31015">
+<title>
+<emphasis id="Interesting_experiments" effect="bold">
+
+Interesting experiments
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1069">
+There are some interesting experiments that you can perform with the color picker to get 
+a better feel for the complex relationship between HSV and RGB. We will begin 
+with the one that is the most straightforward. 
+
+</para>
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="Hold_Hue_and_Saturation_constant_and_vary_Brightness" effect="bold">
+
+Hold Hue and Saturation constant and 
+vary Brightness
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1070">
+Pick any value for Hue, 199 for example, and enter it into the Hue box. Pick any value for Saturation, 60 for example, and enter it into the 
+Saturation box. Enter 100 in the Brightness box. The cursor should be at the top 
+edge of the large square.
+
+</para>
+
+
+
+
+<para id="p1071">
+Note the values for R, G, and B. Now drag the cursor straight down the screen 
+trying to maintain the Saturation value constant. The values for Brightness, 
+Red, Green, and Blue should all decrease linearly and should be zero when 
+the cursor reaches the bottom.
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="Hold_Hue_and_Brightness_constant_and_vary_Saturation" effect="bold">
+
+Hold Hue and Brightness constant and 
+vary Saturation
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1072">
+Pick any value for Hue, 199 for example, and enter it into the Hue box. 
+Pick any value for Brightness, 50 for example, and enter it into the Brightness 
+box. Enter 100 into the Saturation box and note the values for 
+Red, Green, and Blue. One of the values for RGB will be larger than the other 
+two. 
+
+<emphasis id="em1028" effect="italics">
+(If you chose 60, 180, or 300 for Hue, two of the RGB colors will have the same 
+value.)
+
+</emphasis>
+ Now drag the cursor from right to left being careful to hold the 
+value for Brightness constant. The large value that you noted before you started 
+dragging should not change, 
+but the other two values should increase until all three values are equal when 
+the cursor reaches the left side with a Saturation value of 0. In this case, the 
+change in value is linear as the cursor moves from right to left.
+
+</para>
+
+
+
+
+</section>
+<section id="h41002">
+<title>
+<emphasis id="Hold_Saturation_and_Brightness_constant_and_vary_Hue" effect="bold">
+
+Hold Saturation and Brightness constant and 
+vary Hue
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1073">
+Pick any value for Saturation, 60 for example, and enter it into the 
+Saturation box. Pick any value for Brightness, 30, for example, and enter it 
+into the Brightness box. Pick any Hue value between 0 and 359, 
+199 for example, and enter it into the Hue box. Note the RGB values. 
+
+</para>
+
+
+
+
+<para id="p1074">
+One 
+of the values for RGB will be larger than the other two. 
+
+<emphasis id="em1029" effect="italics">
+(If you choose 60, 180, or 300 for Hue, two of 
+the RGB colors will have the same value.)
+
+</emphasis>
+ Now drag the Hue slider up and 
+down. Regardless of the position of the slider, one and possibly two of the RGB 
+values will continue to have that same maximum value. Among Red, Green, and 
+Blue, the maximum value switches from one color to the next as the Hue crosses 
+the 30, 180, and 300 degree marks.
+
+</para>
+
+
+
+
+<para id="p1075">
+Given the behavior of the RGB values in this third experiment, you may also conclude that thinking of 
+color in terms of HSB or HSV is more intuitive than thinking of color in terms 
+of RGB, even if you don't have an artistic bent. Just remember that most 
+computers don't natively deal with colors according to an HSV color space. Digital 
+color data is stored and manipulated in most computers in an RGB format. Working 
+with HSV or HSB requires that the values be converted back and forth between RGB 
+and HSV. This, in turn, frequently requires more programming effort. 
+Fortunately, the extra programming effort required in 
+
+<emphasis id="strong1009" effect="bold">
+pygame
+
+</emphasis>
+ is 
+minimal.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h21007">
+<title>
+<emphasis id="The_HSL_color_space" effect="bold">
+
+The HSL color space
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1076">
+I don't plan to discuss HSL. However, there are some interesting HSL color 
+pickers in the following list. You may find it instructive to experiment with 
+them.
+
+</para>
+
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+	
+
+<item id="li1059">
+<link id="a1082" url="http://hslpicker.com/#fff">
+
+HSL Color Picker - by Brandon Mathis
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1060">
+<link id="a1083" url="http://www.workwithcolor.com/hsl-color-picker-01.htm">
+
+HSL Color 
+Picker; HTML Color Picker; Web, HEX, CSS, HSLa
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1061">
+<link id="a1084" url="http://colorizer.org/">
+
+Colorizer - A color picker and converter (RGB 
+HSL HSBHSV CMYK HEX)
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1077">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1010" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1016" list-type="bulleted">
+
+					
+
+<item id="li1062">
+Module name: Itse1359-2245-Color-Part 6
+
+</item>
+
+
+					
+
+<item id="li1063">
+File: Itse1359-2245.htm
+
+
+</item>
+
+
+					
+
+<item id="li1064">
+Published: 01/10/15
+
+</item>
+
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1011" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1078">
+<emphasis id="strong1012" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1079">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1080">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1081">
+<emphasis id="strong1013" effect="bold">
+Affiliation
+
+</emphasis>
+:: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+	
+
+
+
+<para id="p1082">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,2383 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2225-Color-Introduction to Alpha Transparency</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52511</md:content-id>
+  <md:title>Itse1359-2225-Color-Introduction to Alpha Transparency</md:title>
+  <md:abstract>This module introduces the student to the use of alpha transparency in Pygame.</md:abstract>
+  <md:uuid>58304103-3849-49d6-a0dc-82946234df35</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Create_some_constants_and_variables">
+
+Create some constants and variables
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Create_some_objects">
+
+Create some objects
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Enter_the_runtime_loop">
+
+Enter the runtime loop
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1009">
+
+			
+
+<link id="a1009" target-id="Create_some_colored_rectangular_areas_on_the_base_surface">
+
+Create some colored rectangular areas on the base surface
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Create_a_new_surface">
+
+Create a new surface
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Draw_the_new_surface_on_the_base_surface">
+
+Draw the new surface on the base surface
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="Display_the_surface_and_control_the_clock">
+
+Display the surface and control the clock
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="Terminate_the_program">
+
+Terminate the program
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Complete_program_listings">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1017">
+<link id="a1017" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Program output. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+
+
+<item id="li1018">
+<link id="a1018" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ The preliminaries. 
+
+</item>
+
+
+
+
+<item id="li1019">
+<link id="a1019" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Create some constants and variables. 
+
+</item>
+
+
+
+
+<item id="li1020">
+<link id="a1020" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ Create some objects. 
+
+</item>
+
+
+
+
+<item id="li1021">
+<link id="a1021" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ Enter the runtime loop. 
+
+</item>
+
+
+
+
+<item id="li1022">
+<link id="a1022" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Create some colored rectangular areas on the base surface. 
+
+</item>
+
+
+
+
+<item id="li1023">
+<link id="a1023" target-id="Listing_6">
+
+Listing 6.
+
+</link>
+
+ Create a new surface.
+
+</item>
+
+
+
+
+<item id="li1024">
+<link id="a1024" target-id="Listing_7">
+
+Listing 7.
+
+</link>
+
+ Draw the new surface on the base surface. 
+
+</item>
+
+
+
+
+<item id="li1025">
+<link id="a1025" target-id="Listing_8">
+
+Listing 8.
+
+</link>
+
+ Terminate the program. 
+
+</item>
+
+
+
+
+<item id="li1026">
+<link id="a1026" target-id="Listing_9">
+
+Listing 9.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+One of the more complicated aspects of dealing with color has to do with 
+
+
+<emphasis id="em1001" effect="italics">
+transparency
+
+</emphasis>
+ or its inverse, 
+
+<emphasis id="em1002" effect="italics">
+opacity
+
+</emphasis>
+. There are at least
+
+
+<link id="a1027" url="http://www.pygame.org/docs/ref/surface.html">
+
+three types of transparency
+
+</link>
+
+ supported in Pygame: 
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1027">
+colorkeys
+
+</item>
+
+
+	
+
+<item id="li1028">
+surface alphas
+
+</item>
+
+
+	
+
+<item id="li1029">
+pixel alphas
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1003">
+This module will deal with 
+
+<emphasis id="em1003" effect="italics">
+surface alphas
+
+</emphasis>
+ and defer a discussion of 
+the other two types to future a module. 
+
+</para>
+
+
+
+
+<para id="p1004">
+A surface alpha value is a single value that changes the transparency for the entire image. A surface alpha 
+value of 255 is opaque, and a value of 0 is completely transparent.
+
+</para>
+
+
+
+
+<para id="p1005">
+Although there may be some exceptions, alpha values belonging to pixels 
+written onto the base surface created by calling 
+
+<emphasis id="strong1001" effect="bold">
+pygame.display.set_mode
+
+</emphasis>
+ 
+will be ignored. For example, if you call 
+
+<emphasis id="strong1002" effect="bold">
+python.draw.rect
+
+</emphasis>
+ to draw a rectangle 
+on the base surface and set the alpha value for the border color to 128 
+
+<emphasis id="em1004" effect="italics">
+
+(50%)
+
+</emphasis>
+, the border will still be opaque. 
+
+</para>
+
+
+
+
+<para id="p1006">
+To make use of the alpha channel, you will need to 
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1030">
+create a surface that supports 
+the alpha channel, 
+
+</item>
+
+
+	
+
+<item id="li1031">
+manipulate the color data on that surface, and 
+
+</item>
+
+
+	
+
+<item id="li1032">
+
+	
+
+<link id="a1028" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.blit">
+
+blit
+
+</link>
+
+ that 
+surface to the base surface. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1007">
+There are several ways to do that. I will show you 
+one of those ways in this module and will show you other ways in future modules.
+
+</para>
+
+
+
+
+<para id="p1008">
+The program that I will explain in the 
+
+<link id="a1029" target-id="Discussion_and_sample_code">
+
+
+next section
+
+</link>
+
+ begins by creating two blue and one gray rectangular areas on the 
+base surface as shown by the image in the left half of 
+
+<link id="a1030" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+
+<emphasis id="em1005" effect="italics">
+(Note that the default surface background is black.)
+
+</emphasis>
+</para>
+
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1003" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Program output.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1010">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2225-01.jpg" width="628" height="246"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<media id="media1001" alt="Missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-2225-01.jpg" width="628" height="246"/>
+</media>
+
+
+<para id="p1011">
+Then the program creates a new surface with a format that contains surface 
+alphas. The surface alpha 
+value is set to 127.5 
+
+<emphasis id="em1006" effect="italics">
+(the decimal part is probably ignored for an alpha value of 
+127 or 49.8-percent opaque)
+
+</emphasis>
+. The width of the new surface is equal to the width of 
+the base surface and the height is half the height of the base surface. The new 
+surface is drawn onto the upper half of the base surface by calling the
+
+
+<link id="a1031" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.blit">
+
+blit
+
+</link>
+
+ 
+method of the 
+
+<link id="a1032" url="http://www.pygame.org/docs/ref/surface.html">
+
+Surface
+
+</link>
+
+ 
+class.
+
+</para>
+
+
+
+
+<para id="p1012">
+This produces the output shown in the right half of 
+
+<link id="a1033" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Blending the 
+yellow color with the blue color using the default blending formula produces the 
+gray color shown in the top half of the right half of 
+
+<link id="a1034" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. To the eye, at 
+least, this gray color matches the gray color of the bottom-right rectangle in 
+both images. 
+
+</para>
+
+
+
+
+<para id="p1013">
+There are many different formulas that can be used to compute the resulting 
+color when two colors are blended in pygame. They have names like BLEND_ADD and 
+BLEND_SUB and can be passed as 
+
+<emphasis id="strong1004" effect="bold">
+special_flags
+
+</emphasis>
+ to the 
+
+<emphasis id="strong1005" effect="bold">
+
+blit
+
+</emphasis>
+ method. 
+
+</para>
+
+
+
+
+<para id="p1014">
+This program uses the default blending formula. The output shown in 
+
+<link id="a1035" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ can be used to make an educated guess 
+that the behavior of the default blending formula is as follows. 
+
+</para>
+
+
+
+
+<para id="p1015">
+If the color values of the surface being copied to are represented by vd 
+
+<emphasis id="em1007" effect="italics">
+
+(for destination)
+
+</emphasis>
+, the color values of the surface being copied from 
+are represented by vs 
+
+<emphasis id="em1008" effect="italics">
+(for source)
+
+</emphasis>
+ and the resulting color values are 
+represented by vr, then it appears that 
+
+</para>
+
+
+
+
+<para id="p1016">
+vr = vs * (alpha/255) + vd * (1 - (alpha/255))
+
+</para>
+
+
+
+
+<para id="p1017">
+<emphasis id="em1009" effect="italics">
+(I will show in a future module that this 
+is apparently not true if all three color values on the surface being copied to are zero 
+indicating that the source is being copied to a black surface. In that case, the 
+resulting color values appear to match the source color values regardless of the 
+value of alpha.)
+
+</emphasis>
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1018">
+A complete listing of this program is provided in 
+
+<link id="a1036" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. I will 
+	break the program down and explain it in fragments. The first fragment is 
+	shown in 
+
+<link id="a1037" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ The preliminaries.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Transparency01.py") #Set the window caption</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1019">
+I have explained code like that shown in 
+
+<link id="a1038" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ in earlier modules. 
+Therefore, no further explanation of this code should be needed.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Create_some_constants_and_variables" effect="bold">
+
+Create some constants and 
+variables
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+In keeping with my philosophy that we should strive to make our code as 
+self-documenting as practical, this program makes use of variables with 
+meaningful names as opposed to simply sticking numbers in various locations. 
+Five such variables are created in 
+
+<link id="a1039" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. You will learn what these 
+variables are used for later in the module.
+
+</para>
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+
+
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Create some constants and variables.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">FRAMERATE = 4 #Used to control the maximum frame rate.
+WIDTH = 300
+HEIGHT = 200
+ORIGIN = (0,0)
+fiftyPercent = 255/2</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Create_some_objects" effect="bold">
+
+Create some objects
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1021">
+Once again, in keeping with my philosophy regarding self documenting code, 
+this program uses objects referred to by variables with meaningful names. 
+Several such objects are created in 
+
+<link id="a1040" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. You will see what these objects 
+are used for later. Note that the second statement in 
+
+<link id="a1041" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ uses the 
+variables WIDTH and HEIGHT that were created in 
+
+<link id="a1042" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ Create some objects.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Create some color objects
+blue = pygame.Color(0,0,255)
+gray = pygame.Color(128,128,128)
+yellow = pygame.Color(255,255,0)
+
+#Create some Rect objects for use in specifying rectangular areas.
+leftRectArea = pygame.Rect(50,0,98,200)
+upperRightRectArea = pygame.Rect(150,0,100,98)
+lowerRightRectArea = pygame.Rect(150,100,100,100)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Enter_the_runtime_loop" effect="bold">
+
+Enter the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+The code in 
+
+<link id="a1043" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ enters the runtime loop and checks for user input.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ Enter the runtime loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1023">
+I have explained code like this in earlier modules and a further explanation 
+should not be needed.
+
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Create_some_colored_rectangular_areas_on_the_base_surface" effect="bold">
+
+Create 
+some colored rectangular areas on the base surface
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1024">
+There are at least two ways to create filled rectangles in pygame. One way is 
+to call 
+
+<link id="a1044" url="http://www.pygame.org/docs/ref/draw.html#pygame.draw.rect">
+
+pygame.draw.rect
+
+</link>
+
+ 
+and set the border width to zero. The other way is to 
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1033">
+call the
+	
+
+<link id="a1045" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.fill">
+
+
+	fill
+
+</link>
+
+ method on a 
+
+<link id="a1046" url="http://www.pygame.org/docs/ref/surface.html">
+
+
+	Surface
+
+</link>
+
+ object,
+
+</item>
+
+
+	
+
+<item id="li1034">
+specify the color as the first parameter, and 
+
+</item>
+
+
+	
+
+<item id="li1035">
+specify a rectangular area as the second parameter.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1025">
+That is the approach that was used in this program.
+
+</para>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1004">
+<row id="tr1008">
+
+
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Create some colored rectangular areas on 
+the base surface.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">    baseSurf.fill(blue,leftRectArea) #Blue area on left
+    baseSurf.fill(blue,upperRightRectArea) #Blue square - upper right
+    baseSurf.fill(gray,lowerRightRectArea) #Gray square - lower right</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1026">
+Taken together, the three statements in 
+
+<link id="a1047" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ produce the three 
+colored rectangular areas shown in the left half of 
+
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+Note that these statements pass 
+
+<emphasis id="strong1006" effect="bold">
+Color
+
+</emphasis>
+ and 
+
+<emphasis id="strong1007" effect="bold">
+Rect
+
+</emphasis>
+ 
+object references that were created in 
+
+<link id="a1049" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ as parameters to the 
+
+<emphasis id="strong1008" effect="bold">
+fill
+
+</emphasis>
+ 
+method..
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Create_a_new_surface" effect="bold">
+
+Create a new surface
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+    
+
+<link id="a1050" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ creates a new surface with 50-percent transparency 
+
+<emphasis id="em1010" effect="italics">
+(also 
+50-percent opacity)
+
+</emphasis>
+ and a yellow color
+    half the size of the base surface.
+
+</para>
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1005">
+<row id="tr1010">
+
+
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6.
+
+</emphasis>
+
+ Create a new surface.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">    s1 = pygame.Surface((WIDTH,HEIGHT/2))
+    s1.set_alpha(fiftyPercent)
+    s1.fill(yellow)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1028">
+<link id="a1051" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ begins by calling one of the overloaded constructors for the
+
+
+<link id="a1052" url="http://www.pygame.org/docs/ref/surface.html">
+
+Surface
+
+</link>
+
+ class passing 
+width and height information in a tuple as the first parameter. As near as I can 
+tell, the 
+documentation does not explicitly state that the resulting surface format 
+contains surface alphas. However, the documentation for the
+
+
+<link id="a1053" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.set_alpha">
+
+
+set_alpha
+
+</link>
+
+ method states 
+
+<emphasis id="em1011" effect="italics">
+"If the Surface format contains per pixel alphas, then this alpha value will be ignored."
+
+</emphasis>
+ 
+The documentation also states 
+
+<emphasis id="em1012" effect="italics">
+"Per pixel alphas cannot be mixed with surface alpha and colorkeys."
+
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1029">
+The fact that the alpha value that is set in 
+
+<link id="a1054" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ is not ignored strongly suggests that 
+the default surface format does not contain per pixel alphas and does contain 
+surface alphas.
+
+</para>
+
+
+
+
+<para id="p1030">
+<link id="a1055" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1009" effect="bold">
+fill
+
+</emphasis>
+ method on the 
+
+
+<emphasis id="strong1010" effect="bold">
+Surface
+
+</emphasis>
+ object to set the color of the 
+entire surface to 
+
+<emphasis id="strong1011" effect="bold">
+yellow
+
+</emphasis>
+, as defined in 
+
+<link id="a1056" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Draw_the_new_surface_on_the_base_surface" effect="bold">
+
+Draw the new surface on 
+the base surface
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1031">
+Calling the
+
+
+<link id="a1057" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.blit">
+
+blit
+
+</link>
+
+ 
+method on a surface causes the surface passed as the first parameter 
+
+<emphasis id="em1013" effect="italics">
+
+(source)
+
+</emphasis>
+ to be drawn on the surface on which the method is called. The 
+second parameter specifies the location at which the upper-left corner of the 
+source will be drawn. In this case, the upper-left corners of the two surfaces 
+were aligned. There are other parameters that can be passed to control other 
+aspects of the drawing as well, but they weren't used in this case. 
+
+</para>
+
+
+
+
+<para id="p1032">
+Running the code in 
+
+<link id="a1058" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ with the # character intact disables the call 
+to the 
+
+<emphasis id="strong1012" effect="bold">
+blit
+
+</emphasis>
+ method and produces the output shown in the left half of 
+
+<link id="a1059" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+Removing the # character and running the code in 
+
+<link id="a1060" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ produces the output 
+shown in the right half of 
+
+<link id="a1061" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1006">
+<row id="tr1012">
+
+
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7.
+
+</emphasis>
+
+ Draw the new surface on the base surface.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">    #Draw the new surface at the origin on the baseSurf.
+    #Disable the following statement to see the raw baseSurf.
+#    baseSurf.blit(s1,ORIGIN)
+
+    #Display the baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Display_the_surface_and_control_the_clock" effect="bold">
+
+Display the surface and 
+control the clock
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1033">
+The remaining code in 
+
+<link id="a1062" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ is the same as code that I have explained in 
+earlier modules. Therefore, no further explanation of this code should be 
+needed.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Terminate_the_program" effect="bold">
+
+Terminate the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1034">
+The code in 
+
+<link id="a1063" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ does any necessary cleanup and terminates the program 
+when the user clicks the X-button in the upper-right of 
+
+<link id="a1064" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, causing 
+control to exit the runtime loop.
+
+</para>
+
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1007">
+<row id="tr1014">
+
+
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8.
+
+</emphasis>
+
+ Terminate the program.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1035">
+I encourage you to copy the code from 
+
+<link id="a1065" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Execute the code and confirm 
+that you get the same results as those shown in 
+
+<link id="a1066" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+A complete listing of the program is shown in 
+
+<link id="a1067" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1037">
+<emphasis id="strong1013" effect="bold">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9.
+
+</emphasis>
+
+ Complete program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1008" display="block">"""
+File Transparency01.py
+Illustrates surface alpha blending.
+================================================================================
+"""
+import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Transparency01.py") #Set the window caption
+FRAMERATE = 4 #Used to control the maximum frame rate.
+WIDTH = 300
+HEIGHT = 200
+ORIGIN = (0,0)
+fiftyPercent = 255/2
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Create some color objects
+blue = pygame.Color(0,0,255)
+gray = pygame.Color(128,128,128)
+yellow = pygame.Color(255,255,0)
+
+#Create some Rect objects for use in specifying rectangular areas.
+leftRectArea = pygame.Rect(50,0,98,200)
+upperRightRectArea = pygame.Rect(150,0,100,98)
+lowerRightRectArea = pygame.Rect(150,100,100,100)
+
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+    
+    #Create some colored rectangular areas on the baseSurf
+    baseSurf.fill(blue,leftRectArea) #Blue area on left
+    baseSurf.fill(blue,upperRightRectArea) #Blue square - upper right
+    baseSurf.fill(gray,lowerRightRectArea) #Gray square - lower right
+    
+    #Create a new surface with 50% transparency/opacity and a yellow color
+    # half the size of baseSurf.
+    s1 = pygame.Surface((WIDTH,HEIGHT/2))
+    s1.set_alpha(fiftyPercent)
+    s1.fill(yellow)    
+    
+    #Draw the new surface at the origin on the baseSurf.
+    #Disable the following statement to see the raw baseSurf.
+#    baseSurf.blit(s1,ORIGIN)
+
+    #Display the baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop
+</code>
+
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1038">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1014" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1010" list-type="bulleted">
+
+					
+
+<item id="li1036">
+Module name: Itse1359-2225-Color-Part 2
+
+</item>
+
+
+					
+
+<item id="li1037">
+File: Itse1359-2225.htm
+
+
+</item>
+
+
+					
+
+<item id="li1038">
+Published: 01/31/16
+
+</item>
+
+
+
+
+<item id="li1039">
+Revised: 02/08/16
+
+</item>
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1015" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1039">
+<emphasis id="strong1016" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1040">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1041">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1042">
+<emphasis id="strong1017" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1043">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

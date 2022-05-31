@@ -1,0 +1,1915 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2230-Color-Animated Demonstration of Surface Alphas</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52534</md:content-id>
+  <md:title>Itse1359-2230-Color-Animated Demonstration of Surface Alphas</md:title>
+  <md:abstract>This module presents an animated demonstration of surface alphas.</md:abstract>
+  <md:uuid>2a72ef15-7b35-4df2-b62c-687893137573</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="The_program_output">
+
+The program output
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Dynamic_behavior_of_the_program">
+
+Dynamic behavior of the program
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_preliminaries">
+
+The preliminaries
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Enter_the_runtime_loop">
+
+Enter the runtime loop
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="The_program_logic">
+
+The program logic
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="The_remainder_of_the_runtime_loop_code">
+
+The remainder of the runtime loop code
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Terminate_the_program">
+
+Terminate the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Complete_program_listings">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Screen shots from a dynamic demonstration of runtime alphas. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+
+
+<item id="li1017">
+<link id="a1017" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ The preliminaries.
+
+</item>
+
+
+
+
+<item id="li1018">
+<link id="a1018" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Enter the runtime loop. 
+
+</item>
+
+
+
+
+<item id="li1019">
+<link id="a1019" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ The program logic. 
+
+</item>
+
+
+
+
+<item id="li1020">
+<link id="a1020" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ The remainder of the runtime loop code. 
+
+</item>
+
+
+
+
+<item id="li1021">
+<link id="a1021" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Terminate the program. 
+
+</item>
+
+
+
+
+<item id="li1022">
+<link id="a1022" target-id="Listing_6">
+
+Listing 6.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+In an earlier module, you learned about the runtime loop and how code that is 
+executed within the runtime loop can cause the display to change over time. You also 
+learned about 
+
+<emphasis id="em1001" effect="italics">
+surface alphas
+
+</emphasis>
+ in an earlier module. In this module, you will 
+learn how to write a program that displays a dynamic demonstration of surface alphas 
+that change over time.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_program_output" effect="bold">
+
+The program output
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+<link id="a1023" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows nine screen shots taken at random 
+times while the program was running.
+
+</para>
+
+
+
+
+
+<para id="p1004">
+<emphasis id="strong1001" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Screen shots from a dynamic demonstration of runtime alphas.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1005">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2230-01.jpg" width="639" height="420"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1006">
+The program creates three colored rectangular areas 
+
+<emphasis id="em1002" effect="italics">
+(red, green, and 
+blue)
+
+</emphasis>
+ on the black base surface during each iteration of the runtime loop. 
+The red and green areas are shown side by side at the top of each output image 
+in 
+
+<link id="a1024" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The blue area is shown centered below the 
+red and green areas.
+
+</para>
+
+
+
+
+<para id="p1007">
+Also, during each iteration, the program creates a small, partially 
+transparent rectangular surface with a color of yellow, cyan, or magenta and 
+draws it at the center of the display on top of the red, green, and blue areas.
+
+
+<emphasis id="em1003" effect="italics">
+(For want of a better term, I will refer to this area as the mask.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1008">
+You can see the actual color of the mask where it overlaps the black areas 
+that separate the red, green, and blue areas. 
+
+<emphasis id="em1004" effect="italics">
+(The mask displays its actual 
+color, or something very close to its actual color in those black areas even 
+for alpha values as low as 16.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+The top left image in 
+
+<link id="a1025" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows the mask during a period when it is 
+yellow with a high alpha value. The top center image shows the mask when it is cyan 
+with a moderate alpha value. The top right image shows the mask when it is cyan 
+with a moderate relatively high value.
+
+</para>
+
+
+
+
+<para id="p1010">
+The images at each 
+end of the center row shows the mask when it is magenta with a low alpha value 
+on the left and a somewhat higher value on the right. None of the images show 
+magenta with a really high alpha value.
+
+</para>
+
+
+
+
+<para id="p1011">
+The important thing to note in 
+
+<link id="a1026" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ is the 
+blended colors produced by the overlap 
+of the mask with the red, green, and blue areas. However, the results are much 
+more instructive when viewed in real time while the program is running.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Dynamic_behavior_of_the_program" effect="bold">
+
+Dynamic behavior of the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1012">
+When the program starts, the mask has a yellow color with an alpha value of 
+zero 
+
+<emphasis id="em1005" effect="italics">
+(totally transparent)
+
+</emphasis>
+. During each iteration of the runtime loop, 
+the alpha value is increased until it reaches 255 
+
+<emphasis id="em1006" effect="italics">
+(totally opaque)
+
+</emphasis>
+. 
+When the alpha value of the yellow mask reaches 255, the color of the mask is 
+switched to cyan and the alpha value is set to zero. 
+
+</para>
+
+
+
+
+<para id="p1013">
+As the iterations continue, the alpha value increases again until it reaches 
+255. When that happens, the color of the mask is switched from cyan to magenta and the 
+alpha value is once again set to zero. 
+
+</para>
+
+
+
+
+<para id="p1014">
+The process continues as before. When the alpha value of the magenta mask reaches 255, the color is switched 
+back to yellow with an alpha value of zero. This cycle repeats until the user 
+clicks the X-button in the upper-left corner of the output image shown in 
+
+
+<link id="a1027" target-id="Figure_1">
+
+Figure 
+1
+
+</link>
+
+. 
+
+</para>
+
+
+	
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<section id="h21003">
+<title>
+<emphasis id="The_preliminaries" effect="bold">
+
+The preliminaries
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1015">
+A complete listing of the program is provided in 
+
+<link id="a1028" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ near the end of 
+the module. I will break the program down and explain it in fragments. The first 
+fragment is shown in 
+
+<link id="a1029" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ The preliminaries.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Transparency02.py") #Set the window caption
+FRAMERATE = 40 #Used to control the maximum frame rate.
+WIDTH = 200
+HEIGHT = 100
+ORIGIN = (WIDTH/3,HEIGHT/4)
+alpha = 0
+alphaInc = 1
+colorNumber = 0
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Create some color objects
+red = pygame.Color(255,0,0)
+green = pygame.Color(0,255,0)
+blue = pygame.Color(0,0,255)
+yellow = pygame.Color(255,255,0)
+cyan = pygame.Color(0,255,255)
+magenta = pygame.Color(255,0,255)
+
+#Populate a tuple with references to the color objects
+colors = (yellow,cyan,magenta)
+
+#Create some Rect objects for use in specifying rectangular areas.
+leftRectArea = pygame.Rect(WIDTH/6,0,WIDTH/3-4,HEIGHT/2-4)
+rightRectArea = pygame.Rect(WIDTH/2,0,WIDTH/3-4,HEIGHT/2-4)
+bottomRectArea = pygame.Rect(WIDTH/3,HEIGHT/2,WIDTH/3,HEIGHT/2-4)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1016">
+Almost all of the code in 
+
+<link id="a1030" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ is similar to code that you have seen in 
+previous modules so a detailed explanation should not be needed. However, there 
+are a couple of things that are worthy of note.
+
+</para>
+
+
+
+
+<para id="p1017">
+First, all coordinate, width, and height values in the program are specified 
+in terms of the values contained in the constants named WIDTH and HEIGHT. 
+Therefore, you can change the size of the display and its contents simply by 
+changing those values. In order to make it possible to show nine screen shots in 
+a small amount of space, those values were set relatively small to create the 
+screen shots in 
+
+<link id="a1031" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. You may want to increase those values when you copy 
+the code from 
+
+<link id="a1032" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ and run the program to provide 
+a better view of the results.
+
+</para>
+
+
+
+
+<para id="p1018">
+Second, after creating 
+
+<emphasis id="strong1002" effect="bold">
+Color
+
+</emphasis>
+ objects for 
+
+<emphasis id="strong1003" effect="bold">
+yellow
+
+</emphasis>
+,
+
+
+<emphasis id="strong1004" effect="bold">
+cyan
+
+</emphasis>
+, and 
+
+<emphasis id="strong1005" effect="bold">
+magenta
+
+</emphasis>
+, references to those objects 
+are stored in a tuple referred to by the variable named 
+
+<emphasis id="strong1006" effect="bold">
+colors
+
+</emphasis>
+. 
+This tuple will be indexed inside the runtime loop to specify the color of the 
+mask for the current iteration.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Enter_the_runtime_loop" effect="bold">
+
+Enter the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1019">
+The code in 
+
+<link id="a1033" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ is also very similar to code that I have explained in 
+earlier modules. Therefore, a detailed explanation should not be needed.
+
+</para>
+
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+
+
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Enter the runtime loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+    
+    #Create some colored rectangular areas on baseSurf
+    baseSurf.fill(red,leftRectArea) #Red area on left
+    baseSurf.fill(green,rightRectArea) #Green area on the right
+    baseSurf.fill(blue,bottomRectArea) #Blue area on the bottom</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="The_program_logic" effect="bold">
+
+The program logic
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+<link id="a1034" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ uses relatively straightforward logic to     compute the alpha value
+
+
+<emphasis id="em1007" effect="italics">
+(
+
+<emphasis id="strong1007" effect="bold">
+alpha
+
+</emphasis>
+)
+
+</emphasis>
+ and the color index 
+
+<emphasis id="em1008" effect="italics">
+(
+
+<emphasis id="strong1008" effect="bold">
+colorNumber
+
+</emphasis>
+)
+
+</emphasis>
+ 
+that will be applied to the mask for this iteration of the runtime loop.
+
+</para>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ The program logic.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+    if alpha &lt;= (255 - alphaInc):
+        alpha += alphaInc
+    else:
+        alpha = 0
+        colorNumber += 1
+        if colorNumber &gt; 2:
+            colorNumber = 0</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1021">
+If you have learned about Python 
+
+<emphasis id="em1009" effect="italics">
+flow of control
+
+</emphasis>
+, you should have no 
+difficulty understanding the code in 
+
+<link id="a1035" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ without a detailed explanation. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="The_remainder_of_the_runtime_loop_code" effect="bold">
+
+The remainder of the 
+runtime loop code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+    The code in 
+
+<link id="a1036" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ creates a new surface for the mask using the values 
+of the 
+
+<emphasis id="strong1009" effect="bold">
+WIDTH
+
+</emphasis>
+ and 
+
+<emphasis id="strong1010" effect="bold">
+HEIGHT
+
+</emphasis>
+ constants to specify 
+the dimensions of the surface.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ The remainder of the runtime loop code.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+    s1 = pygame.Surface((2*WIDTH/6,2*HEIGHT/4))
+    s1.set_alpha(alpha)
+    s1.fill(colors[colorNumber])
+    
+    #Draw the new surface on baseSurf at the specified location.
+    baseSurf.blit(s1,ORIGIN)
+    
+    #Display baseSurf
+    pygame.display.flip()
+
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1023">
+Then the code in 
+
+<link id="a1037" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ sets the alpha value for the surface using the 
+value contained in the variable named 
+
+<emphasis id="strong1011" effect="bold">
+alpha
+
+</emphasis>
+ that was computed 
+in 
+
+<link id="a1038" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1024">
+After that, the code uses the value of the variable named 
+
+<emphasis id="strong1012" effect="bold">
+colorNumber
+
+</emphasis>
+, 
+which was computed in 
+
+<link id="a1039" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+, to index the tuple named 
+
+<emphasis id="strong1013" effect="bold">
+colors
+
+</emphasis>
+ to get the color used to 
+
+<emphasis id="strong1014" effect="bold">
+fill
+
+</emphasis>
+ the mask.
+
+</para>
+
+
+
+
+<para id="p1025">
+The code in 
+
+<link id="a1040" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1015" effect="bold">
+blit
+
+</emphasis>
+ method to draw the mask 
+on the base surface at a location specified by the value of the constant named
+
+
+<emphasis id="strong1016" effect="bold">
+ORIGIN
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1026">
+Finally, the code calls the 
+
+<emphasis id="strong1017" effect="bold">
+tick
+
+</emphasis>
+ method on the 
+
+<emphasis id="strong1018" effect="bold">
+Clock
+
+</emphasis>
+ 
+object to insert a delay and assure that the frame rate 
+will be less than or equal to the value stored in the constant named 
+
+<emphasis id="strong1019" effect="bold">
+
+FRAMERATE
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Terminate_the_program" effect="bold">
+
+Terminate the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+When the user clicks the X-button shown in 
+
+<link id="a1041" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, control will exit the 
+runtime loop. This causes the code shown in 
+
+<link id="a1042" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ to be executed, which will 
+perform any necessary cleanup and terminate the program.
+
+</para>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1004">
+<row id="tr1008">
+
+
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Terminate the program.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1028">
+II encourage you to copy the code from 
+
+<link id="a1043" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Execute the code and confirm 
+that you get results similar to those shown in 
+
+<link id="a1044" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+A complete listing of the program is shown in 
+
+<link id="a1045" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1020" effect="bold">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6.
+
+</emphasis>
+
+ Complete program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1005" display="block">"""
+File Transparency02.py
+Presents a dynamic demonstration of surface alphas.
+================================================================================
+"""
+import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Transparency02.py") #Set the window caption
+FRAMERATE = 40 #Used to control the maximum frame rate.
+WIDTH = 200
+HEIGHT = 100
+ORIGIN = (WIDTH/3,HEIGHT/4)
+alpha = 0
+alphaInc = 1
+colorNumber = 0
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Create some color objects
+red = pygame.Color(255,0,0)
+green = pygame.Color(0,255,0)
+blue = pygame.Color(0,0,255)
+yellow = pygame.Color(255,255,0)
+cyan = pygame.Color(0,255,255)
+magenta = pygame.Color(255,0,255)
+
+#Populate a tuple with references to the color objects
+colors = (yellow,cyan,magenta)
+
+#Create some Rect objects for use in specifying rectangular areas.
+leftRectArea = pygame.Rect(WIDTH/6,0,WIDTH/3-4,HEIGHT/2-4)
+rightRectArea = pygame.Rect(WIDTH/2,0,WIDTH/3-4,HEIGHT/2-4)
+bottomRectArea = pygame.Rect(WIDTH/3,HEIGHT/2,WIDTH/3,HEIGHT/2-4)
+
+#Enter the runtime loop.
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+    
+    #Create some colored rectangular areas on baseSurf
+    baseSurf.fill(red,leftRectArea) #Red area on left
+    baseSurf.fill(green,rightRectArea) #Green area on the right
+    baseSurf.fill(blue,bottomRectArea) #Blue area on the bottom
+
+    #Compute alpha value and color for this iteration of the runtime loop.
+    if alpha &lt;= (255 - alphaInc):
+        alpha += alphaInc
+    else:
+        alpha = 0
+        colorNumber += 1
+        if colorNumber &gt; 2:
+            colorNumber = 0
+
+    #Create a new surface smaller than baseSurf. Set the alpha and the color.
+    s1 = pygame.Surface((2*WIDTH/6,2*HEIGHT/4))
+    s1.set_alpha(alpha)
+    s1.fill(colors[colorNumber])
+    
+    #Draw the new surface on baseSurf at the specified location.
+    baseSurf.blit(s1,ORIGIN)
+    
+    #Display baseSurf
+    pygame.display.flip()
+
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop
+</code>
+
+
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1031">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1021" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1008" list-type="bulleted">
+
+					
+
+<item id="li1023">
+Module name: Itse1359-2230-Color-Part 3
+
+</item>
+
+
+					
+
+<item id="li1024">
+File: Itse1359-2230.htm
+
+
+</item>
+
+
+					
+
+<item id="li1025">
+Published: 01/31/16
+
+</item>
+
+
+
+
+<item id="li1026">
+Revised: 02/08/16
+
+</item>
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1022" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1032">
+<emphasis id="strong1023" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1033">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1034">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1035">
+<emphasis id="strong1024" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1036">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

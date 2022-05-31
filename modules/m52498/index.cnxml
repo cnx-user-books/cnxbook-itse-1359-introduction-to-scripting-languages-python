@@ -1,0 +1,1160 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2210-Getting Started with Pygame</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52498</md:content-id>
+  <md:title>Itse1359-2210-Getting Started with Pygame</md:title>
+  <md:abstract>This module explains how to get started programming with Pygame and Python.</md:abstract>
+  <md:uuid>9a32092e-c0c7-4ee9-bb4b-37f16599fb04</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Installing_Pygame">
+
+Installing Pygame
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+
+	
+
+<item id="li1008">
+<link id="a1008" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX.
+
+</para>
+
+
+
+
+<para id="p1001">
+As I mentioned in the earlier module titled 
+
+
+<link id="a1009" url="http://cnx.org/contents/228ac3a7-ed79-4a10-8d52-890dfa1fd20d">
+
+Preface to Putting Python to 
+Work
+
+</link>
+
+ I like to provide my students with interesting and useful programming 
+projects in addition to the dull and boring text-based projects typically found 
+in beginning programming courses. This is the 
+first module in a sub-collection that will explore the use of the 
+
+
+<link id="a1010" url="http://www.pygame.org/news.html">
+
+Pygame
+
+</link>
+
+ library for 
+writing programs involving drawing, color, fonts, graphics, bitmap images, 
+sound, animation, music, and sprites, along with other assorted and interesting 
+effects.
+
+</para>
+
+
+
+
+<para id="p1002">
+This material is provided for the benefit of those students who are 
+interested in expanding their learning experience beyond the minimum 
+requirements of the course titled 
+
+<emphasis id="em1001" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+. 
+Knowledge of the material in this sub-collection titled 
+
+<emphasis id="strong1000" effect="bold">
+Pygame
+
+</emphasis>
+ 
+is not a requirement of the course. 
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1003">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1009">
+<link id="a1011" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Graphic screen output.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1010">
+<link id="a1012" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ Source code for TestProgram.py. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+The Pygame home page is located at 
+
+<link id="a1013" url="http://www.pygame.org">
+
+http://www.pygame.org.
+
+</link>
+
+ 
+As of January 2015, if you open that page you will find a menu on the upper-left 
+that provides links to the other pages on the website such as
+
+
+<link id="a1014" url="http://www.pygame.org/download.shtml">
+
+Downloads
+
+</link>
+
+,
+
+
+<link id="a1015" url="http://www.pygame.org/docs/">
+
+Documentation
+
+</link>
+
+ and
+
+
+<link id="a1016" url="http://www.pygame.org/wiki/tutorials">
+
+Tutorials.
+
+</link>
+
+
+</para>
+
+
+
+
+<para id="p1005">
+If you select 
+
+<link id="a1017" url="http://www.pygame.org/wiki/about">
+
+About
+
+</link>
+
+ in that menu, you will find 
+a description of Pygame that reads partially as follows:
+
+</para>
+
+
+
+
+
+
+
+<note id="note1000" type="">
+
+
+
+
+
+<emphasis id="strong1001" effect="bold">
+Pygame
+
+</emphasis>
+
+
+
+<para id="p1006">
+Pygame is a set of Python modules designed for writing games. Pygame adds functionality on top of the excellent 
+
+
+<link id="a1018" url="http://www.libsdl.org/">
+
+SDL
+
+</link>
+
+ library. This allows you to create 
+fully featured games and multimedia programs in the python language. Pygame is 
+highly portable and runs on nearly every platform and operating system...
+
+</para>
+
+
+
+	
+
+<para id="p1007">
+Pygame is free. Released under the 
+
+<link id="a1019" url="http://www.pygame.org/LGPL">
+
+GPL License
+
+</link>
+
+, you can create open source, free, freeware, shareware, and commercial games with it. See the license for full details.
+
+</para>
+
+
+	
+
+<para id="p1008">
+For a nice introduction to pygame, examine the 
+	
+
+<link id="a1020" url="http://www.pygame.org/docs/tut/chimp/ChimpLineByLine.html">
+
+Line By Line Chimp tutorial
+
+</link>
+
+ 
+	... or 
+
+<link id="a1021" url="http://inventwithpython.com/chapter17.html">
+
+Chapters 17 to 20
+
+</link>
+
+ of
+	
+
+<link id="a1022" url="http://inventwithpython.com/chapters/">
+
+Invent with Python.
+
+</link>
+
+
+</para>
+
+
+
+
+</note>
+
+
+
+	
+
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Installing_Pygame" effect="bold">
+
+Installing Pygame
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1009">
+Because of the different versions of Python and Pygame that are available, 
+and because of the different operating systems in use, selection of the correct 
+set of files to download and install can be complicated. Unfortunately, as of January 
+2, 2015, the 
+
+<emphasis id="strong1002" effect="bold">
+Install
+
+</emphasis>
+ link at
+
+
+<link id="a1023" url="http://www.pygame.org/docs/">
+
+http://www.pygame.org/docs/
+
+</link>
+
+ is broken. 
+This link purports to provide 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+<emphasis id="em1002" effect="italics">
+"Steps needed to compile Pygame on several platforms. Also help on finding and installing prebuilt binaries for your system."
+
+</emphasis>
+
+
+
+</quote>
+
+
+
+
+<para id="p1010">
+Fortunately, the information is available from other sources on the 
+web.
+
+</para>
+
+
+
+
+<para id="p1011">
+If you are currently using or are willing to use Python v3.4 on a Windows 
+machine, in his chapter 
+titled 
+
+<emphasis id="em1003" effect="italics">
+"Before getting started..."
+
+</emphasis>
+ 
+
+
+<link id="a1024" url="http://programarcadegames.com/index.php?">
+
+
+Professor Paul Vincent Craven
+
+</link>
+
+ recommends simply that you
+
+</para>
+
+
+
+
+    
+
+<list id="ol1000" list-type="enumerated">
+
+		
+
+<item id="li1011">
+First run the Python installer downloaded from:
+    	
+
+<link id="a1025" url="http://programarcadegames.com/python-3.4.2.msi">
+
+
+		ProgramArcadeGames.com/python-3.4.2.msi
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+Then run the Pygame installer downloaded from: 
+		
+
+<link id="a1026" url="http://programarcadegames.com/pygame-1.9.2a0.win32-py3.4.msi">
+
+
+		ProgramArcadeGames.com/pygame-1.9.2a0.win32-py3.4.msi
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+<para id="p1012">
+In my case, I already had Python v3.4 installed on my Windows 7 machine. I 
+downloaded and ran the Pygame installer listed above. As I recall, the installer 
+asked if I wanted to install the program based on the location of Python 3.4 or 
+elsewhere. I elected to install it based on the location of Python 3.4. This 
+resulted in the Pygame library being integrated into the Python34 directory 
+structure on my C-drive in such a way that the same 
+
+<emphasis id="em1004" effect="italics">
+path environment 
+variable
+
+</emphasis>
+ that I have been using since the beginning of the course works for 
+Pygame programs.
+
+</para>
+
+
+
+
+<para id="p1013">
+If you are using an operating system other than Windows, or if you are using 
+Windows and are using a version of Python other than v3.4, Al Sweigart provides 
+detailed installation instructions in 
+
+<link id="a1027" url="http://inventwithpython.com/chapter17.html">
+
+Chapter 17
+
+</link>
+
+ of
+
+
+<link id="a1028" url="http://inventwithpython.com/chapters/">
+
+Invent with Python.
+
+</link>
+
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1014">
+I am providing the Pygame program shown in 
+
+<link id="a1029" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ in this module 
+	solely for 
+	test purposes with no explanation. I will explain it, or something similar, 
+	in a future module. 
+
+</para>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ Source code for TestProgram.py.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">"""
+File TestProgram.py
+Draws a transparent rectangle with an opaque red border on
+a green background.
+"""
+
+# Import pygame library and initialize all imported pygame modules
+import pygame
+pygame.init()
+
+#Initialize color constants
+GREEN    = ( 0, 255, 0)
+RED      = ( 255, 0, 0)
+
+#Initialize the display Surface object
+displaySurface = pygame.display.set_mode([250,150])
+
+#Set the window caption
+pygame.display.set_caption("TestProgram")
+
+#Initialize control variable used for termination by the user.
+quit = False
+
+#Create an object to help track time
+timer = pygame.time.Clock()
+
+#Execute the runtime loop
+while not quit:
+
+    #Get user input
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Final iteration of runtime loop.
+
+    #Fill display Surface object with solid green
+    displaySurface.fill(GREEN)
+    
+    #Draw a rectangle on the display Surface object
+    pygame.draw.rect(displaySurface, RED, [10, 15, 200, 100], 10)
+    
+    #Copy contents of display Surface object to the physical
+    # screen.
+    pygame.display.flip()
+
+    #Control the frame rate by implementing a delay that does not
+    # use much cpu resource.
+    timer.tick(20)
+
+#Outside the runtime loop
+pygame.quit()
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1015">
+If you have Python and Pygame properly installed on your computer, you should 
+be able to copy and run the code shown in 
+
+<link id="a1030" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ to produce the screen output 
+shown in 
+
+<link id="a1031" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+
+</para>
+
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1003" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Graphic screen output.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2210-01.jpg" width="257" height="184"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1018">
+I encourage you to copy the code from 
+
+<link id="a1032" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ Execute the code and confirm 
+that you get the graphic screen output shown in 
+
+<link id="a1033" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1019">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1004" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1005" list-type="bulleted">
+
+					
+
+<item id="li1013">
+Module name: Itse1359-2210-Getting Started
+
+</item>
+
+
+					
+
+<item id="li1014">
+File: Itse1359-2210.htm
+
+
+</item>
+
+
+					
+
+<item id="li1015">
+Published: 01/02/15
+
+</item>
+
+
+					
+
+<item id="li1016">
+Revised: 01/31/16
+
+</item>
+
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1005" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1020">
+<emphasis id="strong1006" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1021">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1022">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1023">
+<emphasis id="strong1007" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1024">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

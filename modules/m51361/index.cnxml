@@ -1,0 +1,4907 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1080-Lists Part 1</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51361</md:content-id>
+  <md:title>Itse1359-1080-Lists Part 1</md:title>
+  <md:abstract>This module extends our Python knowledge to a new type of data called a list. This type of data, along with a string, is referred to as a sequence.</md:abstract>
+  <md:uuid>81942bae-453e-4cce-ac50-6e9ed9f2c54e</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Introduction">
+
+Introduction
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="What_you_have_learned">
+
+What you have learned
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Introducing_lists_">
+
+Introducing lists
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="A_subscription">
+
+A subscription
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="DescriptionOfASubscription">
+
+Description
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_primary">
+
+The primary
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="A_clarification">
+
+A clarification
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="The_expression_list">
+
+The expression_list
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Negative_integers">
+
+Negative integers
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="Example_of_a_negative_index">
+
+Example of a negative index
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="More_negative-integer_rules">
+
+More negative-integer rules
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Good_and_bad_negative_integers__">
+
+Good and bad negative integers
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="The_character_type_">
+
+The character type 
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="A_sequence">
+
+A sequence
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="A_mapping">
+
+A mapping
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="A_real_dictionary_example_">
+
+A real dictionary example
+
+</link>
+
+ 
+		
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="Is_this_a_definition">
+
+Is this a definition or a value?
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="No_mention_of_the_Python_language_">
+
+No mention of the Python language 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1022">
+<link id="a1022" target-id="What_about_the_expression_list">
+
+What about the expression_list?
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1023" target-id="Slicing">
+
+Slicing
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1024">
+<link id="a1024" target-id="A_mutable_sequence">
+
+A mutable sequence
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1025">
+<link id="a1025" target-id="A_list">
+
+A list
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1026">
+<link id="a1026" target-id="SomeSamplePrograms">
+
+Some sample programs
+
+</link>
+
+
+<list id="ul1008" list-type="bulleted">
+
+		
+
+<item id="li1027">
+<link id="a1027" target-id="Creating_indexing_and_slicing_lists">
+
+Creating, indexing, 
+		and slicing lists
+
+</link>
+
+
+<list id="ul1009" list-type="bulleted">
+
+			
+
+<item id="li1028">
+<link id="a1028" target-id="An_example_list_">
+
+An example list 
+
+</link>
+
+
+			
+
+<list id="ul1010" list-type="bulleted">
+
+				
+
+<item id="li1029">
+<link id="a1029" target-id="Print_an_item_using_a_subscription">
+
+Print an item using a subscription
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1030">
+<link id="a1030" target-id="Print_some_slices_">
+
+Print some slices 
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1031">
+<link id="a1031" target-id="Program_output_">
+
+Program output 
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1032">
+<link id="a1032" target-id="Visualize_sliced_lists">
+
+Visualize sliced lists
+
+</link>
+
+
+<list id="ul1011" list-type="bulleted">
+
+				
+
+<item id="li1033">
+<link id="a1033" target-id="Create_new_lists_by_slicing_an_existing_list">
+
+
+				Create new lists by slicing an existing list
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1034">
+<link id="a1034" target-id="Change_an_item_in_the_original_list">
+
+Change an 
+				item in the original list
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1035">
+<link id="a1035" target-id="Lists_can_be_concatenated">
+
+Lists can be concatenated
+
+</link>
+
+
+<list id="ul1012" list-type="bulleted">
+
+				
+
+<item id="li1036">
+<link id="a1036" target-id="A_concatenation_program">
+
+A concatenation program
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1037">
+<link id="a1037" target-id="Concatenation_program_output_">
+
+Concatenation program output 
+				
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1038">
+<link id="a1038" target-id="Visualize_concatenated_lists">
+
+Visualize concatenated lists
+
+</link>
+
+
+<list id="ul1013" list-type="bulleted">
+
+				
+
+<item id="li1039">
+
+				
+
+<link id="a1039" target-id="Create_a_new_list_by_concatenating_existing_lists">
+
+Create a new list by concatenating 
+				two existing lists
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1040">
+<link id="a1040" target-id="Change_an_element_in_an_original_list">
+
+Change an element in an original list
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1041">
+<link id="a1041" target-id="Lists_are_mutable_">
+
+Lists are mutable 
+
+</link>
+
+
+			
+
+<list id="ul1014" list-type="bulleted">
+
+				
+
+<item id="li1042">
+<link id="a1042" target-id="Replace_a_string_with_another_string">
+
+Replace a string with another string
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1043">
+<link id="a1043" target-id="Multiply_an_integer_element_by_two_">
+
+Multiply an integer element by two 
+				
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1044">
+<link id="a1044" target-id="Replace_a_string_by_a_float_">
+
+Replace a string by a float 
+				
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1045">
+<link id="a1045" target-id="List_modification_program_output_">
+
+List modification program output 
+				
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="More_to_come_">
+
+More to come 
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1047">
+<link id="a1047" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. It extends our Python knowledge to a new type of data 
+	called a list. This type of data, along with a 
+
+<emphasis id="strong1000" effect="bold">
+string
+
+</emphasis>
+, is referred to as 
+	a 
+
+<emphasis id="em1001" effect="italics">
+<emphasis id="strong1001" effect="bold">
+sequence
+
+</emphasis>
+</emphasis>
+.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+	and Listings 
+	while you are reading about them.
+
+</para>
+
+
+
+
+<para id="p1002">
+<emphasis id="em1002" effect="italics">
+(Note to blind and visually impaired students: many of the Figures and all 
+of the Listings in 
+this module are presented in plain text format and should be accessible using an 
+audio screen reader or a braille display.)
+
+</emphasis>
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1015" list-type="bulleted">
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Program output.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Visualize sliced lists.
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Change an item in the 
+		original list.
+
+</item>
+
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Concatenation program output.
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Visualize concatenated 
+		lists.
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1053" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Change an element in an 
+		original list.
+
+</item>
+
+
+
+		
+
+<item id="li1054">
+<link id="a1054" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. List modification program output.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1016" list-type="bulleted">
+
+		
+
+<item id="li1055">
+<link id="a1055" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. A string as a primary. 
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1056" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Example of a negative index.
+
+</item>
+
+
+		
+
+<item id="li1057">
+<link id="a1057" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Good and bad negative integers.
+
+</item>
+
+
+		
+
+<item id="li1058">
+<link id="a1058" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. An example list.
+
+</item>
+
+
+		
+
+<item id="li1059">
+<link id="a1059" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Lists can be concatenated.
+
+</item>
+
+
+		
+
+<item id="li1060">
+<link id="a1060" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Lists are mutable.
+
+</item>
+
+		
+
+
+</list>
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Introduction" effect="bold">
+
+Introduction
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<section id="h21001">
+<title>
+<emphasis id="What_you_have_learned" effect="bold">
+
+What you have learned
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1003">
+In an earlier module you learned how to 
+
+<emphasis id="em1003" effect="italics">
+index
+
+</emphasis>
+ and 
+
+<emphasis id="em1004" effect="italics">
+
+slice
+
+</emphasis>
+ strings. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Introducing_lists_" effect="bold">
+
+Introducing lists 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1004">
+In this module, we will extend that knowledge to a new type of data called a
+
+
+<emphasis id="em1005" effect="italics">
+list
+
+</emphasis>
+. This type of data, along with a 
+
+<emphasis id="strong1002" effect="bold">
+string
+
+</emphasis>
+, is referred to as a 
+
+<emphasis id="em1006" effect="italics">
+
+sequence
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1005">
+First, however, I will nail down some terminology from the 
+
+
+<link id="a1061" url="https://docs.python.org/3/reference/index.html">
+
+Python Language 
+Reference
+
+</link>
+
+,
+
+
+<link id="a1062" url="https://docs.python.org/3/tutorial/introduction.html#lists">
+
+The Python 
+Tutorial -- 3.1.3. Lists
+
+</link>
+
+, and
+
+
+<link id="a1063" url="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">
+
+
+The Python Standard Library -- 4.6. Sequence Types -- list, tuple, range
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="A_subscription" effect="bold">
+
+A subscription
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+I referred to a 
+
+<emphasis id="em1007" effect="italics">
+subscription
+
+</emphasis>
+ as an 
+
+<emphasis id="em1008" effect="italics">
+index
+
+</emphasis>
+ in the earlier module 
+titled 
+
+
+<link id="a1064" url="http://cnx.org/contents/e1810477-2efd-46c1-a2fd-aeedda25154b">
+
+Itse1359-1070-Strings Part 2
+
+</link>
+
+ 
+in
+	
+
+<link id="a1065" url="http://cnx.org/contents/96b34405-9562-406b-bafb-90c5fb70f39e">
+
+this 
+	book
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1007">
+The following discussion of a 
+
+<emphasis id="em1009" effect="italics">
+subscription
+
+</emphasis>
+ is based on the
+
+
+<link id="a1066" url="https://docs.python.org/3/reference/expressions.html#subscriptions">
+
+
+Python Language Reference -- 6.3.2. Subscriptions
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="DescriptionOfASubscription" effect="bold">
+
+Description
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1008">
+A 
+
+<emphasis id="em1010" effect="italics">
+subscription
+
+</emphasis>
+ selects an item of a 
+
+<emphasis id="em1011" effect="italics">
+sequence
+
+</emphasis>
+ (
+
+<emphasis id="em1012" effect="italics">
+string
+
+</emphasis>
+, 
+
+<emphasis id="em1013" effect="italics">
+tuple
+
+</emphasis>
+ 
+or 
+
+<emphasis id="em1014" effect="italics">
+list
+
+</emphasis>
+) or 
+
+<emphasis id="em1015" effect="italics">
+mapping
+
+</emphasis>
+ (
+
+<emphasis id="em1016" effect="italics">
+dictionary
+
+</emphasis>
+) object, 
+
+
+<emphasis id="as_in_the_following" effect="bold">
+
+as in the 
+following
+
+</emphasis>
+
+: 
+
+</para>
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1003" effect="bold">
+primary "[" expression_list "]" 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1010">
+I discussed strings earlier. I will discuss lists in this and the next 
+module. I will discuss tuples 
+
+<emphasis id="em1017" effect="italics">
+and
+
+</emphasis>
+ 
+mappings later.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_primary" effect="bold">
+
+The primary
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+According to the
+
+
+<link id="a1067" url="https://docs.python.org/3/reference/expressions.html#subscriptions">
+
+
+Python Language Reference -- 6.3.2. Subscriptions
+
+</link>
+
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+"The primary must evaluate to an object that supports subscription, e.g. a list or dictionary. User-defined objects can support subscription by defining a __getitem__() method."
+
+</quote>
+
+
+
+
+<para id="p1012">
+For example, in the earlier module titled
+
+
+<link id="a1068" url="http://cnx.org/contents/e1810477-2efd-46c1-a2fd-aeedda25154b">
+
+Itse1359-1070-Strings Part 2
+
+</link>
+
+. the 
+
+<emphasis id="em1018" effect="italics">
+primary
+
+</emphasis>
+ 
+was a reference to an object of type 
+
+<emphasis id="strong1004" effect="bold">
+str
+
+</emphasis>
+ where the reference 
+was stored in a variable named 
+
+<emphasis id="strong1005" effect="bold">
+aStr
+
+</emphasis>
+, as shown in 
+
+<link id="a1069" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. 
+A diagram showing the variable and the object was shown in
+
+
+<emphasis id="strong1006" effect="bold">
+Figure 1
+
+</emphasis>
+ in
+that module.
+
+</para>
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. A string as a 
+				primary.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+							
+
+<code id="pre1000" display="block">aStr = "This is a string"
+print(aStr[0]) #print T
+print(aStr[3]) #print s
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="A_clarification" effect="bold">
+
+A clarification
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1013">
+This terminology can be a little confusing. Perhaps the following will help to clarify things.
+
+</para>
+
+
+
+
+<para id="p1014">
+An 
+
+<link id="a1070" url="http://mathworld.wolfram.com/OrdinalNumber.html">
+
+ordinal number
+
+</link>
+
+ 
+is an adjective that describes the numerical position of an object, e.g., first, 
+second, third, etc.
+
+</para>
+
+
+
+
+<para id="p1015">
+<emphasis id="strong1007" effect="bold">
+Indexing
+
+</emphasis>
+ is the process of assigning an ordinal number to 
+each data item contained in some sort of a container. 
+
+</para>
+
+
+
+
+<para id="p1016">
+The 
+
+<emphasis id="strong1008" effect="bold">
+index
+
+</emphasis>
+ is the value of an ordinal number that has been 
+assigned to an item.
+
+</para>
+
+
+
+
+<para id="p1017">
+A 
+
+<emphasis id="strong1009" effect="bold">
+subscription
+
+</emphasis>
+ is the process of selecting an item of a 
+
+<emphasis id="em1019" effect="italics">
+sequence
+
+</emphasis>
+ (
+
+<emphasis id="em1020" effect="italics">
+string
+
+</emphasis>
+, 
+
+<emphasis id="em1021" effect="italics">
+tuple
+
+</emphasis>
+ 
+or 
+
+<emphasis id="em1022" effect="italics">
+list
+
+</emphasis>
+) or 
+
+<emphasis id="em1023" effect="italics">
+mapping
+
+</emphasis>
+ (
+
+<emphasis id="em1024" effect="italics">
+dictionary
+
+</emphasis>
+) object.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_expression_list" effect="bold">
+
+The expression_list
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1018">
+The earlier 
+
+<link id="a1071" target-id="as_in_the_following">
+
+description
+
+</link>
+
+ included the term
+
+
+<emphasis id="strong1010" effect="bold">
+expression_list
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1019">
+The 
+
+
+<link id="a1072" url="https://docs.python.org/3/reference/expressions.html#subscriptions">
+
+
+Python Language Reference -- 6.3.2. Subscriptions
+
+</link>
+
+ states:
+
+</para>
+
+
+
+
+<quote id="blockquote1001" display="block">
+"If the primary is a sequence, the expression_list must evaluate to an integer or a slice..."
+
+</quote>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="An_example_of_an_integer_expression_list_" effect="bold">
+
+An example of an integer expression_list
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1020">
+In the string example in 
+
+<link id="a1073" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+, the integer was 0 in one case and 3 in the 
+other case. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Negative_integers" effect="bold">
+
+Negative integers
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1021">
+If the 
+
+<emphasis id="em1025" effect="italics">
+(index)
+
+</emphasis>
+ value is negative, the 
+
+<emphasis id="em1026" effect="italics">
+length
+
+</emphasis>
+ of the sequence is added to it 
+to obtain the actual index used to access the sequence. 
+
+</para>
+
+
+
+
+<section id="h31003">
+<title>
+<emphasis id="Example_of_a_negative_index" effect="bold">
+
+Example of a negative index
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+For example, 
+
+<emphasis id="strong1011" effect="bold">
+aSequence[-1]
+
+</emphasis>
+ selects the last item of the sequence. 
+
+</para>
+
+
+
+
+<para id="p1023">
+This is illustrated in the script shown in 
+
+<link id="a1074" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, which 
+prints the last character in a string. 
+
+</para>
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Example of a 
+				negative index.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+aStr = "xyz"
+print(aStr[-1]) 
+
+# the output is z
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1024">
+The length of the string is 3.
+
+</para>
+
+
+
+
+<para id="p1025">
+The sum of the length and the negative index is 2.
+
+</para>
+
+
+
+
+<para id="p1026">
+The character in the string at an index value of 2 is "z".
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="More_negative-integer_rules" effect="bold">
+
+More negative-integer rules
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1027">
+The value resulting from adding the length of the sequence to the specified 
+index value must be a non-negative integer less than the number of items in the 
+sequence. 
+
+</para>
+
+
+
+
+<para id="p1028">
+Then, the subscription selects the item whose index is that value 
+
+<emphasis id="em1027" effect="italics">
+(counting 
+from zero)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Good_and_bad_negative_integers__" effect="bold">
+
+Good and bad negative integers
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1029">
+This is illustrated by the script in 
+
+<link id="a1075" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+, which 
+shows both valid and invalid negative index values. 
+
+<emphasis id="em1028" effect="italics">
+(The index 
+value of -4 violates the above rule, thus producing an IndexError.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Good and bad 
+				negative integers.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+aString = "xyz"
+
+print(aString[-1])
+
+print(aString[-2])
+
+print(aString[-3])
+
+print(aString[-4])
+
+#The output from this script is shown below.
+z
+y
+x
+Traceback (most recent call last):
+  File "1359-1080-03.py", line 9, in &lt;module&gt;
+    print(aString[-4])
+IndexError: string index out of range
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h21008">
+<title>
+<emphasis id="The_character_type_" effect="bold">
+
+The character type 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1030">
+Unlike many other programming languages, there is no 
+
+<emphasis id="em1029" effect="italics">
+character
+
+</emphasis>
+ type in Python. Rather, a string's items are 
+characters. A character is not a separate data type but is a string of exactly one 
+character. 
+
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="A_sequence" effect="bold">
+
+A sequence
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1031">
+The
+
+
+<link id="a1076" url="https://docs.python.org/3/reference/expressions.html#subscriptions">
+
+
+Python Language Reference -- 6.3.2. Subscriptions
+
+</link>
+
+ indicates that:
+
+</para>
+
+
+
+
+<quote id="blockquote1002" display="block">
+Python provides three kinds of sequences: 
+
+<emphasis id="em1030" effect="italics">
+strings
+
+</emphasis>
+, 
+
+<emphasis id="em1031" effect="italics">
+lists
+
+</emphasis>
+, and
+
+
+<emphasis id="em1032" effect="italics">
+tuples
+
+</emphasis>
+.
+
+
+</quote>
+
+
+
+
+<para id="p1032">
+
+
+
+<link id="a1077" url="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">
+
+
+The Python Standard Library -- 4.6. Sequence Types -- list, tuple, range
+
+</link>
+
+ states:
+
+</para>
+
+
+
+
+<quote id="blockquote1003" display="block">
+"There are three basic sequence types: lists, tuples, and range objects. Additional sequence types tailored for processing of binary data and text strings are described in dedicated sections."
+
+</quote>
+
+
+
+
+<para id="p1033">
+Further down the page, the
+
+
+<link id="a1078" url="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str">
+
+
+Python Standard Library -- 4.7. Text Sequence Type -- str
+
+</link>
+
+ states:
+
+</para>
+
+
+
+
+<quote id="blockquote1004" display="block">
+"Textual data in Python is handled with 
+
+<emphasis id="strong1012" effect="bold">
+str
+
+</emphasis>
+ objects, or strings. Strings are immutable sequences of Unicode code points."
+
+</quote>
+
+
+
+
+<para id="p1034">
+From that, we can conclude that at least the following are 
+
+<emphasis id="em1033" effect="italics">
+sequence types
+
+</emphasis>
+ in 
+Python:
+
+</para>
+
+
+
+
+<list id="ul1017" list-type="bulleted">
+
+	
+
+<item id="li1061">
+lists
+
+</item>
+
+
+	
+
+<item id="li1062">
+tuples
+
+</item>
+
+
+	
+
+<item id="li1063">
+range objects
+
+</item>
+
+
+	
+
+<item id="li1064">
+strings
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1035">
+I discussed strings in previous modules. I will discuss lists in this 
+module, and I will discuss tuples and range objects in future modules. 
+
+</para>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="A_mapping" effect="bold">
+
+A mapping
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+The 
+
+<link id="a1079" url="https://docs.python.org/3/library/stdtypes.html#">
+
+Python 
+Standard Library - 4. Built-in Types
+
+</link>
+
+ states:
+
+</para>
+
+
+
+
+<quote id="blockquote1005" display="block">
+"The principal built-in types are numerics, sequences, mappings, 
+classes, instances and exceptions."
+
+</quote>
+
+
+
+
+<para id="p1037">
+A 
+
+<emphasis id="em1034" effect="italics">
+mapping
+
+</emphasis>
+ is a structure in which values are stored and retrieved 
+according to a 
+
+<emphasis id="em1035" effect="italics">
+key
+
+</emphasis>
+. This is often called a dictionary, because it behaves 
+similarly to a common dictionary.
+
+</para>
+
+
+
+
+<para id="p1038">
+The 
+
+
+<link id="a1080" url="https://docs.python.org/3/library/stdtypes.html#mapping-types-dict">
+
+Python 
+Standard Library -- 4.10. Mapping Types -- dict
+
+</link>
+
+ states:
+
+</para>
+
+
+
+
+<quote id="blockquote1006" display="block">
+"A mapping object maps hashable values to arbitrary objects. Mappings are mutable objects. There 
+
+is currently only one standard mapping type, the dictionary."
+
+</quote>
+
+
+
+
+<section id="h21009">
+<title>
+<emphasis id="A_real_dictionary_example_" effect="bold">
+
+A real dictionary example 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1039">
+For example, if I want to know about the word Python, I get out my Webster's 
+Seventh New Collegiate Dictionary, 
+
+<emphasis id="em1036" effect="italics">
+(which is at least 55 years old)
+
+</emphasis>
+, and I look 
+up the word 
+
+<emphasis id="em1037" effect="italics">
+python
+
+</emphasis>
+. In this case, python is the key. 
+
+</para>
+
+
+
+
+<para id="p1040">
+The 
+
+<emphasis id="em1038" effect="italics">
+(approximate)
+
+</emphasis>
+ value associated with the key is, 
+
+<emphasis id="em1039" effect="italics">
+"... monstrous serpent 
+killed by Apollo ..."
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<section id="h31006">
+<title>
+<emphasis id="Is_this_a_definition" effect="bold">
+
+Is this a definition or a value
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1041">
+In normal conversation, we frequently refer to the value obtained from a 
+common printed dictionary as the 
+
+<emphasis id="em1040" effect="italics">
+definition 
+
+</emphasis>
+of the word. However, 
+definition usually means something completely different in computer jargon. 
+
+</para>
+
+
+
+
+<para id="p1042">
+In computer jargon, we refer to it as the 
+
+<emphasis id="em1041" effect="italics">
+value
+
+</emphasis>
+ associated with the 
+word (
+
+<emphasis id="em1042" effect="italics">
+key
+
+</emphasis>
+). Thus, a 
+
+<emphasis id="em1043" effect="italics">
+mapping
+
+</emphasis>
+, is a structure that associates 
+
+<emphasis id="em1044" effect="italics">
+
+values
+
+</emphasis>
+ with 
+
+<emphasis id="em1045" effect="italics">
+keys
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1043">
+So, a common printed dictionary is an example of a mapping. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="No_mention_of_the_Python_language_" effect="bold">
+
+No mention of the Python language 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1044">
+Since my dictionary is much older than the Python programming language, 
+
+<emphasis id="em1046" effect="italics">
+
+(and probably older than the author of Python)
+
+</emphasis>
+ I 
+wouldn't expect to find anything about Python programming there. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21010">
+<title>
+<emphasis id="What_about_the_expression_list" effect="bold">
+
+What about the expression_list
+
+</emphasis>
+
+? 
+
+
+</title>
+
+
+
+
+<para id="p1045">
+According to the 
+
+
+<link id="a1081" url="https://docs.python.org/3/reference/expressions.html#subscriptions">
+
+
+Python Language Reference -- 6.3.2. Subscriptions
+
+</link>
+
+,
+
+</para>
+
+
+
+
+<quote id="blockquote1007" display="block">
+"If the primary is a mapping, the expression list must evaluate to an object whose value is one of the keys of the mapping, and the subscription selects the value in the mapping that corresponds to that key."
+
+</quote>
+
+
+
+
+<para id="p1046">
+In other words, the 
+expression_list must evaluate to an object whose value is one of the keys of the 
+mapping 
+
+<emphasis id="em1047" effect="italics">
+(such as the word python in my common dictionary example)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1047">
+Then the subscription selects the value in the mapping that corresponds to 
+that key. 
+
+</para>
+
+
+
+
+<para id="p1048">
+In other words, the system looks up the word in the dictionary and returns 
+the value that corresponds to that word. 
+
+</para>
+
+
+
+
+<para id="p1049">
+I will have more to say about 
+
+<emphasis id="em1048" effect="italics">
+mappings
+
+</emphasis>
+ in a future module. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Slicing" effect="bold">
+
+Slicing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1050">
+I discussed 
+
+<emphasis id="em1049" effect="italics">
+slicing
+
+</emphasis>
+ at some length in the earlier module titled
+
+
+<link id="a1082" url="http://cnx.org/contents/e1810477-2efd-46c1-a2fd-aeedda25154b">
+
+Itse1359-1070-Strings Part 2
+
+</link>
+
+. I will simply refer you back to that module 
+for the discussion on slicing.
+
+</para>
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="A_mutable_sequence" effect="bold">
+
+A mutable sequence
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1051">
+According to the
+
+
+<link id="a1083" url="https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy">
+
+
+Python Language Reference -- 3.2. The standard type hierarchy
+
+</link>
+
+:
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1013" effect="bold">
+Mutable sequences:
+
+</emphasis>
+
+	
+
+<para id="p1052">
+Mutable sequences can be changed after they are created.
+
+</para>
+
+
+
+
+<para id="p1053">
+There are currently two intrinsic mutable sequence types:
+
+</para>
+
+
+				
+
+<list id="ul1018" list-type="bulleted">
+
+					
+
+<item id="li1065">
+Lists - The items of a list are arbitrary Python objects. Lists are formed by placing a comma-separated list of expressions in square brackets. (Note that there are no special cases needed to form lists of length 0 or 1.)
+
+</item>
+
+
+					
+
+<item id="li1066">
+Byte Arrays - A bytearray object is a mutable array. They are created by the built-in bytearray() constructor. Aside from being mutable (and hence unhashable), 
+					byte arrays otherwise provide the same interface and 
+					functionality as immutable bytes objects.
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1054">
+This module does not discuss 
+
+<emphasis id="strong1014" effect="bold">
+ByteArrays
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h11008">
+<title>
+<emphasis id="A_list" effect="bold">
+
+A list
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+According to 
+
+
+<link id="a1084" url="https://docs.python.org/3/tutorial/introduction.html#lists">
+
+The Python 
+Tutorial -- 3.1.3. Lists
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<quote id="blockquote1008" display="block">
+"Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.
+
+
+</quote>
+
+
+
+
+<quote id="blockquote1009" display="block">
+Like strings (and all other built-in sequence type), lists can be 
+indexed and sliced.
+
+</quote>
+
+
+
+
+<quote id="blockquote1010" display="block">
+All slice operations return a new list containing the requested 
+elements."
+
+</quote>
+
+
+
+
+</section>
+<section id="h11009">
+<title>
+<emphasis id="SomeSamplePrograms" effect="bold">
+
+Some sample programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21011">
+<title>
+<emphasis id="Creating_indexing_and_slicing_lists" effect="bold">
+
+Creating, indexing, and slicing lists
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1056">
+A list can be written as a sequence of comma-separated values 
+
+<emphasis id="em1050" effect="italics">
+(items)
+
+</emphasis>
+ 
+surrounded by square brackets. 
+
+</para>
+
+
+
+
+<para id="p1057">
+Lists can also be nested within other lists. 
+
+</para>
+
+
+
+
+<para id="p1058">
+List items do not all have to be of the same type. 
+
+</para>
+
+
+
+
+<section id="h31008">
+<title>
+<emphasis id="An_example_list_" effect="bold">
+
+An example list 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1059">
+The Python script shown in 
+
+<link id="a1085" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ creates a simple list containing 
+four elements of different types. The types of the elements are respectively, a
+
+
+<emphasis id="em1051" effect="italics">
+float
+
+</emphasis>
+ value, an 
+
+<emphasis id="em1052" effect="italics">
+integer
+
+</emphasis>
+, a 
+
+<emphasis id="em1053" effect="italics">
+string
+
+</emphasis>
+, and another 
+
+<emphasis id="em1054" effect="italics">
+integer
+
+</emphasis>
+.
+
+
+</para>
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. An example list.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+# Illustrates creating, 
+# indexing, and slicing lists.
+#
+#-------------------------------
+
+theList = [3.14,59,"A string",1024]
+print("Print index value 2")
+print(theList[2])
+print("Print a short slice")
+print(theList[0:3])
+print("Print the entire list")
+print(theList[:100])
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="Print_an_item_using_a_subscription" effect="bold">
+
+Print an item using a subscription
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1060">
+After creating the list, the program uses a subscription 
+
+<emphasis id="em1055" effect="italics">
+(index)
+
+</emphasis>
+ to extract 
+and print the value at index 2 
+
+<emphasis id="em1056" effect="italics">
+(remember the first item is at index 0)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="Print_some_slices_" effect="bold">
+
+Print some slices 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1061">
+Then it uses the slice notation to extract and print two different slices 
+from the list. 
+
+</para>
+
+
+
+
+<para id="p1062">
+The first slice extracts and prints the elements from index 0 through index 2 
+inclusive.
+
+<emphasis id="em1057" effect="italics">
+ (Remember, the items selected by a slice do not include the index 
+specified by the upper limit value, which is 3 in this case.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1063">
+The second slice extracts and prints the entire list. If you don't understand 
+these two slices, go back and review the module titled  
+
+
+<link id="a1086" url="http://cnx.org/contents/e1810477-2efd-46c1-a2fd-aeedda25154b">
+
+Itse1359-1070-Strings Part 2
+
+</link>
+
+ 
+where I discuss 
+slicing in detail. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41002">
+<title>
+<emphasis id="Program_output_" effect="bold">
+
+Program output 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1064">
+The output from this program is shown in 
+
+<link id="a1087" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+
+</para>
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Program output.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+Print index value 2
+A string
+Print a short slice
+[3.14, 59, 'A string']
+Print the entire list
+[3.14, 59, 'A string', 1024]
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Visualize_sliced_lists" effect="bold">
+
+Visualize sliced lists
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h41003">
+<title>
+<emphasis id="Create_new_lists_by_slicing_an_existing_list" effect="bold">
+
+Create new lists by 
+slicing an existing list
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1065">
+<link id="a1088" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the output from the
+
+
+<link id="a1089" url="http://pythontutor.com/visualize.html#mode=display">
+
+code visualizer
+
+</link>
+
+ 
+for code similar to the code in 
+
+<link id="a1090" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Instead of accessing the list elements and printing them on the fly 
+as in 
+
+<link id="a1091" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+, the code in 
+
+
+<link id="a1092" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ accesses the list elements and saves references to them so that we can see what 
+the resulting lists look like.
+
+</para>
+
+
+
+
+
+<para id="p1066">
+<emphasis id="strong1015" effect="bold">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2.
+
+</emphasis>
+
+ Visualize sliced lists.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1067">
+<media id="media1000" alt="Visualize sliced lists." display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-1080a.jpg" width="855" height="444"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1068">
+The diagram on the right in 
+
+<link id="a1093" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the state of the program in 
+memory following the execution of all the code in the code box on the left. As 
+you can see, there are now three separate lists:
+
+</para>
+
+
+
+
+<list id="ul1019" list-type="bulleted">
+
+	
+
+<item id="li1067">
+the original list pointed to by 
+the variable named 
+
+<emphasis id="strong1016" effect="bold">
+theList
+
+</emphasis>
+ and 
+
+</item>
+
+
+	
+
+<item id="li1068">
+two new lists pointed to by 
+
+<emphasis id="strong1017" effect="bold">
+bList
+
+</emphasis>
+ and 
+
+<emphasis id="strong1018" effect="bold">
+cList
+
+</emphasis>
+. 
+	
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1069">
+The two new lists were created by slicing 
+the original list. The elements in the lists all 
+point to the 
+
+<emphasis id="strong1019" effect="bold">
+float
+
+</emphasis>
+, 
+
+<emphasis id="strong1020" effect="bold">
+int
+
+</emphasis>
+, and 
+
+<emphasis id="strong1021" effect="bold">
+str
+
+</emphasis>
+ 
+objects that were used to populate the original list.
+
+</para>
+
+
+
+
+<para id="p1070">
+<link id="a1094" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ illustrates a very important concept. Three of the variables 
+shown in the light blue box point to objects of type list. The 
+elements that populate those list objects point to other 
+objects of the types 
+
+<emphasis id="strong1022" effect="bold">
+float
+
+</emphasis>
+, 
+
+<emphasis id="strong1023" effect="bold">
+int
+
+</emphasis>
+, and 
+
+<emphasis id="strong1024" effect="bold">
+str
+
+</emphasis>
+ 
+
+<emphasis id="em1058" effect="italics">
+(This 
+concept is often called indirection.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1071">
+Since the two bottom lists were created as slices of the original 
+
+<emphasis id="em1059" effect="italics">
+(top)
+
+</emphasis>
+ 
+list, they all point to the same objects at this stage in the execution of the 
+program.
+
+</para>
+
+
+
+
+</section>
+<section id="h41004">
+<title>
+<emphasis id="Change_an_item_in_the_original_list" effect="bold">
+
+Change an item in the original 
+list
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1072">
+<link id="a1095" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows what happens when one of the elements of the original 
+list object is modified to cause it to point to a different object. 
+
+<emphasis id="em1060" effect="italics">
+(Note the arrow that 
+now points from element 2 in the original list object down the screen to a new 
+
+<emphasis id="strong1025" effect="bold">
+
+str
+
+</emphasis>
+ object containing the word 
+
+<emphasis id="strong1026" effect="bold">
+"changed"
+
+</emphasis>
+.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1027" effect="bold">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3.
+
+</emphasis>
+
+ Change an item in the original list.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+<media id="media1001" alt="Change an item in the original list." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-1080b.jpg" width="852" height="501"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1075">
+The 
+important thing to note here is that the pointers in element 2 in the other two 
+list 
+objects did not follow suite. In other words, they still point to the original 
+
+
+<emphasis id="strong1028" effect="bold">
+str
+
+</emphasis>
+ object 
+containing the words 
+
+<emphasis id="strong1029" effect="bold">
+"A string"
+
+</emphasis>
+ and they do not point to the new 
+
+
+<emphasis id="strong1030" effect="bold">
+str
+
+</emphasis>
+ object containing the word 
+
+<emphasis id="strong1031" effect="bold">
+"changed"
+
+</emphasis>
+. Thus, even though the two new 
+list objects were 
+created as slices from the original list object, once they are 
+created, they are not dependent on the 
+contents of the original list object. Subsequent changes in the contents of the 
+original list object are not reflected in the contents of the two new 
+list 
+objects.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31010">
+<title>
+<emphasis id="Lists_can_be_concatenated" effect="bold">
+
+Lists can be concatenated
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1076">
+Lists can be concatenated using the + operator. 
+
+</para>
+
+
+
+
+<section id="h41005">
+<title>
+<emphasis id="A_concatenation_program" effect="bold">
+
+A concatenation program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1077">
+The Python program shown in 
+
+<link id="a1096" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ creates two lists and prints them both. 
+Then it concatenates the two lists and prints the concatenated version. 
+
+</para>
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Lists can be concatenated.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+# Illustrates concatenating lists
+#
+#-------------------------------
+print("Create two lists")
+listA = [3.14,59,"A string",1024]
+listB = [2,4,6,16]
+print("Print listA")
+print(listA)
+print("Print listB")
+print(listB)
+print("Concatenate the lists")
+listC = listA + listB
+print("Print concatenated list")
+print(listC)
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h41006">
+<title>
+<emphasis id="Concatenation_program_output_" effect="bold">
+
+Concatenation program output 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1078">
+The output from this program is shown in 
+
+<link id="a1097" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. As you can see, the concatenated list contains the elements of both 
+of the individual lists. 
+
+</para>
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. Concatenation program output.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+Create two lists
+Print listA
+[3.14, 59, 'A string', 1024]
+Print listB
+[2, 4, 6, 16]
+Concatenate the lists
+Print concatenated list
+[3.14, 59, 'A string', 1024, 2, 4, 6, 16]
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Visualize_concatenated_lists" effect="bold">
+
+Visualize concatenated lists
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h41007">
+<title>
+<emphasis id="Create_a_new_list_by_concatenating_existing_lists" effect="bold">
+
+Create a new 
+list by concatenating two existing lists
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1079">
+The diagram in 
+
+<link id="a1098" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ visualizes the state of the program memory after 
+the three statements in the code box have been executed. This code creates two
+list objects and then concatenates them into a third 
+
+<emphasis id="strong1032" effect="bold">
+
+list
+
+</emphasis>
+ object pointed to by the variable named 
+
+<emphasis id="strong1033" effect="bold">
+listC
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+
+<para id="p1080">
+<emphasis id="strong1034" effect="bold">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5.
+
+</emphasis>
+
+ Visualize concatenated lists.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1081">
+<media id="media1002" alt="Visualize concatenated lists" display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/1359-1080c.jpg" width="791" height="561"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1082">
+As you can see in 
+
+<link id="a1099" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+, the elements in the new list 
+object point to the objects originally pointed to by the elements in the two 
+original list objects. As you can also see, the order of the 
+elements in the two parts of the new list object preserve the 
+order of the elements in the two original list objects.
+
+</para>
+
+
+
+
+</section>
+<section id="h41008">
+<title>
+<emphasis id="Change_an_element_in_an_original_list" effect="bold">
+
+Change an element in an 
+original list
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1083">
+The code in 
+
+<link id="a1100" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ was updated with one additional statement that 
+causes element 0 in one of the original list objects to point to a different 
+object of type 
+
+<emphasis id="strong1035" effect="bold">
+str
+
+</emphasis>
+ containing "
+
+<emphasis id="strong1036" effect="bold">
+OK
+
+</emphasis>
+".
+
+</para>
+
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1037" effect="bold">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6.
+
+</emphasis>
+
+ Change an element in an original list.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+<media id="media1003" alt="Change an element in an original list." display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/1359-1080d.jpg" width="799" height="618"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1086">
+However, element 0 in the concatenated list object pointed to by 
+
+<emphasis id="strong1038" effect="bold">
+
+listC
+
+</emphasis>
+ continues to point to the 
+object of type 
+
+<emphasis id="strong1039" effect="bold">
+float
+
+</emphasis>
+ containing 3.14. The important thing to note here is 
+that the pointer in element 0 in the new list object did not follow suite when 
+there was a change in one of the elements in one of the original list objects. It still points to the original 
+
+
+<emphasis id="strong1040" effect="bold">
+float
+
+</emphasis>
+ object containing 3.14 and it does not point to the new 
+
+
+<emphasis id="strong1041" effect="bold">
+str
+
+</emphasis>
+ object 
+containing 
+
+<emphasis id="strong1042" effect="bold">
+"OK"
+
+</emphasis>
+. Therefore, even though the new list object was created by 
+concatenating two original list objects, once created, it is not dependent on the 
+future contents of the original list objects. Subsequent changes in the contents of the original list objects are not reflected in the contents of the new list object.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31012">
+<title>
+<emphasis id="Lists_are_mutable_" effect="bold">
+
+Lists are mutable 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1087">
+Unlike strings, the values in a list can be modified after the list is 
+created. 
+
+</para>
+
+
+
+
+<para id="p1088">
+The Python program shown in 
+
+<link id="a1101" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ creates and prints a list. Then it uses 
+a subscription to modify and print the list three times. 
+
+</para>
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Lists are mutable.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+# Illustrates mutating lists
+#
+#-------------------------------
+print("Create and print a list")
+listA = [3.14,59,"A string",1024]
+print(listA)
+
+print("Modify the list")
+listA[2] = "New string"
+print("Print the modified list")
+print(listA)
+
+print("Modify the list again")
+listA[3] = listA[3] * 2
+print("Print the modified list")
+print(listA)
+
+print("Modify the list again")
+listA[2] = 0.99999
+print("Print the modified list")
+print(listA)
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<section id="h41009">
+<title>
+<emphasis id="Replace_a_string_with_another_string" effect="bold">
+
+Replace a string with another string
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1089">
+The first modification replaces an existing string in the list with a new 
+string. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41010">
+<title>
+<emphasis id="Multiply_an_integer_element_by_two_" effect="bold">
+
+Multiply an integer element by two 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1090">
+The second modification multiplies an integer value in the list by a factor 
+of two. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41011">
+<title>
+<emphasis id="Replace_a_string_by_a_float_" effect="bold">
+
+Replace a string by a float 
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1091">
+The third modification replaces a string in the list by a float value of 
+0.99999. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41012">
+<title>
+<emphasis id="List_modification_program_output_" effect="bold">
+
+List modification program output
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1092">
+The output from the program is shown in 
+
+<link id="a1102" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. List modification program output.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+Create and print a list
+[3.14, 59, 'A string', 1024]
+Modify the list
+Print the modified list
+[3.14, 59, 'New string', 1024]
+Modify the list again
+Print the modified list
+[3.14, 59, 'New string', 2048]
+Modify the list again
+Print the modified list
+[3.14, 59, 0.99999, 2048]
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h21012">
+<title>
+<emphasis id="More_to_come_" effect="bold">
+
+More to come 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1093">
+There is a lot more for you to learn about lists that is not included in this 
+module. I will continue this discussion of lists, including more 
+sample programs, in a future module.
+
+</para>
+
+
+	
+
+</section>
+</section>
+<section id="h11010">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1094">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1043" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1020" list-type="bulleted">
+
+					
+
+<item id="li1069">
+Module name: Itse1359-1080-Lists Part 1
+
+</item>
+
+
+					
+
+<item id="li1070">
+File: Itse1359-1080.htm
+
+
+</item>
+
+
+					
+
+<item id="li1071">
+Published: 10/15/14
+
+</item>
+
+
+					
+
+<item id="li1072">
+Revised: 01/31/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1044" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1095">
+<emphasis id="strong1045" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1096">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1097">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1098">
+<emphasis id="strong1046" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1099">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

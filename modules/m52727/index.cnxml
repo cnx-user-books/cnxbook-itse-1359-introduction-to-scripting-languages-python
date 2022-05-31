@@ -1,0 +1,2839 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2240-Color-Animated Fly Through an RGB Color Cube</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52727</md:content-id>
+  <md:title>Itse1359-2240-Color-Animated Fly Through an RGB Color Cube</md:title>
+  <md:abstract>This module explains a program that provides an animated fly through an RGB color cube.</md:abstract>
+  <md:uuid>03c42b16-504e-489f-9234-0b267f030229</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="Red_green_and_blue">
+
+Red, green, and blue
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Electromagnetic_waves_and_visible_light">
+
+Electromagnetic waves, visible light, frequency and wavelength
+
+</link>
+
+.
+		
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Cathode_ray_tubes">
+
+Cathode ray tubes
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_organization_of_digital_color_data">
+
+The organization of digital color data
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="An_RGB_color_cube">
+
+An RGB color cube
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="An_online_ColorPicker_program">
+
+An online ColorPicker
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="An_animated_walk_through_program">
+
+An animated fly through program
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Access_to_individual_pixels">
+
+Access to individual pixels
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1014">
+<link id="a1014" target-id="The_beginning_of_the_program">
+
+The beginning of the program
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1015">
+<link id="a1015" target-id="Populate_the_pixel_array">
+
+Populate the pixel array
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Decrement_the_blue_value_and_repeat_the_process">
+
+Decrement the blue value and repeat the process
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1017">
+<link id="a1017" target-id="The_remaining_program_code">
+
+The remaining program code
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1018">
+<link id="a1018" target-id="A_final_comment">
+
+A final comment
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1019">
+<link id="a1019" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1020">
+<link id="a1020" target-id="Complete_program_listings">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1021">
+<link id="a1021" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1022">
+<link id="a1022" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ An RGB color cube. 
+
+</item>
+
+
+		
+
+<item id="li1023">
+<link id="a1023" target-id="Figure_2">
+
+Figure 2.
+
+</link>
+
+ Four slices through the color cube. . 
+
+</item>
+
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+
+
+<item id="li1024">
+<link id="a1024" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ The beginning of the program. 
+
+</item>
+
+
+
+
+<item id="li1025">
+<link id="a1025" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Populate the pixel array. 
+
+</item>
+
+
+
+
+<item id="li1026">
+<link id="a1026" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ Decrement the blue value and repeat the process. 
+
+</item>
+
+
+
+
+<item id="li1027">
+<link id="a1027" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ The remaining program code. 
+
+</item>
+
+
+
+
+<item id="li1028">
+<link id="a1028" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Red_green_and_blue" effect="bold">
+
+Red, green, and blue
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+In an earlier module, I told you that there are at least
+
+
+<emphasis id="six_different_ways" effect="bold">
+
+six different ways
+
+</emphasis>
+
+ 
+that color can be represented in a 
+
+<emphasis id="strong1001" effect="bold">
+pygame
+
+</emphasis>
+ program:
+
+</para>
+
+
+
+
+<list id="ol1000" list-type="enumerated">
+
+	
+
+<item id="li1029">
+<emphasis id="RGB_and_RGBA" effect="bold">
+
+RGB and RGBA
+
+</emphasis>
+
+
+</item>
+
+
+	
+
+<item id="li1030">
+<emphasis id="CMY" effect="bold">
+
+CMY
+
+</emphasis>
+
+
+</item>
+
+
+	
+
+<item id="li1031">
+HSV and HSVA
+
+</item>
+
+
+	
+
+<item id="li1032">
+HSL and HSLA
+
+</item>
+
+
+	
+
+<item id="li1033">
+|1|2|3
+
+</item>
+
+
+	
+
+<item id="li1034">
+#rrggbb and #rrggbbaa
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1003">
+<emphasis id="em1001" effect="italics">
+RGB
+
+</emphasis>
+ and 
+
+<emphasis id="em1002" effect="italics">
+RGBA
+
+</emphasis>
+ are the most fundamental representations. They 
+are based on the properties of visible light, the physical characteristics of 
+computer monitors, and the physical characteristics of computer memory. 
+Virtually all modern computers support RGB.
+
+</para>
+
+
+
+
+<para id="p1004">
+CMY is based on the physical characteristics of printer ink.
+
+</para>
+
+
+
+
+<para id="p1005">
+HSV and HSL are based on the human perception of color as opposed to the 
+physical properties of anything.
+
+</para>
+
+
+
+
+<para id="p1006">
+I'm not even going to try to describe item 5 in the 
+
+
+<link id="a1029" target-id="six_different_ways">
+
+above list
+
+</link>
+
+. If you want 
+to learn more about it, go to Google and search for 
+
+<emphasis id="em1003" effect="italics">
+"
+
+</emphasis>
+<emphasis id="em1004" effect="italics">
+opponent 
+color space representation of I1I2I3
+
+</emphasis>
+".
+
+</para>
+
+
+
+
+<para id="p1007">
+Number 6 in the 
+
+<link id="a1030" target-id="six_different_ways">
+
+above list
+
+</link>
+
+ is essentially the same as number 1 but 
+specified 
+using a different syntax.
+
+</para>
+
+
+
+
+<para id="p1008">
+The letters in the acronym RGB represent the following color components
+
+
+<emphasis id="em1005" effect="italics">
+(often called channels in computer graphics lingo)
+
+</emphasis>
+:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1035">
+R - red
+
+</item>
+
+
+	
+
+<item id="li1036">
+G - green
+
+</item>
+
+
+	
+
+<item id="li1037">
+B - blue
+
+</item>
+
+
+	
+
+<item id="li1038">
+A - alpha 
+
+<emphasis id="em1006" effect="italics">
+(transparency)
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1009">
+This module will concentrate on the RGB representation of color. I will 
+explain the HSV representation in a future module.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Electromagnetic_waves_and_visible_light" effect="bold">
+
+Electromagnetic waves, visible light, frequency and wavelength
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+The universe is full of electromagnetic waves. Your cell phone uses relatively 
+low frequency electromagnetic waves 
+
+<emphasis id="em1007" effect="italics">
+(radio frequency waves)
+
+</emphasis>
+ to 
+communicate with a cell phone tower. Your TV remote control uses electromagnetic 
+waves in the 
+
+<emphasis id="em1008" effect="italics">
+infra red
+
+</emphasis>
+ or IR frequency range to communicate with the television. 
+Electromagnetic waves in the 
+
+<emphasis id="em1009" effect="italics">
+ultra violet
+
+</emphasis>
+ or UV frequency range cause sunburns and 
+skin cancer. Electromagnetic waves in the X-ray frequency range inform the 
+dentist as to the internal state of your teeth and gums. The
+
+
+<link id="a1031" url="http://www.seti.org/">
+
+SETI Institute
+
+</link>
+
+ uses radio telescopes to 
+search for coherent electromagnetic waves from space. Last but not least, electromagnet waves in the 
+
+<emphasis id="em1010" effect="italics">
+"visible light"
+
+</emphasis>
+ frequency range 
+
+
+<emphasis id="em1011" effect="italics">
+(spectrum)
+
+</emphasis>
+ impinge 
+upon the retina in your eyes to let you see the world around you.
+
+</para>
+
+
+
+
+<para id="p1011">
+Electromagnetic waves have a 
+
+<emphasis id="em1012" effect="italics">
+frequency
+
+</emphasis>
+ which is measured in cycles per second. The 
+reciprocal of frequency is 
+
+<emphasis id="em1013" effect="italics">
+wavelength
+
+</emphasis>
+ measured in meters per cycle. A rough 
+analogy to frequency and wavelength would be to stand on the beach and measure how frequently the waves come 
+onto the shore 
+
+<emphasis id="em1014" effect="italics">
+(frequency in cycles per second)
+
+</emphasis>
+ or to estimate the 
+distance between the waves 
+
+<emphasis id="em1015" effect="italics">
+(wavelength in meters per cycle)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1012">
+In theory, pure sunlight contains about equal amounts of all wavelengths in the 
+visible frequency spectrum. A prism can be used to separate those wavelengths 
+onto different paths and to 
+project them onto a screen. When this is done, the different wavelengths appear 
+as different colors to a human observer. The waves with the longest wavelengths appear to humans as 
+something that is identified in the English language as red. The shortest 
+wavelengths appear as something that is identified in the English language as 
+violet or magenta.
+
+</para>
+
+
+
+
+<para id="p1013">
+The wavelength of visible light is very small. The visible light spectrum 
+extends from about 400 nanometers to about 750 nanometers. Within that range we 
+find:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1039">
+red - longest wavelength
+
+</item>
+
+
+	
+
+<item id="li1040">
+orange
+
+</item>
+
+
+	
+
+<item id="li1041">
+yellow
+
+</item>
+
+
+	
+
+<item id="li1042">
+green
+
+</item>
+
+
+	
+
+<item id="li1043">
+cyan
+
+</item>
+
+
+	
+
+<item id="li1044">
+blue
+
+</item>
+
+
+	
+
+<item id="li1045">
+violet - shortest wavelength
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1014">
+You can view a webpage
+
+
+<link id="a1032" url="http://hyperphysics.phy-astr.gsu.edu/hbase/vision/specol.html">
+
+here
+
+</link>
+
+ 
+that contains a chart showing the wavelengths of the different colors.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Cathode_ray_tubes" effect="bold">
+
+Cathode ray tubes
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1015">
+In the development of color television 
+
+<emphasis id="em1016" effect="italics">
+(or perhaps 
+color photography)
+
+</emphasis>
+ someone determined that most of the colors that are 
+useful for human vision can be created by combining various amounts of red, 
+green, and blue light. These have come to be know as the
+
+
+<link id="a1033" url="http://en.wikipedia.org/wiki/Additive_color">
+
+additive primary colors
+
+</link>
+
+
+
+
+<emphasis id="em1017" effect="italics">
+(
+
+<link id="a1034" target-id="RGB_and_RGBA">
+
+RGB
+
+</link>
+
+)
+
+</emphasis>
+ as opposed to the
+
+
+<link id="a1035" url="http://en.wikipedia.org/wiki/Subtractive_color">
+
+subtractive primary 
+colors
+
+</link>
+
+ 
+
+<emphasis id="em1018" effect="italics">
+(cyan, magenta, and yellow or 
+
+<link id="a1036" target-id="CMY">
+
+CMY
+
+</link>
+
+)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1016">
+The cathode ray tubes 
+
+<emphasis id="em1019" effect="italics">
+(CRTs)
+
+</emphasis>
+ used in early color televisions and CRT 
+computer monitors were constructed of glass and shaped something like a bell 
+with both ends closed. The glass on the large in was transparent. The inside surface of the 
+glass on the large end was coated with 
+phosphorous that glowed or transmitted light when bombarded with electrons. An 
+electron gun was positioned at the small end. Electronic signals were used to 
+cause a stream of electrons to bombard the phosphorous on the inside of the tube
+
+
+<emphasis id="em1020" effect="italics">
+(similar to a stream of water from a hose washing a car)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1017">
+For color television, the phosphorous coating actually consisted of three different types of 
+phosphorous. One type would glow red. Another type would glow green, and the third 
+type would glow blue. The phosphorous was arranged in tiny dots on the inside of 
+the glass in groups of three dots. One dot would glow red, one dot would glow 
+green, and the other dot would glow blue. By 
+carefully aiming the electron stream at each group of dots is such a was as to control 
+the intensity with which each dot glowed, the system was able to control the 
+color of the light transmitted by each group of dots. In other words, by 
+glowing, each group transmitted an additive mixture of red, 
+green, and blue light. 
+
+</para>
+
+
+
+
+<para id="p1018">
+The colors perceived by a human observer could be 
+controlled by individually controlling the intensity of the light transmitted by 
+each dot in each group of three dots. Television signals were composed and 
+transmitted in such a way as to consist of separate red, green, and blue signal 
+channels. The red, green, and blue signals were used to control the electron gun 
+in such a was as to cause the desired dots to glow and the desired colors to be produced on the television 
+screen.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_organization_of_digital_color_data" effect="bold">
+
+The organization of digital 
+color data
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1019">
+This concept was carried forward when CRT color monitors were developed for 
+use with computers. The organization of the digital data representing color in the 
+computer was designed so that it could easily be converted into red, 
+green, and blue signals by the electronic interface that connected the monitor 
+to the computer. Originally, various complicated schemes were used to minimize 
+the amount of memory required to store the data for a colored image.
+
+</para>
+
+
+
+
+<para id="p1020">
+This data organization has evolved over time as computer memory has become less 
+expensive. As of 2015, most computer systems organize color data in terms of 
+pixels 
+
+<emphasis id="em1021" effect="italics">
+(picture elements)
+
+</emphasis>
+. Each pixel ultimately causes a colored dot 
+to appear on the computer screen when the colored image is displayed by a 
+program.
+
+</para>
+
+
+
+
+<para id="p1021">
+The digital data for each pixel usually consists of three 
+
+<emphasis id="em1022" effect="italics">
+
+(and possibly four)
+
+</emphasis>
+ eight-bit bytes. One byte contains the data for the 
+primary color red, 
+one byte contains the data for the primary color green, and the third byte contains the data for 
+the primary color blue. The fourth byte, if it exists, contains the data for transparency or opacity that you learned about in an earlier module. 
+This is commonly known as 24-bit color with or without an alpha channel. Hence 
+the names 
+
+<link id="a1037" target-id="RGB_and_RGBA">
+
+RGB and RGBA
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1022">
+Each eight-bit byte can contain the data for 256 different intensity levels of the primary color 
+that it represents ranging 
+from black to bright red, bright green, or bright blue for example. Given that there are three such 
+8-bit bytes in 
+combination, the total number of combinations of bits is two to the 24th power, 
+256 to the third power, or 16,777,216. In theory a 24-bit color system can 
+represent 16,777,216 different colors.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="An_RGB_color_cube" effect="bold">
+
+An RGB color cube
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+One way to envision the possible colors is to think of them as residing 
+inside and on the surface of a cube, 256 units along each edge, as shown in 
+
+<link id="a1038" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1024">
+<emphasis id="strong1002" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ An RGB color cube.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1025">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2240-01.jpg" width="469" height="495"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1026">
+With the 24-bit RGB color system, the color black is represented by all three 
+bytes having a value of zero. The color white is represented by all three bytes 
+having a value of 255. The primary colors 
+
+<emphasis id="em1023" effect="italics">
+(red, green, and blue)
+
+</emphasis>
+ are 
+represented when one byte has a value of 255 and the other two bytes have a 
+value of zero. The secondary colors 
+
+<emphasis id="em1024" effect="italics">
+(yellow, cyan, and magenta)
+
+</emphasis>
+ are 
+represented when two bytes have a value of 255 and the third byte has a value of 
+zero.
+
+</para>
+
+
+
+
+<para id="p1027">
+<emphasis id="Given_the_syntax" effect="bold">
+
+Given the syntax
+
+</emphasis>
+
+ (red,green,blue), the 
+following colors are produced by the combinations of value shown:
+
+</para>
+
+
+
+
+<list id="ol1001" list-type="enumerated">
+
+	
+
+<item id="li1046">
+black (0,0,0)
+
+</item>
+
+
+	
+
+<item id="li1047">
+red (255,0,0)
+
+</item>
+
+
+	
+
+<item id="li1048">
+yellow (255,255,0)
+
+</item>
+
+
+	
+
+<item id="li1049">
+green (0,255,0)
+
+</item>
+
+
+	
+
+<item id="li1050">
+cyan (0,255,255)
+
+</item>
+
+
+	
+
+<item id="li1051">
+blue (0,0,255)
+
+</item>
+
+
+	
+
+<item id="li1052">
+magenta (255,0,255)
+
+</item>
+
+
+	
+
+<item id="li1053">
+white (255,255,255)
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1028">
+The cube shown in 
+
+<link id="a1039" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ is plotted against in a 3D coordinate system where 
+the axes are red, green, and blue. The red axis is horizontal to the right. The 
+green axis is vertical. The blue axis is intended to represent an axis 
+protruding from the screen.
+
+</para>
+
+
+
+
+<para id="p1029">
+Although it might not look like it, the cube is intended to have equal length 
+edges with each edge extending from 0 to 255. The coordinates of each of the 
+eight vertices represents one of the eight combinations of color values given
+
+
+<link id="a1040" target-id="Given_the_syntax">
+
+above
+
+</link>
+
+. The 
+
+<emphasis id="em1025" effect="italics">
+(hidden)
+
+</emphasis>
+ coordinates of the 
+origin represent black (red=0,green=0,blue=0). 
+
+</para>
+
+
+
+
+<para id="p1030">
+The front, top, right vertex 
+represents white (red=255,green=255,blue=255). 
+
+</para>
+
+
+
+
+<para id="p1031">
+The front, bottom, right vertex 
+represents magenta (red=255,green=0,blue=255), etc. 
+
+</para>
+
+
+
+
+<para id="p1032">
+As you can see, except for 
+the hidden vertex at the origin, the color of the image at each vertex in
+
+
+<link id="a1041" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ matches 
+the corresponding colors in the 
+
+<link id="a1042" target-id="Given_the_syntax">
+
+above list
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1033">
+Three of the surfaces of the cube are shown and the other three are hidden. 
+The color shown at any point on any of the three visible surfaces is intended to 
+represent the color produced by a 24-bit RGB color system value when the three color 
+values are used as the coordinates of the point. 
+
+<emphasis id="em1026" effect="italics">
+(Obviously the colors at 
+points inside the cube and the colors of points on the hidden surfaces are not 
+shown in 
+
+<link id="a1043" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="An_online_ColorPicker_program" effect="bold">
+
+An online ColorPicker
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1034">
+Given enough computer time and enough publication space, I could show all 
+16,777,216 colors by drawing 256 slices through the cube parallel to 
+any of the faces on the cube. You probably aren't interested in seeing that and 
+I'm not interested in producing it. However, you may be interested 
+in experimenting with the online 
+
+<link id="a1044" url="http://www.colorpicker.com/">
+
+ColorPicker
+
+</link>
+
+ 
+that lets you interactively fly through the cube by moving the interactive 
+slider on the right to view the different color planes. Alternatively, you can 
+enter RGB values or HSB values in the cells on the right to see the colors 
+produced by those values.
+
+</para>
+
+
+
+
+<para id="p1035">
+For example, the official RGB values for
+
+
+<link id="a1045" url="http://www.utexas.edu/brand-guidelines/visual-style-guide/color">
+
+burnt 
+orange
+
+</link>
+
+ at the University of Texas are (191,87,0). Try entering those values 
+into the text fields for R, G, and B and note the 
+color that appears above the text fields as well as the color underneath the 
+small round cursor. 
+
+<emphasis id="em1027" effect="italics">
+(If you happen to live in central Texas as I do, that color should 
+be familiar to you as one of the official colors of the University of Texas. The 
+other official color at UT is white.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1036">
+The color picker also shows the HSB values for any given color. These values are essentially the same as 
+the HSV values that I will discuss in a future module.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="An_animated_walk_through_program" effect="bold">
+
+An animated fly through program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1037">
+You may also be interested in the following animated 
+
+<emphasis id="strong1003" effect="bold">
+pygame
+
+</emphasis>
+ program. It 
+begins at the front face of the cube in 
+
+<link id="a1046" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ and flys through the cube from front to 
+back showing you the 65,536 colors on each of 255 slices that are parallel to the 
+front face. The first slice for a blue value of 255 is shown in the upper left 
+image in 
+
+<link id="a1047" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Not the similarity between that slice and the front 
+face of the cube in 
+
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1004" effect="bold">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2.
+
+</emphasis>
+
+ Four slices through the color cube.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+<media id="media1001" alt="Missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-2240-02.jpg" width="551" height="601"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1040">
+The upper right image in 
+
+<link id="a1049" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the slice for a blue value of 170. 
+The bottom left image shows the slice for a blue value of 85, and the bottom 
+right image shows the slice for a blue value of 0, which is the back face of the 
+cube.
+
+</para>
+
+
+
+
+<para id="p1041">
+This program contains some features that are new to this module so may might 
+want to pay particular attention to the code.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Access_to_individual_pixels" effect="bold">
+
+Access to individual pixels
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1042">
+Although the primary topic of this module continues to be about color, an 
+important new concept is introduced here -- access to individual pixels. The 
+code in this module, and several future modules, will use an object of the class
+
+
+<link id="a1050" url="http://www.pygame.org/docs/ref/pixelarray.html">
+
+PixelArray
+
+</link>
+
+ to wrap 
+an object of type 
+
+<link id="a1051" url="http://www.pygame.org/docs/ref/surface.html">
+
+Surface
+
+</link>
+
+ 
+to provide 
+direct access to the surface's pixels. Several future modules will manipulate 
+the color and the alpha values of individual pixels. Some of those modules will 
+use a more sophisticated form on pixel access based of
+
+
+<link id="a1052" url="http://www.pygame.org/docs/ref/surfarray.html">
+
+pygame.surfarray
+
+</link>
+
+ and 
+a numeric library named 
+
+<link id="a1053" url="http://www.numpy.org/">
+
+Numpy
+
+</link>
+
+.
+
+</para>
+
+
+	
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1043">
+A complete listing of the program is provided in 
+
+<link id="a1054" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ near the 
+	end of the module. I will explain the program in fragments.
+
+</para>
+
+
+
+
+<section id="h21007">
+<title>
+<emphasis id="The_beginning_of_the_program" effect="bold">
+
+The beginning of the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1044">
+The beginning of the program is shown in 
+
+<link id="a1055" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. With one exception, all 
+of the code in 
+
+<link id="a1056" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ should be familiar to you by now.
+
+</para>
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ The beginning of the program.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Rgb01.py") #Set the window caption
+FRAMERATE = 40 #Used to control the maximum frame rate.
+WIDTH = 256 #Width of output window
+HEIGHT = 256 #Height of output window
+
+#Initialize working variables
+red = 0
+redRange = 255
+green = 0
+greenRange = 255
+blue = 255
+blueRange = 255
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Get an array that wraps the pixels on the base surface making it possible
+# to set the color of each pixel individually based on its coordinate location.
+pxarray = pygame.PixelArray(baseSurf)
+
+#Create a color object for use in coloring the pixels
+color = pygame.Color(0,0,0)
+
+#Enter the runtime loop
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1045">
+The exception is the statement that begins with 
+
+<emphasis id="strong1005" effect="bold">
+pxarray
+
+</emphasis>
+, 
+which creates an object of the class
+
+
+<link id="a1057" url="http://www.pygame.org/docs/ref/pixelarray.html">
+
+PixelArray
+
+</link>
+
+. An 
+object of type 
+
+<emphasis id="strong1006" effect="bold">
+PixelArray
+
+</emphasis>
+ wraps an object of type
+
+
+<link id="a1058" url="http://www.pygame.org/docs/ref/surface.html">
+
+Surface
+
+</link>
+
+ and provides direct access to the surface's pixels. 
+
+</para>
+
+
+
+
+<para id="p1046">
+A pixel array can be one or two dimensional. A two dimensional array, like its surface, is indexed [column, row]. 
+
+
+<emphasis id="em1028" effect="italics">
+(I will use a two dimensional pixel array in this program.)
+
+</emphasis>
+ This object will be used once during each iteration of the runtime loop to set 
+the color of each of the pixels belonging to the base surface referred to by
+
+
+<emphasis id="strong1007" effect="bold">
+baseSurf
+
+</emphasis>
+. The use of an object of type 
+
+<emphasis id="strong1008" effect="bold">
+PixelArray
+
+</emphasis>
+ 
+is new to this module but will be heavily used in future modules.
+
+</para>
+
+
+
+
+<para id="p1047">
+<link id="a1059" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ also creates a 
+
+<link id="a1060" url="http://www.pygame.org/docs/ref/color.html">
+
+
+Color
+
+</link>
+
+ object referred to by the variable named 
+
+<emphasis id="strong1009" effect="bold">
+color
+
+</emphasis>
+. This 
+object along with some of the working variables created in 
+
+<link id="a1061" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ will be 
+used to set the color of each pixel inside the runtime loop.
+
+</para>
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Populate_the_pixel_array" effect="bold">
+
+Populate the pixel array
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1048">
+The code in 
+
+<link id="a1062" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ is inside the runtime loop. At this point, the blue 
+color value 
+
+<link id="a1063" target-id="Decrement_the_blue_value_and_repeat_the_process">
+
+has been set
+
+</link>
+
+ for this iteration. The code in 
+
+<link id="a1064" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ uses a pair 
+of nested 
+
+<emphasis id="strong1010" effect="bold">
+for
+
+</emphasis>
+ loops to populate the 65,536 pixels in the base 
+surface with colors derived from the current blue value in combination with all 
+possible combinations of red and green values.
+
+</para>
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+
+
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Populate the pixel array.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">    #Populate the pixel array from left to right, top to bottom. 
+    for red in range(redRange):
+        for green in range(greenRange):
+            color.r = red
+            color.g = green
+            color.b = blue
+            pxarray[red,255-green] = color</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1049">
+For a blue value of 170, for example, this produces the 65,536 different 
+colors shown in the top right image in 
+
+<link id="a1065" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Decrement_the_blue_value_and_repeat_the_process" effect="bold">
+
+Decrement the blue 
+value and repeat the process
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1050">
+In order to represent a fly through from the front face to the back face of 
+the cube in 
+
+<link id="a1066" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, the program begins with a blue value of 255 and reduces it 
+by one during each iteration of the runtime loop. When it reaches -1, it is 
+reset to 255 and the cycle repeats. This is accomplished by the code in 
+
+
+<link id="a1067" target-id="Listing_3">
+
+Listing 
+3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ Decrement the blue value and repeat the 
+process.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+    if blue &gt; 0:
+        blue -= 1
+    else:
+        blue = 255</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h21010">
+<title>
+<emphasis id="The_remaining_program_code" effect="bold">
+
+The remaining program code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1051">
+The remaining program code is shown in 
+
+<link id="a1068" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. There is nothing new here 
+so further explanation should not be needed.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ The remaining program code.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">    #Display baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+</section>
+<section id="h21011">
+<title>
+<emphasis id="A_final_comment" effect="bold">
+
+A final comment
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1052">
+Although the RGB system for managing color data is mathematically and 
+arithmetically straightforward, and reasonably efficient computationally, not 
+everyone is happy with it. In particular, many people with an artistic bent say 
+that it does not represent color in the same way that people perceive color.
+
+</para>
+
+
+
+
+<para id="p1053">
+Numerous attempts have been made to resolve that issue by defining 
+alternative way to manage digital color data. Two of those alternative 
+approaches are supported by 
+
+<emphasis id="strong1011" effect="bold">
+pygame
+
+</emphasis>
+: HSV and HSL. You will 
+probably need some understanding of alternative approaches in addition to RGB, 
+so I will explain HSV in a future module.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1054">
+I encourage you to copy the code from 
+
+<link id="a1069" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Execute the code and confirm 
+that you get results similar to those shown in 
+
+<link id="a1070" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do. For example, you might want to 
+hold the red value constant during each iteration and iterate on the blue and 
+green values instead. That would cause you to fly through the cube beginning at 
+a different face.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+A complete listing of the program is provided in 
+
+<link id="a1071" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1056">
+<emphasis id="strong1012" effect="bold">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Complete program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1004" display="block">"""
+File Rgb01.py
+This program animates a fly through an RGB color cube displaying each of 
+256 slices that are parallel to the red-green plane. The first slice is at
+a blue value of 255 showing the blue, cyan, white, and magenta vertices. The
+last slice is at a blue value of 0 showing the black, green, yellow, and
+red vertices.
+
+After displaying the last slice, the blue value is reset to 255 and the cycle 
+continues.
+================================================================================
+"""
+import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Rgb01.py") #Set the window caption
+FRAMERATE = 40 #Used to control the maximum frame rate.
+WIDTH = 256 #Width of output window
+HEIGHT = 256 #Height of output window
+
+#Initialize working variables
+red = 0
+redRange = 255
+green = 0
+greenRange = 255
+blue = 255
+blueRange = 255
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Get an array that wraps the pixels on the base surface making it possible
+# to set the color of each pixel individually based on its coordinate location.
+pxarray = pygame.PixelArray(baseSurf)
+
+#Create a color object for use in coloring the pixels
+color = pygame.Color(0,0,0)
+
+#Enter the runtime loop
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+        
+    #Populate the pixel array from left to right, top to bottom. 
+    for red in range(redRange):
+        for green in range(greenRange):
+            color.r = red
+            color.g = green
+            color.b = blue
+            pxarray[red,255-green] = color
+
+    #Decrement the blue color value by one unit during each iteration of 
+    # the runtime loop and reset to 255 when it reaches -1.
+    if blue &gt; 0:
+        blue -= 1
+    else:
+        blue = 255
+    
+    #Display baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop
+</code>
+
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1057">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1013" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1010" list-type="bulleted">
+
+					
+
+<item id="li1054">
+Module name: Itse1359-2240-Color-Part 5
+
+</item>
+
+
+					
+
+<item id="li1055">
+File: Itse1359-2240.htm
+
+
+</item>
+
+
+					
+
+<item id="li1056">
+Published: 01/08/15
+
+</item>
+
+
+
+
+<item id="li1057">
+Revised: 02/08/16
+
+</item>
+
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1014" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1058">
+<emphasis id="strong1015" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1059">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1060">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1061">
+<emphasis id="strong1016" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1062">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

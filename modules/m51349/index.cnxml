@@ -1,0 +1,4047 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1070-Strings Part 2</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51349</md:content-id>
+  <md:title>Itse1359-1070-Strings Part 2</md:title>
+  <md:abstract>This module will expand your knowledge of Python strings, and in addition will introduce you to some concepts that will be useful with other data types as well: indexing and slicing.</md:abstract>
+  <md:uuid>e1810477-2efd-46c1-a2fd-aeedda25154b</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="Introduction">
+
+Introduction
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="What_you_have_learned">
+
+What you have learned
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="What_you_will_learn">
+
+What you will learn
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="Indexing">
+
+Indexing
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="A_practical_example">
+
+A practical example
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Assigning_an_ordinal_index_">
+
+Assigning an ordinal index 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Using_an_ordinal_index">
+
+Using an ordinal index
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Index_values_automatically_assigned_">
+
+Index values automatically assigned 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Slicing">
+
+Slicing
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="ASampleProgram">
+
+A sample program
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+		
+
+<item id="li1014">
+<link id="a1014" target-id="The_program_listing_">
+
+The program listing 
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+<item id="li1015">
+<link id="a1015" target-id="Will_discuss_in_fragments_">
+
+Will discuss in fragments 
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1016">
+<link id="a1016" target-id="InterestingCodeFragments">
+
+Interesting code fragments
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1017">
+<link id="a1017" target-id="Extract_a_single_character">
+
+Extract a single character
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="Create_a_string_to_work_with_">
+
+Create a string object to work with 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="Visualizing_the_string">
+
+Visualizing the string object
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="Index_values_always_begin_with_zero_">
+
+Index values always begin with zero 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Display_the_character_at_index_3">
+
+Display the character at index 3
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="Is_this_the_fourth_character">
+
+Is this the fourth character? 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="An_important_and_potentially_confusing_point_">
+
+An important and potentially confusing point 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1024">
+<link id="a1024" target-id="Not_like_eggs_">
+
+Not like eggs 
+
+</link>
+
+ 
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1025">
+<link id="a1025" target-id="A_simple_slice_">
+
+A simple slice 
+
+</link>
+
+
+		
+
+<list id="ul1008" list-type="bulleted">
+
+			
+
+<item id="li1026">
+<link id="a1026" target-id="Slice_Notation_">
+
+Slice notation 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1027">
+<link id="a1027" target-id="The_end_is_non-inclusive_">
+
+The end is non-inclusive 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1028">
+<link id="a1028" target-id="Extract_the_first_word_in_the_string_">
+
+Extract the first word in the string 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="Extract_the_last_word_in_the_string_">
+
+Extract the last word in the string 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1030">
+<link id="a1030" target-id="A_more_complicated_slice">
+
+A more complicated slice
+
+</link>
+
+
+<list id="ul1009" list-type="bulleted">
+
+			
+
+<item id="li1031">
+<link id="a1031" target-id="Omitting_the_first_index_">
+
+Omitting the first index 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1032">
+<link id="a1032" target-id="Omitting_the_second_index_">
+
+Omitting the second index 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1033">
+<link id="a1033" target-id="Print_the_entire_string_">
+
+Print the entire string 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1034">
+<link id="a1034" target-id="Print_an_empty_string">
+
+Print an empty string
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1035">
+<link id="a1035" target-id="Negative_indices">
+
+Negative indices
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1036">
+<link id="a1036" target-id="Eliminating_confusion">
+
+Eliminating confusion
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1037">
+<link id="a1037" target-id="Getting_the_length_of_a_string">
+
+Getting the length of a string
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1038">
+<link id="a1038" target-id="The_complete_output">
+
+The complete output
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1039">
+<link id="a1039" target-id="AStringisImmutable">
+
+A string is Immutable
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1040">
+<link id="a1040" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1041">
+<link id="a1041" target-id="Complete_program_listing">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. It will expand your knowledge of strings, and in addition 
+	will introduce you to some concepts that will be useful with other data 
+	types as well: 
+
+<emphasis id="em1001" effect="italics">
+indexing
+
+</emphasis>
+ and 
+
+<emphasis id="em1002" effect="italics">
+slicing
+
+</emphasis>
+.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+	and Listings 
+while you are reading about them.
+
+</para>
+
+
+
+
+<para id="p1002">
+<emphasis id="em1003" effect="italics">
+(Note to blind and visually impaired students: all of the Listings in 
+this module are presented in plain text format and should be accessible using an 
+audio screen reader or a braille display. However, some of the Figures contain 
+images that may not be accessible.)
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1042">
+<link id="a1042" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Visualizing the string object.
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1011" list-type="bulleted">
+
+		
+
+<item id="li1043">
+<link id="a1043" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Extract a single character.
+
+</item>
+
+
+		
+
+<item id="li1044">
+<link id="a1044" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. A simple slice.
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1045" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Omitting the first index.
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Omitting the second index.
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Print the entire string.
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+. Print an empty string.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. Negative indices.
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. Getting the length of a string.
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. The script named String01.py.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Introduction" effect="bold">
+
+Introduction
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<section id="h21001">
+<title>
+<emphasis id="What_you_have_learned" effect="bold">
+
+What you have learned
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+You have learned how to write some simple Python programs and to execute them 
+interactively. 
+
+</para>
+
+
+
+
+<para id="p1004">
+You have learned how to capture simple programs in script files and to 
+execute those script files. 
+
+</para>
+
+
+
+
+<para id="p1005">
+You have learned how to construct programs, including the indentation 
+required by Python. 
+
+</para>
+
+
+
+
+<para id="p1006">
+You have also learned some of the fundamental concepts involving strings. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="What_you_will_learn" effect="bold">
+
+What you will learn
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1007">
+This module will expand your knowledge of strings and in addition will 
+introduce you to some concepts that will be useful with other data types as 
+well: 
+
+<emphasis id="em1004" effect="italics">
+indexing
+
+</emphasis>
+ and 
+
+<emphasis id="em1005" effect="italics">
+slicing
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Indexing" effect="bold">
+
+Indexing
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1008">
+According to 
+
+<link id="a1052" url="http://mathworld.wolfram.com/">
+
+WolframMathWorld
+
+</link>
+
+, "... an
+
+
+<link id="a1053" url="http://mathworld.wolfram.com/OrdinalNumber.html">
+
+ordinal number
+
+</link>
+
+ is 
+an adjective which describes the numerical position of an object, e.g., first, 
+second, third, etc." 
+
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="A_practical_example" effect="bold">
+
+A practical example
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1009">
+Many years ago when I did a tour of duty as an enlisted man in the U.S. Air 
+Force, the drill sergeant had a habit of lining us up and telling us to 
+
+<emphasis id="em1006" effect="italics">
+"count off."
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1010">
+What that meant was that the first person in the line called out the number 
+
+
+<emphasis id="strong1000" effect="bold">
+one
+
+</emphasis>
+, the person behind him called out the number 
+
+<emphasis id="strong1001" effect="bold">
+two
+
+</emphasis>
+, the person behind him 
+called out the number 
+
+<emphasis id="strong1002" effect="bold">
+three
+
+</emphasis>
+, etc. 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+<emphasis id="em1007" effect="italics">
+(Since learning about computer programming, I 
+now wonder if the first person should have called out zero. I notice that the 
+first case of Ebola in the United States is being identified by the CDC as case 
+0.) 
+
+</emphasis>
+ 
+
+</quote>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Assigning_an_ordinal_index_" effect="bold">
+
+Assigning an ordinal index 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1011">
+I'm sure the drill sergeant didn't realize that what he was doing was assigning an 
+ordinal index value to each person in the line 
+
+<emphasis id="em1008" effect="italics">
+(and neither did I realize it at the time)
+
+</emphasis>
+.
+
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Using_an_ordinal_index" effect="bold">
+
+Using an ordinal index
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1012">
+Even though he didn't know the technical details of ordinal indices, he 
+didn't have any difficulty yelling, "Number six, wash dishes, number fourteen, 
+peel potatoes, number twenty-two, carry out the garbage, etc." 
+
+</para>
+
+
+
+
+<para id="p1013">
+That is what using an index is all about -- using an ordinal index to select 
+an item. As you will see in a future module titled 
+
+<emphasis id="em1009" effect="italics">
+Itse1359-1080-Lists Part 
+1
+
+</emphasis>
+, this is also referred to as a 
+
+<emphasis id="em1010" effect="italics">
+subscription
+
+</emphasis>
+ in Python. In the context of this module, indexing is the process of assigning 
+		an ordinal index value to each data item contained in some sort of a 
+		container.
+
+</para>
+
+
+
+
+
+
+	
+
+
+<para id="p1014">
+In other words, we assign an ordinal number to each item, which describes the 
+numerical position of the item in the container. 
+
+</para>
+
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+
+				
+
+<para id="p1015">
+<emphasis id="strong1003" effect="bold">
+A dozen eggs:
+
+</emphasis>
+</para>
+
+
+		
+
+<para id="p1016">
+For example, if you were very careful, you could use a felt tip pen 
+		to assign an ordinal index to each of the twelve eggs contained in a 
+		carton containing a dozen eggs. 
+
+<emphasis id="em1011" effect="italics">
+(Should you start with zero or one?)
+
+</emphasis>
+</para>
+
+
+		
+
+<para id="p1017">
+Then you could extract the egg whose index value is 9 from the 
+		container and eat it for breakfast.
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1018">
+Having assigned the index, we can use that index to access the data item 
+corresponding to that index, as in 
+
+<emphasis id="em1012" effect="italics">
+"Number six, wash dishes." 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Index_values_automatically_assigned_" effect="bold">
+
+Index values automatically assigned 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1019">
+In this module, we will be using the index values that are automatically 
+assigned to the characters in a string for the purpose of accessing those 
+characters, both individually, and in groups. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Slicing" effect="bold">
+
+Slicing
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1020">
+Here is what 
+
+<link id="a1054" url="http://www.idt.unit.no/~mlh/python/instant.html">
+
+Magnus 
+Lie Hetland
+
+</link>
+
+ has to say on the topic of slicing 
+
+<emphasis id="em1013" effect="italics">
+(and indexing as well.)
+
+</emphasis>
+ 
+Although this quotation was taken from a discussion of lists, it applies equally 
+well to strings. 
+
+<emphasis id="em1014" effect="italics">
+(Note that some material was deleted from the quotation for 
+brevity.)
+
+</emphasis>
+</para>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+
+				
+
+<para id="p1021">
+<emphasis id="strong1004" effect="bold">
+According to Magnus Lie Hetland:
+
+</emphasis>
+
+				
+
+</para>
+
+
+		
+
+<para id="p1022">
+"One of the nice things about lists is that you can access their 
+		elements separately or in groups, through indexing and slicing. 
+
+</para>
+
+
+		
+
+<para id="p1023">
+Indexing is done 
+
+<emphasis id="em1015" effect="italics">
+(as in many other languages)
+
+</emphasis>
+ by appending the index 
+		in brackets to the list. 
+
+<emphasis id="em1016" effect="italics">
+(Note that the first element has index 0)
+
+</emphasis>
+...
+
+</para>
+
+
+				
+
+<para id="p1024">
+<emphasis id="em1017" effect="italics">
+(This is the answer to the question about the first egg 
+				-- Baldwin)
+
+</emphasis>
+</para>
+
+
+				
+
+<para id="p1025">
+Slicing is almost like indexing, except that you indicate both the start 
+		and stop index of the result, with a colon (":") separating them: ... 
+				
+
+</para>
+
+
+				
+
+<para id="p1026">
+Notice that the end is non-inclusive. If one of the indices is dropped, 
+		it is assumed that you want everything in that direction. i.e. list[:3] 
+		means "every element from the beginning of list up to element 3, 
+		non-inclusive." ... 
+
+</para>
+
+
+				
+
+<para id="p1027">
+list[3:] would, on the other hand, mean "every 
+		element from list, starting at element 3 
+
+<emphasis id="em1018" effect="italics">
+(inclusive)
+
+</emphasis>
+ up to, and 
+		including, the last one." 
+
+</para>
+
+
+		
+
+<para id="p1028">
+For really interesting results, you can use negative numbers too: 
+		list[-3] is the third element from the end of the list..."
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="ASampleProgram" effect="bold">
+
+A sample program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+I will illustrate indexing and slicing of strings using a sample program 
+contained in a script file named 
+
+<emphasis id="strong1005" effect="bold">
+String01.py
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<section id="h21005">
+<title>
+<emphasis id="The_program_listing_" effect="bold">
+
+The program listing 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1030">
+A complete listing of the program, 
+
+<emphasis id="em1019" effect="italics">
+(along with the output produced by the program)
+
+</emphasis>
+, 
+is provided in 
+
+<link id="a1055" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ near the end of the module. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Will_discuss_in_fragments_" effect="bold">
+
+Will discuss in fragments 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1031">
+I will discuss the program in fragments, illustrating particular aspects of 
+indexing and slicing in each fragment. This is a scheme that I will use 
+frequently in this set of tutorial modules. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="InterestingCodeFragments" effect="bold">
+
+Interesting code fragments
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21007">
+<title>
+<emphasis id="Extract_a_single_character" effect="bold">
+
+Extract a single character
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+A single character can be extracted from a string by referring to the string 
+and enclosing the index of the character in square brackets, as shown in the 
+code fragment in 
+
+<link id="a1056" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Extract a single 
+				character.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+aStr = "This is a string"
+print(aStr[0]) #print T
+print(aStr[3]) #print s
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1033">
+<emphasis id="em1020" effect="italics">
+(Note that this is a fragment from a script file, not from an interactive 
+Python program.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<section id="h31006">
+<title>
+<emphasis id="Create_a_string_to_work_with_" effect="bold">
+
+Create a string object to work with 
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1034">
+The fragment in 
+
+<link id="a1057" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ creates a string object and 
+assigns it to a variable named 
+
+<emphasis id="strong1006" effect="bold">
+aStr
+
+</emphasis>
+. From this point forward, the contents of the 
+string can be accessed by referring to the variable. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Visualizing_the_string" effect="bold">
+
+Visualizing the string object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+<link id="a1058" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows a visualization of the string object. 
+This visualization was produced using the
+
+
+<link id="a1059" url="http://pythontutor.com/visualize.html#mode=edit">
+
+Online Python Tutor
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1036">
+<emphasis id="strong1007" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Visualizing the string object.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1037">
+<media id="media1000" alt="missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-1070-a.jpg" width="797" height="120"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1038">
+The green arrow in 
+
+<link id="a1060" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ indicates that the first statement in the program 
+is the most recently executed statement in this visualization. 
+
+<emphasis id="em1021" effect="italics">
+(This is the 
+statement that created the string object.)
+
+</emphasis>
+ The diagram on the right shows that the 
+variable named 
+
+<emphasis id="strong1008" effect="bold">
+aStr
+
+</emphasis>
+ contains a reference to an object of type
+
+
+<emphasis id="strong1009" effect="bold">
+str
+
+</emphasis>
+, 
+which contains the value: 
+
+<emphasis id="em1022" effect="italics">
+"This is a string"
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1039">
+This is a very simple diagram but it shows a 
+pattern that you need to remember. Variables in Python contain 
+references to objects. Those objects may be
+
+<emphasis id="em1023" effect="italics">
+ "dumb"
+
+</emphasis>
+ objects intended solely to 
+encapsulate a value 
+
+<emphasis id="em1024" effect="italics">
+(such as type 
+
+<emphasis id="strong1010" effect="bold">
+int
+
+</emphasis>
+)
+
+</emphasis>
+ or they may be 
+
+
+<emphasis id="em1025" effect="italics">
+"smart"
+
+</emphasis>
+ objects 
+
+<emphasis id="em1026" effect="italics">
+(such as type 
+
+<emphasis id="strong1011" effect="bold">
+str
+
+</emphasis>
+)
+
+</emphasis>
+ that can not only 
+encapsulate data values but can also encapsulate methods 
+
+<emphasis id="em1027" effect="italics">
+(such as 
+
+
+<emphasis id="strong1012" effect="bold">
+capitalize()
+
+</emphasis>
+)
+
+</emphasis>
+ to manipulate those data values in various ways.
+
+</para>
+
+
+
+
+<para id="p1040">
+<emphasis id="em1028" effect="italics">
+(Note that even the dumb objects are not completely dumb. For example, 
+all of the numeric types such as 
+
+<emphasis id="strong1013" effect="bold">
+int
+
+</emphasis>
+ know how to participate in 
+arithmetic operations, how to negate themselves, and how to do a few other 
+things that might be expected of a numeric.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Index_values_always_begin_with_zero_" effect="bold">
+
+Index values always begin with zero 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1041">
+Unlike eggs and Air Force enlisted men, the first character in a string is 
+always located at index 0, as in 
+
+<emphasis id="strong1014" effect="bold">
+aStr[0]
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1042">
+Thus, the second statement in the fragment extracts and prints the 
+
+<emphasis id="strong1015" effect="bold">
+T
+
+</emphasis>
+, which 
+is the first character in the word 
+
+<emphasis id="strong1016" effect="bold">
+This
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Display_the_character_at_index_3" effect="bold">
+
+Display the character at index 3
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+Similarly, the last statement in the fragment in 
+
+<link id="a1061" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ extracts and prints the 
+
+
+<emphasis id="strong1017" effect="bold">
+s
+
+</emphasis>
+ from 
+index position 3, as in 
+
+<emphasis id="strong1018" effect="bold">
+aStr[3]
+
+</emphasis>
+. The character at this index position is the 
+
+
+<emphasis id="strong1019" effect="bold">
+s
+
+</emphasis>
+ that ends the word 
+
+<emphasis id="strong1020" effect="bold">
+This
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1044">
+The last statement is equivalent to the following request, 
+
+<emphasis id="em1029" effect="italics">
+"Will the 
+character at index position 3 please display yourself on the screen." 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="Is_this_the_fourth_character" effect="bold">
+
+Is this the fourth character
+
+</emphasis>
+
+? 
+
+
+</title>
+
+
+
+
+<para id="p1045">
+You would probably refer to this as the fourth character, and you would be 
+correct if you did. The character at index 3 is the fourth character in the 
+string. The character at index 0 is the first character in the string. First 
+does not equate to index 1. You need to think about this, because this can be a 
+very confusing topic for new programmers.
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="An_important_and_potentially_confusing_point_" effect="bold">
+
+An important and potentially confusing point
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1046">
+At the risk of becoming boring, there is an important point here that you 
+might as well get used to right now. 
+
+</para>
+
+
+
+
+<para id="p1047">
+The 
+
+<emphasis id="strong1021" effect="bold">
+s
+
+</emphasis>
+ is located at index value 3. However, according to the way you are 
+probably accustomed to counting, this is actually the fourth character in the 
+string. You might be inclined to refer to this character as character number 4.
+
+
+</para>
+
+
+
+
+<para id="p1048">
+This is because index values always begin with zero, while you are probably 
+accustomed to counting things beginning with one, not zero. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="Not_like_eggs_" effect="bold">
+
+Not like eggs 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1049">
+Regardless of whether you begin with zero or one, if you access the egg at index value 4 in the container and eat it for 
+breakfast, it cannot be accessed again 
+
+<emphasis id="em1030" effect="italics">
+(because it will be gone)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1050">
+However, if you access the character at index value 4 in the string and use 
+it for some purpose, what you really use is a copy of the character. It is still 
+there and it can be accessed again. 
+
+</para>
+
+
+
+
+<para id="p1051">
+<emphasis id="em1031" effect="italics">
+(Some data containers do allow for the removal of data elements in much the 
+same sense that we can remove an egg from its container. However, a string is 
+not such a container.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21008">
+<title>
+<emphasis id="A_simple_slice_" effect="bold">
+
+A simple slice 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1052">
+The fragment in 
+
+<link id="a1062" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ cuts a couple of slices out of the string that was 
+created in 
+
+<link id="a1063" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ and 
+displays them on the screen. 
+
+</para>
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. A simple slice.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+print(aStr[0:4]) #print This
+print(aStr[10:16]) #print string
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+<section id="h31013">
+<title>
+<emphasis id="Slice_Notation_" effect="bold">
+
+Slice notation 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1053">
+The slice notation uses two index values separated by a colon, as shown in 
+
+<link id="a1064" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="The_end_is_non-inclusive_" effect="bold">
+
+The end is non-inclusive 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1054">
+As was indicated in the earlier quotation,
+
+<emphasis id="em1032" effect="italics">
+ "... the end is non-inclusive."
+
+</emphasis>
+ 
+This means that the character whose index value is the number following the 
+colon is not included in the slice. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31015">
+<title>
+<emphasis id="Extract_the_first_word_in_the_string_" effect="bold">
+
+Extract the first word in the string 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1055">
+Thus, the first statement in 
+
+<link id="a1065" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ containing the reference 
+
+<emphasis id="strong1022" effect="bold">
+aStr[0:4]
+
+</emphasis>
+ extracts and 
+prints the character sequence beginning with index value 0 and ending with index 
+value 3 
+
+<emphasis id="em1033" effect="italics">
+(not 4)
+
+</emphasis>
+. This causes the word 
+
+<emphasis id="strong1023" effect="bold">
+This
+
+</emphasis>
+ to be extracted and printed. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="Extract_the_last_word_in_the_string_" effect="bold">
+
+Extract the last word in the string 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1056">
+Similarly, the second statement in the above fragment containing the 
+reference 
+
+<emphasis id="strong1024" effect="bold">
+aStr[10:16]
+
+</emphasis>
+ extracts 
+and prints the characters having index values from 10 through 15, inclusive 
+
+<emphasis id="em1034" effect="italics">
+(not 
+16)
+
+</emphasis>
+. This causes the word 
+
+<emphasis id="strong1025" effect="bold">
+string
+
+</emphasis>
+ to be extracted and printed. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21009">
+<title>
+<emphasis id="A_more_complicated_slice" effect="bold">
+
+A more complicated slice
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31017">
+<title>
+<emphasis id="Omitting_the_first_index_" effect="bold">
+
+Omitting the first index 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1057">
+If you omit the first index value, as shown in 
+
+<link id="a1066" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+, it defaults to the 
+value zero. 
+
+</para>
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Omitting the first index.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+print(aStr[:4]) #print This
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1058">
+Therefore, the statement in 
+
+<link id="a1067" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ extracts and prints the first word in 
+the string, which is 
+
+<emphasis id="strong1026" effect="bold">
+This
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31018">
+<title>
+<emphasis id="Omitting_the_second_index_" effect="bold">
+
+Omitting the second index 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1059">
+If you omit the second index, as shown in 
+
+<link id="a1068" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+, it defaults to a value 
+that includes the last character in the string. 
+
+</para>
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Omitting the second index.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+print(aStr[10:]) #print string
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1060">
+Thus, the statement in 
+
+<link id="a1069" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ extracts and prints the last word in the 
+string, which is 
+
+<emphasis id="strong1027" effect="bold">
+string
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31019">
+<title>
+<emphasis id="Print_the_entire_string_" effect="bold">
+
+Print the entire string 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1061">
+<link id="a1070" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ shows two different ways to extract and print the entire string. I 
+won't comment on this, but will leave the analysis as an exercise for the 
+student. 
+
+</para>
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Print the entire string.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+#print the entire string
+print(aStr[:5] + aStr[5:])
+print(aStr[:100])
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1062">
+<emphasis id="em1035" effect="italics">
+(Hint: Remember that the plus sign when used with strings is the string 
+concatenation operator.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h31020">
+<title>
+<emphasis id="Print_an_empty_string" effect="bold">
+
+Print an empty string
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1063">
+There are several ways that you can specify the index values that will 
+produce an empty string. One of those ways is shown following the plus sign in 
+
+
+<link id="a1071" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6
+
+</emphasis>
+
+. Print an empty string.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+#print an empty string
+print("Empty: " + aStr[16:100])
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1064">
+In 
+
+<link id="a1072" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+, both index values are outside the bounds of the index values of 
+the characters in the string, which range from 0 through 15 inclusive. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31021">
+<title>
+<emphasis id="Negative_indices" effect="bold">
+
+Negative indices
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1065">
+Although it can be a little confusing, negative index values can be used to 
+count from the right, as shown in 
+
+<link id="a1073" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7
+
+</emphasis>
+
+. Negative indices.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+#count from the right
+print(aStr[-5:-2]) #print tri
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1066">
+This fragment extracts and prints the characters 
+
+<emphasis id="strong1028" effect="bold">
+tri
+
+</emphasis>
+ from the word 
+
+
+<emphasis id="strong1029" effect="bold">
+string
+
+</emphasis>
+, 
+which is the last word in the string. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31022">
+<title>
+<emphasis id="Eliminating_confusion" effect="bold">
+
+Eliminating confusion
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1067">
+Once you allow negative indices for slicing, things can become very confusing. 
+The following explanation of how indices work with slicing is attributed to
+
+
+<link id="a1074" url="https://www.python.org/~guido/">
+
+Guido van Rossum
+
+</link>
+
+, the author of the 
+Python programming language.
+
+</para>
+
+
+
+
+<para id="p1068">
+In this example, Mr. van Rossum is referring to a five-character string with 
+a value of "
+
+<emphasis id="strong1030" effect="bold">
+HelpA
+
+</emphasis>
+". 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+
+				
+
+<para id="p1069">
+<emphasis id="strong1031" effect="bold">
+Eliminating confusion
+
+</emphasis>
+</para>
+
+
+		
+
+<para id="p1070">
+The best way to remember how slices work is to think of the indices 
+		as pointing between characters, with the left edge of the first 
+		character numbered 0. Then the right edge of the last character of a 
+		string of n characters has index n, for example:
+
+</para>
+
+
+		
+
+<code id="pre1007" display="block"> 
+ +---+---+---+---+---+ 
+ | H | e | l | p | A | 
+ +---+---+---+---+---+ 
+ 0   1   2   3   4   5 
+-5  -4  -3  -2  -1 </code>
+
+
+		
+
+<para id="p1071">
+The first row of numbers gives the position of the indices 0...5 in 
+		the string; the second row gives the corresponding negative indices. 
+
+</para>
+
+
+		
+
+<para id="p1072">
+The slice from i to j consists of all characters between the edges 
+		labeled i and j, respectively. 
+
+</para>
+
+
+		
+
+<para id="p1073">
+For nonnegative indices, the length of a slice is the difference of 
+		the indices, if both are within bounds, e.g., the length of word[1:3] is 
+		2.
+
+</para>
+
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1074">
+Hopefully, this explanation will help you to understand and to remember how 
+index values are used for the extraction of substrings from strings using 
+slicing. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21010">
+<title>
+<emphasis id="Getting_the_length_of_a_string" effect="bold">
+
+Getting the length of a string
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1075">
+And finally, a built-in function named 
+
+<emphasis id="strong1032" effect="bold">
+len()
+
+</emphasis>
+ can be used to determine the 
+number of characters actually contained in a string as shown in 
+
+<link id="a1075" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8
+
+</emphasis>
+
+. Getting the length of a string.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1008" display="block">
+#get the length of the string
+print(len(aStr))
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1076">
+For the example string used in this module, 
+
+<link id="a1076" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ gets and prints the 
+length of the string as 16. 
+
+</para>
+
+
+
+
+<para id="p1077">
+If you count the characters in the string 
+
+<emphasis id="em1036" effect="italics">
+(beginning with 1)
+
+</emphasis>
+, you will 
+conclude that there are 16 characters in the string. 
+
+</para>
+
+
+
+
+<para id="p1078">
+Note the difference between the number of characters and the maximum index 
+value 
+
+</para>
+
+
+
+
+<para id="p1079">
+For a string containing 16 characters, the valid index values range from 0 
+through 15 inclusive. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21011">
+<title>
+<emphasis id="The_complete_output" effect="bold">
+
+The complete output
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1080">
+This Python script file produces the output shown in the lower portion of 
+
+
+<link id="a1077" target-id="Listing_9">
+
+Listing 
+9
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="AStringisImmutable" effect="bold">
+
+A string is immutable
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1081">
+There is one more point that needs to be made here. Although you can use 
+indexing and slicing to access the characters in a string, you cannot use 
+indexing and slicing to assign new character values to those characters.
+
+</para>
+
+
+
+
+<para id="p1082">
+This is because a Python string is 
+
+<emphasis id="em1037" effect="italics">
+immutable
+
+</emphasis>
+. In other words, after it is 
+created, it cannot be modified. 
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1083">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1003" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1033" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1012" list-type="bulleted">
+
+					
+
+<item id="li1052">
+Module name: Itse1359-1070-Strings Part 2
+
+</item>
+
+
+					
+
+<item id="li1053">
+File: Itse1359-1070.htm
+
+
+</item>
+
+
+					
+
+<item id="li1054">
+Published: 10/15/14
+
+</item>
+
+
+					
+
+<item id="li1055">
+Revised: 01/31/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1004" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1034" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1084">
+<emphasis id="strong1035" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1085">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1086">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1087">
+<emphasis id="strong1036" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1088">
+A complete listing of the program follows is shown in 
+
+<link id="a1078" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9
+
+</emphasis>
+
+. The script named 
+				String01.py.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1009" display="block">
+# File String01.py
+# Rev 2/4/00
+# Copyright 2000, R. G. Baldwin
+# Illustrates indexing and 
+# slicing strings
+#
+#-------------------------------
+
+aStr = "This is a string"
+print(aStr[0]) #print T
+print(aStr[3]) #print s
+print(aStr[0:4]) #print This
+print(aStr[10:16]) #print string
+print(aStr[:4]) #print This
+print(aStr[10:]) #print string
+
+#print the entire string
+print(aStr[:5] + aStr[5:])
+print(aStr[:100])
+
+#print an empty string
+print("Empty: " + aStr[16:100])
+
+#count from the right
+print(aStr[-5:-2]) #print tri
+
+#get the length of the string
+print(len(aStr))
+
+#==========================================
+#This script produces the following output, 
+#which is not part of the script.
+T
+s
+This
+string
+This
+string
+This is a string
+This is a string
+Empty:
+tri
+16
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+	
+
+<para id="p1089">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,2058 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2250-Color-An Animated Dive Into an HSV Color Cylinder</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52750</md:content-id>
+  <md:title>Itse1359-2250-Color-An Animated Dive Into an HSV Color Cylinder</md:title>
+  <md:abstract>This module demonstrates an animated dive down through the center of an HSV color cylinder.</md:abstract>
+  <md:uuid>73a9767e-3896-4c25-8ba0-154e3a8f5a03</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Complete_program_listings">
+
+Complete program listings
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1008">
+<link id="a1008" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Six screen shots taken at random. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1004" list-type="bulleted">
+
+
+
+<item id="li1010">
+<link id="a1010" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ The preliminaries. 
+
+</item>
+
+
+
+
+<item id="li1011">
+<link id="a1011" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Iterate across all coordinates on the surface. 
+
+</item>
+
+
+
+
+<item id="li1012">
+<link id="a1012" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ Test for inside the circle and set the Saturation if inside. 
+
+</item>
+
+
+
+
+<item id="li1013">
+<link id="a1013" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ Compute the Hue angle. 
+
+</item>
+
+
+
+
+<item id="li1014">
+<link id="a1014" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Use HSVA parameters to set the color of a Color object. 
+
+</item>
+
+
+
+
+<item id="li1015">
+<link id="a1015" target-id="Listing_6">
+
+Listing 6.
+
+</link>
+
+ Set the color of the current pixel. 
+
+</item>
+
+
+
+
+<item id="li1016">
+<link id="a1016" target-id="Listing_7">
+
+Listing 7.
+
+</link>
+
+ Decrease or reset Value for HSV. 
+
+</item>
+
+
+
+
+<item id="li1017">
+<link id="a1017" target-id="Listing_8">
+
+Listing 8.
+
+</link>
+
+ The remainder of the program code. 
+
+</item>
+
+
+
+
+<item id="li1018">
+<link id="a1018" target-id="Listing_9">
+
+Listing 9.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+In an earlier module, you learned about the 
+
+<emphasis id="em1001" effect="italics">
+HSV color space
+
+</emphasis>
+ and how that 
+color space can be envisioned as a 3D cylinder with a radius of 100 units and a height 
+of 100 units.
+
+</para>
+
+
+
+
+<para id="p1003">
+You will learn to work with HSV color using the 
+
+<emphasis id="strong1001" effect="bold">
+pygame
+
+</emphasis>
+ library in this 
+module. I will explain an animated 
+
+<emphasis id="strong1002" effect="bold">
+pygame
+
+</emphasis>
+ program that dives into the top of an 
+HSV color cylinder and displays the colors at each of 100 horizontal slices 
+through the cylinder. When the animation reaches the bottom 
+
+<emphasis id="em1002" effect="italics">
+(black)
+
+</emphasis>
+ 
+surface, it will reset to the top of the cylinder and the cycle will continue.
+
+</para>
+
+
+
+
+<para id="p1004">
+<link id="a1019" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows six screen shots taken at random while the program was 
+running. Each of the circles represents a horizontal slice through the HSV color cylinder. 
+The colors in each circle show the colors that reside in the cylinder at the 
+vertical location of the slice. The slice in the upper-left corner of 
+
+<link id="a1020" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ 
+is near the bottom 
+
+<emphasis id="em1003" effect="italics">
+(black)
+
+</emphasis>
+ surface of the cylinder. The slice in the 
+lower-right corner is near the top of the cylinder.
+
+</para>
+
+
+	
+
+
+<para id="p1005">
+<emphasis id="strong1003" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Six screen shots taken at random.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1006">
+<media id="media1000" alt="missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2250-aa.jpg" width="643" height="483"/>
+</media>
+
+
+</para>
+
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1007">
+I will explain the code for this program in fragments. The first fragment 
+	is provided in 
+
+<link id="a1021" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+
+</para>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ The preliminaries.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">import math
+import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Hsv01.py") #Set the window caption
+FRAMERATE = 10 #Used to control the maximum frame rate.
+WIDTH = 200 #Width of output window
+HEIGHT = 200 #Height of output window
+
+#Initialize HSVA parameters
+hue = 0 #Initial hue value
+saturation = 0 #Initial saturation value
+value = 100 #Start at the top and animate downward.
+valueRange = 100 #Height of cylinder
+radius = 100 #Radius of the cylinder
+radiusSq = radius ** 2 #squared
+ALPHA = 100 #A constant in this program. Could be omitted.
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Get an array that wraps the pixels on the base surface making it possible
+# to set the color of each pixel individually based on its coordinate location.
+pxarray = pygame.PixelArray(baseSurf)
+
+#Create a color object for use in transforming from HSVA to RGB
+color = pygame.Color(0,0,0)
+
+#Create a Color object for the background of the surface.
+white = pygame.Color(255,255,255)
+
+#Enter the runtime loop
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+
+    baseSurf.fill(white)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1008">
+Code similar to all of the code shown in 
+
+<link id="a1022" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ has been explained in 
+earlier modules. Therefore, no explanation of that code beyond the embedded 
+comments should be required in this module.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Iterate_across_all_coordinates_on_the_surface" effect="bold">
+
+Iterate across all 
+coordinates on the surface
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1009">
+The code in 
+
+<link id="a1023" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ shows the use of a pair of nested 
+
+
+<emphasis id="strong1004" effect="bold">
+for
+
+</emphasis>
+ loops to examine 
+every pixel on the surface.
+
+</para>
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+
+
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Iterate across all coordinates on the surface.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">    
+    for xCnt in range(WIDTH):
+        for yCnt in range(HEIGHT):</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1010">
+The coordinates of each pixel will be examined to determine if that pixel 
+falls inside or outside of the circle as shown in 
+
+<link id="a1024" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. If 
+the pixel is outside the circle, the 
+pixel is ignored and its color remains white as established by the call to 
+
+
+<emphasis id="strong1005" effect="bold">
+fill
+
+</emphasis>
+ 
+in 
+
+<link id="a1025" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. If the pixel is inside the circle, the color of the pixel is modified to represent the HSV 
+color at that location inside the cylinder.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Test_for_inside_the_circle" effect="bold">
+
+Test for inside the circle
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1011">
+The code in 
+
+<link id="a1026" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ performs the test described above and sets the 
+Saturation of the pixel is inside the circle.
+
+</para>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ Test for inside the circle and set the 
+Saturation if inside.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+            xCntSq = (xCnt-WIDTH//2)**2
+            yCntSq = (yCnt-HEIGHT//2)**2
+            
+            if  xCntSq + yCntSq &lt;= radiusSq:
+                #The coordinate is inside the circle. Compute and display
+                # a color for it.
+                saturation = (xCntSq + yCntSq) ** 0.5 #square root</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1012">
+The test is performed by computing the square of the distance from the pixel 
+to the center of the circle and comparing that distance to the square of the 
+radius of the circle. The Saturation is the distance from the pixel to the center 
+of the circle. When the pixel is inside the circle, the Saturation is set as the 
+square root of the square of the distance of the pixel from the center of the 
+circle.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Compute_the_Hue_angle" effect="bold">
+
+Compute the Hue angle
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1013">
+<link id="a1027" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ uses Python's
+
+
+<link id="a1028" url="https://docs.python.org/3/library/math.html#trigonometric-functions">
+
+
+math.atan2
+
+</link>
+
+ function to compute the Hue angle.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ Compute the Hue angle.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+                angInRad = math.atan2(-(yCnt-radius),-(xCnt-radius)) + math.pi
+                angInDeg = angInRad * 180/math.pi
+
+                if angInDeg &gt; 359:
+                    angInDeg = 0</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1014">
+                The code in 
+
+<link id="a1029" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ changes the sign of 
+the x and y coordinates to place the red color at
+                3 o'clock, to place the green color at 7 o'clock, and to 
+                place the blue color at 11 o'clock. Without those changes, the 
+red color would be at 9 o'clock.
+
+</para>
+
+
+
+
+<para id="p1015">
+The 
+
+<emphasis id="strong1006" effect="bold">
+math.atan2
+
+</emphasis>
+ function returns the angle in radians in the 
+range from -
+
+<link id="a1030" url="https://docs.python.org/3/library/math.html#math.pi">
+
+math.pi
+
+</link>
+
+ 
+to +
+
+<link id="a1031" url="https://docs.python.org/3/library/math.html#math.pi">
+
+math.pi
+
+</link>
+
+. 
+The code in 
+
+<link id="a1032" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ adds 
+
+<emphasis id="strong1007" effect="bold">
+math.pi
+
+</emphasis>
+ to the returned value to 
+cause 
+
+<emphasis id="strong1008" effect="bold">
+angInRad
+
+</emphasis>
+ to represent the angle in the range from 0 to
+
+
+<emphasis id="strong1009" effect="bold">
+2*math.pi
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1016">
+Then the code in 
+
+<link id="a1033" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ converts the angle from radians to degrees and 
+stores it in the variable named 
+
+<emphasis id="strong1010" effect="bold">
+angInDeg
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1017">
+The Hue angle needs to be in the range from 0 to 359 degrees. The computation 
+described above can return a value of 360.0 degrees, which is the same as zero 
+degrees. The code in 
+
+<link id="a1034" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ converts any angle value greater than 359 degrees 
+to zero degrees.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Use_HSVA_parameters_to_set_the_color_of_a_Color_object" effect="bold">
+
+Use HSVA 
+parameters to set the color of a Color object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1018">
+The code in 
+
+<link id="a1035" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ creates a black 
+
+<emphasis id="strong1011" effect="bold">
+Color
+
+</emphasis>
+ object and 
+stores that object's reference in the variable named 
+
+<emphasis id="strong1012" effect="bold">
+color
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1019">
+The code in 
+
+<link id="a1036" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ changes the color stored in that object by setting the
+
+
+<link id="a1037" url="http://www.pygame.org/docs/ref/color.html#pygame.Color.hsva">
+
+hsva 
+attribute
+
+</link>
+
+ to a 
+
+
+<link id="a1038" url="https://docs.python.org/3/tutorial/introduction.html#lists">
+
+List
+
+</link>
+
+ containing 
+
+<emphasis id="strong1013" effect="bold">
+angInDeg
+
+</emphasis>
+, 
+
+<emphasis id="strong1014" effect="bold">
+saturation
+
+</emphasis>
+,
+
+
+<emphasis id="strong1015" effect="bold">
+value
+
+</emphasis>
+, and 
+
+<emphasis id="strong1016" effect="bold">
+ALPHA
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1004">
+<row id="tr1008">
+
+
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Use HSVA parameters to set the color of a 
+Color object.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+                color.hsva = [angInDeg,saturation,value,ALPHA]</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1020">
+The initial value for 
+
+<emphasis id="strong1017" effect="bold">
+value
+
+</emphasis>
+ is set to 100 in 
+
+<link id="a1039" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. It 
+will be 
+
+<link id="a1040" target-id="Decrease_or_reset_Value_for_HSV">
+
+modified
+
+</link>
+
+ during each iteration of the runtime loop. The initial value 
+for 
+
+<emphasis id="strong1018" effect="bold">
+ALPHA
+
+</emphasis>
+ is also set to 100 in 
+
+<link id="a1041" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ and does not change. It could be omitted from the code and the 
+results would be the same. The base surface does not support alpha transparency.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Set_the_color_of_the_current_pixel" effect="bold">
+
+Set the color of the current 
+pixel
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1021">
+The code in 
+
+<link id="a1042" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ sets the color of the pixel at the current 
+
+<emphasis id="strong1019" effect="bold">
+
+xCnt
+
+</emphasis>
+,
+
+<emphasis id="strong1020" effect="bold">
+ yCnt
+
+</emphasis>
+ 
+location to the color that is now stored in the 
+
+<emphasis id="strong1021" effect="bold">
+Color
+
+</emphasis>
+ object 
+referred to by 
+
+<emphasis id="strong1022" effect="bold">
+color
+
+</emphasis>
+, using the 
+
+<emphasis id="strong1023" effect="bold">
+PixelArray
+
+</emphasis>
+ object that was created 
+in 
+
+<link id="a1043" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. 
+
+<emphasis id="em1004" effect="italics">
+(You learned about PixelArray objects 
+in an earlier module)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1005">
+<row id="tr1010">
+
+
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6.
+
+</emphasis>
+
+ Set the color of the current pixel.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+                pxarray[xCnt, yCnt] = color</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Decrease_or_reset_Value_for_HSV" effect="bold">
+
+Decrease or reset Value for HSV
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+The iteration process that began in 
+
+<link id="a1044" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ continues until the color of every pixel in the circle for the 
+current 
+
+<emphasis id="strong1024" effect="bold">
+value
+
+</emphasis>
+ has been set. Then the code in 
+
+<link id="a1045" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ is 
+executed to either decrease 
+
+<emphasis id="strong1025" effect="bold">
+value
+
+</emphasis>
+ or to reset it to 100. The cycle 
+repeats until the user terminates the program.
+
+</para>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1006">
+<row id="tr1012">
+
+
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7.
+
+</emphasis>
+
+ Decrease or reset Value for HSV.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+    value -= 1
+    if value &lt; 0:
+        value = valueRange</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="The_remainder_of_the_program_code" effect="bold">
+
+The remainder of the program 
+code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+The remainder of the program code is shown in 
+
+<link id="a1046" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+. There is nothing new 
+about this code so it shouldn't require further explanation.
+
+</para>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1007">
+<row id="tr1014">
+
+
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8.
+
+</emphasis>
+
+ The remainder of the program code.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">    #Display baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1024">
+I encourage you to copy the code from 
+
+<link id="a1047" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+. Execute the code and confirm 
+that you get results similar to those shown in 
+
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1025">
+A complete listing of the program is provided in 
+
+<link id="a1049" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1026">
+<emphasis id="strong1026" effect="bold">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9.
+
+</emphasis>
+
+ Complete program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1008" display="block">"""
+File Hsv01.py
+This animated program dives into the top of an HSVA cylinder and displays the
+surfaces one surface at a time until reaching the (black) bottom. When it
+reaches the bottom, it resets to the top and the cycle is repeated.
+================================================================================
+"""
+import math
+import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Hsv01.py") #Set the window caption
+FRAMERATE = 10 #Used to control the maximum frame rate.
+WIDTH = 200 #Width of output window
+HEIGHT = 200 #Height of output window
+
+#Initialize HSVA parameters
+hue = 0 #Initial hue value
+saturation = 0 #Initial saturation value
+value = 100 #Start at the top and animate downward.
+valueRange = 100 #Height of cylinder
+radius = 100 #Radius of the cylinder
+radiusSq = radius ** 2 #squared
+ALPHA = 100 #A constant in this program. Could be omitted.
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Get an array that wraps the pixels on the base surface making it possible
+# to set the color of each pixel individually based on its coordinate location.
+pxarray = pygame.PixelArray(baseSurf)
+
+#Create a color object for use in transforming from HSVA to RGB
+color = pygame.Color(0,0,0)
+
+#Create a Color object for the background of the surface.
+white = pygame.Color(255,255,255)
+
+#Enter the runtime loop
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+
+    baseSurf.fill(white)
+
+    #Iterate across all coordinates on the surface.    
+    for xCnt in range(WIDTH):
+        for yCnt in range(HEIGHT):
+            
+            #Check each coordinate to see if it is inside the circle. If 
+            # not, ignore it.
+            #Compute the squares of the distances of the x and y coordinates
+            # from the horizontal and vertical center lines of the surface.
+            #Will use that information to compute the square of the distance
+            # from the center of the circle and compare that distance with
+            # the square of the radius of the circle.
+            xCntSq = (xCnt-WIDTH//2)**2
+            yCntSq = (yCnt-HEIGHT//2)**2
+            
+            if  xCntSq + yCntSq &lt;= radiusSq:
+                #The coordinate is inside the circle. Compute and display
+                # a color for it.
+                #Saturation is the distance of the point from the center
+                # of the circle.
+                saturation = (xCntSq + yCntSq) ** 0.5 #square root
+                
+                #Compute the angle to the coordinate.
+                #Change sign of x and y coordinates to place the red color at
+                # 3 o'clock, to place the green color at 7 o'clock, and to 
+                # place the blue color at 11 o'clock.
+                angInRad = math.atan2(-(yCnt-radius),-(xCnt-radius)) + math.pi
+                angInDeg = angInRad * 180/math.pi
+
+                #The angle computation above can return an angle of 360.0
+                # degrees. If so, set it to zero and process angles from 0 to
+                # 359 degrees inclusive.
+                if angInDeg &gt; 359:
+                    angInDeg = 0
+                
+                #Set the color in the object referred to by the variable
+                # named color based on the HSVA parameters. Could omit
+                # the ALPHA parameter and the output would be the same.
+                # The base surface does not support alpha by default.
+                color.hsva = [angInDeg,saturation,value,ALPHA]
+
+                #Set the color of the pixel to the value now represented
+                # by the variable named color.
+                pxarray[xCnt, yCnt] = color
+    
+    
+    #Decrease the value parameter (the V in HSVA) by one unit during 
+    # each iteration of the runtime loop. When it becomes -1, reset it to
+    # the top of the cylinder and the cycle will repeat.
+    value -= 1
+    if value &lt; 0:
+        value = valueRange
+
+    #Display baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop
+</code>
+
+
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1027">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1027" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1005" list-type="bulleted">
+
+					
+
+<item id="li1019">
+Module name: Itse1359-2250-Color-Animated Dive Into an 
+					HSV Color Cylinder
+
+</item>
+
+
+					
+
+<item id="li1020">
+File: Itse1359-2250.htm
+
+
+</item>
+
+
+					
+
+<item id="li1021">
+Published: 01/08/15
+
+</item>
+
+
+
+
+<item id="li1022">
+Revised: 02/08/16
+
+</item>
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1028" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1028">
+<emphasis id="strong1029" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1029">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1030">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1031">
+<emphasis id="strong1030" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1032">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

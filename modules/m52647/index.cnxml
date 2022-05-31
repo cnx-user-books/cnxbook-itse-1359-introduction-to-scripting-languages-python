@@ -1,0 +1,2649 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2235-Color-Animated Demonstration of Per Pixel Alpha Blending</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52647</md:content-id>
+  <md:title>Itse1359-2235-Color-Animated Demonstration of Per Pixel Alpha Blending</md:title>
+  <md:abstract>This module provides an animated demonstration of per pixel alpha blending with a draw function.</md:abstract>
+  <md:uuid>9b8e74d2-1db1-4e3b-ba10-0ccbc8e238ae</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="The_program_output">
+
+The program output
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="Behavior_of_the_program">
+
+Behavior of the program
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="The_preliminaries">
+
+The preliminaries
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Enter_the_runtime_loop">
+
+Enter the runtime loop
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Create_a_Color_object_for_the_circle">
+
+Create a Color object for the circle
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Create_a_Color_object_for_the_lower_right_quadrant">
+
+Create a Color object for the lower right quadrant
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="Draw_three_filled_rectangles_on_the_base_surface">
+
+Draw three filled rectangles on the base surface
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1013">
+<link id="a1013" target-id="Compute_the_alpha_value_for_the_circle">
+
+Compute the alpha value for the circle
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+
+			
+
+<link id="a1014" target-id="Create_a_new_surface_with_a_format_that_contains_per_pixel_alphas">
+
+Create a new surface with a format that contains per pixel alphas
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Draw_a_circle_on_the_mask">
+
+Draw a circle on the mask
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="The_remainder_of_the_code">
+
+The remainder of the code
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1017">
+<link id="a1017" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Complete_program_listings">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1019">
+<link id="a1019" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1006" list-type="bulleted">
+
+
+
+<item id="li1020">
+<link id="a1020" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Screen shots from an animated demonstration of per pixel alphas that change over time. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+
+
+<item id="li1021">
+<link id="a1021" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ The preliminaries. 
+
+</item>
+
+
+
+
+<item id="li1022">
+<link id="a1022" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Enter the runtime loop. 
+
+</item>
+
+
+
+
+<item id="li1023">
+<link id="a1023" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ Create a Color object for the circle. 
+
+</item>
+
+
+
+
+<item id="li1024">
+<link id="a1024" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ Create a Color object for the lower right quadrant. 
+
+</item>
+
+
+
+
+<item id="li1025">
+<link id="a1025" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Draw three filled rectangles on the base surface.
+
+</item>
+
+
+
+
+<item id="li1026">
+<link id="a1026" target-id="Listing_6">
+
+Listing 6.
+
+</link>
+
+ Compute the alpha value for the circle. 
+
+</item>
+
+
+
+
+<item id="li1027">
+<link id="a1027" target-id="Listing_7">
+
+Listing 7.
+
+</link>
+
+ Create a new surface with a format that contains per pixel alphas. 
+
+</item>
+
+
+
+
+<item id="li1028">
+<link id="a1028" target-id="Listing_8">
+
+Listing 8.
+
+</link>
+
+ Draw a circle on the mask. 
+
+</item>
+
+
+
+
+<item id="li1029">
+<link id="a1029" target-id="Listing_9">
+
+Listing 9.
+
+</link>
+
+ The remainder of the code. 
+
+</item>
+
+
+
+
+<item id="li1030">
+<link id="a1030" target-id="Listing_10">
+
+Listing 10.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+In an earlier module, you learned about the runtime loop and how code that is 
+executed within the runtime loop can cause the display to change over time. You 
+also learned about 
+
+<emphasis id="em1001" effect="italics">
+surface alphas
+
+</emphasis>
+ in an earlier module. With surface 
+alphas, a single alpha value applies to every pixel on the surface. Changing the 
+surface alpha value changes the transparency/opacity of the entire surface.
+
+</para>
+
+
+
+
+<para id="p1003">
+In this module, you will learn about 
+
+<emphasis id="em1002" effect="italics">
+per pixel alphas
+
+</emphasis>
+. In other 
+words, you will learn how to write code where the alpha value of each pixel may 
+be different from the alpha values of its neighbors. Those alpha values can 
+be changed at runtime independently of one another.
+
+</para>
+
+
+
+
+<para id="p1004">
+You will learn how to compute the red, green, and blue color values produced 
+by the default blending formula when a color with a given alpha value is drawn 
+over another color.
+
+</para>
+
+
+
+
+<para id="p1005">
+You will learn how to write a program that displays an animated 
+demonstration of per pixel alphas that change over time.
+
+</para>
+
+
+
+
+<para id="p1006">
+Finally, you will learn how to use two of the functions from the
+
+
+<link id="a1031" url="http://www.pygame.org/docs/ref/draw.html">
+
+pygame.draw
+
+</link>
+
+ module for 
+drawing a 
+
+<link id="a1032" url="http://www.pygame.org/docs/ref/draw.html#pygame.draw.circle">
+
+
+circle
+
+</link>
+
+ and for drawing several
+
+
+<link id="a1033" url="http://www.pygame.org/docs/ref/draw.html#pygame.draw.rect">
+
+rectangles
+
+</link>
+
+.
+
+
+<emphasis id="em1003" effect="italics">
+(Note that this is different from using the 
+
+<emphasis id="strong1001" effect="bold">
+fill
+
+</emphasis>
+ method to 
+create colored rectangular areas on the base surface as was done in an earlier module.)
+
+</emphasis>
+ Other functions in 
+the
+
+
+<link id="a1034" url="http://www.pygame.org/docs/ref/draw.html">
+
+pygame.draw
+
+</link>
+
+ module can be used to draw 
+polygons, ellipses, arcs, and various forms of lines. 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+(Be careful to avoid confusing Python/Pygame 
+
+<emphasis id="em1004" effect="italics">
+modules
+
+</emphasis>
+ with 
+cnx.org 
+
+<emphasis id="em1005" effect="italics">
+modules
+
+</emphasis>
+. A Python/Pygame module is a programming construct of the Python 
+programming language. A cnx.org module is a document in the cnx legacy view or a 
+page in the openstax view.)
+
+</quote>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_program_output" effect="bold">
+
+The program output
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1007">
+<link id="a1035" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows nine screen shots taken at random times while the program 
+	was running.
+
+</para>
+
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1002" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Screen shots from an animated demonstration of 
+per pixel alphas that change over time.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2235-01.jpg" width="656" height="730"/>
+</media>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Behavior_of_the_program" effect="bold">
+
+Behavior of the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+During each iteration of the runtime loop, the program draws three filled rectangles 
+on the base surface and draws a circle on a surface that supports per pixel alphas. 
+For want of a better term, I will refer to this second surface as the 
+
+<emphasis id="em1006" effect="italics">
+mask
+
+</emphasis>
+. After 
+drawing the circle on the mask, the program blits the mask onto the base surface and then 
+displays the base surface. 
+
+</para>
+
+
+
+
+<para id="p1011">
+A blue rectangle is drawn in the upper left quadrant of the base surface as shown by all of the 
+screen shots in 
+
+<link id="a1036" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. A green rectangle is drawn in the upper right 
+quadrant as also shown by all of the screen shots in 
+
+<link id="a1037" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. The colors of these two rectangles do not change over time. 
+
+</para>
+
+
+
+
+<para id="p1012">
+Nothing is 
+drawn in the lower left quadrant of the base surface leaving it constantly black.
+
+</para>
+
+
+
+
+<para id="p1013">
+A red circle with a wide border and an alpha value that changes over time is 
+drawn on the mask. The circle is centered on the mask as shown by the screen 
+shots in Figure 1.
+
+</para>
+
+
+
+
+<para id="p1014">
+A rectangle is also drawn in the lower right quadrant of the base surface. The color of this 
+rectangle changes over time and is designed to match the color produced by 
+blending the red circle with the green color in the upper right quadrant. For 
+example, the 
+color of the lower right quadrant in the rightmost screen shot on the third row 
+of 
+
+<link id="a1038" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ is a color that we might refer to as tan. This is the same color 
+produced by the overlap of the red circle with the green color in the upper 
+right quadrant.
+
+</para>
+
+
+
+
+<para id="p1015">
+The alpha value for the red circle starts at zero 
+
+<emphasis id="em1007" effect="italics">
+(totally transparent)
+
+</emphasis>
+ 
+and increases during each iteration of the runtime loop until it reaches 255 
+
+<emphasis id="em1008" effect="italics">
+
+(totally opaque)
+
+</emphasis>
+. Then it resets back to zero. During this process, the 
+blended overlap region in the upper right quadrant takes on 256 different colors 
+ranging from green to red with many different colors in between. The color of the lower right rectangle tracks the 
+color of the overlap region in the upper right rectangle.
+
+</para>
+
+
+
+
+<para id="p1016">
+The red circle appears to be red in the lower left black area for all but the 
+smallest values of alpha. 
+
+</para>
+
+
+
+
+<para id="p1017">
+The overlap region in the blue upper left rectangle 
+progresses from blue for an alpha value of zero to red for an alpha value of 
+255. Along the way, various violets, purples, magentas, etc., are produced.
+
+</para>
+
+
+
+
+<para id="p1018">
+The overlap region in the bottom right rectangle progresses from green for an 
+alpha value of zero to red for an alpha value of 255. Many different colors are 
+produced in between those extremes.
+
+</para>
+
+
+	
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<section id="h21003">
+<title>
+<emphasis id="The_preliminaries" effect="bold">
+
+The preliminaries
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1019">
+A complete listing of the program is provided in 
+
+<link id="a1039" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ near the end of the module. I will break the program down and explain it in fragments. The first fragment is shown in 
+
+<link id="a1040" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ The preliminaries.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Transparency03.py") #Set the window caption
+FRAMERATE = 20 #Used to control the maximum frame rate.
+WIDTH = 200 #Width of output window
+HEIGHT = 200 #Height of output window
+RADIUS = WIDTH//2 #Radius of circle
+BORDERWIDTH = RADIUS//2 #Width of circle border
+ORIGIN = (0,0) #Location of the mask on the base surface
+alpha = 0 #Initial opacity of circle
+alphaInc = 1 #Variable used to change opacity of circle
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Create some objects of type Rect to use later with pygame.draw.rect
+upperLeftRect = pygame.Rect(0,0,WIDTH/2,HEIGHT/2)
+upperRightRect = pygame.Rect(WIDTH/2,0,WIDTH/2,HEIGHT/2)
+lowerRightRect = pygame.Rect(WIDTH/2,HEIGHT/2,WIDTH/2,HEIGHT/2)
+
+#Create some color objects
+upperLeftColor = pygame.Color(0,0,255) #Upper left color
+upperRightColor = pygame.Color(0,255,0) #Upper right corner</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1020">
+There is very little that is new in 
+
+<link id="a1041" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ so a detailed explanation 
+should not be needed. It is worth noting however, that the values of some of the 
+variables are computed using the integer form of division, such as:
+
+</para>
+
+
+
+
+<code id="pre1001" display="block">RADIUS = WIDTH//2 #Radius of circle</code>
+
+
+
+
+<para id="p1021">
+This is required because the variable is later passed as a parameter to a method or function 
+that requires the parameter to be of type integer.
+
+</para>
+
+
+
+
+<para id="p1022">
+All of the locations and dimensions in this program are specified in terms of 
+the contents of the variables named WIDTH and HEIGHT. Therefore, you can change 
+the overall size and dimensions of the output by changing the values of WIDTH 
+and HEIGHT. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Enter_the_runtime_loop" effect="bold">
+
+Enter the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+The code in 
+
+<link id="a1042" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ enters the runtime loop and tests for user input.
+
+</para>
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+
+
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Enter the runtime loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1002" display="block">while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1024">
+There is nothing new in 
+
+<link id="a1043" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Create_a_Color_object_for_the_circle" effect="bold">
+
+Create a Color object for the 
+circle
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1025">
+The statement in 
+
+<link id="a1044" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ creates a 
+
+<emphasis id="strong1003" effect="bold">
+Color
+
+</emphasis>
+ object for a given alpha value 
+that will be used later to set the color for the circle.
+
+</para>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ Create a Color object for the circle.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1003" display="block">    circleColor = pygame.Color(255,0,0,alpha)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1026">
+The statement in 
+
+<link id="a1045" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ must be inside the runtime loop because the value 
+of alpha is different for each iteration of the runtime loop. As explained 
+earlier, it starts at 0 and increases during each iteration of the loop until it 
+reaches 255. At that point it resets to 0 and the cycle repeats.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Create_a_Color_object_for_the_lower_right_quadrant" effect="bold">
+
+Create a Color 
+object for the lower right quadrant
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+    The code in 
+
+<link id="a1046" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ creates a 
+
+<emphasis id="strong1004" effect="bold">
+Color
+
+</emphasis>
+ object that matches the color that results from blending
+    the circle color with the green color of the upper right quadrant. This 
+
+<emphasis id="strong1005" effect="bold">
+
+Color
+
+</emphasis>
+ object is used to set the color of the lower right quadrant in 
+each screen shot in 
+
+<link id="a1047" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ Create a Color object for the lower right 
+quadrant.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1004" display="block">    lowerRightColor = pygame.Color(
+           int(circleColor.r*circleColor.a/255+
+                   upperRightColor.r*(1-circleColor.a/255)),
+           int(circleColor.g*circleColor.a/255+
+                   upperRightColor.g*(1-circleColor.a/255)),
+           int(circleColor.b*circleColor.a/255+
+                   upperRightColor.b*(1-circleColor.a/255)))</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1028">
+The code in 
+
+<link id="a1048" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ probably needs some explanation. If the color values of the base surface are represented by redBase, greenBase, and 
+blueBase and the color values of the circle are represented by redCircle, 
+greenCircle, and 
+blueCircle, the resulting blended color values can be computed as
+
+</para>
+
+
+
+
+<code id="pre1005" display="block">redResult = redCircle*(alpha/255) + redBase*(1-alpha/255)
+greenResult = greenCircle*(alpha/255) + greenBase*(1-alpha/255)
+blueResult = blueCircle*(alpha/255) + blueBase*(1-alpha/255)</code>
+
+
+
+
+<para id="p1029">
+A 
+
+<emphasis id="strong1006" effect="bold">
+Color
+
+</emphasis>
+ object has several attributes including attributes for 
+the red, green, 
+blue, and alpha values. For a 
+
+<emphasis id="strong1007" effect="bold">
+Color
+
+</emphasis>
+ object referred to by a variable named 
+
+<emphasis id="strong1008" effect="bold">
+obj
+
+</emphasis>
+, 
+those attribute values can be accessed as follows:
+
+</para>
+
+
+
+
+<code id="pre1006" display="block">red = obj.r
+green = obj.g
+blue = obj.b
+alpha = obj.a</code>
+
+
+
+
+<para id="p1030">
+That is the notation used in 
+
+<link id="a1049" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ to access and perform arithmetic with 
+the red, green, blue, and alpha values of the circle and the green filled 
+rectangle drawn in the upper right quadrant on the base surface. The code in 
+
+
+<link id="a1050" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ uses that notation to access and compute the blended color values for 
+the overlap between the circle and the green upper right quadrant. Those color 
+values are then used to create a 
+
+<emphasis id="strong1009" effect="bold">
+Color
+
+</emphasis>
+ object that is used to set the color of the lower right quadrant. 
+This causes the color of the lower right quadrant to track the overlap in the 
+upper right quadrant.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Draw_three_filled_rectangles_on_the_base_surface" effect="bold">
+
+Draw three 
+filled rectangles on the base surface
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1031">
+The code in 
+
+<link id="a1051" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ calls 
+
+
+<link id="a1052" url="http://www.pygame.org/docs/ref/draw.html#pygame.draw.rect">
+
+pygame.draw.rect
+
+</link>
+
+ 
+three times in succession to draw the three filled rectangles on the base 
+surface passing 
+
+<emphasis id="strong1010" effect="bold">
+Color
+
+</emphasis>
+ objects and 
+
+<emphasis id="strong1011" effect="bold">
+
+Rect
+
+</emphasis>
+ objects created earlier as parameters..
+
+</para>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1004">
+<row id="tr1008">
+
+
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Draw three filled rectangles on the base 
+surface.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1007" display="block">    pygame.draw.rect(baseSurf,upperLeftColor,upperLeftRect,0)
+    pygame.draw.rect(baseSurf,upperRightColor,upperRightRect,0)
+    pygame.draw.rect(baseSurf,lowerRightColor,lowerRightRect,0)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1032">
+The first parameter to 
+
+<emphasis id="strong1012" effect="bold">
+pygame.draw.rect
+
+</emphasis>
+ specifies the surface on which the rectangle is to be 
+drawn.
+
+</para>
+
+
+
+
+<para id="p1033">
+The second parameter specifies the color of the rectangle's border.
+
+</para>
+
+
+
+
+<para id="p1034">
+The third parameter specifies the location, width, and height of the 
+rectangle.
+
+</para>
+
+
+
+
+<para id="p1035">
+The fourth parameter specifies the width of the border. If this value is set 
+to zero, as is the case here, the rectangle is filled with the color specified by the second 
+parameter.
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Compute_the_alpha_value_for_the_circle" effect="bold">
+
+Compute the alpha value for 
+the circle
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+The code in 
+
+<link id="a1053" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ computes the alpha value that will be used to draw the 
+circle during the next iteration of the runtime loop. 
+
+<emphasis id="em1009" effect="italics">
+(The alpha value from 
+the previous iteration is used to compute the 
+
+<emphasis id="strong1013" effect="bold">
+Color
+
+</emphasis>
+ object for 
+the circle at the beginning of this iteration of the runtime loop in 
+
+<link id="a1054" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. 
+I should have put the code in 
+
+<link id="a1055" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ at the top 
+of the runtime loop just ahead of the code in 
+
+<link id="a1056" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ for better organization.)
+
+</emphasis>
+</para>
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1005">
+<row id="tr1010">
+
+
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6.
+
+</emphasis>
+
+ Compute the alpha value for the circle.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1008" display="block">    if alpha &lt;= (255 - alphaInc):
+        alpha += alphaInc #Increase alpha
+    else:
+        alpha = 0 #Reset alpha to zero</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Create_a_new_surface_with_a_format_that_contains_per_pixel_alphas" effect="bold">
+
+
+Create a new surface with a format that contains per pixel alphas
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1037">
+    The statement in 
+
+<link id="a1057" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ calls the
+
+
+<link id="a1058" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.convert_alpha">
+
+
+convert_alpha
+
+</link>
+
+ method of the
+
+
+<link id="a1059" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.convert">
+
+
+Surface
+
+</link>
+
+ class on the 
+
+<emphasis id="strong1014" effect="bold">
+baseSurf
+
+</emphasis>
+ object to create a new surface with 
+the same dimensions and a format that contains 
+
+<emphasis id="em1010" effect="italics">
+<emphasis id="strong1015" effect="bold">
+per pixel alphas
+
+</emphasis>
+</emphasis>
+. 
+In other words, each pixel in the new surface format has its own alpha value. 
+
+</para>
+
+
+
+
+<para id="p1038">
+    Apparently the pixel alpha
+    values are initially set to zero. Areas of the surface other than those on which 
+the circle is drawn are transparent allowing the colored rectangles on the 
+base surface to show through unchanged as shown in 
+
+<link id="a1060" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1006">
+<row id="tr1012">
+
+
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7.
+
+</emphasis>
+
+ Create a new surface with a format that 
+contains per pixel alphas.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1009" display="block">    mask = baseSurf.convert_alpha()
+    
+    """
+    #This is another way to create a surface with per pixel alpha enabled.
+    mask = pygame.Surface((WIDTH,HEIGHT),pygame.SRCALPHA)
+    """</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1039">
+The code inside the comment in 
+
+<link id="a1061" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ shows another way to create a
+
+
+<emphasis id="strong1016" effect="bold">
+Surface
+
+</emphasis>
+ object with a format that contains per pixel alphas. 
+With this approach, the 
+
+<emphasis id="strong1017" effect="bold">
+Surface
+
+</emphasis>
+ class constructor is called to create a 
+new surface with specified arbitrary dimensions and the flag
+
+
+<link id="a1062" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.convert">
+
+
+pygame.SRCALPHA
+
+</link>
+
+. It is the flag that causes the surface format to contain 
+per pixel alphas. Either approach will work in this program because the 
+dimensions of the new surface need to match the dimensions of the base surface.
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Draw_a_circle_on_the_mask" effect="bold">
+
+Draw a circle on the mask
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1040">
+The statement in 
+
+<link id="a1063" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ calls
+
+
+<link id="a1064" url="Draw%20a%20circle%20on%20the%20mask">
+
+pygame.draw.circle
+
+</link>
+
+ to draw a 
+circle on the mask passing an object and several variables that were created 
+earlier as parameters..
+
+</para>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1007">
+<row id="tr1014">
+
+
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8.
+
+</emphasis>
+
+ Draw a circle on the mask.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1010" display="block">    pygame.draw.circle(mask,circleColor,(WIDTH//2,HEIGHT//2),RADIUS,BORDERWIDTH)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1041">
+The first parameter to 
+
+<emphasis id="strong1018" effect="bold">
+pygame.draw.circle
+
+</emphasis>
+ specifies the 
+surface on which the circle is to be drawn.
+
+</para>
+
+
+
+
+<para id="p1042">
+The second parameter specifies the color 
+
+<emphasis id="em1011" effect="italics">
+(and transparency)
+
+</emphasis>
+ of the 
+circle's border.
+
+</para>
+
+
+
+
+<para id="p1043">
+The third parameter specifies the coordinates of the center of the circle.
+
+</para>
+
+
+
+
+<para id="p1044">
+The fourth parameter specifies the radius of the circle.
+
+</para>
+
+
+
+
+<para id="p1045">
+The fifth parameter specifies the width of the border. If the border width is 
+specified as zero, the circle will be filled with the border color and 
+transparency. However, unlike with the rectangles drawn earlier, the border 
+width for the circle is not set to zero for this program. This produces an 
+output that might technically be referred to as an
+annulus.
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="The_remainder_of_the_code" effect="bold">
+
+The remainder of the code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1046">
+The remainder of the code in the program is shown in 
+
+<link id="a1065" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+
+</para>
+
+
+
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1008">
+<row id="tr1016">
+
+
+
+<entry id="th1008">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9.
+
+</emphasis>
+
+ The remainder of the code.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1008">
+<row id="tr1017">
+<entry id="td1008">
+
+
+
+<code id="pre1011" display="block">    #Draw the mask on baseSurf.
+    baseSurf.blit(mask,(ORIGIN))
+
+    #Display baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1047">
+I have explained code like that shown in 
+
+<link id="a1066" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ in earlier modules. 
+Therefore, this code should not require an explanation beyond that provided by 
+the comments.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1048">
+I encourage you to copy the code from 
+
+<link id="a1067" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Execute the code and confirm 
+that you get results similar to those shown in 
+
+<link id="a1068" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1049">
+A complete listing of the program is provided in 
+
+<link id="a1069" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1019" effect="bold">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10.
+
+</emphasis>
+
+ Complete program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1012" display="block">"""
+File Transparency03.py
+An animated demonstration of per pixel alpha blending with a draw function.
+================================================================================
+"""
+import pygame #Import required library
+pygame.init() #Initialize imported pygame modules
+
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Transparency03.py") #Set the window caption
+FRAMERATE = 20 #Used to control the maximum frame rate.
+WIDTH = 200 #Width of output window
+HEIGHT = 200 #Height of output window
+RADIUS = WIDTH//2 #Radius of circle
+BORDERWIDTH = RADIUS//2 #Width of circle border
+ORIGIN = (0,0) #Location of the mask on the base surface
+alpha = 0 #Initial opacity of circle
+alphaInc = 1 #Variable used to change opacity of circle
+
+#Create and set the display mode on the base surface.
+baseSurf = pygame.display.set_mode([WIDTH,HEIGHT]) 
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Create some objects of type Rect to use later with pygame.draw.rect
+upperLeftRect = pygame.Rect(0,0,WIDTH/2,HEIGHT/2)
+upperRightRect = pygame.Rect(WIDTH/2,0,WIDTH/2,HEIGHT/2)
+lowerRightRect = pygame.Rect(WIDTH/2,HEIGHT/2,WIDTH/2,HEIGHT/2)
+
+#Create some color objects
+upperLeftColor = pygame.Color(0,0,255) #Upper left color
+upperRightColor = pygame.Color(0,255,0) #Upper right corner
+
+#Enter the runtime loop
+while not quit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of the runtime loop.
+
+    circleColor = pygame.Color(255,0,0,alpha) #Circle color
+
+    #Create a Color object that matches the color that results from blending
+    # the circle color with the color of the upper right rectangle
+    lowerRightColor = pygame.Color(
+           int(circleColor.r*circleColor.a/255+
+                   upperRightColor.r*(1-circleColor.a/255)),
+           int(circleColor.g*circleColor.a/255+
+                   upperRightColor.g*(1-circleColor.a/255)),
+           int(circleColor.b*circleColor.a/255+
+                   upperRightColor.b*(1-circleColor.a/255)))    
+    
+    #Draw some filled rectangles on baseSurf
+    pygame.draw.rect(baseSurf,upperLeftColor,upperLeftRect,0)
+    pygame.draw.rect(baseSurf,upperRightColor,upperRightRect,0)
+    pygame.draw.rect(baseSurf,lowerRightColor,lowerRightRect,0)
+    
+    #Compute alpha value for this iteration of the runtime loop.
+    if alpha &lt;= (255 - alphaInc):
+        alpha += alphaInc #Increase alpha
+    else:
+        alpha = 0 #Reset alpha to zero
+    
+    #Create a new surface with per pixel alpha enabled. Apparently pixel alpha
+    # values are initially zero.
+    mask = baseSurf.convert_alpha()
+    
+    """
+    #This is another way to create a surface with per pixel alpha enabled.
+    mask = pygame.Surface((WIDTH,HEIGHT),pygame.SRCALPHA)
+    """
+   
+    #Draw a  circle on the mask
+    pygame.draw.circle(mask,circleColor,(WIDTH//2,HEIGHT//2),RADIUS,BORDERWIDTH)
+   
+    #Draw the mask on baseSurf.
+    baseSurf.blit(mask,(ORIGIN))
+
+    #Display baseSurf
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1051">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1020" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1008" list-type="bulleted">
+
+					
+
+<item id="li1031">
+Module name: Itse1359-2235-Color-Part 4
+
+</item>
+
+
+					
+
+<item id="li1032">
+File: Itse1359-2235.htm
+
+
+</item>
+
+
+					
+
+<item id="li1033">
+Published: 01/31/16
+
+</item>
+
+
+
+
+<item id="li1034">
+Revised: 02/08/16
+
+</item>
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1021" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1052">
+<emphasis id="strong1022" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1053">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1054">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1055">
+<emphasis id="strong1023" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1056">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

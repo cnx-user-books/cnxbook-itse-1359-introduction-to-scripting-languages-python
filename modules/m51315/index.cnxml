@@ -1,0 +1,4711 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1020-Numbers</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51315</md:content-id>
+  <md:title>Itse1359-1020-Numbers</md:title>
+  <md:abstract>This module explains various aspects of numbers in Python.</md:abstract>
+  <md:uuid>26725c08-7eb9-456e-a9c2-861ace6b9980</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="Lets_Program">
+
+Let's program
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1004">
+<link id="a1004" target-id="Start_the_interactive_Python_environment_">
+
+Start the interactive Python environment 
+		
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="Program_comments">
+
+Program comments
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1006">
+<link id="a1006" target-id="How_useful_are_comments">
+
+How useful are comments? 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1007">
+<link id="a1007" target-id="A_Python_comment">
+
+A Python comment
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Using_the_interactive_mode">
+
+Using the interactive mode
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="What_is_that_..._prompt">
+
+What is that ... prompt? 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="The_sum_of_2_and_5">
+
+The sum of 2 and 5
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Input_and_output">
+
+Input and output
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+				
+
+<item id="li1012">
+<link id="a1012" target-id="What_was_the_input_in_this_case">
+
+What was the input in this case? 
+				
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1013">
+<link id="a1013" target-id="What_was_the_output">
+
+What was the output? 
+
+</link>
+
+
+				
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="Mixing_comments_and_expressions">
+
+Mixing comments and expressions
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Command_line_versus_GUI_">
+
+Command line versus GUI 
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Lets_get_technical_">
+
+Let's get technical
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Statement_ends_at_the_end_of_the_line_">
+
+Statement ends at the end of the line
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="Literal_values_and_variables">
+
+Literal values and variables
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1019">
+<link id="a1019" target-id="Operators">
+
+Operators
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1020">
+<link id="a1020" target-id="Operands">
+
+Operands
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Unary_and_binary_operators">
+
+Unary and binary operators
+
+</link>
+
+
+<list id="ul1008" list-type="bulleted">
+
+				
+
+<item id="li1022">
+<link id="a1022" target-id="Some_can_be_either">
+
+Some can be either
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="Some_arithmetic_operators_">
+
+Some arithmetic operators
+
+</link>
+
+
+			
+
+<list id="ul1009" list-type="bulleted">
+
+				
+
+<item id="li1024">
+<link id="a1024" target-id="Addition_subtraction_and_multiplication">
+
+Addition, subtraction, and multiplication
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1025">
+<link id="a1025" target-id="Division_">
+
+Division
+
+</link>
+
+ 
+
+</item>
+
+
+				
+
+<item id="li1026">
+<link id="a1026" target-id="Integer_division">
+
+Integer division
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1027">
+<link id="a1027" target-id="Do_you_remember_long_division">
+
+Do you remember long division? 
+				
+
+</link>
+
+ 
+
+</item>
+
+
+				
+
+<item id="li1028">
+<link id="a1028" target-id="The_modulus_operator">
+
+The modulus operator
+
+</link>
+
+
+				
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="The_order_of_operations">
+
+The order of operations
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1030">
+<link id="a1030" target-id="Operator_precedence_">
+
+Operator precedence 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1031">
+<link id="a1031" target-id="Grouping_terms_with_parentheses_">
+
+Grouping terms with parentheses
+
+</link>
+
+
+			
+
+<list id="ul1010" list-type="bulleted">
+
+				
+
+<item id="li1032">
+<link id="a1032" target-id="Forcing_addition_to_be_performed_first_">
+
+Forcing addition to be performed first 
+				
+
+</link>
+
+ 
+
+</item>
+
+
+				
+
+<item id="li1033">
+<link id="a1033" target-id="Forcing_multiplication_to_be_performed_first">
+
+Forcing multiplication to be performed first
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1034">
+<link id="a1034" target-id="Nested_parentheses_">
+
+Nested parentheses 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1035">
+<link id="a1035" target-id="Negative_integer_division_">
+
+Negative integer division 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1036">
+<link id="a1036" target-id="Complex_Numbers">
+
+Complex numbers
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1037">
+<link id="a1037" target-id="Programming_Errors">
+
+Programming errors
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1038">
+<link id="a1038" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. It explains various aspects of numbers in Python. 
+
+</para>
+
+
+
+
+<para id="p1001">
+I will 
+	start out by showing you how to use Python as a programmable calculator. In 
+	the process, I will introduce you to some programming concepts, such as 
+
+<emphasis id="em1001" effect="italics">
+
+	operators
+
+</emphasis>
+ that I will explain in a more formal way 
+	in future modules.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1002">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+while you are reading about them. 
+
+</para>
+
+
+
+
+<para id="p1003">
+<emphasis id="em1002" effect="italics">
+(Note to blind and visually 
+	impaired students: all of the Figures in this module are presented in plain 
+	text format and should be accessible using an audio screen reader or a 
+	braille display.)
+
+</emphasis>
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1011" list-type="bulleted">
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. IDLE GUI at startup. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1040" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. A Python comment.
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1041" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. The sum of 2 and 5.
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1042" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Mixing comments and expressions on the command line interface.
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1043" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Example prompts from The Python Tutorial.
+
+</item>
+
+
+		
+
+<item id="li1044">
+<link id="a1044" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. A Python addition operator.
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1045" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. Some arithmetic operators.
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Two division operators.
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Whole number quotient and remainder.
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+. A simple expression.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+. A simple expression in Python.
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+. Grouping terms with parentheses.
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+. Nested parentheses.
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+. Negative integer division.
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1053" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+. An error on the command-line interface.
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1054" target-id="Figure_16">
+
+Figure 16
+
+</link>
+
+. An error on the IDLE GUI interface.
+
+</item>
+
+
+
+
+	
+
+</list>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Lets_Program" effect="bold">
+
+Let's program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Start_the_interactive_Python_environment_" effect="bold">
+
+Start the interactive 
+Python environment 
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+The first thing that you need to do is to start the interactive programming 
+environment. If you have forgotten how to do that, see the earlier module titled
+
+
+<link id="a1055" url="http://cnx.org/contents/6aef4a8b-0205-480b-ad13-344a682d8688">
+
+Itse1359-1010-Getting Started
+
+</link>
+
+ 
+in
+	
+
+<link id="a1056" url="http://cnx.org/contents/96b34405-9562-406b-bafb-90c5fb70f39e">
+
+this 
+	book
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1005">
+You can start the interactive Python environment from the Windows 
+
+<emphasis id="em1003" effect="italics">
+Start
+
+</emphasis>
+ 
+menu by selecting one of the following:
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1055">
+IDLE (Python GUI)
+
+</item>
+
+
+	
+
+<item id="li1056">
+Python (command line).
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1006">
+Either way, the interactive programming environment should look something 
+like 
+
+<link id="a1057" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ when it starts running.
+
+</para>
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. IDLE GUI at startup.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+Python 3.4.1 (v3.4.1:c0e311e010fc, May 18 2014, 10:38:22) 
+[MSC v.1600 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more 
+information.
+&gt;&gt;&gt;
+</code>
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1007">
+The &gt;&gt;&gt; that you see on the last line is the Python interactive prompt, which 
+I will refer to simply as the prompt. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Program_comments" effect="bold">
+
+Program comments
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1008">
+Before we go any further, I need to introduce you to the concept of 
+
+<emphasis id="em1004" effect="italics">
+
+program comments
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1009">
+In programming jargon, a comment is text that you insert into the program 
+that is intended for human consumption only. Comments provide a quick and easy 
+form of documentation. They are ignored by the computer and are intended to 
+explain what you are doing. 
+
+</para>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="How_useful_are_comments" effect="bold">
+
+How useful are comments
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1010">
+Comments aren't terribly useful when doing interactive programming. 
+Presumably you already know what you are doing and don't need to explain it to 
+yourself using comments. 
+
+</para>
+
+
+
+
+<para id="p1011">
+However, comments are very useful when you are writing scripts that you will 
+store in files and use again later after you have forgotten how you did what you 
+did. 
+
+</para>
+
+
+
+
+<para id="p1012">
+In these modules, I will use comments occasionally to explain what I am doing 
+for your benefit, even in interactive mode. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="A_Python_comment" effect="bold">
+
+A Python comment
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1013">
+According to the 
+
+
+<link id="a1058" url="https://docs.python.org/3/reference/lexical_analysis.html#comments">
+
+Python Language Reference -- 2.1.3 Comments
+
+</link>
+
+: 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+"A comment starts with a hash character (#) 
+that is not part of a string literal, and ends at the end of the physical line. 
+A comment signifies the end of the logical line unless the implicit line joining 
+rules are invoked. Comments are ignored by the syntax; they are not tokens."
+
+</quote>
+
+
+
+
+<para id="p1014">
+<link id="a1059" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows a Python comment, taken from the Python command-line interface, 
+along with a new kind of prompt. 
+
+</para>
+
+
+	
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. A Python comment.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+&gt;&gt;&gt; # This is a comment
+...
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Using_the_interactive_mode" effect="bold">
+
+Using the interactive mode
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31003">
+<title>
+<emphasis id="What_is_that_..._prompt" effect="bold">
+
+What is that ... prompt
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1015">
+The interactive mode actually uses two different kinds of prompts. 
+
+</para>
+
+
+
+
+<list id="ul1013" list-type="bulleted">
+
+	
+
+<item id="li1057">
+One is &gt;&gt;&gt;
+
+</item>
+
+
+	
+
+<item id="li1058">
+The other is ...
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1016">
+I will explain the difference a little later For now, just pretend 
+like they both mean the same thing. That will suffice until we get into more 
+complicated material. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="The_sum_of_2_and_5" effect="bold">
+
+The sum of 2 and 5
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+Enter 2+5 at the prompt in the IDLE GUI interface and press the Enter key. You should see something 
+like 
+
+<link id="a1060" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ on your screen. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. The sum of 2 and 5.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+&gt;&gt;&gt; # This is a comment in Python GUI shell
+&gt;&gt;&gt; 2+5
+7
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Input_and_output" effect="bold">
+
+Input and output
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1018">
+We need to differentiate between input and output. Everything 
+that appears on a line with one of the prompts is input to the Python 
+interpreter. 
+
+<emphasis id="em1005" effect="italics">
+(You typed it, so you know that it is input.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1019">
+Everything that appears on a line without a prompt is output from the 
+interpreter. 
+
+<emphasis id="em1006" effect="italics">
+(You didn't type it. The interpreter produced it, so it was 
+output.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="What_was_the_input_in_this_case" effect="bold">
+
+What was the input in this case
+
+</emphasis>
+
+? 
+
+
+</title>
+
+
+
+
+<para id="p1020">
+Your input was the expression 2+5. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="What_was_the_output" effect="bold">
+
+What was the output
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1021">
+Python evaluated that expression and produced an output, which was the sum of 
+2 and 5, or 7. 
+
+</para>
+
+
+
+
+<para id="p1022">
+Then Python presented you with a new prompt to allow you to provide more 
+input. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Mixing_comments_and_expressions" effect="bold">
+
+Mixing comments and expressions
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1023">
+Now using the Python command-line window, try entering the comment, followed 
+by the expression that you see in 
+
+<link id="a1061" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, and 
+note the difference in the prompts as compared to 
+
+<link id="a1062" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. Mixing comments and expressions on the 
+				command line interface.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+&gt;&gt;&gt; # This is a comment in Python command-line interface
+... 2+5
+7
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1024">
+My only reason for showing you this at this time is to give you some 
+experience in mixing comments and expressions and to attempt to explain the 
+difference between the &gt;&gt;&gt; prompt and the ... prompt. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Command_line_versus_GUI_" effect="bold">
+
+Command line versus GUI 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1025">
+The text in 
+
+<link id="a1063" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ was produced using the 
+Python (command line) interface. I don't get exactly the same behavior 
+
+<emphasis id="em1007" effect="italics">
+(with 
+respect to prompts)
+
+</emphasis>
+ when I use the Python GUI interface. Rather, what I get is shown 
+in 
+
+<link id="a1064" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. 
+
+<emphasis id="em1008" effect="italics">
+(Note the missing ... prompt.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1026">
+The difference between the ... prompt and the &gt;&gt;&gt; prompt is discussed in 
+section 
+
+
+<link id="a1065" url="https://docs.python.org/3/tutorial/interpreter.html#interactive-mode">
+
+2.1.2. Interactive Mode
+
+</link>
+
+ of 
+
+
+<link id="a1066" url="https://docs.python.org/3/tutorial/index.html">
+
+The Python Tutorial
+
+</link>
+
+.
+ 
+
+<emphasis id="em1009" effect="italics">
+(Note that the tutorial is also accessible in a different format from 
+the Start/All Programs/Python 3.4 selection in Windows.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1027">
+Apparently the command-line interface creates the ... prompt when it thinks 
+that the next line is a continuation line. The example given in the tutorial is 
+shown in 
+
+<link id="a1067" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. 
+
+<emphasis id="em1010" effect="italics">
+(Don't be concerned if you don't understand the code in 
+
+<link id="a1068" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. 
+I will explain similar code in a future module.)
+
+</emphasis>
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Example prompts from 
+				The Python Tutorial.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+							
+
+<code id="pre1004" display="block">&gt;&gt;&gt; the_world_is_flat = True
+&gt;&gt;&gt; if the_world_is_flat:
+...     print("Be careful not to fall off!")
+...
+Be careful not to fall off!
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1028">
+Apparently for the case of 
+
+<link id="a1069" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, the system became confused by the 
+	comment and treated the line after the comment as a continuation line.
+
+</para>
+
+
+
+
+<para id="p1029">
+The IDLE GUI did not become confused in 
+
+<link id="a1070" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. I believe that it 
+accomplishes line continuation by automatically indenting the next line and no 
+continuation was required in either 
+
+<link id="a1071" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ or 
+
+<link id="a1072" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Lets_get_technical_" effect="bold">
+
+Let's get technical 
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1030">
+But not too technical. Computer programs are made up of statements. 
+
+</para>
+
+
+
+
+<para id="p1031">
+Statements are composed of expressions. 
+
+</para>
+
+
+
+
+<para id="p1032">
+<emphasis id="em1011" effect="italics">
+(Later we will learn that large Python programs are made up of smaller 
+programs called modules, which are made up of statements, which are composed of 
+expressions.) 
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h31008">
+<title>
+<emphasis id="Statement_ends_at_the_end_of_the_line_" effect="bold">
+
+Statement ends at the end 
+of the line 
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1033">
+In Python, a statement normally ends at the end of the line that contains it
+
+
+<emphasis id="em1012" effect="italics">
+(although there are exceptions to this rule)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1034">
+For the time being, suffice it to say that expressions are made up of 
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1059">
+literal values
+
+</item>
+
+
+	
+
+<item id="li1060">
+variables
+
+</item>
+
+
+	
+
+<item id="li1061">
+operators
+
+</item>
+
+
+	
+
+<item id="li1062">
+parentheses
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Literal_values_and_variables" effect="bold">
+
+Literal values and variables
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+Literal values are simply numbers that are included in an expression such as the 
+2 and the 5 shown in 
+
+<link id="a1073" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1036">
+I will defer a discussion of variables until a future module, and will 
+discuss operators and parentheses in the following paragraphs.
+
+</para>
+
+
+
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="Operators" effect="bold">
+
+Operators
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1037">
+If you have ever used a hand calculator, you already know what operators are. 
+The plus key on a hand calculator is an operator. The plus sign (+) in the expression shown in 
+
+
+<link id="a1074" target-id="Figure_6">
+
+Figure 
+6
+
+</link>
+
+ is also an operator.
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. A Python addition operator.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+							
+
+<code id="pre1005" display="block">&gt;&gt;&gt; 2+5
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<para id="p1038">
+In programming jargon, operators are said to operate on 
+
+<emphasis id="em1013" effect="italics">
+operands
+
+</emphasis>
+.. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="Operands" effect="bold">
+
+Operands
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+In 
+
+<link id="a1075" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, the 2 is the left operand and 
+the 5 is the right operand of the + operator. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="Unary_and_binary_operators" effect="bold">
+
+Unary and binary operators
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1040">
+Normally, operators are said to be either 
+
+<emphasis id="em1014" effect="italics">
+unary
+
+</emphasis>
+ or 
+
+<emphasis id="em1015" effect="italics">
+binary
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1041">
+A unary operator has only one operand while a binary operator has two 
+operands. 
+
+</para>
+
+
+
+
+<section id="h41002">
+<title>
+<emphasis id="Some_can_be_either" effect="bold">
+
+Some can be either
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1042">
+Some operators, such as the minus sign (-), can be either unary or binary 
+operators. 
+
+</para>
+
+
+
+
+<para id="p1043">
+In its unary mode with a single operand, a minus sign is usually a 
+
+<emphasis id="em1016" effect="italics">
+sign 
+changing
+
+</emphasis>
+ operator, while in its binary mode with two operands, a minus sign 
+is usually a subtraction operator. 
+
+</para>
+
+
+
+
+<para id="p1044">
+All of the operators discussed in this module are being used as binary 
+operators. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31013">
+<title>
+<emphasis id="Some_arithmetic_operators_" effect="bold">
+
+Some arithmetic operators 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1045">
+Python has numerous operators. You can find a complete list of operators in 
+the 
+
+
+<link id="a1076" url="https://docs.python.org/3/reference/lexical_analysis.html#operators">
+
+
+Python Language Reference
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1046">
+For the time being, we will concentrate on the follow arithmetic operators:
+
+
+</para>
+
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+	
+
+<item id="li1063">
+The addition operator, +
+
+</item>
+
+
+	
+
+<item id="li1064">
+The subtraction operator, -
+
+</item>
+
+
+	
+
+<item id="li1065">
+The multiplication operator, *
+
+</item>
+
+
+	
+
+<item id="li1066">
+The division operators, / and //
+
+</item>
+
+
+	
+
+<item id="li1067">
+The modulus operator, %
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h41003">
+<title>
+<emphasis id="Addition_subtraction_and_multiplication" effect="bold">
+
+Addition, subtraction, and 
+multiplication
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1047">
+<link id="a1077" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ shows some examples of using these 
+operators that probably won't present any surprises to you. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. Some arithmetic operators.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+&gt;&gt;&gt; 2+5
+7
+&gt;&gt;&gt; 2-5
+-3
+&gt;&gt;&gt; 2*5
+10
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1048">
+If you add 2 and 5, you get 7. If you subtract 5 from 2, the answer is -3. If 
+you multiply 2 by 5, you get 10 
+
+</para>
+
+
+
+
+</section>
+<section id="h41004">
+<title>
+<emphasis id="Division_" effect="bold">
+
+Division 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1049">
+Division is a bit more complicated. In its early days, Python had a single division operator (/) that behaved 
+differently depending on the types of its operands. It behaved in a manner similar to 
+the same division operator in Java 
+and C++. 
+
+</para>
+
+
+
+
+<para id="p1050">
+Somewhere along the way, a second division operator (//) was added to 
+the language and the behavior of the original operator (/) was changed. As a result, 
+the behavior is now quite a bit different from Java and C++. Take a look at 
+
+
+<link id="a1078" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. Two division operators.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+&gt;&gt;&gt; 2/5
+0.4
+&gt;&gt;&gt; 2.0/5
+0.4
+&gt;&gt;&gt; 2//5
+0
+&gt;&gt;&gt; 2.0//5
+0.0
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1051">
+Originally, 
+
+<emphasis id="em1017" effect="italics">
+(in the early days of python)
+
+</emphasis>
+ the division operation shown 
+	on the first line in 
+
+<link id="a1079" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ would have 
+	yielded a value of 0. 
+
+<emphasis id="em1018" effect="italics">
+(Note that both operands are integers with no 
+	decimal point.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1052">
+The second division operation 
+
+<emphasis id="em1019" effect="italics">
+(note the decimal 
+	point in the numerator)
+
+</emphasis>
+ would have yielded a value of 0.4 just like your 
+	hand calculator. The new division operator shown in the last two division 
+	operations did not exist.
+
+</para>
+
+
+
+
+<para id="p1053">
+Now the behavior of the division operator consisting of a single slash 
+character (/) has been modified to produce a decimal fraction regardless of 
+whether its operands are integers or are values containing a decimal point.
+
+</para>
+
+
+
+
+<para id="p1054">
+The new division operator consisting of two slash characters (//) produces 
+the results shown in the last two division operations in 
+
+<link id="a1080" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h41005">
+<title>
+<emphasis id="Integer_division" effect="bold">
+
+Integer division
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1055">
+You probably won't see anything unusual in the second division operation in 
+
+
+<link id="a1081" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ and you may not see anything unusual in the first division operation in 
+
+
+<link id="a1082" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ 
+
+<emphasis id="em1020" effect="italics">
+(unless you are an experienced Java or C++ programmer)
+
+</emphasis>
+. 
+However, the "integer division" shown in the third division operation in 
+
+<link id="a1083" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ 
+probably merits an explanation.
+
+</para>
+
+
+
+
+<para id="p1056">
+In this case, we are dividing the integer 
+2 by the integer 5 producing an integer result. 
+
+</para>
+
+
+
+
+<para id="p1057">
+Normally, a hand calculator would tell you that the answer is 0.4, but that 
+is not an integer result. Rather, it is a decimal fraction. 
+
+</para>
+
+
+
+
+<para id="p1058">
+As you can see in 
+
+<link id="a1084" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, Python tells you 
+that the result of dividing the integer 2 by the integer 5 using the // division 
+operator is 0. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41006">
+<title>
+<emphasis id="Do_you_remember_long_division" effect="bold">
+
+Do you remember long division
+
+</emphasis>
+
+? 
+
+
+</title>
+
+
+
+
+<para id="p1059">
+Think back to when your second grade teacher taught you how to do 
+long division with whole numbers. She told you that if you divide 2 by 5, you 
+get a quotient of 0 and a remainder of 5. Or, if you divide 23 by 4, you get a 
+quotient of 5 and a remainder of 3. That is what we are talking about here. The 
+third division operation in 
+
+<link id="a1085" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ produces a quotient of 0.
+
+</para>
+
+
+
+
+</section>
+<section id="h41007">
+<title>
+<emphasis id="The_modulus_operator" effect="bold">
+
+The modulus operator
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1060">
+And that brings us to the modulus operator (%). 
+
+</para>
+
+
+
+
+<para id="p1061">
+Enter the code shown in 
+
+<link id="a1086" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. 
+
+
+<emphasis id="em1021" effect="italics">
+(You don't need to enter the comments. They are there to explain what is going 
+on.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9
+
+</emphasis>
+
+. Whole number quotient and remainder.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+&gt;&gt;&gt; 23//4 #get integer quotient
+5
+&gt;&gt;&gt; 23%4 #get remainder
+3
+&gt;&gt;&gt; 23.0//4 #get quotient
+5.0
+&gt;&gt;&gt; 23.0%4 #get remainder
+3.0
+&gt;&gt;&gt;  
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+<para id="p1062">
+It is probably safe to say that the purpose of the // division operator is to 
+produce a whole number quotient 
+
+<emphasis id="em1022" effect="italics">
+(no digits to the right of the decimal point 
+even if the decimal point is showing as in the last operation in
+
+
+<link id="a1087" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1063">
+The purpose of the modulus operator is to produce the remainder resulting 
+from a division. 
+
+</para>
+
+
+
+
+<para id="p1064">
+As you can see from the example in 
+
+<link id="a1088" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+, both division operations using 
+the // division operator produced the whole number quotient of 5, and both 
+modulus operations produced the whole number remainder of 3.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31014">
+<title>
+<emphasis id="The_order_of_operations" effect="bold">
+
+The order of operations
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1065">
+What is the result of evaluating the expression shown in
+
+
+<link id="a1089" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ on a hand calculator? 
+
+</para>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Figure_10" effect="bold">
+
+Figure 10
+
+</emphasis>
+
+. A simple expression.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">
+3+5*4 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1066">
+Try it on your hand calculator. 
+
+<emphasis id="em1023" effect="italics">
+(You will probably need to use an X instead 
+of an * to indicate multiplication.)
+
+</emphasis>
+ My hand calculator gives an answer of 32.
+
+
+</para>
+
+
+
+
+<para id="p1067">
+Now try it with Python and you should get the result shown in
+
+
+<link id="a1090" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Figure_11" effect="bold">
+
+Figure 11
+
+</emphasis>
+
+. A simple expression in Python.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">
+&gt;&gt;&gt; 3+5*4
+23
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+<para id="p1068">
+Oops! This answer doesn't match the answer produced by my hand calculator, and I'll 
+bet that it doesn't match your calculator either unless you are using a fancy 
+scientific calculator. 
+
+</para>
+
+
+
+
+<para id="p1069">
+The answer depends on the order in which you perform the various arithmetic 
+operations. Ordinary hand calculators usually do the arithmetic in the order 
+that the terms are fed into the keyboard. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31015">
+<title>
+<emphasis id="Operator_precedence_" effect="bold">
+
+Operator precedence 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1070">
+However, most computer programming systems, including Python, use a 
+precedence system to decide which operations to perform first, which operations 
+to perform second, etc. 
+
+</para>
+
+
+
+
+<para id="p1071">
+I'm not going to go into the Python precedence system in detail. 
+
+<emphasis id="em1024" effect="italics">
+(If you 
+are interested in the order of precedence of all the operators, you can find a 
+precedence table in 
+
+</emphasis>
+
+
+
+<link id="a1091" url="https://docs.python.org/3/reference/expressions.html#operator-precedence">
+
+
+
+
+<emphasis id="em1025" effect="italics">
+Python Language Reference -- 6.15. Operator precedence
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1026" effect="italics">
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1072">
+Rather, I am going to show you how to group terms using parentheses so that 
+you can control the order of operations without worrying about the precedence 
+system. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="Grouping_terms_with_parentheses_" effect="bold">
+
+Grouping terms with parentheses 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1073">
+The Python code fragment in 
+
+<link id="a1092" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ shows 
+how I can produce both results simply by grouping terms using parentheses. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1011" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1011">
+
+			
+
+<row id="tr1022">
+
+				
+
+<entry id="th1011">
+<emphasis id="Figure_12" effect="bold">
+
+Figure 12
+
+</emphasis>
+
+. Grouping terms with parentheses.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1011">
+
+			
+
+<row id="tr1023">
+
+				
+
+<entry id="td1011">
+
+
+
+<code id="pre1011" display="block">
+&gt;&gt;&gt; (3+5)*4 # do addition first
+32
+&gt;&gt;&gt; 3+(5*4) # do multiplication first, default
+23
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+<para id="p1074">
+The first expression produces 32 as produced by the hand calculator. The 
+second expression produces 23 as produced by the earlier Python expression. 
+
+</para>
+
+
+
+
+<para id="p1075">
+A Python expression is evaluated by first evaluating each of the 
+sub-expressions inside the parentheses and then using those values to complete 
+the evaluation. 
+
+</para>
+
+
+
+
+<section id="h41008">
+<title>
+<emphasis id="Forcing_addition_to_be_performed_first_" effect="bold">
+
+Forcing addition to be performed first 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1076">
+In the first expression, the code in 
+
+<link id="a1093" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ forced Python to perform the addition first by 
+placing the addition inside the parentheses. This produced an intermediate value 
+of 8 when the sub-expression inside the parentheses was evaluated. The remaining 
+part of the overall expression was then evaluated by multiplying the 
+intermediate value by 4, producing a result of 32. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41009">
+<title>
+<emphasis id="Forcing_multiplication_to_be_performed_first" effect="bold">
+
+Forcing multiplication to be performed first
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1077">
+In the second expression, the code in 
+
+<link id="a1094" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ forced Python to perform the multiplication first 
+
+
+<emphasis id="em1027" effect="italics">
+(which it does anyway by default, but the parentheses make that more obvious)
+
+</emphasis>
+. 
+This produced an intermediate value of 20. The remaining part of the overall 
+expression was then evaluated by adding the intermediate value to 3 producing an 
+output of 23. 
+
+</para>
+
+
+
+
+<para id="p1078">
+Hopefully, you get the picture. By using parentheses to group the terms in an 
+expression, you have total control over the order in which the arithmetic 
+operations are performed, without having to memorize a precedence table. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41010">
+<title>
+<emphasis id="Nested_parentheses_" effect="bold">
+
+Nested parentheses 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1079">
+Parentheses can be, and often are nested to provide greater control over the 
+order of the operations as shown in 
+
+<link id="a1095" target-id="Figure_13">
+
+Figure 13
+
+</link>
+
+.
+
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1012" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1012">
+
+			
+
+<row id="tr1024">
+
+				
+
+<entry id="th1012">
+<emphasis id="Figure_13" effect="bold">
+
+Figure 13
+
+</emphasis>
+
+. Nested parentheses.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1012">
+
+			
+
+<row id="tr1025">
+
+				
+
+<entry id="td1012">
+
+
+
+<code id="pre1012" display="block">
+&gt;&gt;&gt; (3+(5*4))*14 # nested parentheses
+322
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1080">
+In this case, Python evaluates the expressions inside the innermost 
+parentheses first, and then works from the inside out evaluating each pair of 
+parentheses along the way. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31017">
+<title>
+<emphasis id="Negative_integer_division_" effect="bold">
+
+Negative integer division 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1081">
+When I learned to do long division in the second grade, I didn't know about 
+positive and negative numbers yet, so I didn't learn about remainders when one 
+of the operands is negative and the other is positive. I suspect that you didn't 
+either. 
+
+</para>
+
+
+
+
+<para id="p1082">
+<link id="a1096" target-id="Figure_14">
+
+Figure 14
+
+</link>
+
+ shows how negative integer division 
+and modulus works in Python. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1013" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1013">
+
+			
+
+<row id="tr1026">
+
+				
+
+<entry id="th1013">
+<emphasis id="Figure_14" effect="bold">
+
+Figure 14
+
+</emphasis>
+
+. Negative integer division.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1013">
+
+			
+
+<row id="tr1027">
+
+				
+
+<entry id="td1013">
+
+
+
+<code id="pre1013" display="block">
+&gt;&gt;&gt; 7 // -3
+-3
+&gt;&gt;&gt; 7 % -3
+-2
+&gt;&gt;&gt; 7 // 3
+2
+&gt;&gt;&gt; 7 % 3
+1
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+
+<para id="p1083">
+You may find these results surprising. I'm not going to try to explain it. I just want to make you aware that the 
+behavior of integer division and integer modulus is different when the operands 
+have different signs. I will leave it as "an exercise for the student" to think 
+about this and come to a mental reconciliation with the facts as presented here.
+
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Complex_Numbers" effect="bold">
+
+Complex numbers
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1084">
+Python also provides a significant level of support for doing arithmetic with 
+complex numbers. Since this is a very specialized area, which is probably of 
+interest to only a small percentage of potential Python users, I'm not going to 
+provide any of the details. If this is something that interests you, see 
+
+<link id="a1097" url="https://docs.python.org/3/library/cmath.html">
+
+Standard Library -- Mathematical functions for complex numbers
+
+</link>
+
+ 
+for more information.
+
+</para>
+
+
+
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Programming_Errors" effect="bold">
+
+
+</emphasis>
+
+Programming errors
+
+</title>
+
+
+
+
+<para id="p1085">
+Sometimes, you may make an error and enter an expression that can't be 
+evaluated. In this case, you will get an error message. A typical error message 
+that was produced by the command-line interface is shown in 
+
+<link id="a1098" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1014" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1014">
+
+			
+
+<row id="tr1028">
+
+				
+
+<entry id="th1014">
+<emphasis id="Figure_15" effect="bold">
+
+Figure 15
+
+</emphasis>
+
+. An error on the command-line interface.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1014">
+
+			
+
+<row id="tr1029">
+
+				
+
+<entry id="td1014">
+
+
+
+<code id="pre1014" display="block">
+&gt;&gt;&gt; 3 + 5a
+File "&lt;stdin&gt;", line 1
+3 + 5a
+     ^
+SyntaxError: invalid syntax
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1086">
+Note that the IDLE GUI interface doesn't provide as much information as 
+	the command-line interface for the same error. Only the 
+
+<emphasis id="em1028" effect="italics">
+SyntaxError
+
+</emphasis>
+ message 
+	appears on the IDLE GUI interface as shown in 
+
+<link id="a1099" target-id="Figure_16">
+
+Figure 16
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1015" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1015">
+
+			
+
+<row id="tr1030">
+
+				
+
+<entry id="th1015">
+<emphasis id="Figure_16" effect="bold">
+
+Figure 16
+
+</emphasis>
+
+. An error on the IDLE GUI interface.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1015">
+
+			
+
+<row id="tr1031">
+
+				
+
+<entry id="td1015">
+
+
+
+<code id="pre1015" display="block">
+&gt;&gt;&gt; 3 + 5a
+SyntaxError: invalid syntax
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1087">
+Not shown here, however, is the fact that the 
+
+<emphasis id="strong1000" effect="bold">
+5a
+
+</emphasis>
+ is highlighted with a red 
+	background in the GUI interface. Also, the error message is displayed in 
+	red.
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<para id="p1088">
+Referring back to 
+
+<link id="a1100" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+, this error message means that the Python interpreter doesn't know 
+how to add the value 3 to the value 5a. I will discuss error messages in more 
+detail in a future module. I just wanted to show you a programming error 
+here at the beginning. 
+
+<emphasis id="em1029" effect="italics">
+(Note the ^ character in 
+
+<link id="a1101" target-id="Figure_15">
+
+Figure 15
+
+</link>
+
+ pointing upward to the 
+"a" 
+character. This is a pointer to the source of the error.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1089">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1001" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1016" list-type="bulleted">
+
+					
+
+<item id="li1068">
+Module name: Itse1359-1020-Numbers
+
+</item>
+
+
+					
+
+<item id="li1069">
+File: Itse1359-1020.htm
+
+
+</item>
+
+
+					
+
+<item id="li1070">
+Published: 10/14/14
+
+</item>
+
+
+					
+
+<item id="li1071">
+Revised: 03/26/15
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1002" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1090">
+<emphasis id="strong1003" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1091">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1092">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1093">
+<emphasis id="strong1004" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1094">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,4845 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2215-Structure of a Pygame Program</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52499</md:content-id>
+  <md:title>Itse1359-2215-Structure of a Pygame Program</md:title>
+  <md:abstract>This module explains the polling pattern often used for game or simulation programs.</md:abstract>
+  <md:uuid>591a3e51-708a-45bb-819f-642595814467</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="The_simple_fall_through_pattern">
+
+The simple fall through pattern
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_eventdriven_pattern">
+
+The event-driven pattern
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_polling_pattern">
+
+The polling pattern
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1008">
+<link id="a1008" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Import_required_libraries">
+
+Import required libraries
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="Initialize_everything_that_needs_to_be_initialized">
+
+Initialize everything that needs to be initialized
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="Initialize_imported_pygame_modules">
+
+Initialize imported pygame modules
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="Initialize_color_constants">
+
+Initialize color constants
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1013">
+
+			
+
+<link id="a1013" target-id="Initialize_control_variable_used_for_termination_by_the_user">
+
+Initialize control variable used for termination by the user
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1014">
+
+			
+
+<link id="a1014" target-id="Initialize_control_variable_used_to_determine_colors_of_background_and_border">
+
+Initialize control variable used to determine colors of background and border
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Set_the_window_caption">
+
+Set the window caption
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Create_objects_that_will_be_used_by_the_program">
+
+Create objects that will be used by the program
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Create_the_display_Surface_object">
+
+Create the display Surface object
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1018">
+<link id="a1018" target-id="Create_an_object_to_help_track_time">
+
+Create an object to help track time
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1019">
+
+		
+
+<link id="a1019" target-id="Enter_the_runtime_loop_and_continue_looping_until_a_quit_signal_is_received">
+
+Enter the runtime loop and continue looping until a "quit" signal is received
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1020">
+
+			
+
+<link id="a1020" target-id="Get_user_inputs_for_this_iteration_of_the_runtime_loop">
+
+Get user inputs for this iteration of the runtime loop
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1021">
+
+			
+
+<link id="a1021" target-id="Get_state_of_internal_control_structures_for_this_iteration_of_the_runtime_loop">
+
+Get state of internal control structures for this iteration of the runtime loop
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+
+			
+
+<link id="a1022" target-id="Execute_the_program_logic_based_on_the_state_of_internal_control_structures">
+
+Execute the program logic based on the state of internal control structures
+
+</link>
+
+
+<list id="ul1008" list-type="bulleted">
+
+				
+
+<item id="li1023">
+
+				
+
+<link id="a1023" target-id="Set_background_and_border_colors_on_the_basis_of_the_random_number">
+
+Set background and border colors on the basis of the random number
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1024">
+<link id="a1024" target-id="Fill_display_Surface_object_with_backgroundColor">
+
+Fill display Surface object with backgroundColor
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1025">
+
+				
+
+<link id="a1025" target-id="Draw_a_rectangle_on_the_display_Surface_object_with_borderColor">
+
+Draw a rectangle on the display Surface object with borderColor
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1026">
+<link id="a1026" target-id="Display_the_new_state_of_the_program">
+
+Display the new state of the program
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1027">
+<link id="a1027" target-id="Deal_with_frame_rate_control">
+
+Deal with frame rate 
+			control
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="Do_any_required_cleanup_and_terminate_the_program">
+
+Do any required cleanup and terminate the program
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1029">
+<link id="a1029" target-id="Other_observations">
+
+Other observations
+
+</link>
+
+
+<list id="ul1009" list-type="bulleted">
+
+		
+
+<item id="li1030">
+<link id="a1030" target-id="The_location_of_the_origin">
+
+The location of the origin
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1031">
+<link id="a1031" target-id="The_minimize_maximize_and_quit_buttons">
+
+The minimize, maximize, and quit buttons
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1032" target-id="The_appearance_of_the_display_window">
+
+The appearance of the display window
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1033">
+<link id="a1033" target-id="A_partially_covered_display_window">
+
+A partially covered display window
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1034">
+<link id="a1034" target-id="Uncovering_the_display_window">
+
+Uncovering the display window
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1035">
+<link id="a1035" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1036">
+<link id="a1036" target-id="Complete_program_listings">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1037">
+<link id="a1037" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1010" list-type="bulleted">
+
+		
+
+<item id="li1038">
+<link id="a1038" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Pseudo code for a polling framework. 
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Figure_2">
+
+Figure 2.
+
+</link>
+
+ Typical operations inside the runtime loop. 
+
+</item>
+
+
+		
+
+<item id="li1040">
+<link id="a1040" target-id="Figure_3">
+
+Figure 3.
+
+</link>
+
+ Program output for one state. 
+
+</item>
+
+
+		
+
+<item id="li1041">
+<link id="a1041" target-id="Figure_4">
+
+Figure 4.
+
+</link>
+
+ Program output for a different state. 
+
+</item>
+
+
+
+
+
+<item id="li1042">
+<link id="a1042" target-id="Figure_5">
+
+Figure 5.
+
+</link>
+
+ The origin of the display window. 
+
+</item>
+
+
+
+
+<item id="li1043">
+<link id="a1043" target-id="Figure_6">
+
+Figure 6.
+
+</link>
+
+ The appearance of the display window. 
+
+</item>
+
+
+
+
+<item id="li1044">
+<link id="a1044" target-id="Figure_7">
+
+Figure 7.
+
+</link>
+
+ A partially covered display window. 
+
+</item>
+
+
+
+
+<item id="li1045">
+<link id="a1045" target-id="Figure_8">
+
+Figure 8.
+
+</link>
+
+ Uncovering the display window. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1011" list-type="bulleted">
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ Import required libraries.
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Initialize everything that needs to be initialized. 
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ Create objects that will be used by the program.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ Enter the runtime loop and continue looping until a "quit" signal is received.
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Get user inputs for this iteration of the runtime loop.
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Listing_6">
+
+Listing 6.
+
+</link>
+
+ Get state of internal control structures for this iteration of the runtime loop.
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" target-id="Listing_7">
+
+Listing 7.
+
+</link>
+
+ Execute the program logic based on the state of internal control structures.
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1053" target-id="Listing_8">
+
+Listing 8.
+
+</link>
+
+ Display the new state of the program.
+
+</item>
+
+
+		
+
+<item id="li1054">
+<link id="a1054" target-id="Listing_9">
+
+Listing 9.
+
+</link>
+
+ Deal with frame rate control by implementing a delay that does not use much cpu resource.
+
+</item>
+
+
+		
+
+<item id="li1055">
+<link id="a1055" target-id="Listing_10">
+
+Listing 10.
+
+</link>
+
+ Having exited the runtime loop, do any required cleanup and terminate the program.
+
+</item>
+
+
+		
+
+<item id="li1056">
+<link id="a1056" target-id="Listing_11">
+
+Listing 11.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+The structure of a computer program usually takes on one of several familiar patterns. 
+There are many patterns and many variations on each pattern. Three common 
+patterns are described below.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_simple_fall_through_pattern" effect="bold">
+
+The simple fall through pattern
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+One such pattern is the 
+
+<emphasis id="em1001" effect="italics">
+"simple fall through"
+
+</emphasis>
+ pattern often used 
+for teaching programming to beginning programming students. With this pattern, 
+the program starts, does something, and then terminates. In other words, it 
+
+
+<emphasis id="em1002" effect="italics">
+"falls through"
+
+</emphasis>
+ the code performing some required action 
+
+<emphasis id="em1003" effect="italics">
+(such as printing a 
+tax table)
+
+</emphasis>
+ along the way.
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_eventdriven_pattern" effect="bold">
+
+The event-driven pattern
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1004">
+This is the pattern commonly used for programs such as spread sheets, word 
+processors, inventory control programs, and other programs that are expected to 
+run for long periods of time with frequent periods during which the program is 
+idle. This type of program lends itself to having many programs running 
+concurrently on a single computer because it consumes minimal cpu resources 
+when idle.
+
+</para>
+
+
+
+
+<para id="p1005">
+This type of program typically start up, does some initialization, and then 
+goes to sleep waiting for the user to create an event such asa 
+
+<emphasis id="em1004" effect="italics">
+key press
+
+</emphasis>
+, 
+a 
+
+<emphasis id="em1005" effect="italics">
+mouse click
+
+</emphasis>
+, etc. When an event happens, the program wakes up, services the 
+event, and then goes back to sleep. As mentioned above, while sleeping, the 
+program consumes very little in the way of cpu resources allowing those 
+resources to be used by other programs.
+
+</para>
+
+
+
+
+<para id="p1006">
+Overall program control during idle periods is handled behind the scenes 
+and out of sight of the programmer. In particular, the programmer doesn't write 
+code to determine if an event has happened. Instead, the program is 
+automatically notified when an event happens and the programmer writes the code 
+required to service the event. If the programmer isn't interested in a 
+particular type of event, a service method is not written for that event type 
+and it is ignored with no further effort on the part of the programmer.
+
+</para>
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_polling_pattern" effect="bold">
+
+The polling pattern
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+This pattern is often used for programs that are intended to be very active 
+from start to finish such as games and simulations. Programs of this sort may 
+not be intended to 
+
+<emphasis id="em1006" effect="italics">
+"play nicely and share cpu resources"
+
+</emphasis>
+ with other 
+programs running concurrently on the same computer.
+
+</para>
+
+
+
+
+<para id="p1008">
+With this pattern, it is the responsibility of the programmer to "poll" the 
+state of input devices and internal control structures to determine if something 
+interesting has happened and then to take appropriate action when something 
+interesting does happen. It is also the responsibility of the programmer to 
+exercise some control over the amount of cpu resources consumed by the 
+program. The programmer often has the ability to starve other programs of 
+cpu resources in order to improve the performance of his or her program.
+
+</para>
+
+
+
+
+<para id="p1009">
+<emphasis id="strong1001" effect="bold">
+Pygame
+
+</emphasis>
+ programs generally fall in this category. Also, 
+programs written with the XNA Game Studio, Allegro, Dark GDK, Slick2D, and many 
+other frameworks also fall in this category.
+
+</para>
+
+
+
+
+<para id="p1010">
+Although there are many variations and many degrees of sophistication among 
+the frameworks, the overall structure of such frameworks typically looks something like the 
+pseudo code shown in 
+
+<link id="a1057" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+<entry id="th1000">
+
+
+
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Pseudo code for a polling framework.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+		
+
+<list id="ul1012" list-type="bulleted">
+
+			
+
+<item id="li1057">
+Start
+
+</item>
+
+
+			
+
+<item id="li1058">
+Import required libraries.
+
+</item>
+
+
+			
+
+<item id="li1059">
+Load resources such as sound and image files.
+
+</item>
+
+
+			
+
+<item id="li1060">
+Define classes, methods, and functions that will be used by the 
+			program.
+
+</item>
+
+
+
+			
+
+<item id="li1061">
+Initialize everything that needs to be initialized.
+
+</item>
+
+
+			
+
+<item id="li1062">
+Create objects that will be used by the program.
+
+</item>
+
+
+			
+
+<item id="li1063">
+Enter the runtime loop and continue looping until a "quit" 
+			signal is received.
+
+<list id="ul1013" list-type="bulleted">
+
+				
+
+<item id="li1064">
+Get user inputs for this iteration of the runtime loop.
+
+</item>
+
+
+				
+
+<item id="li1065">
+Get states of internal control structures for this iteration 
+				of the runtime loop.
+
+</item>
+
+
+				
+
+<item id="li1066">
+Execute the program logic based on the input values and the 
+				state of internal control structures.
+
+</item>
+
+
+				
+
+<item id="li1067">
+Display the new state of the program. 
+
+</item>
+
+
+				
+
+<item id="li1068">
+Deal with frame rate control if required by the framework. 
+				Then either start a new iteration or exit the runtime loop.
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1069">
+Having exited the runtime loop, do any required cleanup and terminate 
+			the program - Quit.
+
+</item>
+
+
+		
+
+</list>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1011">
+The preliminary operations prior to entering the runtime loop vary widely 
+from one program to the next. However, most game and simulation programs will 
+implement the five operations shown in 
+
+<link id="a1058" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ 
+
+<emphasis id="em1007" effect="italics">
+(and possibly other 
+operations as well)
+
+</emphasis>
+ inside the runtime loop.
+
+</para>
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+<entry id="th1001">
+
+
+
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2.
+
+</emphasis>
+
+ Typical operations inside the runtime loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+		
+
+<list id="ol1000" list-type="enumerated">
+
+			
+
+<item id="li1070">
+Get user inputs for this iteration of the runtime loop.
+
+</item>
+
+
+			
+
+<item id="li1071">
+Get states of internal control structures for this iteration 
+of the runtime loop.
+
+</item>
+
+
+			
+
+<item id="li1072">
+Execute the program logic based on the input values and the 
+state of internal control structures.
+
+</item>
+
+
+			
+
+<item id="li1073">
+Display the new state of the program. 
+
+</item>
+
+
+			
+
+<item id="li1074">
+Deal with frame rate control if required by the framework. Then 
+			either start a new iteration or exit the runtime loop.
+
+</item>
+
+
+		
+
+</list>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+	
+	
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1012">
+The code in 
+
+<link id="a1059" target-id="Listing_11">
+
+Listing 11
+
+</link>
+
+ provides a simple illustration of the five 
+	operations listed in 
+
+<link id="a1060" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. The comments in the program generally 
+	coincide with the operations listed in 
+
+<link id="a1061" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1013">
+The program produces the outputs shown in 
+
+<link id="a1062" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ and 
+
+<link id="a1063" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ at different 
+points in time.
+
+</para>
+
+
+
+
+
+<para id="p1014">
+<emphasis id="strong1002" effect="bold">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Program output for one state.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1015">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2215-03.jpg" width="257" height="184"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1016">
+<emphasis id="strong1003" effect="bold">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4.
+
+</emphasis>
+
+ Program output for a different state.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+<media id="media1001" alt="Missing image." display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-2215-04.jpg" width="257" height="184"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1018">
+As shown in 
+
+<link id="a1064" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ and 
+
+<link id="a1065" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, the output switches between a rectangle with a red border on a green background
+and a rectangle with a green border on a red background.
+
+The switch occurs randomly on the basis of a random number and can occur as
+frequently as once per second.
+
+</para>
+
+
+
+
+<para id="p1019">
+I will break this program down and explain it in fragments.
+
+</para>
+
+
+
+
+<section id="h21004">
+<title>
+<emphasis id="Import_required_libraries" effect="bold">
+
+Import required libraries
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1020">
+<link id="a1066" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ shows that portion of the program that imports the required 
+libraries.
+
+</para>
+
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ Import required libraries.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1000" display="block">import random
+import pygame</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1021">
+The 
+
+<emphasis id="strong1004" effect="bold">
+random
+
+</emphasis>
+ module is imported for the purpose of generating 
+a random sequence of 0 and 1 values. These values are used to determine the color 
+of the border and the background that will be displayed during each iteration of 
+the runtime loop.
+
+</para>
+
+
+
+
+<para id="p1022">
+The 
+
+<emphasis id="strong1005" effect="bold">
+python
+
+</emphasis>
+ library is imported to provide a variety of 
+capabilities to the program.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Initialize_everything_that_needs_to_be_initialized" effect="bold">
+
+Initialize everything that needs to be 
+initialized
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+The code in 
+
+<link id="a1067" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ initializes everything that needs to be initialized.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Initialize everything that needs to be initialized.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1001" display="block">#Initialize imported pygame modules
+pygame.init()
+
+#Initialize color constants
+GREEN    = ( 0, 255, 0)
+RED      = ( 255, 0, 0)
+
+#Initialize control variable used for termination by the user.
+quit = False
+
+#Initialize control variable used to determine colors of background and border.
+randomNumber = 0;
+
+#Set the window caption
+pygame.display.set_caption("TestProgram")</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Initialize_imported_pygame_modules" effect="bold">
+
+Initialize imported pygame 
+modules
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1024">
+<link id="a1068" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ begins by initializing the imported 
+
+<emphasis id="strong1006" effect="bold">
+pygame
+
+</emphasis>
+ 
+modules. This statement, or something similar is required for all programs that 
+use the 
+
+<emphasis id="strong1007" effect="bold">
+pygame
+
+</emphasis>
+ library.
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Initialize_color_constants" effect="bold">
+
+Initialize color constants
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1025">
+After that, the code in 
+
+<link id="a1069" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ initializes the values for two constants 
+that represent the colors GREEN and RED. I will explain more about how 
+
+<emphasis id="strong1008" effect="bold">
+
+pygame
+
+</emphasis>
+ deals with colors in a future module.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Initialize_control_variable_used_for_termination_by_the_user" effect="bold">
+
+Initialize control variable used for termination by the user
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1026">
+The variable named 
+
+<emphasis id="strong1009" effect="bold">
+quit
+
+</emphasis>
+ is initialized to 
+
+<emphasis id="strong1010" effect="bold">
+False
+
+</emphasis>
+. Later on, you will see how 
+it is changed to 
+
+<emphasis id="strong1011" effect="bold">
+True
+
+</emphasis>
+ to cause the runtime loop and hence the program to terminate.
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+
+
+
+<emphasis id="Initialize_control_variable_used_to_determine_colors_of_background_and_border" effect="bold">
+
+Initialize control variable used to determine colors of background and border
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+The variable named 
+
+<emphasis id="strong1012" effect="bold">
+randomNumber
+
+</emphasis>
+ is initialized to a value of 
+zero. Later on, it will receive a new value of either 0 or 1 from a random 
+number generator once during each iteration of the runtime loop. You will see 
+later 
+how this value is used to control the colors of the border and background in 
+
+
+<link id="a1070" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ and 
+
+<link id="a1071" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Set_the_window_caption" effect="bold">
+
+Set the window caption
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1028">
+Finally, the code in 
+
+<link id="a1072" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ sets the caption in 
+the banner at the top of the window that appears 
+in 
+
+<link id="a1073" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ and 
+
+<link id="a1074" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Create_objects_that_will_be_used_by_the_program" effect="bold">
+
+Create objects that will be used by the 
+program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+The code in 
+
+<link id="a1075" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ creates the objects that will be used later by the 
+program.
+
+</para>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1004">
+<row id="tr1008">
+
+
+
+<entry id="th1004">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ Create objects that will be used by the program.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1002" display="block">#Create the display Surface object
+displaySurface = pygame.display.set_mode([250,150])
+
+#Create an object to help track time
+timer = pygame.time.Clock()</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<section id="h31007">
+<title>
+<emphasis id="Create_the_display_Surface_object" effect="bold">
+
+Create the display Surface object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1030">
+<link id="a1076" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ begins by creating and setting the mode for an object of type
+
+
+<emphasis id="strong1013" effect="bold">
+Surface
+
+</emphasis>
+. In this case, the mode is a rectangular window 250 
+pixels wide and 150 pixels tall as shown in 
+
+<link id="a1077" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.
+
+
+<emphasis id="em1008" effect="italics">
+(I will have more to say about the 
+
+<emphasis id="strong1014" effect="bold">
+set_mode
+
+</emphasis>
+ method
+
+
+<link id="a1078" target-id="The_display_window_can_be_moved_manually">
+
+later
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1031">
+A 
+
+<emphasis id="strong1015" effect="bold">
+Surface
+
+</emphasis>
+ object is essentially an area of memory that 
+represents a portion of the screen. Program code can draw on the surface without 
+the drawing being visible on the screen. Later, a method named 
+
+<emphasis id="strong1016" effect="bold">
+flip
+
+</emphasis>
+ 
+can be called to copy the drawing from the surface to the screen very quickly. 
+This provide a more pleasing effect than drawing directly on the screen, 
+particularly in those cases where a noticeable amount of time is required to 
+complete the drawing.
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Create_an_object_to_help_track_time" effect="bold">
+
+Create an object to help track time
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+The object referred to by the variable named 
+
+<emphasis id="strong1017" effect="bold">
+timer
+
+</emphasis>
+ in 
+
+
+<link id="a1079" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ will be used later to insert a one-second delay at the end of each 
+iteration of the runtime loop. A delay implemented in this manner consumes very 
+little in the way of cpu resources and prevents the computer from starving other 
+programs of cpu resources that they might need to complete their tasks.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21007">
+<title>
+
+
+
+<emphasis id="Enter_the_runtime_loop_and_continue_looping_until_a_quit_signal_is_received" effect="bold">
+
+
+Enter the runtime loop and continue looping until a "quit" signal is received
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1033">
+The code in 
+
+<link id="a1080" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ shows the beginning of a 
+
+<emphasis id="strong1018" effect="bold">
+while
+
+</emphasis>
+ loop 
+that I will refer to as the runtime loop.
+
+</para>
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1005">
+<row id="tr1010">
+
+
+
+<entry id="th1005">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ Enter the runtime loop and continue looping until a "quit" signal is received.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1003" display="block">while not quit:
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1034">
+This loop will continue to iterate until the value of the variable named
+
+
+<emphasis id="strong1019" effect="bold">
+quit
+
+</emphasis>
+ 
+
+<emphasis id="em1009" effect="italics">
+(see 
+
+<link id="a1081" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+)
+
+</emphasis>
+  changes from 
+
+<emphasis id="strong1020" effect="bold">
+False
+
+</emphasis>
+ to 
+
+<emphasis id="strong1021" effect="bold">
+True
+
+</emphasis>
+. 
+Usually the bulk of the time encompassed by a computer simulation or computer 
+game involves millions of iterations of the runtime loop.
+
+</para>
+
+
+
+
+<section id="h31009">
+<title>
+<emphasis id="Get_user_inputs_for_this_iteration_of_the_runtime_loop" effect="bold">
+
+Get user inputs for this iteration of the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+This is where the term 
+
+<link id="a1082" target-id="The_polling_pattern">
+
+polling
+
+</link>
+
+ comes into 
+play. For programs written using the 
+
+<link id="a1083" target-id="The_polling_pattern">
+
+polling 
+pattern
+
+</link>
+
+, the programmer must write code to 
+
+<emphasis id="em1010" effect="italics">
+"poll the system"
+
+</emphasis>
+ to 
+determine what, if any user input has occurred. That polling is illustrated by 
+the code in 
+
+<link id="a1084" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1006">
+<row id="tr1012">
+
+
+
+<entry id="th1006">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Get user inputs for this iteration of the runtime loop.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1004" display="block">
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Final iteration of runtime loop.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1036">
+The user can provide input to the program in several different ways 
+including:
+
+</para>
+
+
+
+
+<list id="ul1014" list-type="bulleted">
+
+	
+
+<item id="li1075">
+QUIT
+
+</item>
+
+
+	
+
+<item id="li1076">
+KEYDOWN
+
+</item>
+
+
+	
+
+<item id="li1077">
+KEYUP
+
+</item>
+
+
+	
+
+<item id="li1078">
+MOUSEMOTION
+
+</item>
+
+
+	
+
+<item id="li1079">
+MOUSEBUTTONUP
+
+</item>
+
+
+	
+
+<item id="li1080">
+MOUSEBUTTONDOWN
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1037">
+However, unlike with the 
+
+<link id="a1085" target-id="The_eventdriven_pattern">
+
+event-driven 
+pattern
+
+</link>
+
+, the program will only learn about those user actions that it 
+inquires about in the polling code. In this program, for example, the only 
+action that the user can take that will become known to the program is to click 
+the red x-button in the upper-right of 
+
+<link id="a1086" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. When that happens, an event 
+type matching 
+
+<emphasis id="strong1022" effect="bold">
+pygame.QUIT
+
+</emphasis>
+ occurs. This event type is recognized by the
+
+
+<emphasis id="strong1023" effect="bold">
+if
+
+</emphasis>
+ 
+statement in 
+
+<link id="a1087" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. This in turn causes the value of the variable named
+
+
+<emphasis id="strong1024" effect="bold">
+quit
+
+</emphasis>
+ to be switched from the initial value of 
+
+<emphasis id="strong1025" effect="bold">
+False
+
+</emphasis>
+ 
+to a new value of 
+
+<emphasis id="strong1026" effect="bold">
+True
+
+</emphasis>
+, which in turn causes the runtime loop 
+to terminate at the end of the current iteration. For a real game or simulation, 
+the code in 
+
+<link id="a1088" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ would probably be expanded considerably to make it 
+possible for other user actions to be recognized by the program.
+
+</para>
+
+
+
+
+<para id="p1038">
+A big difference between the event-driven pattern and the polling pattern has 
+to do with when the program learns of the occurrence of the event. With the 
+polling pattern, the program will only learn of the event at the beginning of 
+the next iteration of the runtime loop, which could involve a noticeable delay. 
+With the event-driven pattern, the program is usually notified of the event very 
+quickly after it occurs and may or may not be able to service the event very 
+quickly depending on other circumstances.
+
+</para>
+
+
+
+
+</section>
+<section id="h31010">
+<title>
+
+
+
+<emphasis id="Get_state_of_internal_control_structures_for_this_iteration_of_the_runtime_loop" effect="bold">
+
+
+Get state of internal control structures for this iteration of the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+Other than the QUIT button discussed above, the only internal control 
+structure in this program that is used to control the behavior of the program is 
+the variable named 
+
+<emphasis id="strong1027" effect="bold">
+randomNumber
+
+</emphasis>
+. As you will see later, the 
+value of that variable determines the colors of the border and the background in 
+
+
+<link id="a1089" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ and 
+
+<link id="a1090" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1007">
+<row id="tr1014">
+
+
+
+<entry id="th1007">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6.
+
+</emphasis>
+
+ Get state of internal control structures for this iteration of the runtime loop.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1005" display="block">
+    randomNumber = random.randrange(2)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1040">
+The code in 
+
+<link id="a1091" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ calls a random number generator to store either a 0 or 
+a 1 in that variable. That value constitutes the current state of the control 
+variable and in this program constitutes the current state of the control 
+structure. A real simulation or game program would typically have many different 
+control variables and the combination of the individual states of those control 
+variables would define the state of the overall control structure.
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+
+
+
+<emphasis id="Execute_the_program_logic_based_on_the_state_of_internal_control_structures" effect="bold">
+
+Execute the program logic based on the state of internal control structures
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1041">
+The code in 
+
+<link id="a1092" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ executes the program logic based on the state of 
+internal control structures. Other than the termination of the runtime loop when 
+the user clicks the x-button, there is no logic in this program based on user 
+input.
+
+</para>
+
+
+
+
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1008">
+<row id="tr1016">
+
+
+
+<entry id="th1008">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7.
+
+</emphasis>
+
+ Execute the program logic based on the state of internal control structures.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1008">
+<row id="tr1017">
+<entry id="td1008">
+
+
+
+<code id="pre1006" display="block">
+    #Set background and border colors on the basis of the random number.
+    if randomNumber == 0:
+        borderColor = GREEN
+        backgroundColor = RED
+    else:
+        borderColor = RED
+        backgroundColor = GREEN
+    
+    #Fill display Surface object with backgroundColor
+    displaySurface.fill(backgroundColor)
+    
+    #Draw a rectangle on the display Surface object with borderColor.
+    pygame.draw.rect(displaySurface, borderColor, [10, 15, 200, 100], 10)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<section id="h41000">
+<title>
+
+
+
+<emphasis id="Set_background_and_border_colors_on_the_basis_of_the_random_number" effect="bold">
+
+Set background and border colors on the basis of the random number
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1042">
+<link id="a1093" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ begins by setting the background and border colors on the basis of the random 
+number using the color constants that were initialized in 
+
+<link id="a1094" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="Fill_display_Surface_object_with_backgroundColor" effect="bold">
+
+Fill display Surface object with backgroundColor
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+Then 
+
+<link id="a1095" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1028" effect="bold">
+fill
+
+</emphasis>
+ method on the 
+
+
+<emphasis id="strong1029" effect="bold">
+Surface
+
+</emphasis>
+ object to, using the
+terminology of the 
+
+
+<link id="a1096" url="http://www.pygame.org/docs/ref/surface.html#pygame.Surface.fill">
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="em1011" effect="italics">
+"fill Surface with a solid color."
+
+</emphasis>
+  
+In other words, the code paints the entire surface with the color specified by 
+the value currently stored in the variable named 
+
+<emphasis id="strong1030" effect="bold">
+backgroundColor
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h41002">
+<title>
+<emphasis id="Draw_a_rectangle_on_the_display_Surface_object_with_borderColor" effect="bold">
+
+Draw a rectangle on the display Surface object with borderColor
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1044">
+Finally the code in 
+
+<link id="a1097" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ draws a rectangle on the display surface. The 
+color of the border is specified as the value contained in the variable named 
+
+
+<emphasis id="strong1031" effect="bold">
+borderColor
+
+</emphasis>
+. The width of the border is given by the last parameter value, which 
+is 10 pixels.
+
+</para>
+
+
+
+
+<para id="p1045">
+The upper-left corner of the rectangle is located at (10,15). The rectangle 
+is 200 pixels wide and 100 pixels tall as shown in 
+
+<link id="a1098" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+<emphasis id="em1012" effect="italics">
+Note that the coordinate values that specify the position of the 
+upper-left corner of the rectangle are relative to the upper-left corner of the 
+red or green background area of the display window, not relative to the 
+upper-left corner of the screen. Also note that half the specified border width 
+is outside the actual border and half is inside. Therefore, specifying a border 
+width greater than one pixel actually increases the overall width and height of 
+the rectangle.
+
+</emphasis>
+</quote>
+
+
+
+
+</section>
+</section>
+<section id="h31012">
+<title>
+<emphasis id="Display_the_new_state_of_the_program" effect="bold">
+
+Display the new state of the 
+program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1046">
+The code in 
+
+<link id="a1099" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1032" effect="bold">
+flip
+
+</emphasis>
+ method to very quickly 
+copy the drawing that has been produced on the 
+
+<emphasis id="strong1033" effect="bold">
+Surface
+
+</emphasis>
+ object to the screen. 
+
+</para>
+
+
+
+
+
+<table id="table1009" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1009">
+<row id="tr1018">
+
+
+
+<entry id="th1009">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8.
+
+</emphasis>
+
+ Display the new state of the program.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1009">
+<row id="tr1019">
+<entry id="td1009">
+
+
+
+<code id="pre1007" display="block">    pygame.display.flip()</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1047">
+Because this method is called inside of the runtime loop, the image on the 
+screen will be refreshed once during each iteration of the runtime loop. One 
+effect of this is that if a portion of the output is covered and then uncovered 
+by another window, it will be redrawn shortly after being uncovered. Because 
+this program is refreshing the image on the screen only once per second, if you 
+cover and then uncover it with another window, you will probably see a delay 
+before the uncovered portion is redrawn on the screen. You may also notice a 
+delay of up to one second when you click the x-button to terminate the program. 
+I will discuss this in more detail later in the section titled
+
+
+<link id="a1100" target-id="Other_observations">
+
+Other observations
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31013">
+<title>
+
+
+
+<emphasis id="Deal_with_frame_rate_control" effect="bold">
+
+Deal with frame rate control
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1048">
+<link id="a1101" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1034" effect="bold">
+tick
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1035" effect="bold">
+Clock
+
+</emphasis>
+ 
+object to deal with frame rate control by implementing a delay that does not use 
+much cpu resource.
+
+</para>
+
+
+
+
+<table id="table1010" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1010">
+<row id="tr1020">
+
+
+
+<entry id="th1010">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9.
+
+</emphasis>
+
+ Deal with frame rate control by implementing a delay that does not use much cpu resource.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1010">
+<row id="tr1021">
+<entry id="td1010">
+
+
+
+<code id="pre1008" display="block">    timer.tick(1)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1049">
+The 
+
+<link id="a1102" url="http://www.pygame.org/docs/ref/time.html#pygame.time.Clock">
+
+
+documentation
+
+</link>
+
+ describes the 
+
+<emphasis id="strong1036" effect="bold">
+tick
+
+</emphasis>
+ method as shown follows:
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1037" effect="bold">
+The tick method of the Clock object
+
+</emphasis>
+
+				
+
+<para id="p1050">
+This method should be called once per frame. It will compute how many milliseconds have passed since the previous call.
+
+</para>
+
+
+				
+
+<para id="p1051">
+If you pass the optional framerate argument the function will delay to keep the game running slower than the given ticks per second. This can be used to help limit the runtime speed of a game. By calling Clock.tick(40) once per frame, the program will never run at more than 40 frames per second.
+
+</para>
+
+
+				
+
+<para id="p1052">
+Note that this function uses SDL_Delay function which is not accurate on every platform, but does not use much cpu. Use tick_busy_loop if you want an accurate timer, and 
+				don't mind chewing cpu.
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+</section>
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Do_any_required_cleanup_and_terminate_the_program" effect="bold">
+
+Do any required cleanup and terminate the 
+program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1053">
+Having exited the runtime loop, 
+
+<link id="a1103" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ calls 
+
+<emphasis id="strong1038" effect="bold">
+pygame.quit
+
+</emphasis>
+ to
+
+<emphasis id="em1013" effect="italics">
+ "Uninitialize all pygame modules that have 
+previously been initialized."
+
+</emphasis>
+</para>
+
+
+
+
+<table id="table1011" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1011">
+<row id="tr1022">
+
+
+
+<entry id="th1011">
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10.
+
+</emphasis>
+
+ Having exited the runtime loop, do any required cleanup and terminate the program.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1011">
+<row id="tr1023">
+<entry id="td1011">
+
+
+
+<code id="pre1009" display="block">pygame.quit()</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1054">
+There is some disagreement as to the need to call this function. The
+
+
+<link id="a1104" url="http://www.pygame.org/docs/ref/pygame.html#pygame.quit">
+
+documentation
+
+</link>
+
+ 
+states 
+
+<emphasis id="em1014" effect="italics">
+"When the Python interpreter shuts down, this method is called 
+regardless, so your program should not need it, except when it wants to 
+terminate its pygame resources and continue."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1055">
+On the other hand 
+
+<link id="a1105" url="http://programarcadegames.com/index.php?">
+
+
+Professor Paul Vincent Craven
+
+</link>
+
+ 
+tells us that it is needed to resolve a deficiency in the IDLE development 
+environment.
+
+</para>
+
+
+
+
+<para id="p1056">
+In any event, the
+
+
+<link id="a1106" url="http://www.pygame.org/docs/ref/pygame.html#pygame.quit">
+
+documentation
+
+</link>
+
+ 
+also states 
+
+<emphasis id="em1015" effect="italics">
+"It is safe to call this function more than once: repeated calls 
+have no effect."
+
+</emphasis>
+ Therefore, I will take Professor Craven's advice and call 
+the function at the end of each of my 
+
+<emphasis id="strong1039" effect="bold">
+pygame
+
+</emphasis>
+ programs.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Other_observations" effect="bold">
+
+Other observations
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1057">
+According to the 
+
+<link id="a1107" url="http://www.pygame.org/docs/ref/display.html">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="em1016" effect="italics">
+"Pygame has a single display Surface that is either contained in a window or runs full screen."
+
+</emphasis>
+ In 
+other words, it is apparently not possible to write a program using 
+
+<emphasis id="strong1040" effect="bold">
+
+pygame
+
+</emphasis>
+ that places multiple display windows on the screen.
+
+</para>
+
+
+
+
+<para id="p1058">
+Some 
+aspects of display window are controlled by code that you write but many aspects 
+are beyond the direct control of the programmer.
+
+</para>
+
+
+
+
+<section id="h21009">
+<title>
+<emphasis id="The_location_of_the_origin" effect="bold">
+
+The location of the origin
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1059">
+For example, according to the 
+
+<link id="a1108" url="http://www.pygame.org/docs/ref/display.html">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="em1017" effect="italics">
+"The origin of the display, where x = 0, and y = 0 is the top left of the screen"
+
+</emphasis>
+ 
+On my Windows 
+7 machine, the origin is as shown by the 
+
+<emphasis id="strong1041" effect="bold">
+pygame
+
+</emphasis>
+ display windows in 
+
+<link id="a1109" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+
+<emphasis id="em1018" effect="italics">
+(The notepad window was manually placed in the top left corner of the screen 
+before running the 
+
+<emphasis id="strong1042" effect="bold">
+pygame
+
+</emphasis>
+ program multiple times.)
+
+</emphasis>
+</para>
+
+
+
+
+
+
+<para id="p1060">
+<emphasis id="strong1043" effect="bold">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5.
+
+</emphasis>
+
+ The origin of the display window.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1061">
+<media id="media1002" alt="Missing image." display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/1359-2215-05.jpg" width="460" height="384"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1062">
+When running from the command line, you can run multiple instances of the 
+
+
+<emphasis id="strong1044" effect="bold">
+pygame
+
+</emphasis>
+ program. 
+
+<emphasis id="em1019" effect="italics">
+(Although not demonstrated here, it appears that the state of 
+each instance is independent of the state of all other instances.)
+
+</emphasis>
+ The origin of the display window for the first instance is near but 
+not at the top left corner of the screen. The origin for each of the next six 
+instances is placed to the right of and slightly below the origin for the 
+previous instance as shown in 
+
+<link id="a1110" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. The origin for 
+the eighth instance is the same as the origin for the first instance and the 
+pattern repeats.
+
+</para>
+
+
+
+
+<para id="p1063">
+Although you cannot display multiple instances when running from the IDLE IDE 
+or the Wing IDE, similar behavior regarding placement occurs if you run, kill, 
+and then rerun the program multiple times from within the IDE.
+
+</para>
+
+
+
+
+<para id="p1064">
+<emphasis id="The_display_window_can_be_moved_manually" effect="bold">
+
+The display window can be moved manually
+
+</emphasis>
+
+ once it appears on the screen. 
+However, it is not resizable by default. It can be made resizable by passing the 
+
+
+<emphasis id="strong1045" effect="bold">
+pygame.RESIZABLE
+
+</emphasis>
+ flag to the 
+
+<emphasis id="strong1046" effect="bold">
+set_mode
+
+</emphasis>
+ method 
+in the code that you write.
+
+</para>
+
+
+
+
+</section>
+<section id="h21010">
+<title>
+<emphasis id="The_minimize_maximize_and_quit_buttons" effect="bold">
+
+The minimize, maximize, and 
+quit buttons
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1065">
+As is typical under the Windows operating system, the display window has 
+three buttons in the upper-right corner as shown in 
+
+<link id="a1111" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+	
+
+<item id="li1081">
+minimize - 
+
+<emphasis id="em1020" effect="italics">
+(the one on the left with the underscore character)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1082">
+maximize - 
+
+<emphasis id="em1021" effect="italics">
+(the one in the middle with the rectangle that appears to 
+	be disabled)
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1083">
+quit - 
+
+<emphasis id="em1022" effect="italics">
+(the one on the right with the X)
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1066">
+The display window will respond to the 
+
+<emphasis id="strong1047" effect="bold">
+minimize
+
+</emphasis>
+ button and 
+the 
+
+<emphasis id="strong1048" effect="bold">
+quit
+
+</emphasis>
+ button without any requirement for you to write 
+code to support that action. However, it will not respond to the 
+
+<emphasis id="strong1049" effect="bold">
+maximize
+
+</emphasis>
+ 
+button.
+
+</para>
+
+
+
+
+<para id="p1067">
+Clicking the 
+
+<emphasis id="strong1050" effect="bold">
+minimize
+
+</emphasis>
+ button will cause the 
+display window to be minimized into an icon in the system tray. Clicking the 
+icon in the system tray will restore the window to its previous location on the 
+screen.
+
+</para>
+
+
+
+
+<para id="p1068">
+The documentation is somewhat confusing regarding the 
+
+<emphasis id="strong1051" effect="bold">
+quit
+
+</emphasis>
+ 
+button but the Windows Task Manager can be used to confirm that clicking the
+
+
+<emphasis id="strong1052" effect="bold">
+quit
+
+</emphasis>
+ button will terminate the program.
+
+</para>
+
+
+
+
+<para id="p1069">
+As an alternative to the maximize button, you can cause the program to run in 
+full screen mode by passing the
+
+<emphasis id="strong1053" effect="bold">
+ pygame.FULLSCREEN
+
+</emphasis>
+ flag to the 
+
+
+<emphasis id="strong1054" effect="bold">
+set_mode
+
+</emphasis>
+ method. 
+
+<emphasis id="em1023" effect="italics">
+(Be careful with this one. If not used 
+properly, you may have to shut down your computer to get out of full screen 
+mode.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h21011">
+<title>
+<emphasis id="The_appearance_of_the_display_window" effect="bold">
+
+The appearance of the display 
+window
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1070">
+You may find that the 
+
+<emphasis id="strong1055" effect="bold">
+pygame
+
+</emphasis>
+ display window looks like the native window on your 
+operating system. 
+
+<link id="a1112" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ shows a pygame display window alongside a notepad 
+window on Windows 7 with the Windows appearance option set to 
+
+<emphasis id="em1024" effect="italics">
+Windows Classic
+
+</emphasis>
+. 
+As you can see, they are very similar. 
+
+<emphasis id="em1025" effect="italics">
+(Note that the appearance in
+
+
+<link id="a1113" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+ is somewhat different from the appearance in
+
+
+<link id="a1114" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, which was not run under Windows Classic.)
+
+</emphasis>
+</para>
+
+
+
+
+
+
+<para id="p1071">
+<emphasis id="strong1056" effect="bold">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6.
+
+</emphasis>
+
+ The appearance of the display window.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1072">
+<media id="media1003" alt="Missing image" display="block">
+<image id="img1003" mime-type="image/jpeg" src="../../media/1359-2215-06.jpg" width="530" height="198"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1073">
+Windows has many appearance options. Switching between appearance options 
+causes changes to the appearance of the 
+
+<emphasis id="strong1057" effect="bold">
+pygame
+
+</emphasis>
+ display window 
+
+<emphasis id="em1026" effect="italics">
+(slightly 
+rounded corners for example as shown in 
+
+<link id="a1115" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+)
+
+</emphasis>
+ but does not cause the appearance of 
+the 
+
+<emphasis id="strong1058" effect="bold">
+pygame
+
+</emphasis>
+ display window to track the appearance of a Windows notepad window in all 
+respects. For whatever its worth, however, selection of the 
+
+<emphasis id="em1027" effect="italics">
+Dell Aero 
+Theme
+
+</emphasis>
+ on my Dell computer running Windows 7 causes the 
+
+<emphasis id="strong1059" effect="bold">
+pygame
+
+</emphasis>
+ display window and 
+the notepad window to look almost identical including button size, rounded 
+corners, backshadow, border width, and border transparency.
+
+</para>
+
+
+
+
+</section>
+<section id="h21012">
+<title>
+<emphasis id="A_partially_covered_display_window" effect="bold">
+
+A partially covered display 
+window
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1074">
+<link id="a1116" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ shows what happens when another window partially covers the 
+
+<emphasis id="strong1060" effect="bold">
+pygame
+
+</emphasis>
+ 
+display window on a Windows 7 system.
+
+</para>
+
+
+
+
+
+<para id="p1075">
+<emphasis id="strong1061" effect="bold">
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7.
+
+</emphasis>
+
+ A partially covered display window.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1076">
+<media id="media1004" alt="Missing image." display="block">
+<image id="img1004" mime-type="image/jpeg" src="../../media/1359-2215-07.jpg" width="388" height="279"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1077">
+The result is that the 
+
+<emphasis id="strong1062" effect="bold">
+pygame
+
+</emphasis>
+ program continues to run and to display 
+changing graphics in the visible portion of the display window. This is true even 
+though the 
+
+<emphasis id="strong1063" effect="bold">
+pygame
+
+</emphasis>
+ program no longer 
+
+<emphasis id="em1028" effect="italics">
+"has the focus."
+
+</emphasis>
+ Among other 
+things, this probably means that the program logic will continue to keep the 
+state of the game or simulation current when the program loses focus provided 
+that it has access to sufficient cpu resources. If the 
+
+<emphasis id="strong1064" effect="bold">
+pygame
+
+</emphasis>
+ program in
+
+
+<link id="a1117" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ regains the focus, the display window will 
+cover the notepad window.
+
+</para>
+
+
+
+
+</section>
+<section id="h21013">
+<title>
+<emphasis id="Uncovering_the_display_window" effect="bold">
+
+Uncovering the display window
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1078">
+<link id="a1118" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ shows what you are likely to see if you
+
+</para>
+
+
+
+
+<list id="ul1016" list-type="bulleted">
+
+	
+
+<item id="li1084">
+Slow the frame rate down to perhaps one iteration of the runtime loop 
+	every ten seconds.
+
+</item>
+
+
+	
+
+<item id="li1085">
+Partially cover the display window with another window.
+
+</item>
+
+
+	
+
+<item id="li1086">
+Uncover the display window.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+<para id="p1079">
+<emphasis id="strong1065" effect="bold">
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8.
+
+</emphasis>
+
+ Uncovering the display window.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1080">
+<media id="media1005" alt="Missing image" display="block">
+<image id="img1005" mime-type="image/jpeg" src="../../media/1359-2215-08.jpg" width="262" height="185"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1081">
+The white rectangle in 
+
+<link id="a1119" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ is the portion of the display window that was 
+covered. 
+
+<emphasis id="em1029" effect="italics">
+(Note that the banner at the top of the window including the 
+buttons was also partially covered with the other window.)
+
+</emphasis>
+ The white area will continue to be white until the next iteration of the runtime 
+loop in which the code calls the 
+
+<emphasis id="strong1066" effect="bold">
+flip
+
+</emphasis>
+ method on the 
+
+<emphasis id="strong1067" effect="bold">
+Surface
+
+</emphasis>
+ 
+object.
+
+</para>
+
+
+
+
+<para id="p1082">
+The image in 
+
+<link id="a1120" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+ illustrates a couple of important points.
+
+</para>
+
+
+
+
+<list id="ul1017" list-type="bulleted">
+
+	
+
+<item id="li1087">
+First, the display of the window in terms of the banner, buttons, border, etc., 
+is independent of the frame rate of the program. Those portions of the window 
+are restored as soon as the display window is uncovered.
+
+</item>
+
+
+	
+
+<item id="li1088">
+Second, the code that you write only controls the graphics contents of the 
+window in the area below the banner and inside the borders. This area is often 
+referred to as the 
+
+<emphasis id="em1030" effect="italics">
+"client area"
+
+</emphasis>
+ of a window.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1083">
+Although not shown here, you can eliminate all but the client area of the display window by passing 
+the 
+
+<emphasis id="strong1068" effect="bold">
+pygame.NOFRAME
+
+</emphasis>
+ flag to the 
+
+<emphasis id="strong1069" effect="bold">
+set_mode
+
+</emphasis>
+ method. 
+If you do that and run the same experiment, the white area will appear and will 
+remain on the screen until the next iteration of the runtime loop, at which time 
+the normal graphics will be displayed. 
+
+<emphasis id="em1031" effect="italics">
+(Make sure you have a way to 
+terminate the program before doing that.)
+
+</emphasis>
+</para>
+
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1084">
+I encourage you to copy the code from 
+
+<link id="a1121" target-id="Listing_11">
+
+Listing 11.
+
+</link>
+
+ Execute the code and confirm 
+that you get the same results as those shown in 
+
+<link id="a1122" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ 
+through 
+
+<link id="a1123" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1085">
+A complete listing of the program discussed in this module is provided below.
+
+</para>
+
+
+
+
+
+<para id="p1086">
+<emphasis id="strong1070" effect="bold">
+<emphasis id="Listing_11" effect="bold">
+
+Listing 11.
+
+</emphasis>
+
+ Complete program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+<code id="pre1010" display="block">"""
+File TestProgram.py
+Revised: 01/02/15
+The output switches between a rectangle with a red border on a green background
+and a rectangle with a green border on a red background.
+
+The switch occurs randomly on the basis of a random number and can occur as
+frequently as once per second.
+================================================================================
+"""
+#===Import required libraries.===
+import random
+import pygame
+
+
+#===Initialize everything that needs to be initialized.===
+#Initialize imported pygame modules
+pygame.init()
+
+#Initialize color constants
+GREEN    = ( 0, 255, 0)
+RED      = ( 255, 0, 0)
+
+#Initialize control variable used for termination by the user.
+quit = False
+
+#Initialize control variable used to determine colors of background and border.
+randomNumber = 0;
+
+#Set the window caption
+pygame.display.set_caption("TestProgram")
+
+
+#===Create objects that will be used by the program.===
+#Create the display Surface object
+displaySurface = pygame.display.set_mode([250,150])
+
+#Create an object to help track time
+timer = pygame.time.Clock()
+
+#===Enter the runtime loop and continue looping until a "quit" signal is
+#   received.===
+
+while not quit:
+    #===Get user inputs for this iteration of the runtime loop.===
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Final iteration of runtime loop.
+            
+    #===Get state of internal control structures for this iteration of the 
+    #   runtime loop.===
+    randomNumber = random.randrange(2)
+        
+    #===Execute the program logic based on the input values and the state of
+    #   internal control structures.===
+    
+    #Set background and border colors on the basis of the random number.
+    if randomNumber == 0:
+        borderColor = GREEN
+        backgroundColor = RED
+    else:
+        borderColor = RED
+        backgroundColor = GREEN
+    
+    #Fill display Surface object with backgroundColor
+    displaySurface.fill(backgroundColor)
+    
+    #Draw a rectangle on the display Surface object with borderColor.
+    pygame.draw.rect(displaySurface, borderColor, [10, 15, 200, 100], 10)
+    
+   
+    #===Display the new state of the program.===
+    pygame.display.flip()
+    
+    #===Deal with frame rate control by implementing a delay that does not
+    # use much cpu resource.===
+    timer.tick(1)
+
+#===Having exited the runtime loop, do any required cleanup and terminate the
+#   program.
+pygame.quit()</code>
+
+
+
+
+
+
+	
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1087">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1071" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1018" list-type="bulleted">
+
+					
+
+<item id="li1089">
+Module name: Itse1359-2215-Structure of a Pygame Program
+
+</item>
+
+
+					
+
+<item id="li1090">
+File: Itse1359-2215.htm
+
+
+</item>
+
+
+					
+
+<item id="li1091">
+Published: 01/31/16
+
+</item>
+
+
+
+
+<item id="li1092">
+Revised: 02/08/16
+
+</item>
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1072" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1088">
+<emphasis id="strong1073" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1089">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1090">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1091">
+<emphasis id="strong1074" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1092">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

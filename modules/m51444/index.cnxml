@@ -1,0 +1,2379 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1420-Understanding self</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51444</md:content-id>
+  <md:title>Itse1359-1420-Understanding self</md:title>
+  <md:abstract>This module explains the use of the word self in class definitions.</md:abstract>
+  <md:uuid>a7c7bdd5-0726-4a5b-bc9d-70e675bb1bd5</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="What_you_have_learned">
+
+What you have learned
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="What_you_will_learn">
+
+What you will learn
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1003">
+<link id="a1003" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1005">
+<link id="a1005" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Preview">
+
+Preview
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1007">
+<link id="a1007" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Multiple_objects_from_the_same_class">
+
+Multiple objects from the same class
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="The_class_named_Radio">
+
+The class named Radio
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="Class_methods_versus_instance_methods">
+
+Class methods 
+		versus instance methods
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1011">
+<link id="a1011" target-id="Complete_program_listing">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="Visualizing_the_program">
+
+Visualizing the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1013">
+<link id="a1013" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX.
+
+</para>
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="What_you_have_learned" effect="bold">
+
+What you have learned
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+In an earlier module, you learned how to define a Python class, how to 
+instantiate objects of that class, and how to call methods on those objects.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="What_you_will_learn" effect="bold">
+
+What you will learn
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+The class-definition code in the earlier module included the word 
+
+<emphasis id="strong1000" effect="bold">
+
+self
+
+</emphasis>
+ in several different locations. I promised that I would revisit 
+the class definition and explain the use of the word 
+
+<emphasis id="strong1001" effect="bold">
+self
+
+</emphasis>
+. 
+That is the purpose of this module.
+
+</para>
+
+
+	
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1003">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+	and the Listings while you are reading about them.
+
+</para>
+
+
+
+
+<para id="p1004">
+<emphasis id="em1001" effect="italics">
+(Note to blind and visually impaired students: most of the Figures and all of the 
+Listings in 
+this module are presented in plain text format and should be accessible using an 
+audio screen reader or a braille display. Note however that the required 
+indentation may not be properly represented by an audio screen reader.)
+
+</emphasis>
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1004" list-type="bulleted">
+
+		
+
+<item id="li1015">
+<link id="a1015" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Visualizing the program. 
+
+</item>
+
+
+		
+
+<item id="li1016">
+<link id="a1016" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Output from the code in Listing 5.
+
+</item>
+
+
+	
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1005" list-type="bulleted">
+
+
+
+<item id="li1017">
+<link id="a1017" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Multiple objects from the same class. 
+
+</item>
+
+
+
+
+<item id="li1018">
+<link id="a1018" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. Call the playStation method on an object.
+
+</item>
+
+
+
+
+<item id="li1019">
+<link id="a1019" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. Abbreviated version of the class named Radio.
+
+</item>
+
+
+
+
+<item id="li1020">
+<link id="a1020" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+. Using self to access an instance variable.
+
+</item>
+
+
+
+
+<item id="li1021">
+<link id="a1021" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Complete program listing.
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Preview" effect="bold">
+
+Preview
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1005">
+<link id="a1022" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ shows a complete listing of a scaled down version of the radio 
+program from an earlier module. 
+
+<emphasis id="em1002" effect="italics">
+(The program was scaled down simply to 
+reduce the size and to make 
+the presentation more manageable.)
+
+</emphasis>
+ 
+
+<link id="a1023" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the output produced by 
+the code in 
+
+<link id="a1024" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1006">
+The program in 
+
+<link id="a1025" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ will be used to explain the use of the word 
+
+<emphasis id="strong1002" effect="bold">
+
+self
+
+</emphasis>
+ in a Python class definition.
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1007">
+With the exception of the following items, you should already 
+	understand the code in 
+
+<link id="a1026" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+	
+
+<item id="li1022">
+The use of the word 
+
+<emphasis id="strong1003" effect="bold">
+self
+
+</emphasis>
+</item>
+
+
+	
+
+<item id="li1023">
+The difference 
+	between 
+
+<emphasis id="em1003" effect="italics">
+class variables
+
+</emphasis>
+ and 
+
+<emphasis id="em1004" effect="italics">
+instance variables
+
+</emphasis>
+.
+
+</item>
+
+
+	
+
+<item id="li1024">
+The word 
+
+<emphasis id="strong1004" effect="bold">
+object
+
+</emphasis>
+ in the parentheses in the first line of 
+	the class definition.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1008">
+I will use fragments of code from the 
+	program in 
+
+<link id="a1027" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ to explain the use of the word 
+
+<emphasis id="strong1005" effect="bold">
+self
+
+</emphasis>
+ in this module.
+
+</para>
+
+
+
+
+<para id="p1009">
+I will explain 
+	the difference between class variables and instance variables as well as the 
+use of the word 
+
+<emphasis id="strong1006" effect="bold">
+object
+
+</emphasis>
+ in future 
+	modules.
+
+</para>
+
+
+
+
+<section id="h21003">
+<title>
+<emphasis id="Multiple_objects_from_the_same_class" effect="bold">
+
+Multiple objects from the 
+same class
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1010">
+You learned in the earlier module that you can instantiate one or more 
+independent objects from the same class and call methods on those objects. This 
+is illustrated by the abbreviated code in 
+
+<link id="a1028" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. 
+
+<emphasis id="em1005" effect="italics">
+(Note that comments and 
+code were omitted from 
+
+<link id="a1029" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ to make it easier to discuss the code 
+of interest.)
+
+</emphasis>
+</para>
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Multiple objects 
+				from the same class.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+
+<code id="pre1000" display="block">
+#Manufacture a 1-button radio
+radio01 = Radio()
+## Code omitted for brevity
+
+radio01.playStation(1)
+## Code omitted for brevity
+
+#Manufacture another 1-button radio
+radio02 = Radio()
+## Code omitted for brevity
+
+radio02.playStation(1)
+</code>
+
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1011">
+The code in 
+
+<link id="a1030" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ instantiates two objects of the class 
+
+<emphasis id="strong1007" effect="bold">
+Radio
+
+</emphasis>
+. 
+	References to those objects are stored in the variables named 
+
+<emphasis id="strong1008" effect="bold">
+
+	radio01
+
+</emphasis>
+ and 
+
+<emphasis id="strong1009" effect="bold">
+radio02
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1012">
+Once a variable contains a reference to an object, the name of that variable 
+can be used along with the 
+
+<emphasis id="strong1010" effect="bold">
+<emphasis id="em1006" effect="italics">
+dot operator
+
+</emphasis>
+</emphasis>
+ to call a method on that specific 
+object. 
+
+</para>
+
+
+
+
+<para id="p1013">
+The code in 
+
+<link id="a1031" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ uses the references to the two objects to call a method named
+
+
+<emphasis id="strong1011" effect="bold">
+playStation
+
+</emphasis>
+ on each of the objects. Even though the name of the 
+method is the same in both cases and the value of the parameter passed to the 
+method is the same in both cases, the result of calling the method on one object 
+is different from the result of calling the method on the other object. This is 
+because the data stored in one object is different from the data stored in the 
+other object.
+
+</para>
+
+
+
+
+<para id="p1014">
+The behavior of the method is the same in both cases. However, because the method operates on different data 
+while executing each call, the results are different. This 
+is evidenced by the output shown in 
+
+<link id="a1032" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1015">
+Each object occupies its own chunk of memory and stores its instance 
+variables within that chunk of memory. However 
+
+<emphasis id="em1007" effect="italics">
+(probably for reasons of 
+economy)
+
+</emphasis>
+, each object does not have its own copy of the methods defined in 
+the class from which the object is instantiated. Instead, all objects 
+instantiated from a given class share a common copy of each method defined in 
+the class. This is where the word 
+
+<emphasis id="strong1012" effect="bold">
+self
+
+</emphasis>
+ comes into play. The word 
+
+<emphasis id="strong1013" effect="bold">
+self
+
+</emphasis>
+ is 
+used to cause the program to behave 
+
+<emphasis id="em1008" effect="italics">
+as if
+
+</emphasis>
+ each object has its own copy of each 
+method.
+
+</para>
+
+
+
+
+<para id="p1016">
+Consider the variables named 
+
+<emphasis id="strong1014" effect="bold">
+radio01
+
+</emphasis>
+ and 
+
+<emphasis id="strong1015" effect="bold">
+radio02
+
+</emphasis>
+ 
+in 
+
+<link id="a1033" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+. Each of these variables contains a value that is returned 
+by the process of instantiating an object. 
+
+<emphasis id="em1009" effect="italics">
+(I frequently refer to this value 
+as a reference to the object.)
+
+</emphasis>
+ The value stored in each of these 
+variables identifies the chunk of memory occupied by one object. 
+
+<emphasis id="em1010" effect="italics">
+(The manner 
+in which this identification is accomplished probably varies among different 
+implementations of Python such as CPython, Jython, PyPy, etc. )
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1017">
+In any event, when you execute a statement that calls a common method such as 
+the one shown in 
+
+<link id="a1034" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, the method must have a way of identifying the chunk of memory 
+belonging to the object whose reference was used to 
+
+<emphasis id="make_the_call" effect="bold">
+
+make the call
+
+</emphasis>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Call the playStation 
+				method on an object.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+
+<code id="pre1001" display="block">
+radio02.playStation(1)
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1018">
+In other words, in the case shown in 
+
+<link id="a1035" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, the method must be able to find and use the 
+chunk of memory identified by the contents of 
+
+<emphasis id="strong1016" effect="bold">
+radio02
+
+</emphasis>
+ as 
+opposed to the chunk of memory identified by the contents of 
+
+<emphasis id="strong1017" effect="bold">
+radio01
+
+</emphasis>
+. 
+That is what 
+
+<emphasis id="strong1018" effect="bold">
+self
+
+</emphasis>
+ is all about.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="The_class_named_Radio" effect="bold">
+
+The class named Radio
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1019">
+<link id="a1036" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shows an abbreviated version of the class named 
+
+<emphasis id="strong1019" effect="bold">
+Radio
+
+</emphasis>
+.
+
+</para>
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Abbreviated version 
+				of the class named Radio.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+
+<code id="pre1002" display="block">
+class Radio(object):
+    ## Code omitted for brevity
+    
+    def __init__(self):
+        self.stationNumber = [0,0,0]
+
+    ## Code omitted for brevity
+
+    def playStation(self,index):
+        print("Playing " + self.stationNumber[index-1])
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1020">
+Methods are often defined with a special argument as the first argument 
+	in the argument list. This argument is named 
+
+<emphasis id="strong1020" effect="bold">
+self
+
+</emphasis>
+ in the methods of 
+	
+
+<link id="a1037" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+. 
+	Here is some of what
+	
+
+<link id="a1038" url="https://docs.python.org/3/tutorial/classes.html#random-remarks">
+
+The 
+	Python Tutorial -- Random Remarks
+
+</link>
+
+ has to say about 
+
+<emphasis id="strong1021" effect="bold">
+self
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+Often, the first argument of a method is called self. This is nothing more than a convention: the name self has absolutely no special meaning to Python. Note, however, that by not following the convention your code may be less readable to other Python programmers, and it is also conceivable that a class browser program might be written that relies upon such a convention.
+
+</quote>
+
+
+
+
+<para id="p1021">
+Therefore, even though it is possible to give the first argument a different 
+name, I will stick with the name 
+
+<emphasis id="strong1022" effect="bold">
+self
+
+</emphasis>
+ in this module.
+
+</para>
+
+
+
+
+<para id="p1022">
+The first argument in a function's argument list is special because:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1025">
+When an object's method is called using the syntax shown
+	in 
+
+<link id="a1039" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+, the first incoming parameter to the 
+	method is an identification of the chunk of memory belonging to the object 
+	that was used to make the call.
+
+</item>
+
+
+	
+
+<item id="li1026">
+The client code that makes the call is not responsible for including 
+	that information in the argument list when the call is made. The interpreter 
+	takes care of that task automatically.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1023">
+For example, the 
+
+<emphasis id="strong1023" effect="bold">
+playStation
+
+</emphasis>
+ method shown in 
+
+<link id="a1040" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ shows 
+two required positional arguments including the argument named 
+
+<emphasis id="strong1024" effect="bold">
+self
+
+</emphasis>
+. The call to 
+the 
+
+<emphasis id="strong1025" effect="bold">
+playStation
+
+</emphasis>
+ method shown in 
+
+<link id="a1041" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ 
+passes only one parameter. The argument identified as 
+
+<emphasis id="strong1026" effect="bold">
+self
+
+</emphasis>
+ in 
+
+
+<link id="a1042" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ is automatically constructed and passed to the method by the Python 
+interpreter.
+
+</para>
+
+
+
+
+<para id="p1024">
+When you write code in the body of the method, you can use the value of
+
+
+<emphasis id="strong1027" effect="bold">
+self
+
+</emphasis>
+ along with the dot operator to access variables and 
+methods belonging to the object using code such as that shown in 
+
+<link id="a1043" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+.
+
+</para>
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4
+
+</emphasis>
+
+. Using self to access 
+				an instance variable.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+
+<code id="pre1003" display="block">
+        print("Playing " + self.stationNumber[index-1])
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1025">
+As near as I have been able to determine, references to an object's instance 
+variables or methods by code within the body of a method that is defined in that 
+object's class must qualify those 
+references with 
+
+<emphasis id="strong1028" effect="bold">
+self
+
+</emphasis>
+ 
+
+<emphasis id="em1011" effect="italics">
+(or whatever name you choose to give 
+to the method's first argument)
+
+</emphasis>
+ using the dot operator.
+
+</para>
+
+
+
+
+<para id="p1026">
+That restriction does not apply to class variables. I will have more to say 
+about that in a future module. There are probably other exceptions as well 
+having to do with communications between methods in different objects or methods 
+in one object accessing variables in a different object.
+
+</para>
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Class_methods_versus_instance_methods" effect="bold">
+
+Class methods versus 
+instance methods
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+In other OOP environments, we would probably refer to the method named
+
+
+<emphasis id="strong1029" effect="bold">
+playStation
+
+</emphasis>
+ in 
+
+<link id="a1044" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ as an 
+
+<emphasis id="strong1030" effect="bold">
+
+
+
+<emphasis id="em1012" effect="italics">
+instance method
+
+</emphasis>
+</emphasis>
+. The method is called using an object's 
+reference as shown in 
+
+<link id="a1045" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+. That object's reference is passed into the 
+method's 
+
+<emphasis id="strong1031" effect="bold">
+self
+
+</emphasis>
+ parameter as discussed above.
+
+</para>
+
+
+
+
+<para id="p1028">
+It is also possible to call a method in a class using the name of the class 
+in place of an object's reference. In that case, an object's reference is not 
+automatically passed to a 
+
+<emphasis id="strong1032" effect="bold">
+self
+
+</emphasis>
+ parameter. In fact the method does not even need to define 
+a 
+
+<emphasis id="strong1033" effect="bold">
+self
+
+</emphasis>
+ parameter. In other programming environments, we would 
+probably refer to such a method as a 
+
+<emphasis id="strong1034" effect="bold">
+<emphasis id="em1013" effect="italics">
+class method
+
+</emphasis>
+</emphasis>
+. 
+Class methods are typically used to perform an action that is independent of any 
+specific object, such as computing the square root of a number for example. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Complete_program_listing" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1029">
+A complete listing of the code for the program discussed in this module is 
+provided in 
+
+<link id="a1046" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1030">
+<emphasis id="strong1035" effect="bold">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5
+
+</emphasis>
+
+. Complete 
+				program listing.
+
+</emphasis>
+</para>
+
+
+
+
+
+
+<code id="pre1004" display="block">
+
+# This program simulates the manufacture, programming, and use of a pair of
+# one-button car radios. The purpose is to explain the use of the word self.
+#
+#---------------------------------------------------------------------------
+class Radio(object):
+    #This class provides the plans from which the radio objects are built.
+    stations = {"Austin":{91.7:"KVRX"},
+                "Dallas":{98.3:"KNON"}
+               }
+
+    def __init__(self):
+        self.stationNumber = [0,0,0]
+
+    def scan(self,city):
+        return self.stations[city]
+
+    def setStationNumber(self,index,station):
+        self.stationNumber[index-1] = station
+
+    def playStation(self,index):
+        print("Playing " + self.stationNumber[index-1])
+        
+#Manufacture a 1-button radio
+radio01 = Radio()
+
+#Program the button
+#First scan for available stations
+radio01Stations = radio01.scan("Austin")
+print("Available stations in Austin")
+print(radio01Stations)
+
+print("Program the button")
+radio01.setStationNumber(1,radio01Stations[91.7])
+
+print("Play the  programmed station")
+radio01.playStation(1)
+
+
+#Manufacture another 1-button radio
+radio02 = Radio()
+
+#Program the button
+#First scan for available stations
+radio02Stations = radio02.scan("Dallas")
+print("Available stations in Dallas")
+print(radio02Stations)
+
+print("Program the button")
+radio02.setStationNumber(1,radio02Stations[98.3])
+
+print("Play the  programmed station")
+radio02.playStation(1)
+</code>
+
+
+
+
+	
+
+<para id="p1031">
+<link id="a1047" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the output produced by the code in 
+
+<link id="a1048" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Output from 
+				the code in Listing 5.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+
+<code id="pre1005" display="block">
+Available stations in Austin
+{91.7: 'KVRX'}
+Program the button
+Play the  programmed station
+Playing KVRX
+Available stations in Dallas
+{98.3: 'KNON'}
+Program the button
+Play the  programmed station
+Playing KNON
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Visualizing_the_program" effect="bold">
+
+Visualizing the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1032">
+<link id="a1049" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows a
+
+
+<link id="a1050" url="http://pythontutor.com/visualize.html#mode=display">
+
+visualization
+
+</link>
+
+ 
+of the code shown in 
+
+<link id="a1051" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1033">
+<emphasis id="strong1036" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Visualizing the program.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1034">
+<media id="media1000" alt="Visualizing the program" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-1420a.jpg" width="816" height="586"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1035">
+I recommend that you create a
+
+
+<link id="a1052" url="http://pythontutor.com/visualize.html#mode=display">
+
+
+visualization
+
+</link>
+
+ for the code in 
+
+<link id="a1053" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ and step 
+through the program one instruction at a time. As you do that, pay attention to 
+the movements of the red and green arrows on the left, the diagram on the right, 
+and the printed material at the bottom. That should help you to better 
+understand the concept of classes and objects as well as the use of 
+
+<emphasis id="strong1037" effect="bold">
+<emphasis id="em1014" effect="italics">
+
+self
+
+</emphasis>
+</emphasis>
+ in Python.
+
+</para>
+
+
+
+
+
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1036">
+I also encourage you to copy the code from 
+
+<link id="a1054" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+. Execute the code and confirm 
+that you get the same results as those shown in 
+
+<link id="a1055" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. For example, change 
+all occurrences of the word 
+
+<emphasis id="strong1038" effect="bold">
+self
+
+</emphasis>
+ to the word 
+
+<emphasis id="strong1039" effect="bold">
+this
+
+</emphasis>
+ 
+to see what happens. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1037">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1040" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1008" list-type="bulleted">
+
+					
+
+<item id="li1027">
+Module name: Itse1359-1420-Understanding self
+
+</item>
+
+
+					
+
+<item id="li1028">
+File: Itse1359-1420.htm
+
+
+</item>
+
+
+					
+
+<item id="li1029">
+Published: 10/27/14
+
+</item>
+
+
+
+
+<item id="li1030">
+Revised: 02/08/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1041" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1038">
+<emphasis id="strong1042" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1039">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1040">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1041">
+<emphasis id="strong1043" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1042">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

@@ -1,0 +1,4012 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-2220-Color-Introduction to Color</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m52500</md:content-id>
+  <md:title>Itse1359-2220-Color-Introduction to Color</md:title>
+  <md:abstract>This module provides an introduction to the use of color in Pygame.</md:abstract>
+  <md:uuid>d4cca7a7-97fb-465e-830d-c8fb1e508a45</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+<emphasis id="Table_of_contents" effect="bold">
+
+Table of contents
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1003">
+<link id="a1003" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1004">
+<link id="a1004" target-id="General_background_information">
+
+General background information
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1005">
+<link id="a1005" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1006">
+<link id="a1006" target-id="The_graphic_output">
+
+The graphic output
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_program_code">
+
+The program code
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="Import_and_initialize_pygame_library">
+
+Import and initialize pygame library
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Perform_some_initializations">
+
+Perform some initializations
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Create_some_objects">
+
+Create some objects
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+				
+
+<item id="li1011">
+<link id="a1011" target-id="Overloaded_constructors_methods_and_functions">
+
+Overloaded constructors, methods, and functions
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1012">
+<link id="a1012" target-id="An_object_of_type_Rect">
+
+An object of type Rect
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1013">
+<link id="a1013" target-id="Two_objects_of_type_Color">
+
+Two objects of type Color
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1014">
+<link id="a1014" target-id="Create_and_set_display_mode_on_Surface_object">
+
+Create and set display mode on Surface object
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1015">
+<link id="a1015" target-id="An_object_of_type_Clock">
+
+An object of type Clock
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Enter_the_runtime_loop">
+
+Enter the runtime loop
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+				
+
+<item id="li1017">
+<link id="a1017" target-id="Get_and_process_user_inputs">
+
+Get and process user inputs
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1018">
+
+				
+
+<link id="a1018" target-id="Fill_display_Surface_object_with_green_background_Color_object">
+
+Fill display Surface object with green background Color object
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1019">
+
+				
+
+<link id="a1019" target-id="Cause_border_Color_object_to_morph_from_red_to_green">
+
+Cause border Color object to morph from red to green
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1020">
+<link id="a1020" target-id="Draw_and_display_the_rectangle">
+
+Draw and display the rectangle
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Terminate_the_program_outside_the_runtime_loop">
+
+Terminate the program outside the runtime loop
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1022">
+<link id="a1022" target-id="Run_the_program">
+
+Run the program
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1023">
+<link id="a1023" target-id="Complete_program_listings">
+
+Complete program listing
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1024">
+<link id="a1024" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. This module concentrates on programming with 
+
+<emphasis id="strong1000" effect="bold">
+
+	Pygame
+
+</emphasis>
+.
+
+</para>
+
+
+	
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+and Listings while you are reading about them.
+
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1007" list-type="bulleted">
+
+
+
+<item id="li1025">
+<link id="a1025" target-id="Figure_1">
+
+Figure 1.
+
+</link>
+
+ Output near beginning of cycle. 
+
+</item>
+
+
+
+
+<item id="li1026">
+<link id="a1026" target-id="Figure_2">
+
+Figure 2.
+
+</link>
+
+ Output near middle of cycle. 
+
+</item>
+
+
+
+
+<item id="li1027">
+<link id="a1027" target-id="Figure_3">
+
+Figure 3.
+
+</link>
+
+ Output near end of cycle. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+	
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1008" list-type="bulleted">
+
+
+
+<item id="li1028">
+<link id="a1028" target-id="Listing_1">
+
+Listing 1.
+
+</link>
+
+ Import and initialize pygame library. 
+
+</item>
+
+
+
+
+<item id="li1029">
+<link id="a1029" target-id="Listing_2">
+
+Listing 2.
+
+</link>
+
+ Perform some initializations. 
+
+</item>
+
+
+
+
+<item id="li1030">
+<link id="a1030" target-id="Listing_3">
+
+Listing 3.
+
+</link>
+
+ Create some objects. 
+
+</item>
+
+
+
+
+<item id="li1031">
+<link id="a1031" target-id="Listing_4">
+
+Listing 4.
+
+</link>
+
+ Enter the runtime loop. 
+
+</item>
+
+
+
+
+<item id="li1032">
+<link id="a1032" target-id="Listing_5">
+
+Listing 5.
+
+</link>
+
+ Get and process user inputs. 
+
+</item>
+
+
+
+
+<item id="li1033">
+<link id="a1033" target-id="Listing_6">
+
+Listing 6.
+
+</link>
+
+ Fill display Surface object with green background Color object.
+
+</item>
+
+
+
+
+<item id="li1034">
+<link id="a1034" target-id="Listing_7">
+
+Listing 7.
+
+</link>
+
+ Cause border Color object to morph from red to green.
+
+</item>
+
+
+
+
+<item id="li1035">
+<link id="a1035" target-id="Listing_8">
+
+Listing 8.
+
+</link>
+
+ Draw and display the rectangle. 
+
+</item>
+
+
+
+
+<item id="li1036">
+<link id="a1036" target-id="Listing_9">
+
+Listing 9.
+
+</link>
+
+ Terminate the program outside the runtime loop. 
+
+</item>
+
+
+
+
+<item id="li1037">
+<link id="a1037" target-id="Listing_10">
+
+Listing 10.
+
+</link>
+
+ Complete program listing. 
+
+</item>
+
+
+	
+
+</list>
+
+
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="General_background_information" effect="bold">
+
+General 
+	background information
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1002">
+Just about any program that you write that is intended for human consumption 
+will involve color. Therefore, you need to understand how Python and 
+Pygame handle color.
+
+</para>
+
+
+
+
+<para id="p1003">
+Color is a very broad topic so this won't be the final module on this topic. There are at least 
+six different ways that 
+color can be represented in a 
+
+<emphasis id="strong1001" effect="bold">
+pygame
+
+</emphasis>
+ program:
+
+</para>
+
+
+
+
+<list id="ul1009" list-type="bulleted">
+
+	
+
+<item id="li1038">
+RGB and RGBA
+
+</item>
+
+
+	
+
+<item id="li1039">
+CMY
+
+</item>
+
+
+	
+
+<item id="li1040">
+HSV and HSVA
+
+</item>
+
+
+	
+
+<item id="li1041">
+HSL and HSLA
+
+</item>
+
+
+	
+
+<item id="li1042">
+|1|2|3
+
+</item>
+
+
+	
+
+<item id="li1043">
+#rrggbb and #rrggbbaa
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1004">
+<emphasis id="em1001" effect="italics">
+RGB
+
+</emphasis>
+ and 
+
+<emphasis id="em1002" effect="italics">
+RGBA
+
+</emphasis>
+ are the most fundamental representations. The letters in the 
+acronym represent the following color components 
+
+<emphasis id="em1003" effect="italics">
+(often called channels)
+
+</emphasis>
+:
+
+</para>
+
+
+
+
+<list id="ul1010" list-type="bulleted">
+
+	
+
+<item id="li1044">
+R - red
+
+</item>
+
+
+	
+
+<item id="li1045">
+G - green
+
+</item>
+
+
+	
+
+<item id="li1046">
+B - blue
+
+</item>
+
+
+	
+
+<item id="li1047">
+A - alpha 
+
+<emphasis id="em1004" effect="italics">
+(transparency)
+
+</emphasis>
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1005">
+Alpha transparency is not required for an understanding of the basic RGB 
+color system so a discussion of alpha will be deferred until a future module. 
+This module will concentrate on the RGB representation of color along with 
+objects of the 
+
+<emphasis id="strong1002" effect="bold">
+Color
+
+</emphasis>
+ and 
+
+<emphasis id="strong1003" effect="bold">
+Rect
+
+</emphasis>
+ classes.
+
+</para>
+
+
+	
+	
+
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1006">
+I will explain a program that draws a rectangle with a wide colored 
+	border on a green background. The border on the rectangle starts out as red. 
+	Over time, it morphs into green. When it reaches green, making it 
+	indistinguishable from the background, it resets to red and the cycle 
+	continues.
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="The_graphic_output" effect="bold">
+
+The graphic output
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+<link id="a1038" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, 
+
+<link id="a1039" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+, and 
+
+<link id="a1040" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ show the screen output at three stages of 
+the cycle.
+
+</para>
+
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1004" effect="bold">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1.
+
+</emphasis>
+
+ Output near beginning of cycle.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1009">
+<media id="media1000" alt="Missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-2220-01.jpg" width="257" height="184"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1010">
+<emphasis id="strong1005" effect="bold">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2.
+
+</emphasis>
+
+ Output near middle of cycle.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1011">
+<media id="media1001" alt="Missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-2220-02.jpg" width="257" height="184"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+<para id="p1012">
+<emphasis id="strong1006" effect="bold">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3.
+
+</emphasis>
+
+ Output near end of cycle.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1013">
+<media id="media1002" alt="Missing image" display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/1359-2220-03.jpg" width="257" height="184"/>
+</media>
+
+
+</para>
+
+
+
+
+
+
+
+<para id="p1014">
+<link id="a1041" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows the output near the beginning of the cycle. 
+
+<link id="a1042" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows the 
+output near the middle of the cycle, and 
+
+<link id="a1043" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows the output near the end 
+of the cycle. Shortly after the output shown in 
+
+<link id="a1044" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, the border on the 
+rectangle was reset to pure red.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_program_code" effect="bold">
+
+The program code
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1015">
+A complete listing of the program is provided in 
+
+<link id="a1045" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. I will break 
+the program down and explain it in fragments.
+
+</para>
+
+
+
+
+<section id="h31002">
+<title>
+<emphasis id="Import_and_initialize_pygame_library" effect="bold">
+
+Import and initialize pygame 
+library
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1016">
+As is always the case when programming with 
+
+<emphasis id="strong1007" effect="bold">
+pygame
+
+</emphasis>
+, 
+
+<link id="a1046" target-id="Listing_1">
+
+Listing 1
+
+</link>
+
+ imports and 
+initializes the 
+
+<emphasis id="strong1008" effect="bold">
+pygame
+
+</emphasis>
+ library.
+
+</para>
+
+
+
+
+
+<table id="table1000" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1000">
+<row id="tr1000">
+
+
+
+<entry id="th1000">
+<emphasis id="Listing_1" effect="bold">
+
+Listing 1.
+
+</emphasis>
+
+ Import and initialize pygame library.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1000">
+<row id="tr1001">
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">import pygame #Import required library
+
+pygame.init() #Initialize imported pygame modules</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="Perform_some_initializations" effect="bold">
+
+Perform some initializations
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+The code in 
+
+<link id="a1047" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ performs some initializations.
+
+</para>
+
+
+
+
+<table id="table1001" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1001">
+<row id="tr1002">
+
+
+
+<entry id="th1001">
+<emphasis id="Listing_2" effect="bold">
+
+Listing 2.
+
+</emphasis>
+
+ Perform some initializations.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1001">
+<row id="tr1003">
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">quit = False #Initialize termination control variable.
+
+pygame.display.set_caption("Color01.py") #Set the window caption
+
+INCREMENT = 20 #Initialize control constant
+
+WIDTH = 25 #Initialize border width constant
+
+FRAMERATE = 5 #Used to control the maximum frame rate.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1018">
+The variable named 
+
+<emphasis id="strong1009" effect="bold">
+quit
+
+</emphasis>
+ is used to cause the runtime loop to 
+terminate when the user clicks the red X-button in the upper-right corner of the 
+image in 
+
+<link id="a1048" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1019">
+The second statement in 
+
+<link id="a1049" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+ sets the caption in the banner at the top 
+of the display window as shown in 
+
+<link id="a1050" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1020">
+The constant named 
+
+<emphasis id="strong1010" effect="bold">
+INCREMENT
+
+</emphasis>
+ will be used later to control 
+how rapidly the border color morphs from red to green.
+
+</para>
+
+
+
+
+<para id="p1021">
+The constant named 
+
+<emphasis id="strong1011" effect="bold">
+WIDTH
+
+</emphasis>
+ will be used later to specify the 
+width of the rectangle's border.
+
+</para>
+
+
+
+
+<para id="p1022">
+The constant named 
+
+<emphasis id="strong1012" effect="bold">
+FRAMERATE
+
+</emphasis>
+ will be used later to limit the 
+program to no more than 5 frames per second.
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Create_some_objects" effect="bold">
+
+Create some objects
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1023">
+The code in 
+
+<link id="a1051" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ creates some objects that will be used later.
+
+</para>
+
+
+
+
+<table id="table1002" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1002">
+<row id="tr1004">
+
+
+
+<entry id="th1002">
+<emphasis id="Listing_3" effect="bold">
+
+Listing 3.
+
+</emphasis>
+
+ Create some objects.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1002">
+<row id="tr1005">
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">rect = pygame.Rect(25, 25, 200, 100) #create a Rect object
+
+border = pygame.Color(255,0,0) #Create a red Color object
+
+background = pygame.Color( 0, 255, 0) #Create a green Color object
+
+surface = pygame.display.set_mode([250,150]) #Set the display mode
+
+clock = pygame.time.Clock() #Create an object to help track time</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="Overloaded_constructors_methods_and_functions" effect="bold">
+
+Overloaded 
+constructors, methods, and functions
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1024">
+Prior to the advent of object-oriented programming 
+
+<emphasis id="em1005" effect="italics">
+(OOP)
+
+</emphasis>
+, when programming in 
+Pascal or C for example, if you needed two or more functions in the same scope 
+that would accept the same data in different formats and perform essentially the 
+same operations on that data, you were required to define two or more different 
+functions with different names. This resulted in code that could be confusing 
+due to the use of different function names to perform essentially the same 
+operations.
+
+</para>
+
+
+
+
+<para id="p1025">
+With OOP, we are allowed to define two or more different functions with the 
+same name in the same scope provided that each function has a different formal 
+argument list. This is known as 
+
+<emphasis id="em1006" effect="italics">
+function overloading
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1026">
+For example, you might want to make it possible to process telephone 
+numbers in either of the following formats:
+
+</para>
+
+
+
+
+<list id="ul1011" list-type="bulleted">
+
+	
+
+<item id="li1048">
+("512","123-4567")
+
+</item>
+
+
+	
+
+<item id="li1049">
+("512.123.4567")
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1027">
+Prior to OOP you would have been required to write two different functions 
+with different names. With OOP and function overloading, you can write two 
+different functions with the same name. The programmer who calls the function is 
+only required to remember a single name. The decision as to which overloaded 
+function to execute at runtime is based on the number and types of parameters 
+that are passed to the function. This results in cleaner, more self-documenting 
+code. 
+
+</para>
+
+
+
+
+<para id="p1028">
+Overloading in Python also applies to class constructors and methods as 
+well as to functions. This is one aspect of a concept known as 
+
+<emphasis id="em1007" effect="italics">
+polymorphism
+
+</emphasis>
+. 
+In general, polymorphism is a word that means something like 
+
+<emphasis id="em1008" effect="italics">
+"one name, many 
+forms."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1029">
+Most and perhaps all of the methods and functions in 
+
+<emphasis id="strong1013" effect="bold">
+pygame
+
+</emphasis>
+ that require 
+color information as input are overloaded so as to accept a tuple, a list, or a 
+reference to an object of type 
+
+<emphasis id="strong1014" effect="bold">
+Color
+
+</emphasis>
+ as an input parameter. 
+Similarly, most and perhaps all of the functions that require the numeric 
+description of a rectangle as input will accept a tuple, a list, or a reference 
+to an object of type 
+
+<emphasis id="strong1015" effect="bold">
+Rect
+
+</emphasis>
+ as an input parameter.
+
+</para>
+
+
+
+
+<para id="p1030">
+One of my objectives in publishing this sub-collection of modules on 
+
+<emphasis id="strong1016" effect="bold">
+pygame
+
+</emphasis>
+ 
+is to help you wrap your mind around the Python/pygame flavor of 
+object-oriented programming. Pygame programs are more self-documenting and more 
+obviously object-oriented when written using objects created from specific 
+classes 
+
+<emphasis id="em1009" effect="italics">
+(such as 
+
+<emphasis id="strong1017" effect="bold">
+Color
+
+</emphasis>
+ and 
+
+<emphasis id="strong1018" effect="bold">
+Rect
+
+</emphasis>
+)
+
+</emphasis>
+ than when using 
+tuples, lists, and other non-specific constructs. Therefore, the sample programs 
+that I provide in this sub-collection of modules on 
+
+<emphasis id="strong1019" effect="bold">
+pygame
+
+</emphasis>
+ will tend toward the 
+use of objects created from specific classes where possible.
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="An_object_of_type_Rect" effect="bold">
+
+An object of type Rect
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1031">
+According to the 
+
+<link id="a1052" url="http://www.pygame.org/docs/ref/rect.html">
+
+
+documentation
+
+</link>
+
+, the 
+
+<emphasis id="strong1020" effect="bold">
+Rect
+
+</emphasis>
+ class is specifically designed to store and 
+manipulate rectangular areas. Once an object of type 
+
+<emphasis id="strong1021" effect="bold">
+Rect
+
+</emphasis>
+ is 
+constructed, the object provides numerous methods and attributes that can be 
+used to manipulate the rectangular area such as 
+
+<emphasis id="strong1022" effect="bold">
+move
+
+</emphasis>
+, 
+
+<emphasis id="strong1023" effect="bold">
+
+inflate
+
+</emphasis>
+, 
+
+<emphasis id="strong1024" effect="bold">
+clip
+
+</emphasis>
+, 
+
+<emphasis id="strong1025" effect="bold">
+union
+
+</emphasis>
+, 
+
+<emphasis id="strong1026" effect="bold">
+
+contains
+
+</emphasis>
+, 
+
+<emphasis id="strong1027" effect="bold">
+colliderect
+
+</emphasis>
+, etc. 
+
+</para>
+
+
+
+
+<para id="p1032">
+One of the overloaded constructors for an object of type 
+
+<emphasis id="strong1028" effect="bold">
+Rect
+
+</emphasis>
+ accepts numeric 
+parameters for 
+
+<emphasis id="strong1029" effect="bold">
+left
+
+</emphasis>
+, 
+
+<emphasis id="strong1030" effect="bold">
+top
+
+</emphasis>
+, 
+
+<emphasis id="strong1031" effect="bold">
+
+width
+
+</emphasis>
+, and 
+
+<emphasis id="strong1032" effect="bold">
+height
+
+</emphasis>
+ as incoming parameters. Other 
+overloaded constructors are defined with different formal argument lists.
+
+</para>
+
+
+
+
+<para id="p1033">
+The 
+
+<emphasis id="strong1033" effect="bold">
+left
+
+</emphasis>
+ and 
+
+<emphasis id="strong1034" effect="bold">
+top
+
+</emphasis>
+ parameters specify the 
+coordinates of the upper-left corner of the rectangle in pixels. The 
+
+<emphasis id="strong1035" effect="bold">
+
+width
+
+</emphasis>
+ and 
+
+<emphasis id="strong1036" effect="bold">
+height
+
+</emphasis>
+ parameters specify the width and the 
+height of the rectangle in pixels.
+
+</para>
+
+
+
+
+<para id="p1034">
+The first statement in 
+
+<link id="a1053" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ creates a new object of type 
+
+<emphasis id="strong1037" effect="bold">
+Rect
+
+</emphasis>
+ 
+with the numeric parameters shown and saves a reference to that object in the 
+variable named 
+
+<emphasis id="strong1038" effect="bold">
+rect
+
+</emphasis>
+. This reference will be passed as a 
+parameter to the 
+
+<emphasis id="strong1039" effect="bold">
+pygame.draw.rect
+
+</emphasis>
+ method later to cause a 
+rectangle to be drawn on the display surface.
+
+</para>
+
+
+
+
+</section>
+<section id="h41002">
+<title>
+<emphasis id="Two_objects_of_type_Color" effect="bold">
+
+Two objects of type Color
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1035">
+According to the 
+
+<link id="a1054" url="http://www.pygame.org/docs/ref/color.html">
+
+documentation
+
+</link>
+
+, 
+
+
+<emphasis id="em1010" effect="italics">
+"The Color class represents RGBA color values using a value range of 0-255. It allows basic arithmetic operations to create new colors, supports conversions to other color spaces such as HSV or HSL and lets you adjust single color channels. Alpha defaults to 255 when not given."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1036">
+As with the 
+
+<emphasis id="strong1040" effect="bold">
+Rect
+
+</emphasis>
+ class, once an object of type 
+
+<emphasis id="strong1041" effect="bold">
+Color
+
+</emphasis>
+ 
+is constructed, the object provides numerous methods and attributes that can be 
+used to manipulate the color values. You will see later how the 
+
+<emphasis id="strong1042" effect="bold">
+r
+
+</emphasis>
+ 
+and 
+
+<emphasis id="strong1043" effect="bold">
+g
+
+</emphasis>
+ attribute values are manipulated at runtime to cause the 
+color of the rectangle's border to morph from red to green.
+
+</para>
+
+
+
+
+<para id="p1037">
+One of the overloaded constructors accepts integer parameters for the 
+
+<emphasis id="strong1044" effect="bold">
+red
+
+</emphasis>
+, 
+
+
+<emphasis id="strong1045" effect="bold">
+green
+
+</emphasis>
+, 
+
+<emphasis id="strong1046" effect="bold">
+blue
+
+</emphasis>
+, and 
+
+<emphasis id="strong1047" effect="bold">
+alpha
+
+</emphasis>
+ color components 
+
+<emphasis id="em1011" effect="italics">
+(also known as channels)
+
+</emphasis>
+. As 
+mentioned above, the 
+
+<emphasis id="strong1048" effect="bold">
+alpha
+
+</emphasis>
+ channel value defaults to 255 when 
+not given.
+
+</para>
+
+
+
+
+<para id="p1038">
+The second and third statements in 
+
+<link id="a1055" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ create two different 
+
+<emphasis id="strong1049" effect="bold">
+
+Color
+
+</emphasis>
+ objects. One object, which is initialized to represent pure red
+
+
+<emphasis id="em1012" effect="italics">
+(the green and blue color values are set to zero)
+
+</emphasis>
+ will be used to 
+specify the color of the rectangle's border. The red and green color values in 
+this object will be modified at runtime to cause the color to morph from red to 
+green.
+
+</para>
+
+
+
+
+<para id="p1039">
+The other 
+
+<emphasis id="strong1050" effect="bold">
+Color
+
+</emphasis>
+ object is initialized to represent pure 
+green 
+
+<emphasis id="em1013" effect="italics">
+(the red and blue color values are set to zero)
+
+</emphasis>
+ and will be used 
+to specify the background color used to fill the display surface.
+
+</para>
+
+
+
+
+</section>
+<section id="h41003">
+<title>
+<emphasis id="Create_and_set_display_mode_on_Surface_object" effect="bold">
+
+Create and set display mode on Surface 
+object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1040">
+According to the 
+
+<link id="a1056" url="http://www.pygame.org/docs/ref/surface.html">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="em1014" effect="italics">
+"A pygame Surface is used to represent any image... Call pygame.Surface() to create a new image object. The Surface will be cleared to all black. The only required arguments are the sizes. With no additional arguments, the Surface will be created in a format that best matches the display Surface."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1041">
+There are at least two different ways to create a 
+
+<emphasis id="strong1051" effect="bold">
+Surface
+
+</emphasis>
+ 
+object. One way is to call the constructor for the 
+
+<emphasis id="strong1052" effect="bold">
+Surface
+
+</emphasis>
+ 
+class as described above. The second way is to call the 
+
+<emphasis id="strong1053" effect="bold">
+pygame.display.set_mode
+
+</emphasis>
+ 
+function, which is the way that will be used in this program. Once the 
+
+<emphasis id="strong1054" effect="bold">
+Surface
+
+</emphasis>
+ 
+object is created, numerous 
+methods and attributes are available to manipulate the surface.
+
+</para>
+
+
+
+
+<para id="p1042">
+According to the
+
+
+<link id="a1057" url="http://www.pygame.org/docs/ref/display.html#pygame.display.set_mode">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="em1015" effect="italics">
+"This (pygame.display.set_mode) function will create a display Surface. The arguments passed in are requests for a display type. The actual created display will be the best possible match supported by the system."
+
+</emphasis>
+ The 
+formal argument list contains three arguments with default values. 
+
+</para>
+
+
+
+
+<para id="p1043">
+Continuing 
+with the 
+
+
+<link id="a1058" url="http://www.pygame.org/docs/ref/display.html#pygame.display.set_mode">
+
+
+documentation
+
+</link>
+
+, 
+
+<emphasis id="em1016" effect="italics">
+"The Surface that gets returned can be drawn to like a regular Surface but changes will eventually be seen on the monitor."
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1044">
+The fourth statement in 
+
+<link id="a1059" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1055" effect="bold">
+pygame.display.set_mode
+
+</emphasis>
+ 
+function to create a new 
+
+<emphasis id="strong1056" effect="bold">
+Surface
+
+</emphasis>
+ object, connect it to the 
+display, and set the width and height to 250 x 150 pixels respectively. A 
+rectangle will be drawn on this Surface object and 
+
+<emphasis id="em1017" effect="italics">
+"flipped"
+
+</emphasis>
+ to the 
+screen during each iteration of the runtime loop. 
+
+</para>
+
+
+
+
+<para id="p1045">
+I discussed other possible parameters to the 
+
+<emphasis id="strong1057" effect="bold">
+pygame.display.set_mode
+
+</emphasis>
+ 
+function, 
+
+<emphasis id="em1018" effect="italics">
+(such as FULLSCREEN, RESIZABLE, and NOFRAME)
+
+</emphasis>
+ in an earlier 
+module. None of those parameters were used in this program.
+
+</para>
+
+
+
+
+</section>
+<section id="h41004">
+<title>
+<emphasis id="An_object_of_type_Clock" effect="bold">
+
+An object of type Clock
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1046">
+According to the
+
+
+<link id="a1060" url="http://www.pygame.org/docs/ref/time.html#pygame.time.Clock">
+
+
+documentation
+
+</link>
+
+, a call to the 
+
+<emphasis id="strong1058" effect="bold">
+pygame.time.Clock
+
+</emphasis>
+ constructor
+
+
+<emphasis id="em1019" effect="italics">
+"Creates a new Clock object that can be used to track an amount of time. The clock also provides several functions to help control a game's framerate."
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1047">
+The last statement in 
+
+<link id="a1061" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ creates a 
+
+<emphasis id="strong1059" effect="bold">
+Clock
+
+</emphasis>
+ object. The 
+
+
+<emphasis id="strong1060" effect="bold">
+tick
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1061" effect="bold">
+Clock
+
+</emphasis>
+ object will be called at the end of each iteration of 
+the runtime loop to limit the program to no more than 
+
+<emphasis id="strong1062" effect="bold">
+FRAMERATE
+
+</emphasis>
+ 
+frames per second. 
+
+<emphasis id="em1020" effect="italics">
+(FRAMERATE is a constant that was defined in
+
+
+<link id="a1062" target-id="Listing_2">
+
+Listing 2
+
+</link>
+
+.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31005">
+<title>
+<emphasis id="Enter_the_runtime_loop" effect="bold">
+
+Enter the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1048">
+The statement in 
+
+<link id="a1063" target-id="Listing_4">
+
+Listing 4
+
+</link>
+
+ causes the program to enter the runtime loop. 
+Control will remain in the runtime loop until the value of the variable named
+
+
+<emphasis id="strong1063" effect="bold">
+quit
+
+</emphasis>
+ changes from 
+
+<emphasis id="strong1064" effect="bold">
+False
+
+</emphasis>
+ to 
+
+<emphasis id="strong1065" effect="bold">
+True
+
+</emphasis>
+. 
+You have seen code like this in earlier modules.
+
+</para>
+
+
+
+
+<table id="table1003" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1003">
+<row id="tr1006">
+
+
+
+<entry id="th1003">
+<emphasis id="Listing_4" effect="bold">
+
+Listing 4.
+
+</emphasis>
+
+ Enter the runtime loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1003">
+<row id="tr1007">
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">while not quit:</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<section id="h41005">
+<title>
+<emphasis id="Get_and_process_user_inputs" effect="bold">
+
+Get and process user inputs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1049">
+You have seen code like that shown in 
+
+<link id="a1064" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ before without much in the 
+way of an explanation. I will attempt to explain that code more fully in this 
+module.
+
+</para>
+
+
+
+
+<table id="table1004" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1004">
+<row id="tr1008">
+
+
+
+<entry id="th1004">
+<emphasis id="Listing_5" effect="bold">
+
+Listing 5.
+
+</emphasis>
+
+ Get and process user inputs.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1004">
+<row id="tr1009">
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of runtime loop.</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1050">
+According to the 
+
+<link id="a1065" url="http://www.pygame.org/docs/ref/event.html">
+
+
+documentation
+
+</link>
+
+, 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+<para id="p1051">
+<emphasis id="em1021" effect="italics">
+"Pygame handles all its event messaging through an event queue. The routines in this module help you manage that event queue...
+
+	
+
+</emphasis>
+
+
+
+
+</para>
+
+
+	
+
+<para id="p1052">
+<emphasis id="em1022" effect="italics">
+The queue is a regular queue of 
+	
+
+</emphasis>
+ 
+	
+
+<link id="a1066" url="http://www.pygame.org/docs/ref/event.html#pygame.event.EventType">
+
+
+	
+
+<emphasis id="em1023" effect="italics">
+pygame.event.EventType
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1024" effect="italics">
+ event objects, there are a variety of ways to access the events it contains. From simply checking for the existence of events, to grabbing them directly off the stack.
+
+	
+
+</emphasis>
+
+
+
+
+</para>
+
+
+	
+
+<para id="p1053">
+<emphasis id="em1025" effect="italics">
+An
+
+
+</emphasis>
+
+
+
+<link id="a1067" url="http://www.pygame.org/docs/ref/event.html#pygame.event.EventType">
+
+
+	
+
+<emphasis id="em1026" effect="italics">
+EventType
+
+</emphasis>
+</link>
+
+
+<emphasis id="em1027" effect="italics">
+ event object contains an event type identifier and a set of member data."
+
+</emphasis>
+</para>
+
+
+</quote>
+
+
+
+
+<para id="p1054">
+The code in 
+
+<link id="a1068" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ calls 
+
+<emphasis id="strong1066" effect="bold">
+pygame.event.get()
+
+</emphasis>
+, which 
+removes all of the
+
+
+<link id="a1069" url="http://www.pygame.org/docs/ref/event.html#pygame.event.EventType">
+
+
+EventType
+
+</link>
+
+ objects from the event queue and returns them in a list. The code 
+uses a 
+
+<emphasis id="strong1067" effect="bold">
+for
+
+</emphasis>
+ loop to iterate through the list and 
+to examine each object to determine if it is type QUIT.
+
+</para>
+
+
+
+
+<para id="p1055">
+Each event type is identified by a numeric 
+value. Once you have access to an object of type
+
+
+<link id="a1070" url="http://www.pygame.org/docs/ref/event.html#pygame.event.EventType">
+
+
+EventType
+
+</link>
+
+, you can determine its type by calling the 
+
+<emphasis id="strong1068" effect="bold">
+
+type
+
+</emphasis>
+ method on the object, which returns the type as a numeric integer.
+
+</para>
+
+
+
+
+<para id="p1056">
+To eliminate the requirement for us to remember the numeric 
+values for each event type, the 
+
+<emphasis id="strong1069" effect="bold">
+pygame
+
+</emphasis>
+ module defines a set of numeric constants 
+with appropriate corresponding names and values. For example, the constant 
+
+
+<emphasis id="strong1070" effect="bold">
+pygame.QUIT
+
+</emphasis>
+ has 
+a value that is equal to the numeric value for the event that occurs when the 
+user clicks the X-button in the upper-right corner of the image in 
+
+<link id="a1071" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. 
+This makes it possible for us to test for equality against a named constant to 
+determine if an event is of a particular type.
+
+</para>
+
+
+
+
+<para id="p1057">
+The code in 
+
+<link id="a1072" target-id="Listing_5">
+
+Listing 5
+
+</link>
+
+ tests each event from the queue to see if it matches
+
+
+<emphasis id="strong1071" effect="bold">
+pygame.QUIT
+
+</emphasis>
+ and if so, changes the value of the variable named
+
+
+<emphasis id="strong1072" effect="bold">
+quit
+
+</emphasis>
+ 
+from 
+
+<emphasis id="strong1073" effect="bold">
+False
+
+</emphasis>
+ to 
+
+<emphasis id="strong1074" effect="bold">
+True
+
+</emphasis>
+. This assures that the 
+runtime loop will exit when the test is made at the beginning of the next 
+iteration.
+
+</para>
+
+
+
+
+<para id="p1058">
+The names of 
+constants corresponding to other types of events are listed below along with the 
+attributes defined for each type of event.
+
+</para>
+
+
+
+
+<list id="ul1012" list-type="bulleted">
+
+	
+
+<item id="li1050">
+QUIT             none
+
+
+</item>
+
+
+	
+
+<item id="li1051">
+ACTIVEEVENT      gain, state 
+
+</item>
+
+
+	
+
+<item id="li1052">
+KEYDOWN          unicode, key, mod
+
+
+</item>
+
+
+	
+
+<item id="li1053">
+KEYUP            key, mod
+
+
+</item>
+
+
+	
+
+<item id="li1054">
+MOUSEMOTION pos, rel, buttons
+
+
+</item>
+
+
+	
+
+<item id="li1055">
+MOUSEBUTTONUP pos, button
+
+
+</item>
+
+
+	
+
+<item id="li1056">
+MOUSEBUTTONDOWN pos, button
+
+
+</item>
+
+
+	
+
+<item id="li1057">
+JOYAXISMOTION    joy, axis, value
+
+
+</item>
+
+
+	
+
+<item id="li1058">
+JOYBALLMOTION    joy, ball, rel 
+
+</item>
+
+
+	
+
+<item id="li1059">
+JOYHATMOTION     joy, hat, value
+
+
+</item>
+
+
+	
+
+<item id="li1060">
+JOYBUTTONUP      joy, button
+
+
+</item>
+
+
+	
+
+<item id="li1061">
+JOYBUTTONDOWN    joy, button
+
+
+</item>
+
+
+	
+
+<item id="li1062">
+VIDEORESIZE      size, w, h
+
+
+</item>
+
+
+	
+
+<item id="li1063">
+VIDEOEXPOSE      none
+
+
+</item>
+
+
+	
+
+<item id="li1064">
+USEREVENT code
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1059">
+You can read more about these event types in the
+
+
+<link id="a1073" url="http://www.pygame.org/docs/ref/event.html">
+
+documentation
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1060">
+This module will deal only with the simple QUIT event type. Future modules 
+will deal with more complex event types such as KEYDOWN and MOUSEBUTTONDOWN.
+
+</para>
+
+
+
+
+</section>
+<section id="h41006">
+<title>
+<emphasis id="Fill_display_Surface_object_with_green_background_Color_object" effect="bold">
+
+Fill display Surface object with green background Color object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1061">
+The code in 
+
+<link id="a1074" target-id="Listing_6">
+
+Listing 6
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1075" effect="bold">
+fill
+
+</emphasis>
+ method of the 
+
+<emphasis id="strong1076" effect="bold">
+
+Surface
+
+</emphasis>
+ object to cause it to take on the color represented by the
+
+
+<emphasis id="strong1077" effect="bold">
+Color
+
+</emphasis>
+ object referred to by the variable named 
+
+<emphasis id="strong1078" effect="bold">
+
+background
+
+</emphasis>
+. Recall from 
+
+<link id="a1075" target-id="Listing_3">
+
+Listing 3
+
+</link>
+
+ that this 
+
+<emphasis id="strong1079" effect="bold">
+Color
+
+</emphasis>
+ 
+object represents pure green.
+
+</para>
+
+
+
+
+<table id="table1005" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1005">
+<row id="tr1010">
+
+
+
+<entry id="th1005">
+<emphasis id="Listing_6" effect="bold">
+
+Listing 6.
+
+</emphasis>
+
+ Fill display Surface object with green background Color object.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1005">
+<row id="tr1011">
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">    surface.fill(background)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1062">
+The 
+
+<emphasis id="strong1080" effect="bold">
+fill
+
+</emphasis>
+ method has other default parameters that are not 
+used here. I may explore some of them in future modules.
+
+</para>
+
+
+
+
+</section>
+<section id="h41007">
+<title>
+<emphasis id="Cause_border_Color_object_to_morph_from_red_to_green" effect="bold">
+
+Cause border Color object to morph from red to green
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1063">
+The code in 
+
+<link id="a1076" target-id="Listing_7">
+
+Listing 7
+
+</link>
+
+ causes the color represented by the 
+
+<emphasis id="strong1081" effect="bold">
+Color
+
+</emphasis>
+ 
+object referred to by the variable named 
+
+<emphasis id="strong1082" effect="bold">
+border
+
+</emphasis>
+ to morph from 
+red to green on successive iterations of the runtime loop. When it reaches 
+green, it resets back to red.
+
+</para>
+
+
+
+
+<table id="table1006" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1006">
+<row id="tr1012">
+
+
+
+<entry id="th1006">
+<emphasis id="Listing_7" effect="bold">
+
+Listing 7.
+
+</emphasis>
+
+ Cause border Color object to morph from red to green.
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1006">
+<row id="tr1013">
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">   if border.r &gt;= INCREMENT:
+        border.r -= INCREMENT #Decrease red color component
+        border.g += INCREMENT #Increase green color component
+    else: #Reset the border Color object to pure red
+        border = pygame.Color(255,0,0)</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1064">
+The 
+
+<emphasis id="strong1083" effect="bold">
+Color
+
+</emphasis>
+ object referred to by 
+
+<emphasis id="strong1084" effect="bold">
+border
+
+</emphasis>
+ has 
+attributes named 
+
+<emphasis id="strong1085" effect="bold">
+r
+
+</emphasis>
+,
+
+
+<emphasis id="strong1086" effect="bold">
+g
+
+</emphasis>
+, and 
+
+<emphasis id="strong1087" effect="bold">
+b
+
+</emphasis>
+. These attributes represent the red, 
+green, and blue color channels respectively. They can be accessed and modified 
+at runtime to cause the state of the object to change at runtime.
+
+</para>
+
+
+
+
+<para id="p1065">
+The morphing effect is accomplished by decreasing the value of the attribute 
+named 
+
+<emphasis id="strong1088" effect="bold">
+r
+
+</emphasis>
+ and increasing the value of the attribute named 
+
+<emphasis id="strong1089" effect="bold">
+
+g
+
+</emphasis>
+ by the value stored in INCREMENT once during each iteration of the 
+runtime loop. 
+
+</para>
+
+
+
+
+<para id="p1066">
+Values for 
+
+<emphasis id="strong1090" effect="bold">
+r
+
+</emphasis>
+ and 
+
+<emphasis id="strong1091" effect="bold">
+g
+
+</emphasis>
+ less than zero or 
+greater than 255 are not allowed so logic is provided to prevent that from 
+happening. When the value of 
+
+<emphasis id="strong1092" effect="bold">
+r
+
+</emphasis>
+ becomes less than the value of 
+INCREMENT, the 
+
+<emphasis id="strong1093" effect="bold">
+else
+
+</emphasis>
+ clause causes the modified 
+
+<emphasis id="strong1094" effect="bold">
+Color
+
+</emphasis>
+ 
+object to be replaced by a new 
+
+<emphasis id="strong1095" effect="bold">
+Color
+
+</emphasis>
+ object that represents 
+pure red and the cycle repeats.
+
+</para>
+
+
+
+
+<quote id="blockquote1001" display="block">
+<emphasis id="em1028" effect="italics">
+This reset could also have been accomplished by setting 
+
+<emphasis id="strong1096" effect="bold">
+
+r
+
+</emphasis>
+ 
+to 255 and setting 
+
+<emphasis id="strong1097" effect="bold">
+g
+
+</emphasis>
+ to 0 without creating a new object.
+
+</emphasis>
+</quote>
+
+
+
+
+</section>
+<section id="h41008">
+<title>
+<emphasis id="Draw_and_display_the_rectangle" effect="bold">
+
+Draw and display the rectangle
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1067">
+The code in 
+
+<link id="a1077" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ draws a rectangle on the display 
+
+<emphasis id="strong1098" effect="bold">
+Surface
+
+</emphasis>
+ object 
+passing a 
+
+<emphasis id="strong1099" effect="bold">
+Color
+
+</emphasis>
+ object and a 
+
+<emphasis id="strong1100" effect="bold">
+Rect
+
+</emphasis>
+ object as 
+parameters. The constant named 
+
+<emphasis id="strong1101" effect="bold">
+WIDTH
+
+</emphasis>
+ is also passed as a 
+parameter causing the border width to be 25 pixels.
+
+</para>
+
+
+
+
+<table id="table1007" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1007">
+<row id="tr1014">
+
+
+
+<entry id="th1007">
+<emphasis id="Listing_8" effect="bold">
+
+Listing 8.
+
+</emphasis>
+
+ Draw and display the rectangle.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1007">
+<row id="tr1015">
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">    pygame.draw.rect(surface, border, rect, WIDTH)
+    
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1068">
+This code differs from code in an earlier module in that 
+
+<emphasis id="strong1102" effect="bold">
+Color
+
+</emphasis>
+ 
+and 
+
+<emphasis id="strong1103" effect="bold">
+Rect
+
+</emphasis>
+ objects are passed as parameters to 
+
+<emphasis id="strong1104" effect="bold">
+pygame.draw.rect
+
+</emphasis>
+ 
+instead of passing tuples. This illustrates the overloaded nature of 
+
+<emphasis id="strong1105" effect="bold">
+pygame.draw.rect
+
+</emphasis>
+. 
+In my opinion, it also makes the program more self-documenting.
+
+</para>
+
+
+
+
+<para id="p1069">
+<link id="a1078" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ also calls 
+
+<emphasis id="strong1106" effect="bold">
+flip
+
+</emphasis>
+, which you learned about in an 
+earlier module, to cause the contents of the display surface to be copied to the 
+screen.
+
+</para>
+
+
+
+
+<para id="p1070">
+Finally, 
+
+<link id="a1079" target-id="Listing_8">
+
+Listing 8
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1107" effect="bold">
+tick
+
+</emphasis>
+ method, which you also learned about in an 
+earlier module to insert a time delay to limit the frame rate of the program to less than FRAMERATE in frames per second.
+
+</para>
+
+
+
+
+<para id="p1071">
+At this point, control returns to the top of the runtime loop, which will 
+either exit or begin a new iteration depending of the value stored in the 
+variable named 
+
+<emphasis id="strong1108" effect="bold">
+quit
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31006">
+<title>
+<emphasis id="Terminate_the_program_outside_the_runtime_loop" effect="bold">
+
+Terminate the program outside the runtime loop
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1072">
+The code in 
+
+<link id="a1080" target-id="Listing_9">
+
+Listing 9
+
+</link>
+
+ terminates the program after control exits the runtime 
+loop.
+
+</para>
+
+
+
+
+<table id="table1008" summary="This is a table." pgwide="677">
+<tgroup cols="1">
+
+
+<thead id="thead1008">
+<row id="tr1016">
+
+
+
+<entry id="th1008">
+<emphasis id="Listing_9" effect="bold">
+
+Listing 9.
+
+</emphasis>
+
+ Terminate the program outside the runtime loop.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1008">
+<row id="tr1017">
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">pygame.quit() #Terminate the program outside the runtime loop</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+<para id="p1073">
+There is nothing new with this code so an explanation should not be needed.
+
+</para>
+
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1074">
+I encourage you to copy the code from 
+
+<link id="a1081" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+. Execute the code and confirm 
+that you get the same results as those shown in 
+
+<link id="a1082" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ through 
+
+<link id="a1083" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+.. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+
+
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Complete_program_listings" effect="bold">
+
+Complete program listing
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1075">
+A complete listing of the program is provided in 
+
+<link id="a1084" target-id="Listing_10">
+
+Listing 10
+
+</link>
+
+ below.
+
+</para>
+
+
+
+
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+<thead id="thead1009">
+<row id="tr1018">
+<entry id="th1009">
+
+
+
+<emphasis id="Listing_10" effect="bold">
+
+Listing 10.
+
+</emphasis>
+
+ Complete program listing.
+
+
+</entry>
+</row>
+</thead>
+
+
+<tbody id="tbody1009">
+<row id="tr1019">
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">"""
+File Color01.py
+Revised: 01/03/15
+Draws a rectangle with a wide colored border on a green background. The border
+color starts as red and slowly morphs into green. When it reaches green, it
+switches back to red and the cycle continues.
+================================================================================
+"""
+import pygame #Import required library
+
+pygame.init() #Initialize imported pygame modules
+quit = False #Initialize termination control variable.
+pygame.display.set_caption("Color01.py") #Set the window caption
+INCREMENT = 20 #Initialize control constant
+WIDTH = 25 #Initialize border width constant
+FRAMERATE = 5 #Used to control the maximum frame rate.
+
+rect = pygame.Rect(25, 25, 200, 100) #create a Rect object
+border = pygame.Color(255,0,0) #Create a red Color object
+background = pygame.Color( 0, 255, 0) #Create a green Color object
+surface = pygame.display.set_mode([250,150]) #Set the display mode
+clock = pygame.time.Clock() #Create an object to help track time
+
+#Enter the runtime loop
+while not quit:
+    #Get user inputs for this iteration of the runtime loop.
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            quit = True #Make this the final iteration of runtime loop.
+
+    #Fill display Surface object with green background Color object.
+    surface.fill(background)
+
+    #Cause border Color object to morph from red to green
+    if border.r &gt;= INCREMENT:
+        border.r -= INCREMENT #Decrease red color component
+        border.g += INCREMENT #Increase green color component
+    else: #Reset the border Color object to pure red
+        border = pygame.Color(255,0,0)
+    
+    #Draw a rectangle on the display Surface object with border Color object
+    # and Rect object. Make the border width 25 pixels.
+    pygame.draw.rect(surface, border, rect, WIDTH)
+   
+    #Display the new state
+    pygame.display.flip()
+    
+    clock.tick(FRAMERATE) #Control the frame rate in frames per second
+
+pygame.quit() #Terminate the program outside the runtime loop
+</code>
+
+
+
+
+</entry>
+</row>
+</tbody>
+
+
+</tgroup>
+</table>
+
+
+
+
+
+	
+
+</section>
+<section id="h11006">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1076">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1109" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1013" list-type="bulleted">
+
+					
+
+<item id="li1065">
+Module name: Itse1359-2220-Color-Part 1
+
+</item>
+
+
+					
+
+<item id="li1066">
+File: Itse1359-2220.htm
+
+
+</item>
+
+
+					
+
+<item id="li1067">
+Published: 01/04/15
+
+</item>
+
+
+					
+
+<item id="li1068">
+Revised: 01/31/16
+
+</item>
+
+
+
+				
+
+</list>
+
+
+</note>
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1110" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1077">
+<emphasis id="strong1111" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1078">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1079">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1080">
+<emphasis id="strong1112" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+</note>
+
+
+
+	
+
+
+<para id="p1081">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

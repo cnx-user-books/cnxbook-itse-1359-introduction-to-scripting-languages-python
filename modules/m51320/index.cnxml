@@ -1,0 +1,4548 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1030-Variables and Identifiers</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51320</md:content-id>
+  <md:title>Itse1359-1030-Variables and Identifiers</md:title>
+  <md:abstract>This module provides an introduction to the use of variables, and the required syntax of the identifiers used to represent variables.</md:abstract>
+  <md:uuid>b728b5ba-c35d-4ebd-bc33-97e9908270e3</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="_What_Is_A">
+
+What is a variable?
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1004">
+<link id="a1004" target-id="A_pigeonhole_in_memory_">
+
+A pigeonhole in memory
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1005">
+<link id="a1005" target-id="The_concept_of_type">
+
+The concept of type
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1006">
+<link id="a1006" target-id="Strongly_typed_languages">
+
+Strongly typed languages
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1007">
+<link id="a1007" target-id="Python_is_not_strongly_typed">
+
+Python is not strongly typed
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Declaration_of_variables">
+
+Declaration of variables
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="Dangerous_curves_ahead">
+
+Dangerous curves ahead! 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1010">
+<link id="a1010" target-id="Dont_use_the_same_name_for_two_variables_">
+
+Don't use the same name for two variables 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1011">
+<link id="a1011" target-id="A_more_subtle_danger">
+
+A more subtle danger
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1012">
+<link id="a1012" target-id="_Rules_for_Identifiers">
+
+Rules for identifiers
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="Give_me_the_rules_in_plain_English_">
+
+Give me the rules in plain English
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+			
+
+<item id="li1014">
+<link id="a1014" target-id="Allowable_characters">
+
+Allowable characters
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Case_is_significant_">
+
+Case is significant 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="Numbers">
+
+Numbers
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1017">
+<link id="a1017" target-id="Style">
+
+Style
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="Lets_Program">
+
+Let's program
+
+</link>
+
+
+<list id="ul1008" list-type="bulleted">
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="Start_the_interactive_Python_environment">
+
+Start the 
+		interactive Python environment
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="Create_and_use_some_variables">
+
+Create and use some 
+		variables
+
+</link>
+
+
+<list id="ul1009" list-type="bulleted">
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Back_to_the_pigeonholes">
+
+Back to the pigeonholes
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="The_assignment_operator_">
+
+The assignment operator 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1023">
+<link id="a1023" target-id="What_is_an_operand">
+
+What is an operand? 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1024">
+<link id="a1024" target-id="Addition_of_variables_">
+
+Addition of variables 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1025">
+<link id="a1025" target-id="Assigning_the_same_value_to_several_variables">
+
+Assigning the same value to several variables
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1026">
+<link id="a1026" target-id="Create_three_variables_">
+
+Create three variables 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1027">
+<link id="a1027" target-id="Assign_different_values">
+
+Assign different values
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="A_more_comprehensive_explanation">
+
+A more comprehensive explanation
+
+</link>
+
+
+<list id="ul1010" list-type="bulleted">
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="A_code_visualizer_tool">
+
+A code visualizer tool
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1030">
+<link id="a1030" target-id="Creation_of_variables_and_objects">
+
+Creation of 
+			variables and objects
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1031">
+<link id="a1031" target-id="The_important_point">
+
+The important point
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1032">
+<link id="a1032" target-id="The_sum_of_two_variables">
+
+The sum of two variables
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1033">
+<link id="a1033" target-id="Assigning_the_same_value">
+
+Assigning the same value to several variables
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1034">
+<link id="a1034" target-id="Breaking_a_reference_to_an_object">
+
+Breaking a 
+			reference to an object
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1035">
+<link id="a1035" target-id="Type_considerations_">
+
+Type considerations 
+
+</link>
+
+
+		
+
+<list id="ul1011" list-type="bulleted">
+
+			
+
+<item id="li1036">
+<link id="a1036" target-id="Advantages_and_disadvantages">
+
+Advantages and disadvantages
+
+</link>
+
+
+<list id="ul1012" list-type="bulleted">
+
+				
+
+<item id="li1037">
+<link id="a1037" target-id="The_range_of_values">
+
+The range of values
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1038">
+<link id="a1038" target-id="Speed_">
+
+Speed
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1039">
+<link id="a1039" target-id="Floating_point_provides_greater_range">
+
+Floating point provides greater range
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1040">
+<link id="a1040" target-id="Sometimes_range_is_important_and_sometimes_not">
+
+Sometimes range is important, and sometimes not
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1041">
+<link id="a1041" target-id="Approximate_results">
+
+Approximate results
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1042">
+<link id="a1042" target-id="Automatic_type_handling_in_Python">
+
+Automatic type handling 
+		in Python
+
+</link>
+
+
+<list id="ul1013" list-type="bulleted">
+
+			
+
+<item id="li1043">
+
+			
+
+<link id="a1043" target-id="Python_takes_care_of_routine_type_issues_automatically">
+
+Python takes care of routine type issues automatically
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1044">
+<link id="a1044" target-id="Next_assign_some_floating_point_values_">
+
+Assign some floating point values
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1045">
+<link id="a1045" target-id="How_is_this_accomplished_">
+
+How is this accomplished? 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="The_magic_continuation_variable">
+
+The magic continuation 
+		variable
+
+</link>
+
+
+<list id="ul1014" list-type="bulleted">
+
+			
+
+<item id="li1047">
+<link id="a1047" target-id="How_does_it_work">
+
+How does it work? 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1048">
+<link id="a1048" target-id="Sum_is_saved_in_the_continuation_variable">
+
+Sum is saved in the continuation variable
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1049">
+<link id="a1049" target-id="The_primary_purpose_of_the_continuation_variable">
+
+The primary purpose of the continuation variable
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Illegal_variable_names_">
+
+Illegal variable names 
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Variable_name_spelling_errors">
+
+Variable name spelling 
+		errors
+
+</link>
+
+
+<list id="ul1015" list-type="bulleted">
+
+			
+
+<item id="li1052">
+<link id="a1052" target-id="A_serious_programming_problem">
+
+A serious programming problem
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1053">
+<link id="a1053" target-id="Why_did_this_happen">
+
+Why did this happen? 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1054">
+<link id="a1054" target-id="The_code_visualizer">
+
+The code visualizer
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1055">
+<link id="a1055" target-id="Spelling_errors_can_be_dangerous">
+
+Spelling errors can be dangerous
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1056">
+<link id="a1056" target-id="Defending_against_spelling_errors">
+
+Defending against spelling errors
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1057">
+<link id="a1057" target-id="Meaningful_variable_names">
+
+Meaningful variable names
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1058">
+<link id="a1058" target-id="Remember_case_is_significant_in_variable_names">
+
+Remember, case is significant in variable names
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1059">
+<link id="a1059" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX.
+
+</para>
+
+
+
+
+<para id="p1001">
+This module provides an introduction to the use of variables, and the 
+required syntax of the identifiers used to represent variables.
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1002">
+I recommend that you open another copy of this module in a separate 
+	browser window and use the following links to easily find and view the 
+	Figures while you are reading about them. 
+
+</para>
+
+
+
+
+<para id="p1003">
+<emphasis id="em1001" effect="italics">
+(Note to blind and visually 
+	impaired students: most of the Figures in this module are presented in plain 
+	text format and should be accessible using an audio screen reader or a 
+	braille display.)
+
+</emphasis>
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1016" list-type="bulleted">
+
+		
+
+<item id="li1060">
+<link id="a1060" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. Create and use some variables.
+
+</item>
+
+
+		
+
+<item id="li1061">
+<link id="a1061" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Assigning the same value to several variables.
+
+</item>
+
+
+
+		
+
+<item id="li1062">
+<link id="a1062" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. The truth about pigeonholes. 
+
+</item>
+
+
+		
+
+<item id="li1063">
+<link id="a1063" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Assign a different value to the variable named b. 
+
+</item>
+
+
+		
+
+<item id="li1064">
+<link id="a1064" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Python takes care of routine type issues automatically.
+
+</item>
+
+
+		
+
+<item id="li1065">
+<link id="a1065" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. The magic continuation variable.
+
+</item>
+
+
+		
+
+<item id="li1066">
+<link id="a1066" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. An illegal variable name.
+
+</item>
+
+
+		
+
+<item id="li1067">
+<link id="a1067" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. A serious programming problem.
+
+</item>
+
+
+		
+
+<item id="li1068">
+<link id="a1068" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Visualizer showing result of a spelling error. 
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="_What_Is_A" effect="bold">
+
+
+</emphasis>
+
+What is a variable?
+
+</title>
+
+
+
+
+<para id="p1004">
+As the name implies, a variable is something whose value changes over time.
+
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="A_pigeonhole_in_memory_" effect="bold">
+
+A pigeonhole in memory 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1005">
+As a practical matter, a variable is a pigeonhole in memory, which has a 
+nickname, where you can store values. 
+
+</para>
+
+
+
+
+<para id="p1006">
+You can later retrieve the values that you have stored there by referring to 
+the pigeonhole by its nickname (
+
+<emphasis id="em1002" effect="italics">
+identifier
+
+</emphasis>
+). You can also store a 
+different value in the pigeonhole later if you desire. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="The_concept_of_type" effect="bold">
+
+The concept of type
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="Strongly_typed_languages" effect="bold">
+
+Strongly typed languages
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1007">
+One of the main differences between Python and programming languages such as 
+Java and C++ is the concept of 
+
+<emphasis id="em1003" effect="italics">
+type
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1008">
+In 
+
+<emphasis id="em1004" effect="italics">
+strongly-typed 
+
+</emphasis>
+languages like Java and C++, variables not only have a name, 
+they also have a type. The type determines the kind of data that you can store in the 
+pigeonhole. 
+
+</para>
+
+
+		
+
+<para id="p1009">
+It is probably more correct to say that the type determines the 
+		values that you can store there and the operations 
+
+<emphasis id="em1005" effect="italics">
+(addition, 
+		subtraction, etc.)
+
+</emphasis>
+ that you can perform on those values.
+
+</para>
+
+
+
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="Python_is_not_strongly_typed" effect="bold">
+
+Python is not strongly typed
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1010">
+One of the characteristics that makes Python easier to use than Java is the 
+fact that with Python you don't have to be concerned about the type of a 
+variable. Python takes care of type issues for you behind the scenes. However 
+that ease of use comes with some costs attached.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21003">
+<title>
+<emphasis id="Declaration_of_variables" effect="bold">
+
+Declaration of variables
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1011">
+Another difference between Python and Java is that with Java, you must 
+
+<emphasis id="em1006" effect="italics">
+
+declare
+
+</emphasis>
+ variables before you can use them. Declaration of variables is not 
+required with Python. 
+
+</para>
+
+
+
+
+<para id="p1012">
+With Python, if you need a variable, you simply come up with a name and start 
+using it as a variable. 
+
+</para>
+
+
+
+
+<section id="h31003">
+<title>
+<emphasis id="Dangerous_curves_ahead" effect="bold">
+
+Dangerous curves ahead
+
+</emphasis>
+
+! 
+
+</title>
+
+
+
+
+<para id="p1013">
+With this convenience comes some danger. You can only have one variable with 
+the same name within the same scope 
+
+<emphasis id="em1007" effect="italics">
+(I will discuss scope in a future 
+module)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="Dont_use_the_same_name_for_two_variables_" effect="bold">
+
+Don't use the same name for two variables 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1014">
+With Python, if you unintentionally use the same name for two or more variables, the 
+first will be overwritten by the second. This can lead to program bugs that are 
+difficult to find and fix. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="A_more_subtle_danger" effect="bold">
+
+A more subtle danger
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1015">
+A more subtle danger is that you create a variable that you intend to use 
+more than once and you spell it incorrectly in one of those uses. This can be an 
+extremely difficult problem to find and fix. I will illustrate what I mean by 
+this later with a sample program. 
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="_Rules_for_Identifiers" effect="bold">
+
+
+</emphasis>
+
+Rules for identifiers
+
+</title>
+
+
+
+
+<para id="p1016">
+The name for a variable must follow the naming rules for identifiers that you 
+will find in the 
+
+<emphasis id="em1008" effect="italics">
+
+
+
+<link id="a1069" url="https://docs.python.org/3/reference/lexical_analysis.html#identifiers">
+
+Python Language Reference -- 2.3. Identifiers and keywords
+
+</link>
+
+.
+
+</emphasis>
+</para>
+
+
+
+
+<section id="h21004">
+<title>
+<emphasis id="Give_me_the_rules_in_plain_English_" effect="bold">
+
+Give me the rules in plain English 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1017">
+The notation used in the 
+
+<emphasis id="em1009" effect="italics">
+Python Language Reference
+
+</emphasis>
+ to define the 
+naming rules is a little complicated, so I will try to interpret it for you. 
+
+</para>
+
+
+
+
+<section id="h31006">
+<title>
+<emphasis id="Allowable_characters" effect="bold">
+
+Allowable characters
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1018">
+I believe that the 
+
+<emphasis id="em1010" effect="italics">
+
+
+
+<link id="a1070" url="https://docs.python.org/3/reference/lexical_analysis.html#identifiers">
+
+Python Language Reference -- 2.3. Identifiers and keywords
+
+</link>
+
+
+</emphasis>
+ is saying that identifiers must begin 
+with either a letter or an underscore character. Following that, you can use an 
+unlimited sequence of letters 
+
+<emphasis id="em1011" effect="italics">
+(uppercase A through Z or lowercase a through 
+z)
+
+</emphasis>
+, numbers 
+
+<emphasis id="em1012" effect="italics">
+
+(0 through 9)
+
+</emphasis>
+, or underscore characters. 
+
+</para>
+
+
+
+
+<quote id="blockquote1000" display="block">
+Note that although the underscore character is allowed, it has 
+special meaning in Python. I recommend that you do not use the underscore 
+character for the identifiers that you create.
+
+</quote>
+
+
+
+
+</section>
+<section id="h31007">
+<title>
+<emphasis id="Case_is_significant_" effect="bold">
+
+Case is significant 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1019">
+The letters can be uppercase or lowercase, and case is significant. In other 
+words, the identifier 
+
+<emphasis id="strong1000" effect="bold">
+Ax
+
+</emphasis>
+ is not the same as the identifier
+
+
+<emphasis id="strong1001" effect="bold">
+aX
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="Numbers" effect="bold">
+
+Numbers
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1020">
+Numbers can be any of the digit characters between and including 0 and 9. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31009">
+<title>
+<emphasis id="Style" effect="bold">
+
+Style
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1021">
+Click 
+
+<link id="a1071" url="http://legacy.python.org/dev/peps/pep-0008/">
+
+PEP 8 -- Style 
+Guide for Python Code
+
+</link>
+
+ to learn more about how to create identifiers for 
+variables and other programming elements as well.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Lets_Program" effect="bold">
+
+Let's program
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<section id="h21005">
+<title>
+<emphasis id="Start_the_interactive_Python_environment" effect="bold">
+
+Start the interactive Python environment
+
+</emphasis>
+
+
+
+
+</title>
+
+
+
+
+<para id="p1022">
+The first thing that you need to do is to start the interactive programming 
+environment. If you have forgotten how to do that, see the module titled 
+
+<emphasis id="em1013" effect="italics">
+
+Itse1359-1010-Getting Started
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="Create_and_use_some_variables" effect="bold">
+
+Create and use some variables
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1023">
+The interactive fragment shown in 
+
+
+<link id="a1072" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+: 
+
+</para>
+
+
+
+
+<list id="ul1017" list-type="bulleted">
+
+	
+
+<item id="li1069">
+Creates two variables named x and y,
+
+</item>
+
+
+	
+
+<item id="li1070">
+Populates them by assigning values of 6 and 5 to them respectively
+
+</item>
+
+
+	
+
+<item id="li1071">
+Adds their values together to produce the sum value of 11.
+
+</item>
+
+
+
+
+</list>
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Create and use some variables.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+&gt;&gt;&gt; x=6 # create and populate x
+&gt;&gt;&gt; y=5 # create and populate y
+&gt;&gt;&gt; x+y # add x to y and display the sum
+11
+&gt;&gt;&gt;
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<section id="h31010">
+<title>
+<emphasis id="Back_to_the_pigeonholes" effect="bold">
+
+Back to the pigeonholes
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1024">
+Using the informal jargon from an earlier paragraph, two pigeonholes are 
+established in memory and are given nicknames of x and y. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31011">
+<title>
+<emphasis id="The_assignment_operator_" effect="bold">
+
+The assignment operator 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1025">
+Integer values of 6 and 5 are stored in the two pigeonholes 
+using the 
+
+<emphasis id="em1014" effect="italics">
+assignment operator
+
+</emphasis>
+ (=). 
+
+</para>
+
+
+
+
+<para id="p1026">
+The use of the assignment operator in this fashion causes the value of its 
+
+
+<emphasis id="em1015" effect="italics">
+right operand
+
+</emphasis>
+ to be stored in the pigeonhole identified by its 
+
+<emphasis id="em1016" effect="italics">
+left operand
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="What_is_an_operand" effect="bold">
+
+What is an operand
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1027">
+If you don't recognize the use of the term operand, see the earlier module 
+titled 
+
+<emphasis id="em1017" effect="italics">
+Itse1359-1020-Numbers
+
+</emphasis>
+ for an explanation.
+
+</para>
+
+
+
+
+<para id="p1028">
+In this case, the right operands of the assignment operators are 
+
+<emphasis id="em1018" effect="italics">
+literal numeric 
+values
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<para id="p1029">
+The left operands of the assignment operators are the nicknames identifying the two 
+memory locations that constitute the variables named x and y. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31013">
+<title>
+<emphasis id="Addition_of_variables_" effect="bold">
+
+Addition of variables 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1030">
+The values are retrieved from each 
+pigeonhole and added together in the third line of code. The result of the addition 
+
+<emphasis id="em1019" effect="italics">
+(11)
+
+</emphasis>
+ is displayed as 
+output from the expression 
+
+<emphasis id="strong1002" effect="bold">
+x+y
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="Assigning_the_same_value_to_several_variables" effect="bold">
+
+Assigning the same value to several variables
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1031">
+Python allows you to assign the same value to several variables, causing them 
+to come into existence 
+
+<emphasis id="em1020" effect="italics">
+(begin to occupy memory)
+
+</emphasis>
+ at the same time if necessary
+
+
+</para>
+
+
+
+
+<para id="p1032">
+Consider the interactive fragment shown in
+
+
+<link id="a1073" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Assigning the same value to several variables.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+&gt;&gt;&gt; a=b=c=10 # assign 10 to several variables
+&gt;&gt;&gt; a+b+c    # add them together
+30
+&gt;&gt;&gt; a=b=c=20 # assign 20 to same variables
+&gt;&gt;&gt; a+b+c    # add them together
+60
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31015">
+<title>
+<emphasis id="Create_three_variables_" effect="bold">
+
+Create three variables 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1033">
+The first line of code in 
+
+<link id="a1074" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ creates three variables named 
+
+<emphasis id="strong1003" effect="bold">
+a
+
+</emphasis>
+, 
+
+
+<emphasis id="strong1004" effect="bold">
+b
+
+</emphasis>
+, and 
+
+
+<emphasis id="strong1005" effect="bold">
+c
+
+</emphasis>
+, and assigns a value of 10 to each of them. 
+
+</para>
+
+
+
+
+<para id="p1034">
+They are then added together, in the second line of code, to produce an 
+output value of 30. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="Assign_different_values" effect="bold">
+
+Assign different values
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1035">
+The fourth line of code assigns the value of 20 to the same 
+three variables, replacing what was previously there with the new value. Again 
+they are added together, this time producing an output value of 60. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21007">
+<title>
+<emphasis id="A_more_comprehensive_explanation" effect="bold">
+
+A more comprehensive explanation
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1036">
+Pigeonhole explanations are good for starters, but let's move on to a more 
+comprehensive and technically correct explanation.
+
+</para>
+
+
+
+
+<para id="p1037">
+According to the Python gurus, everything 
+
+<emphasis id="em1021" effect="italics">
+(or at least almost everything)
+
+</emphasis>
+ 
+in Python is an object. I indicated earlier that data values are stored in variables. 
+In reality, that is not the case. 
+
+<link id="a1075" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows the truth about pigeonholes, 
+variables, and objects.
+
+</para>
+
+
+
+
+
+<para id="p1038">
+<emphasis id="strong1006" effect="bold">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3.
+
+</emphasis>
+
+ The truth about pigeonholes.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1039">
+<media id="media1000" alt="missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-1030-a.jpg" width="625" height="246"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<section id="h31017">
+<title>
+<emphasis id="A_code_visualizer_tool" effect="bold">
+
+A code visualizer tool
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1040">
+The image in 
+
+<link id="a1076" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ was produced using a 
+
+<emphasis id="em1022" effect="italics">
+code visualizer tool
+
+</emphasis>
+ from the 
+
+<link id="a1077" url="http://pythontutor.com/visualize.html#mode=edit">
+
+Online Python Tutor
+
+</link>
+
+. 
+At this point in the course, you can ignore the buttons at the bottom of 
+
+<link id="a1078" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ and concentrate on the code window on the upper left and the diagram on the 
+right.
+
+</para>
+
+
+
+
+<para id="p1041">
+Although not implemented using the Python interactive interface, the code shown 
+in the code window in 
+
+<link id="a1079" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ is similar to code discussed earlier in this module.
+
+</para>
+
+
+
+
+</section>
+<section id="h31018">
+<title>
+<emphasis id="Creation_of_variables_and_objects" effect="bold">
+
+Creation of variables and 
+objects
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1042">
+The first two lines of code in 
+
+<link id="a1080" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ show the creation of two variables named 
+
+
+<emphasis id="strong1007" effect="bold">
+x
+
+</emphasis>
+ and 
+
+<emphasis id="strong1008" effect="bold">
+y
+
+</emphasis>
+ 
+and the assignment of the values 6 and 5 to those variables respectively. The 
+diagram on the right in 
+
+<link id="a1081" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows what actually happens in memory as those two lines 
+of code are executed.
+
+</para>
+
+
+
+
+<para id="p1043">
+The two variables are created and stored in something called the 
+
+<emphasis id="em1023" effect="italics">
+Global 
+frame
+
+</emphasis>
+. Two objects of type 
+
+<emphasis id="strong1009" effect="bold">
+int
+
+</emphasis>
+ are created and values of 
+6 and 5 are stored in those objects. The objects themselves are stored in a part 
+of memory commonly called the 
+
+<emphasis id="em1024" effect="italics">
+heap
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31019">
+<title>
+<emphasis id="The_important_point" effect="bold">
+
+The important point
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1044">
+Now here is the important point. The values of 6 and 5 are not actually 
+stored in the variables. Instead, references 
+
+<emphasis id="em1025" effect="italics">
+(sometimes called pointers)
+
+</emphasis>
+ 
+that point to the objects containing the values of 6 and 5 are stored in the 
+variables. Those references can later be used to find and to access the contents of the 
+objects.
+
+</para>
+
+
+
+
+</section>
+<section id="h31020">
+<title>
+<emphasis id="The_sum_of_two_variables" effect="bold">
+
+The sum of two variables
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1045">
+The statement on line 3 in 
+
+<link id="a1082" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ creates a new variable named 
+
+<emphasis id="strong1010" effect="bold">
+z
+
+</emphasis>
+ on the 
+left side of the assignment operator. The expression on the right side of the 
+assignment operator accesses the contents of the first two objects, adds their 
+values, and assigns the result to the variable named 
+
+<emphasis id="strong1011" effect="bold">
+z
+
+</emphasis>
+. This in turn causes a 
+new object of type 
+
+<emphasis id="strong1012" effect="bold">
+int
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<list id="ul1018" list-type="bulleted">
+
+	
+
+<item id="li1072">
+to be created, 
+
+</item>
+
+
+	
+
+<item id="li1073">
+populated with a value of 11 
+
+<emphasis id="em1026" effect="italics">
+(the sum of 6 and 5)
+
+</emphasis>
+, and 
+
+</item>
+
+
+	
+
+<item id="li1074">
+stored 
+on the heap. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1046">
+A reference to the new object is stored in the new variable named 
+
+<emphasis id="strong1013" effect="bold">
+z
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31021">
+<title>
+<emphasis id="Assigning_the_same_value" effect="bold">
+
+Assigning the same value
+
+</emphasis>
+
+ to several variables
+
+</title>
+
+
+
+
+<para id="p1047">
+The statement on line 4 in 
+
+<link id="a1083" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ creates three more variables named a, b, 
+and c and assigns a value of 10 to each of them. The diagram on the right 
+indicates that a single new object of type 
+
+<emphasis id="strong1014" effect="bold">
+int
+
+</emphasis>
+ containing the value 10 is 
+created and stored on the heap. References to that single object are stored in 
+all three variables named a, b, and c. In other words, the contents of all three 
+variables point to the same object.
+
+</para>
+
+
+
+
+<para id="p1048">
+Finally, on line 5, a value of 10 is stored in a new variable named 
+
+<emphasis id="strong1015" effect="bold">
+d
+
+</emphasis>
+. The 
+diagram on the right shows that a reference to the existing object containing 
+the value 10 is stored in this variable as well. Thus, this variable shares 
+an object with the variables named 
+
+<emphasis id="strong1016" effect="bold">
+a
+
+</emphasis>
+, 
+
+<emphasis id="strong1017" effect="bold">
+b
+
+</emphasis>
+, and 
+
+
+<emphasis id="strong1018" effect="bold">
+c
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31022">
+<title>
+<emphasis id="Breaking_a_reference_to_an_object" effect="bold">
+
+Breaking a reference to an 
+object
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1049">
+<link id="a1084" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ shows what happens if a different value is assigned to an existing 
+variable. In this case, the string value "ok" is assigned to the existing variable 
+named 
+
+<emphasis id="strong1019" effect="bold">
+b
+
+</emphasis>
+ by the last statement in the code in 
+
+<link id="a1085" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1050">
+<emphasis id="strong1020" effect="bold">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4.
+
+</emphasis>
+
+ Assign a different value to the variable 
+	named b.
+
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1051">
+<media id="media1001" alt="missing image" display="block">
+<image id="img1001" mime-type="image/jpeg" src="../../media/1359-1030-b.jpg" width="631" height="264"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1052">
+The diagram on the right in 
+
+<link id="a1086" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ shows that this causes a new object of 
+type 
+
+<emphasis id="strong1021" effect="bold">
+str
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<list id="ul1019" list-type="bulleted">
+
+	
+
+<item id="li1075">
+to be created, 
+
+</item>
+
+
+	
+
+<item id="li1076">
+populated with "ok", and 
+
+</item>
+
+
+	
+
+<item id="li1077">
+stored on the heap. 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1053">
+It also 
+causes a reference to the new object to be stored in the variable named 
+
+<emphasis id="strong1022" effect="bold">
+b
+
+</emphasis>
+, 
+replacing the reference to a different object that was previously stored there.
+
+</para>
+
+
+
+
+<para id="p1054">
+You will be learning a lot more about objects as well as the code visualizer 
+tool in future modules.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Type_considerations_" effect="bold">
+
+Type considerations 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1055">
+In most modern programming systems, values having fractional parts, such as 
+3.14159 are commonly referred to as 
+
+<emphasis id="em1027" effect="italics">
+floating point
+
+</emphasis>
+ types. 
+
+<emphasis id="em1028" effect="italics">
+(This 
+terminology comes from the fact that the decimal point can float back and forth 
+from left to right.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1056">
+Similarly, whole number values are commonly referred to as 
+
+<emphasis id="em1029" effect="italics">
+integer
+
+</emphasis>
+ 
+types. 
+
+<emphasis id="em1030" effect="italics">
+(These are values with no decimal parts, such as, "I have 3 whole 
+apples.") 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<section id="h31023">
+<title>
+<emphasis id="Advantages_and_disadvantages" effect="bold">
+
+Advantages and disadvantages
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1057">
+Each type has advantages and disadvantages relative to the other when 
+performing computations. 
+
+</para>
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="The_range_of_values" effect="bold">
+
+The range of values
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1058">
+For example, in some systems, the total range of values for a particular integer type 
+is restricted to the set of whole numbers between -32768 and +32767. Anything 
+outside that range cannot be handled as a whole number of that integer type. 
+
+</para>
+
+
+
+
+<para id="p1059">
+Although the range of an integer type will be different on different systems, 
+it will almost always be less than the range of a floating point type on the 
+same system. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="Speed_" effect="bold">
+
+Speed
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1060">
+On some systems integer arithmetic is performed much faster than 
+floating point arithmetic. On those systems, if speed is important, using 
+integers may be more attractive than using floating point types. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41002">
+<title>
+<emphasis id="Floating_point_provides_greater_range" effect="bold">
+
+Floating point provides greater range
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1061">
+On most systems, the floating point type provides a much greater range in 
+terms of the values that can be maintained and used for arithmetic. For example, 
+a particular system might be capable of representing the following two values as 
+well as millions of values in between: 
+
+</para>
+
+
+
+
+<list id="ul1020" list-type="bulleted">
+
+	
+
+<item id="li1078">
+0.000000000033333
+
+</item>
+
+
+	
+
+<item id="li1079">
+333330000000000.0 
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h41003">
+<title>
+<emphasis id="Sometimes_range_is_important_and_sometimes_not" effect="bold">
+
+Sometimes range is important, and sometimes not
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1062">
+Sometimes range is important, and sometimes it isn't. However, as I mentioned 
+above, in some systems this greater range is obtained at some sacrifice in 
+arithmetic speed relative to integer types. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41004">
+<title>
+<emphasis id="Approximate_results" effect="bold">
+
+Approximate results
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1063">
+Also, as I will explain in the 
+
+<emphasis id="em1031" effect="italics">
+Review
+
+</emphasis>
+ module that goes with this 
+module, floating point 
+arithmetic often produces approximate results instead of exact results. 
+
+</para>
+
+
+
+
+<para id="p1064">
+While approximate results might be OK for some scientific calculations, they might 
+not be OK for other calculations such as financial calculations for example.
+
+</para>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Automatic_type_handling_in_Python" effect="bold">
+
+Automatic type handling in Python
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1065">
+In 
+
+<emphasis id="em1032" effect="italics">
+strongly-typed
+
+</emphasis>
+ languages such as Java, it is the responsibility of 
+the programmer to make certain that types are handled correctly. For example, it 
+is often not possible to store a floating point value into a variable previously 
+declared to be for the storage of integer values. There is a very strong 
+possibility that it simply won't fit. 
+
+</para>
+
+
+
+
+<section id="h31024">
+<title>
+<emphasis id="Python_takes_care_of_routine_type_issues_automatically" effect="bold">
+
+Python takes care of routine type issues automatically
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1066">
+Consider the interactive code fragment shown in
+
+
+<link id="a1087" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. The variables x and
+y are originally created to store integers and are populated with the 
+values 5 and 6 respectively. The variables are added and the correct sum is 
+displayed as output from the interpreter. 
+
+</para>
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Python takes care of routine type issues automatically.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+&gt;&gt;&gt; x=5
+&gt;&gt;&gt; y=6
+&gt;&gt;&gt; x+y
+11
+&gt;&gt;&gt; x=5.55555
+&gt;&gt;&gt; y=6.66666
+&gt;&gt;&gt; x+y
+12.22221
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31025">
+<title>
+<emphasis id="Next_assign_some_floating_point_values_" effect="bold">
+
+Assign some floating point values 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1067">
+Following that, the floating point values 5.55555 and 6.66666 are assigned to the same 
+two variables named x and y. The two variables are successfully 
+added and the correct result is displayed, demonstrating that the two floating 
+point values were successfully stored in the variables originally created for 
+integers. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31026">
+<title>
+<emphasis id="How_is_this_accomplished_" effect="bold">
+
+How is this accomplished? 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1068">
+I don't know the inner workings of exactly how this is accomplished. As Python programmers, we don't 
+usually 
+care. We are simply happy that it works without the requirement for us to deal 
+with the details of type. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21010">
+<title>
+<emphasis id="The_magic_continuation_variable" effect="bold">
+
+The magic continuation variable
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1069">
+In interactive mode, Python automatically provides a variable whose name is 
+simply the underscore character (_). 
+
+</para>
+
+
+
+
+<para id="p1070">
+This variable makes it easy to do continuation arithmetic in interactive 
+mode. 
+
+<emphasis id="em1033" effect="italics">
+(This variable is intended for read only purposes, so don't assign a value 
+to it explicitly.) 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1071">
+At any point in time in interactive mode, this variable will contain the most recent output value 
+displayed by the interpreter. 
+
+</para>
+
+
+
+
+<section id="h31027">
+<title>
+<emphasis id="How_does_it_work" effect="bold">
+
+How does it work
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1072">
+Consider the interactive code fragment shown in
+
+
+<link id="a1088" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. This fragment starts out 
+just like previous examples, causing the sum of 5 and 6 to be calculated and 
+displayed. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. The magic continuation variable.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+&gt;&gt;&gt; 5+6
+11
+&gt;&gt;&gt; _+22 # add 22 to the continuation variable
+33
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31028">
+<title>
+<emphasis id="Sum_is_saved_in_the_continuation_variable" effect="bold">
+
+Sum is saved in the continuation variable
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1073">
+As mentioned above, the sum value of 11 is automatically saved in the 
+continuation variable whose name is simply the underscore. 
+
+</para>
+
+
+
+
+<para id="p1074">
+The contents of the continuation variable 
+
+<emphasis id="em1034" effect="italics">
+(11)
+
+</emphasis>
+ are then added to 22 producing 
+a result of 33. 
+
+<emphasis id="em1035" effect="italics">
+(Note the use of the underscore as the left operand of the 
+addition operator.)
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+</section>
+<section id="h31029">
+<title>
+<emphasis id="The_primary_purpose_of_the_continuation_variable" effect="bold">
+
+The primary purpose of the continuation variable
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1075">
+The primary purpose of this automatic variable named _ is to make it 
+easier for you to string calculations together in interactive mode and to 
+display the intermediate results as you go. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21011">
+<title>
+<emphasis id="Illegal_variable_names_" effect="bold">
+
+Illegal variable names 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1076">
+The interactive fragment in 
+
+<link id="a1089" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ 
+shows the result of attempting to use an illegal variable name. 
+
+</para>
+
+
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. An illegal variable 
+				name.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+&gt;&gt;&gt; 1x=6
+SyntaxError: invalid syntax
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1077">
+The output shown in 
+
+<link id="a1090" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+ was produced by the IDLE GUI interface. 
+	Although not shown here, the "1x" was highlighted with a red background. 
+
+<emphasis id="em1036" effect="italics">
+
+	(The command-line interface provides essentially the same information but in 
+	a different format.)
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1078">
+Variable names cannot begin with a digit. They must begin with either a 
+letter or an underscore character. That was the reason for the error in 
+
+<link id="a1091" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.
+
+
+<emphasis id="em1037" effect="italics">
+(Without getting into the details as to why, I recommend that you never 
+begin a variable name or a method name with the underscore character.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h21012">
+<title>
+<emphasis id="Variable_name_spelling_errors" effect="bold">
+
+Variable name spelling errors
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1079">
+The interpreter assumes that you know what you are doing, and won't help you 
+avoid spelling errors in variable names 
+
+<emphasis id="em1038" effect="italics">
+(unless the spelling error produces an 
+illegal variable name)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+<section id="h31030">
+<title>
+<emphasis id="A_serious_programming_problem" effect="bold">
+
+A serious programming problem
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1080">
+Now I will illustrate a very subtle and very serious programming problem. Consider 
+the interactive code fragment in 
+
+<link id="a1092" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. 
+The programmer expected to get a final answer of 16+5 = 21, but instead the 
+final answer was 11. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. A serious programming problem.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+&gt;&gt;&gt; xypdq = 6
+&gt;&gt;&gt; pzmbw = 5
+&gt;&gt;&gt; xypdq + pzmbw
+11
+&gt;&gt;&gt; xyppq = 16 # accidental misspelling
+&gt;&gt;&gt; xypdq + pzmbw # correct spelling
+11
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31031">
+<title>
+<emphasis id="Why_did_this_happen" effect="bold">
+
+Why did this happen
+
+</emphasis>
+
+? 
+
+</title>
+
+
+
+
+<para id="p1081">
+The problem arose in the fifth line of text in 
+
+<link id="a1093" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. In this line, the 
+programmer intended to assign a value of 16 to the existing variable named xypdq. However, because of a spelling error, the programmer 
+inadvertently created a new variable 
+named xyppq and assigned the new value of 16 to the new variable instead 
+of assigning it to the existing variable. 
+
+</para>
+
+
+
+
+<para id="p1082">
+As a result, the value stored in the original variable named xypdq wasn't changed. 
+When that variable was used later in an expression, the result did not meet the 
+programmer's expectations. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31032">
+<title>
+<emphasis id="The_code_visualizer" effect="bold">
+
+The code visualizer
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1083">
+This error is illustrated in the diagram for the code visualizer in 
+
+
+<link id="a1094" target-id="Figure_9">
+
+Figure 
+9
+
+</link>
+
+.
+
+</para>
+
+
+
+
+
+<para id="p1084">
+<emphasis id="strong1023" effect="bold">
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9.
+
+</emphasis>
+
+ Visualizer showing result of a spelling error.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1085">
+<media id="media1002" alt="missing image" display="block">
+<image id="img1002" mime-type="image/jpeg" src="../../media/1359-1030-c.jpg" width="639" height="263"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1086">
+The code in the code window in 
+
+<link id="a1095" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+ is similar to the interactive code 
+in 
+
+<link id="a1096" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1087">
+The diagram on the right in 
+
+<link id="a1097" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+ shows a variable named 
+
+<emphasis id="strong1024" effect="bold">
+xyppq
+
+</emphasis>
+
+
+
+<emphasis id="em1039" effect="italics">
+(not xypdq)
+
+</emphasis>
+ that exists solely because of a spelling error when writing 
+the code. That variable should not exist. In addition, that variable points to 
+an object of type 
+
+<emphasis id="strong1025" effect="bold">
+int
+
+</emphasis>
+ containing a value 16. That object also 
+should not exist. 
+
+<emphasis id="em1040" effect="italics">
+(The computer does exactly what you tell it to do, even if 
+what you tell it to do is wrong.)
+
+</emphasis>
+</para>
+
+
+
+
+</section>
+<section id="h31033">
+<title>
+<emphasis id="Spelling_errors_can_be_dangerous" effect="bold">
+
+Spelling errors can be dangerous
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1088">
+This is one of the greatest dangers of using a programming language that 
+doesn't require the declaration of variables. This type of spelling error is 
+easy to make 
+
+<emphasis id="em1041" effect="italics">
+(as a result of a simple typing error)
+
+</emphasis>
+, and can be extremely 
+difficult to find and fix. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31034">
+<title>
+<emphasis id="Defending_against_spelling_errors" effect="bold">
+
+Defending against spelling errors
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1089">
+The best defense against this kind of error is to make all of your variable 
+names meaningful. Then if you make a typing error 
+
+<emphasis id="em1042" effect="italics">
+(that results in a spelling 
+error)
+
+</emphasis>
+, you might have a better chance of finding it later. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31035">
+<title>
+<emphasis id="Meaningful_variable_names" effect="bold">
+
+Meaningful variable names
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1090">
+Some meaningful variable names follow. Note the judicious use of upper and 
+lower case to visually break the variable name into separate recognizable words. This is a 
+naming convention that has become very popular, particular among Java 
+programmers. It is commonly referred to as 
+
+<emphasis id="em1043" effect="italics">
+camelCase
+
+</emphasis>
+ as in 
+
+<emphasis id="em1044" effect="italics">
+
+
+
+<emphasis id="strong1026" effect="bold">
+thisCamelHasFourHumps
+
+</emphasis>
+</emphasis>
+.
+
+</para>
+
+
+
+
+<list id="ul1021" list-type="bulleted">
+
+	
+
+<item id="li1080">
+myUpperLimit
+
+</item>
+
+
+	
+
+<item id="li1081">
+yourUpperLimit
+
+</item>
+
+
+	
+
+<item id="li1082">
+theOverheadRate
+
+</item>
+
+
+	
+
+<item id="li1083">
+theFinalPrice
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+</section>
+<section id="h31036">
+<title>
+<emphasis id="Remember_case_is_significant_in_variable_names" effect="bold">
+
+Remember, case is significant in variable names
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1091">
+The variable named 
+
+<emphasis id="strong1027" effect="bold">
+MyUpperLimit
+
+</emphasis>
+ is not the same variable as the one 
+named 
+
+<emphasis id="strong1028" effect="bold">
+myUpperLimit
+
+</emphasis>
+. 
+
+</para>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1092">
+This section contains a variety of miscellaneous information. 
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1029" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1022" list-type="bulleted">
+
+					
+
+<item id="li1084">
+Module name: Itse1359-1030-Variables and Identifiers
+
+</item>
+
+
+					
+
+<item id="li1085">
+File: Itse1359-1030.htm
+
+
+</item>
+
+
+					
+
+<item id="li1086">
+Published: 10/14/14
+
+</item>
+
+
+					
+
+<item id="li1087">
+Revised: 01/31/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1030" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1093">
+<emphasis id="strong1031" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1094">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1095">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1096">
+<emphasis id="strong1032" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1097">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

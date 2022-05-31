@@ -1,0 +1,2996 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1230-The if Statement</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51410</md:content-id>
+  <md:title>Itse1359-1230-The if Statement</md:title>
+  <md:abstract>This module explains Python decision logic in general and the if statement in particular.</md:abstract>
+  <md:uuid>9e98cb96-b07c-427a-bc52-6b0e7fc4a4b0</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of Contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="What_you_have_learned">
+
+What you have learned
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1002">
+<link id="a1002" target-id="What_you_will_learn">
+
+What you will learn
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1003">
+<link id="a1003" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1004">
+<link id="a1004" target-id="Images">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1005">
+<link id="a1005" target-id="Listings">
+
+Listings
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1006">
+<link id="a1006" target-id="Discussion_and_sample_code">
+
+Discussion and sample code
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1007">
+<link id="a1007" target-id="The_if_statement">
+
+The if statement
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1008">
+<link id="a1008" target-id="Visualization_of_the_code_in_Listing_1">
+
+Visualization of 
+		the code in Listing 1
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1009">
+<link id="a1009" target-id="Importing_modules">
+
+Importing modules
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1010">
+<link id="a1010" target-id="The_ifelse_statement">
+
+The if...else statement
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1011">
+<link id="a1011" target-id="Visualization_of_the_code_in_Listing_2">
+
+Visualization of the code 
+in Listing 2
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1012">
+<link id="a1012" target-id="Nested_if_statements">
+
+Nested if statements
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="Visualization_of_the_code_in_Listing_3">
+
+Visualization of 
+		the code in Listing 3
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1014">
+<link id="a1014" target-id="Run_the_program">
+
+Run the programs
+
+</link>
+
+
+</item>
+
+
+
+	
+
+<item id="li1015">
+<link id="a1015" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX.
+
+</para>
+
+
+
+
+<section id="h21000">
+<title>
+<emphasis id="What_you_have_learned" effect="bold">
+
+What you have learned
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1001">
+You were introduced to decision logic in the earlier module titled Itse
+
+<emphasis id="em1001" effect="italics">
+1359-1210-The 
+While Loop
+
+</emphasis>
+. In that module I told you that Python supports a stand-alone 
+decision capability, the 
+
+<emphasis id="strong1000" effect="bold">
+if
+
+</emphasis>
+ statement, which would be 
+discussed in a future module. This is that future module.
+
+</para>
+
+
+
+
+<para id="p1002">
+You learned about the relational and logical operators that are used in 
+decision logic in the module titled 
+
+<emphasis id="em1002" effect="italics">
+Itse1359-1220-Operators
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21001">
+<title>
+<emphasis id="What_you_will_learn" effect="bold">
+
+What you will learn
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+In this module, you will learn about
+
+</para>
+
+
+
+
+<list id="ul1004" list-type="bulleted">
+
+	
+
+<item id="li1016">
+the if statement
+
+</item>
+
+
+	
+
+<item id="li1017">
+the if...else statement
+
+</item>
+
+
+	
+
+<item id="li1018">
+nested if statements
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1004">
+I recommend that you open another copy of this module in a separate 
+browser window and use the following links to easily find and view the Figures 
+	and the Listings 
+while you are reading about them.
+
+</para>
+
+
+
+
+<para id="p1005">
+<emphasis id="em1003" effect="italics">
+(Note to blind and visually impaired students: Most of the Figures and all of the 
+Listings in 
+this module are presented in plain text format and should be accessible using an 
+audio screen reader or a braille display. Note however that the required 
+indentation may not be properly represented by an audio screen reader.)
+
+</emphasis>
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Images" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1005" list-type="bulleted">
+
+
+
+<item id="li1019">
+<link id="a1016" target-id="Image_1">
+
+Figure 1
+
+</link>
+
+. Pseudo-code for an if statement. 
+
+</item>
+
+
+
+
+<item id="li1020">
+<link id="a1017" target-id="Image_3">
+
+Figure 2
+
+</link>
+
+. Output from the code in Listing 1.
+
+</item>
+
+
+
+
+<item id="li1021">
+<link id="a1018" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Visualization of the code in Listing 1. 
+
+</item>
+
+
+
+
+<item id="li1022">
+<link id="a1019" target-id="Image_4">
+
+Figure 4
+
+</link>
+
+. Pseudo-code for a Python if...else statement.
+
+</item>
+
+
+
+
+<item id="li1023">
+<link id="a1020" target-id="Image_6">
+
+Figure 5
+
+</link>
+
+. Output from the code in Listing 2.
+
+</item>
+
+
+
+
+<item id="li1024">
+<link id="a1021" target-id="Image_8">
+
+Figure 6
+
+</link>
+
+. Output from the code in Listing 3.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+</section>
+<section id="h31001">
+<title>
+<emphasis id="Listings" effect="bold">
+
+Listings
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<list id="ul1006" list-type="bulleted">
+
+
+
+<item id="li1025">
+<link id="a1022" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+. Example of if statement usage.
+
+</item>
+
+
+
+
+<item id="li1026">
+<link id="a1023" target-id="Image_5">
+
+Listing 2
+
+</link>
+
+. Example of if...else statement usage.
+
+</item>
+
+
+
+
+<item id="li1027">
+<link id="a1024" target-id="Image_7">
+
+Listing 3
+
+</link>
+
+. Example of nested if statements.
+
+</item>
+
+
+
+
+</list>
+
+
+	
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Discussion_and_sample_code" effect="bold">
+
+Discussion and sample code
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<section id="h21003">
+<title>
+<emphasis id="The_if_statement" effect="bold">
+
+The if statement
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1006">
+The pseudo-code for a Python 
+
+<emphasis id="strong1001" effect="bold">
+if
+
+</emphasis>
+ statement is shown in 
+
+<link id="a1025" target-id="Image_1">
+
+
+Figure 1
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Image_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. Pseudo-code for an if 
+				statement.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+
+<code id="pre1000" display="block">
+if expression is True:
+  Execute one or more statements at same indentation level
+Execute next statement
+</code>
+
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1007">
+The expression must be one that will evaluate to either True or False.
+
+</para>
+
+
+
+
+<para id="p1008">
+If the expression evaluates to True, the indented statement(s) that follow the colon will be executed in sequence.
+
+</para>
+
+
+
+
+<para id="p1009">
+If the expression evaluates to False, those indented statements will be 
+skipped and the next statement following the 
+
+<emphasis id="strong1002" effect="bold">
+if
+
+</emphasis>
+ statement will 
+be executed.
+
+</para>
+
+
+
+
+<para id="p1010">
+<link id="a1026" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+ shows an example of the use of an 
+
+<emphasis id="strong1003" effect="bold">
+if
+
+</emphasis>
+ statement.
+
+</para>
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Image_2" effect="bold">
+
+Listing 1
+
+</emphasis>
+
+. Example of if statement 
+				usage.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+
+<code id="pre1001" display="block">
+# Illustrates the if statement
+#
+#-------------------------------
+
+dogs = ["Affenpinscher","Afgan Hound","Akita"]
+
+if len(dogs) &gt; 2:
+  print(dogs[0])
+  print(dogs[1])
+  print(dogs[2])
+print("Length of dogs list = " + str(len(dogs)))
+
+if len(dogs) == 2:
+  print(dogs[0])
+  print(dogs[1])
+  print(dogs[2])
+  
+print(dogs)</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+
+<para id="p1011">
+The output from the code in 
+
+<link id="a1027" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+ is shown in 
+
+<link id="a1028" target-id="Image_3">
+
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Image_3" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Output from the code in 
+				Listing 1.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+
+<code id="pre1002" display="block">
+Affenpinscher
+Afgan Hound
+Akita
+Length of dogs list = 3
+['Affenpinscher', 'Afgan Hound', 'Akita']
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1012">
+<link id="a1029" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+ begins by creating and populating a list containing the names of 
+	three breeds of dogs. Then it tests to see if the length of the list is 
+	greater than 2, which it is.
+
+</para>
+
+
+
+
+<para id="p1013">
+Because the test returns True, each element in the list is printed in 
+sequence by the three indented 
+
+<emphasis id="strong1004" effect="bold">
+print
+
+</emphasis>
+ statements.
+
+</para>
+
+
+
+
+<para id="p1014">
+After that, the length of the list is printed by the non-indented 
+
+<emphasis id="strong1005" effect="bold">
+
+print
+
+</emphasis>
+ statement. This requires that the numeric length of the list be 
+obtained and converted to a string for printing. 
+
+</para>
+
+
+
+
+<para id="p1015">
+The built-in function named 
+
+<link id="a1030" url="https://docs.python.org/3/library/functions.html#len">
+
+len
+
+</link>
+
+ is called 
+here 
+
+<emphasis id="em1004" effect="italics">
+(and also in the conditional clause of the 
+
+</emphasis>
+<emphasis id="strong1006" effect="bold">
+<emphasis id="em1005" effect="italics">
+if
+
+</emphasis>
+</emphasis>
+<emphasis id="em1006" effect="italics">
+ 
+statement)
+
+</emphasis>
+ to get the length of the list. 
+
+</para>
+
+
+
+
+<para id="p1016">
+The built-in function named 
+
+<link id="a1031" url="https://docs.python.org/3/library/functions.html#func-str">
+
+str
+
+</link>
+
+ is 
+called to convert the numeric length of the list into a string for concatenation 
+with another string for printing.
+
+</para>
+
+
+
+
+<para id="p1017">
+Then the process is repeated except instead of testing the length of the list 
+for 
+
+<emphasis id="em1007" effect="italics">
+greater than 2
+
+</emphasis>
+, it is tested for 
+
+<emphasis id="em1008" effect="italics">
+equal to 2
+
+</emphasis>
+. This test 
+returns False, which causes the indented 
+
+<emphasis id="strong1007" effect="bold">
+print
+
+</emphasis>
+ statements in 
+the body of the 
+
+<emphasis id="strong1008" effect="bold">
+if
+
+</emphasis>
+  statement to be skipped.
+
+</para>
+
+
+
+
+<para id="p1018">
+After that, the list is printed producing the last line of text in 
+
+<link id="a1032" target-id="Image_3">
+
+
+Figure 2
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h21004">
+<title>
+<emphasis id="Visualization_of_the_code_in_Listing_1" effect="bold">
+
+Visualization of the code 
+in Listing 1
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1019">
+<link id="a1033" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+ shows a 
+
+<link id="a1034" url="http://pythontutor.com/visualize.html#mode=edit">
+
+visualization
+
+</link>
+
+ of the code in 
+
+<link id="a1035" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+. 
+I recommend that you create this visualization on your own and step through the 
+program one instruction at a time. As you do that, pay attention to the 
+movements of the red and green arrows on the left, the diagram on the right, and 
+the printed material at the bottom. That should help you to better understand 
+the behavior of an 
+
+<emphasis id="strong1009" effect="bold">
+if
+
+</emphasis>
+ statement.
+
+</para>
+
+
+
+
+
+<para id="p1020">
+<emphasis id="strong1010" effect="bold">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3.
+
+</emphasis>
+
+ Visualization of the code in Listing 1.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1021">
+<media id="media1000" alt="Visualization of the code in Listing 1" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-1230a.jpg" width="854" height="676"/>
+</media>
+
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21005">
+<title>
+<emphasis id="Importing_modules" effect="bold">
+
+Importing modules
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1022">
+The next section will use a function named 
+
+<emphasis id="strong1011" effect="bold">
+randint
+
+</emphasis>
+ belonging 
+to a module named 
+
+<emphasis id="strong1012" effect="bold">
+random
+
+</emphasis>
+. Therefore, I need to say a few words 
+about modules at this point. I will discuss modules in more detail in a future 
+module.
+
+</para>
+
+
+
+
+<para id="p1023">
+You learned about creating scripts in the earlier module titled 
+
+
+<link id="a1036" url="http://cnx.org/contents/28ddaa84-fd39-4161-972a-e9edde592149">
+
+Itse1359-1050-Introduction to Scripts
+
+</link>
+
+. If you save a script in a file, you 
+can 
+
+<emphasis id="em1009" effect="italics">
+import
+
+</emphasis>
+ it into another script and use it later. When used in this 
+way, a file containing a script is called a 
+
+<emphasis id="em1010" effect="italics">
+module
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1024">
+The previous section touched on the fact that Python has a number of built-in 
+functions such as 
+
+<emphasis id="strong1013" effect="bold">
+len
+
+</emphasis>
+ and 
+
+<emphasis id="strong1014" effect="bold">
+str
+
+</emphasis>
+. Similarly, the standard Python 
+distribution includes 
+
+<link id="a1037" url="https://docs.python.org/3/library/index.html">
+
+The 
+Python Standard Library
+
+</link>
+
+ that includes a large number of pre-written modules. 
+One of those modules is named 
+
+<emphasis id="strong1015" effect="bold">
+random
+
+</emphasis>
+. The purpose of the 
+
+
+<emphasis id="strong1016" effect="bold">
+random
+
+</emphasis>
+ 
+module is to generate pseudo-random numbers. The 
+
+<emphasis id="strong1017" effect="bold">
+random
+
+</emphasis>
+ module provides many 
+functions, one of which is named 
+
+<emphasis id="strong1018" effect="bold">
+randint(a,b)
+
+</emphasis>
+ This function will return a random integer 
+with a value between 
+
+<emphasis id="strong1019" effect="bold">
+a
+
+</emphasis>
+ and 
+
+<emphasis id="strong1020" effect="bold">
+b
+
+</emphasis>
+ inclusive.
+
+</para>
+
+
+
+
+<para id="p1025">
+All that is necessary to use a built-in function such as 
+
+<emphasis id="strong1021" effect="bold">
+len
+
+</emphasis>
+ 
+or 
+
+<emphasis id="strong1022" effect="bold">
+str
+
+</emphasis>
+ is to call out its name as shown in 
+
+<link id="a1038" target-id="Image_2">
+
+
+Listing 1
+
+</link>
+
+. I interpret 
+this to mean that the built-in functions occupy memory any time that the Python 
+interpreter has been loaded into memory 
+
+<emphasis id="em1011" effect="italics">
+(but I may be wrong on that)
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1026">
+However, before you can use a module or the functions contained in a module, 
+you must first 
+
+<emphasis id="em1012" effect="italics">
+import
+
+</emphasis>
+ the module into memory. There are a variety of 
+options available when importing modules in Python. You will see an example of 
+one way to import a module and to use its functions in the next section.
+
+</para>
+
+
+
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_ifelse_statement" effect="bold">
+
+The if...else statement
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1027">
+The 
+
+<emphasis id="strong1023" effect="bold">
+if
+
+</emphasis>
+ statement shown in 
+
+<link id="a1039" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+ basically tells the program to test for a 
+condition. If the condition is True, do something special and then continue 
+business as usual. If the condition is False, don't do anything special -- just 
+continue business as usual.
+
+</para>
+
+
+
+
+<para id="p1028">
+Sometimes our decision processes are more complicated than that. Sometimes we 
+need the program to test for a condition and if the condition is True, the 
+program should do something special. However, if the condition is False, the 
+program should do something different that is also special. After one or the 
+other of the special things is done, the program should continue with business 
+as usual. That is the purpose of the 
+
+<emphasis id="strong1024" effect="bold">
+if...else
+
+</emphasis>
+ statement.
+
+</para>
+
+
+
+
+<para id="p1029">
+The pseudo-code for a Python 
+
+<emphasis id="strong1025" effect="bold">
+if...else
+
+</emphasis>
+ statement is shown in 
+
+
+<link id="a1040" target-id="Image_4">
+
+Figure 4
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Image_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. Pseudo-code for a Python 
+				if...else statement.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+
+<code id="pre1003" display="block">
+if expression is True:
+   Execute statements at same indentation level
+else:
+   Execute different statements at same indentation level
+Execute next statement
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1030">
+As before, the expression must be one that will evaluate to either True 
+	or False.
+
+</para>
+
+
+
+
+<para id="p1031">
+If the expression evaluates to True, the indented statement(s) that follow 
+the expression will be executed in sequence and the indented statement(s) that 
+follow 
+
+<emphasis id="strong1026" effect="bold">
+else:
+
+</emphasis>
+ will be skipped.
+
+</para>
+
+
+
+
+<para id="p1032">
+If the expression evaluates to False, the indented statement(s) that follow 
+the expression will be skipped and the indented statements that follow 
+
+<emphasis id="strong1027" effect="bold">
+
+else:
+
+</emphasis>
+ will be executed.
+
+</para>
+
+
+	
+
+<para id="p1033">
+After that, the next statement following the 
+
+<emphasis id="strong1028" effect="bold">
+if
+
+</emphasis>
+ 
+	statement will be executed.
+
+</para>
+
+
+
+
+<para id="p1034">
+An example 
+
+<emphasis id="strong1029" effect="bold">
+if...else
+
+</emphasis>
+ statement is shown in 
+
+<link id="a1041" target-id="Image_5">
+
+
+Listing 2
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Image_5" effect="bold">
+
+Listing 2
+
+</emphasis>
+
+. Example of if...else 
+				statement usage.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+
+<code id="pre1004" display="block">
+# Illustrates the if...else statement
+#------------------------------------
+
+import random
+
+weather = ["sunshine","rain"]
+rain = False
+sunshine = False
+
+# Loop until rain and sunshine are both true
+while (rain == False or sunshine == False):
+
+  # Get today's weather
+  weatherToday = weather[random.randint(0,1)]
+
+  if weatherToday == "rain":
+    rain = True
+    print("It's raining, visit the museum.")
+  else:
+    sunshine = True
+    print("Sunshine, go to the beach.");
+    
+print("Vacation is over, go home.")
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1035">
+The code in 
+
+<link id="a1042" target-id="Image_5">
+
+Listing 2
+
+</link>
+
+ simulates a short vacation. You want to 
+	visit the museum at least once and go to the beach at least once before you 
+	go home.
+
+</para>
+
+
+
+
+<para id="p1036">
+The code begins by importing the 
+
+<emphasis id="strong1030" effect="bold">
+random
+
+</emphasis>
+ module as described
+
+
+<link id="a1043" target-id="Importing_modules">
+
+earlier
+
+</link>
+
+. Then it creates and populates three 
+working variables that will be used later.
+
+</para>
+
+
+
+
+<para id="p1037">
+A 
+
+<emphasis id="strong1031" effect="bold">
+while
+
+</emphasis>
+ loop is used is used to assure that you visit both the 
+museum and the beach at least once before going home. Note the use of the 
+equality operator (
+
+<emphasis id="strong1032" effect="bold">
+==
+
+</emphasis>
+) 
+and the logical (
+
+<emphasis id="strong1033" effect="bold">
+or
+
+</emphasis>
+) operator in the conditional clause of the
+
+
+<emphasis id="strong1034" effect="bold">
+while
+
+</emphasis>
+ loop.
+
+</para>
+
+
+
+
+<para id="p1038">
+The first statement inside the 
+
+<emphasis id="strong1035" effect="bold">
+while
+
+</emphasis>
+ loop uses the random number generator to get the weather for 
+the day from the list named 
+
+<emphasis id="strong1036" effect="bold">
+weather
+
+</emphasis>
+. The result will be either 
+"sunshine" or "rain".
+
+</para>
+
+
+
+
+<para id="p1039">
+Following that, an 
+
+<emphasis id="strong1037" effect="bold">
+if...else
+
+</emphasis>
+ statement is used to decide 
+whether to 
+
+<emphasis id="em1013" effect="italics">
+visit the museum
+
+</emphasis>
+ or to 
+
+<emphasis id="em1014" effect="italics">
+go to the beach
+
+</emphasis>
+ based on the 
+weather. Note the use of the equality operator (
+
+<emphasis id="strong1038" effect="bold">
+==
+
+</emphasis>
+) in the 
+conditional clause of the 
+
+<emphasis id="strong1039" effect="bold">
+if
+
+</emphasis>
+ statement. Also note that the corresponding working variable 
+
+<emphasis id="em1015" effect="italics">
+(
+
+<emphasis id="strong1040" effect="bold">
+rain
+
+</emphasis>
+ 
+or 
+
+<emphasis id="strong1041" effect="bold">
+sunshine
+
+</emphasis>
+)
+
+</emphasis>
+ is set to 
+
+<emphasis id="strong1042" effect="bold">
+True
+
+</emphasis>
+ to confirm 
+the visit for the benefit of the conditional clause of the 
+
+<emphasis id="strong1043" effect="bold">
+while
+
+</emphasis>
+ loop.
+
+</para>
+
+
+
+
+<para id="p1040">
+When the museum and the beach have each been visited at least once, the 
+
+
+<emphasis id="strong1044" effect="bold">
+while
+
+</emphasis>
+ 
+loop will terminate causing the 
+
+<emphasis id="em1016" effect="italics">
+"go home"
+
+</emphasis>
+ print statement to be executed.
+
+</para>
+
+
+
+
+<para id="p1041">
+Because of the use of a random number generator to control the weather, this 
+program will produce a different output each time you run it. 
+
+<link id="a1044" target-id="Image_6">
+
+
+Figure 5
+
+</link>
+
+ shows the 
+output from one such run.
+
+</para>
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Image_6" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Output from the code 
+				in Listing 2.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+
+<code id="pre1005" display="block">
+Sunshine, go to the beach.
+Sunshine, go to the beach.
+Sunshine, go to the beach.
+It's raining, visit the museum.
+Vacation is over, go home.
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1042">
+In this case, the random number generator produced the following sequence 
+	of numbers: 0,0,0,1 causing the beach to be visited three times before the 
+	visit to the museum.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21007">
+<title>
+<emphasis id="Visualization_of_the_code_in_Listing_2" effect="bold">
+
+Visualization of the code 
+in Listing 2
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+I recommend that you create a 
+
+<link id="a1045" url="http://pythontutor.com/visualize.html#mode=edit">
+
+visualization
+
+</link>
+
+ on your own 
+for the code in 
+
+<link id="a1046" target-id="Image_5">
+
+Listing 2
+
+</link>
+
+ and step through the 
+program one instruction at a time. Once again, as you do that, pay attention to the 
+movements of the red and green arrows on the left, the diagram on the right, and 
+the printed material at the bottom. That should help you to better understand 
+the behavior of an 
+
+<emphasis id="strong1045" effect="bold">
+if...else
+
+</emphasis>
+ statement.
+
+</para>
+
+
+
+
+</section>
+<section id="h21008">
+<title>
+<emphasis id="Nested_if_statements" effect="bold">
+
+Nested if statements
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1044">
+There are three keywords that can be used with nested 
+
+<emphasis id="strong1046" effect="bold">
+if
+
+</emphasis>
+ statements:
+
+</para>
+
+
+
+
+<list id="ul1007" list-type="bulleted">
+
+	
+
+<item id="li1028">
+if
+
+</item>
+
+
+	
+
+<item id="li1029">
+else
+
+</item>
+
+
+	
+
+<item id="li1030">
+elif
+
+</item>
+
+
+
+
+</list>
+
+
+	
+	
+
+<para id="p1045">
+You already know about 
+
+<emphasis id="strong1047" effect="bold">
+if
+
+</emphasis>
+ and 
+
+<emphasis id="strong1048" effect="bold">
+else
+
+</emphasis>
+. The 
+	keyword 
+
+<emphasis id="strong1049" effect="bold">
+elif
+
+</emphasis>
+ is short for 
+
+<emphasis id="em1017" effect="italics">
+"else if"
+
+</emphasis>
+. Nested 
+	
+
+<emphasis id="strong1050" effect="bold">
+if
+
+</emphasis>
+ 
+	statements can contain zero or more 
+
+<emphasis id="strong1051" effect="bold">
+elif
+
+</emphasis>
+ parts and the
+	
+
+<emphasis id="strong1052" effect="bold">
+else
+
+</emphasis>
+ part is optional.
+
+</para>
+
+
+
+
+<para id="p1046">
+The 
+
+<emphasis id="strong1053" effect="bold">
+if...else
+
+</emphasis>
+ construct allows the program to choose between 
+two options. The use of 
+
+<emphasis id="strong1054" effect="bold">
+elif
+
+</emphasis>
+ makes it possible to write code 
+that can choose among three or more options.
+
+</para>
+
+
+
+
+<para id="p1047">
+The program shown in 
+
+<link id="a1047" target-id="Image_7">
+
+Listing 3
+
+</link>
+
+ extends the vacation analogy to three options:
+
+</para>
+
+
+
+
+<list id="ul1008" list-type="bulleted">
+
+	
+
+<item id="li1031">
+rain -- visit the museum
+
+</item>
+
+
+	
+
+<item id="li1032">
+sunshine -- go to the beach
+
+</item>
+
+
+	
+
+<item id="li1033">
+snow -- go skiing
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1048">
+Once again, you won't go home until you have at least one opportunity to do 
+each of the three activities in the above list.
+
+</para>
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Image_7" effect="bold">
+
+Listing 3
+
+</emphasis>
+
+. Example of nested if 
+				statements.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+
+<code id="pre1006" display="block">
+# Illustrates nested if statements
+#---------------------------------
+
+import random
+
+weather = ["sunshine","rain","snow"]
+rain = False
+sunshine = False
+snow = False
+
+# Loop until rain and sunshine and snow are all true
+while (rain == False or sunshine == False or snow == False):
+  # Get today's weather
+  weatherToday = weather[random.randint(0,2)]
+
+  if weatherToday == "rain":
+    rain = True
+    print("It's raining, visit the museum.")
+  elif weatherToday == "sunshine":
+    sunshine = True
+    print("Sunshine, go to the beach.")
+  else:
+    snow = True
+    print("It's snowing, go skiing.")
+print("Vacation is over, go home.")
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1049">
+The key thing to note in 
+
+<link id="a1048" target-id="Image_7">
+
+Listing 3
+
+</link>
+
+ is the 
+
+<emphasis id="strong1055" effect="bold">
+elif
+
+</emphasis>
+ after the
+	
+
+<emphasis id="strong1056" effect="bold">
+if
+
+</emphasis>
+ and before the 
+
+<emphasis id="strong1057" effect="bold">
+else
+
+</emphasis>
+. This extends the 
+	choices from two as shown in 
+
+<link id="a1049" target-id="Image_5">
+
+Listing 2
+
+</link>
+
+ to three. The number of choices could 
+	be extended to more than three by inserting more 
+
+<emphasis id="strong1058" effect="bold">
+elif
+
+</emphasis>
+ 
+	options.
+
+</para>
+
+
+
+
+<para id="p1050">
+As before, the output will be different each time you run the program. One 
+such output is shown in 
+
+<link id="a1050" target-id="Image_8">
+
+Figure 6
+
+</link>
+
+.
+
+</para>
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Image_8" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Output from the code 
+				in Listing 3.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+
+<code id="pre1007" display="block">
+It's snowing, go skiing.
+It's raining, visit the museum.
+It's snowing, go skiing.
+It's raining, visit the museum.
+It's raining, visit the museum.
+It's raining, visit the museum.
+It's snowing, go skiing.
+Sunshine, go to the beach.
+Vacation is over, go home.
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1051">
+You should be able to compare the output with the code in 
+
+<link id="a1051" target-id="Image_7">
+
+
+	Listing 3
+
+</link>
+
+ and 
+	determine the sequence of eight random numbers produced by the random number 
+	generator in this case.
+
+</para>
+
+
+
+
+
+</section>
+<section id="h21009">
+<title>
+<emphasis id="Visualization_of_the_code_in_Listing_3" effect="bold">
+
+Visualization of the code 
+in Listing 3
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1052">
+Once again I recommend that you create a 
+
+<link id="a1052" url="http://pythontutor.com/visualize.html#mode=edit">
+
+visualization
+
+</link>
+
+ on your own 
+for the code in 
+
+<link id="a1053" target-id="Image_7">
+
+
+	Listing 3
+
+</link>
+
+ and step through the 
+program one instruction at a time. As you do that, pay attention to the 
+movements of the red and green arrows on the left, the diagram on the right, and 
+the printed material at the bottom. That should help you to better understand 
+the behavior of nested 
+
+<emphasis id="strong1059" effect="bold">
+if 
+
+</emphasis>
+statements.
+
+</para>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="Run_the_program" effect="bold">
+
+Run the programs
+
+</emphasis>
+
+
+</title>
+
+
+
+
+
+<para id="p1053">
+I encourage you to copy the code from 
+
+<link id="a1054" target-id="Image_2">
+
+Listing 1
+
+</link>
+
+, 
+
+<link id="a1055" target-id="Image_5">
+
+
+Listing 2
+
+</link>
+
+, and 
+
+<link id="a1056" target-id="Image_7">
+
+Listing 3
+
+</link>
+
+. Execute the code and confirm 
+that you get the same results as those shown in 
+
+<link id="a1057" target-id="Image_3">
+
+Figure 2
+
+</link>
+
+, 
+
+<link id="a1058" target-id="Image_6">
+
+
+Figure 5
+
+</link>
+
+, and 
+
+<link id="a1059" target-id="Image_8">
+
+Figure 6
+
+</link>
+
+. Experiment with the code, 
+making changes, and observing the results of your changes. Make certain that you 
+can explain why your changes behave as they do.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11004">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1054">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1060" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1009" list-type="bulleted">
+
+					
+
+<item id="li1034">
+Module name: Itse1359-1230-The if Statement
+
+</item>
+
+
+					
+
+<item id="li1035">
+File: Itse1359-1230.htm
+
+
+</item>
+
+
+					
+
+<item id="li1036">
+Published: 10/21/14
+
+</item>
+
+
+					
+
+<item id="li1037">
+Revised: 01/31/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1061" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1055">
+<emphasis id="strong1062" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1056">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1057">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1058">
+<emphasis id="strong1063" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1059">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>

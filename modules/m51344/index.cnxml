@@ -1,0 +1,4339 @@
+<document xmlns="http://cnx.rice.edu/cnxml"> 
+<title>Itse1359-1040-Strings Part 1</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m51344</md:content-id>
+  <md:title>Itse1359-1040-Strings Part 1</md:title>
+  <md:abstract>This module provides an introduction to the use of strings in Python.</md:abstract>
+  <md:uuid>59b7c952-539a-4886-ab13-85e51704859d</md:uuid>
+</metadata>
+
+<content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="h11000">
+<title>
+Table of contents
+
+</title>
+
+
+
+
+<list id="ul1000" list-type="bulleted">
+
+	
+
+<item id="li1000">
+<link id="a1000" target-id="Preface">
+
+Preface
+
+</link>
+
+
+	
+
+<list id="ul1001" list-type="bulleted">
+
+		
+
+<item id="li1001">
+<link id="a1001" target-id="Viewing_tip">
+
+Viewing tip
+
+</link>
+
+
+<list id="ul1002" list-type="bulleted">
+
+			
+
+<item id="li1002">
+<link id="a1002" target-id="Figures">
+
+Figures
+
+</link>
+
+
+</item>
+
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+
+	
+
+<item id="li1003">
+<link id="a1003" target-id="Introduction_to_the_string">
+
+Introduction to the string
+
+</link>
+
+
+<list id="ul1003" list-type="bulleted">
+
+		
+
+<item id="li1004">
+<link id="a1004" target-id="Literals">
+
+Literals
+
+</link>
+
+
+<list id="ul1004" list-type="bulleted">
+
+			
+
+<item id="li1005">
+<link id="a1005" target-id="An_expression_using_variables_">
+
+An expression using variables 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1006">
+<link id="a1006" target-id="An_expression_using_literals">
+
+An expression using literals
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1007">
+<link id="a1007" target-id="String_literals">
+
+String literals
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1008">
+<link id="a1008" target-id="A_syntax_error">
+
+A syntax error
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1009">
+<link id="a1009" target-id="A_valid_string_literal">
+
+A valid string literal
+
+</link>
+
+
+<list id="ul1005" list-type="bulleted">
+
+				
+
+<item id="li1010">
+<link id="a1010" target-id="Proper_syntax">
+
+Proper syntax
+
+</link>
+
+
+</item>
+
+
+				
+
+<item id="li1011">
+<link id="a1011" target-id="Bad_syntax">
+
+Bad syntax
+
+</link>
+
+
+</item>
+
+
+			
+
+</list>
+
+
+			
+
+</item>
+
+
+			
+
+<item id="li1012">
+<link id="a1012" target-id="More_examples">
+
+More examples
+
+</link>
+
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1013">
+<link id="a1013" target-id="Triple-quoted_strings">
+
+Triple-quoted strings
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1014">
+<link id="a1014" target-id="The_newline_character">
+
+The newline (\n) character
+
+</link>
+
+
+<list id="ul1006" list-type="bulleted">
+
+			
+
+<item id="li1015">
+<link id="a1015" target-id="Representing_the_newline_character_">
+
+Representing the newline character 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1016">
+<link id="a1016" target-id="An_escape_sequence_">
+
+An escape sequence 
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1017">
+<link id="a1017" target-id="One_more_syntax_option_">
+
+One more syntax option 
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1018">
+<link id="a1018" target-id="WhatAreEscapeSequences">
+
+Escape sequences
+
+</link>
+
+
+<list id="ul1007" list-type="bulleted">
+
+		
+
+<item id="li1019">
+<link id="a1019" target-id="secondNewlineCharacterBookmark">
+
+The newline character
+
+</link>
+
+
+</item>
+
+
+		
+
+<item id="li1020">
+<link id="a1020" target-id="The_built-in_print_function">
+
+The built-in print function
+
+</link>
+
+
+<list id="ul1008" list-type="bulleted">
+
+			
+
+<item id="li1021">
+<link id="a1021" target-id="Including_the_newline_character">
+
+Including the newline character
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1022">
+<link id="a1022" target-id="The_print_function_renders_according_to_meaning_">
+
+The print function renders according to meaning 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1023">
+<link id="a1023" target-id="The_quote_character_">
+
+The quote character
+
+</link>
+
+ 
+		
+
+<list id="ul1009" list-type="bulleted">
+
+			
+
+<item id="li1024">
+<link id="a1024" target-id="Escaping_the_quote_character">
+
+Escaping the quote character
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1025">
+<link id="a1025" target-id="Avoiding_the_quote_problem_">
+
+Avoiding the quote problem 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1026">
+<link id="a1026" target-id="List_of_escape_sequences_">
+
+List of escape sequences 
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1027">
+<link id="a1027" target-id="MoreWaystoSpanLines">
+
+More ways to span lines
+
+</link>
+
+
+<list id="ul1010" list-type="bulleted">
+
+		
+
+<item id="li1028">
+<link id="a1028" target-id="End_the_line_with_a_backslash_">
+
+End the line with a backslash
+
+</link>
+
+ 
+		
+
+<list id="ul1011" list-type="bulleted">
+
+			
+
+<item id="li1029">
+<link id="a1029" target-id="Not_restricted_to_strings_">
+
+Not restricted to strings 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1030">
+<link id="a1030" target-id="A_form_of_concatenation_">
+
+A form of concatenation 
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1031">
+<link id="a1031" target-id="Use_the_backslash_n_escape_sequence_">
+
+Use the \n escape sequence 
+		
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+<item id="li1032">
+<link id="a1032" target-id="Combine_backslash_and_backslash_n_">
+
+Combine backslash and \n 
+		
+
+</link>
+
+ 
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1033">
+<link id="a1033" target-id="StringConcatenation">
+
+String concatenation
+
+</link>
+
+
+<list id="ul1012" list-type="bulleted">
+
+		
+
+<item id="li1034">
+<link id="a1034" target-id="Literal_string_concatenation">
+
+Literal string concatenation
+
+</link>
+
+
+<list id="ul1013" list-type="bulleted">
+
+			
+
+<item id="li1035">
+<link id="a1035" target-id="Concatenate_through_placement">
+
+Concatenate through placement
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1036">
+<link id="a1036" target-id="Creating_whitespace_">
+
+Creating whitespace 
+
+</link>
+
+ 
+
+</item>
+
+
+			
+
+<item id="li1037">
+<link id="a1037" target-id="Using_plus_for_concatenation">
+
+Using + for concatenation
+
+</link>
+
+
+</item>
+
+
+			
+
+<item id="li1038">
+<link id="a1038" target-id="Whitespace_is_included_in_the_quotes_">
+
+Whitespace is included in the quotes 
+			
+
+</link>
+
+ 
+
+</item>
+
+
+		
+
+</list>
+
+
+		
+
+</item>
+
+
+		
+
+<item id="li1039">
+<link id="a1039" target-id="Visualizing_string_concatenation">
+
+Visualizing string concatenation
+
+</link>
+
+
+</item>
+
+
+	
+
+</list>
+
+
+	
+
+</item>
+
+
+	
+
+<item id="li1040">
+<link id="a1040" target-id="More_on_strings_later">
+
+More on strings later
+
+</link>
+
+
+</item>
+
+
+	
+
+<item id="li1041">
+<link id="a1041" target-id="Miscellaneous">
+
+Miscellaneous
+
+</link>
+
+
+</item>
+
+
+
+
+
+</list>
+
+
+	
+	
+
+</section>
+<section id="h11001">
+<title>
+<emphasis id="Preface" effect="bold">
+
+Preface
+
+</emphasis>
+
+
+</title>
+
+
+	
+	
+
+<para id="p1000">
+This module is one in a collection of modules on Python designed for 
+teaching 
+
+<emphasis id="em1000" effect="italics">
+ITSE 1359 Introduction to Scripting Languages: Python
+
+</emphasis>
+ at Austin Community 
+College in Austin, TX. It provides an introduction to the use of strings 
+	in Python. 
+
+</para>
+
+
+	
+
+<section id="h21000">
+<title>
+<emphasis id="Viewing_tip" effect="bold">
+
+Viewing tip
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1001">
+I recommend that you open another copy of this module in a separate 
+	browser window and use the following links to easily find and view the 
+	Figures while you are reading about them. 
+
+</para>
+
+
+
+
+<para id="p1002">
+<emphasis id="em1001" effect="italics">
+(Note to blind and visually 
+	impaired students: most of the Figures in this module are presented in plain 
+	text format and should be accessible using an audio screen reader or a 
+	braille display.)
+
+</emphasis>
+</para>
+
+
+	
+
+<section id="h31000">
+<title>
+<emphasis id="Figures" effect="bold">
+
+Figures
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<list id="ul1014" list-type="bulleted">
+
+		
+
+<item id="li1042">
+<link id="a1042" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+. String literals. 
+
+</item>
+
+
+		
+
+<item id="li1043">
+<link id="a1043" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+. Triple-quoted strings.
+
+</item>
+
+
+		
+
+<item id="li1044">
+<link id="a1044" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Triple-quoted strings with newlines.
+
+</item>
+
+
+		
+
+<item id="li1045">
+<link id="a1045" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+. Using the newline character.
+
+</item>
+
+
+		
+
+<item id="li1046">
+<link id="a1046" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+. Escaping the quote character.
+
+</item>
+
+
+		
+
+<item id="li1047">
+<link id="a1047" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+. Avoiding the quote problem.
+
+</item>
+
+
+		
+
+<item id="li1048">
+<link id="a1048" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+. End the line with a backslash.
+
+</item>
+
+
+		
+
+<item id="li1049">
+<link id="a1049" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+. Use the \n escape sequence.
+
+</item>
+
+
+		
+
+<item id="li1050">
+<link id="a1050" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+. Combine backslash and \n.
+
+</item>
+
+
+		
+
+<item id="li1051">
+<link id="a1051" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+. Concatenate through placement.
+
+</item>
+
+
+		
+
+<item id="li1052">
+<link id="a1052" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+. Creating whitespace.
+
+</item>
+
+
+		
+
+<item id="li1053">
+<link id="a1053" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+. Visualizing string concatenation.
+
+</item>
+
+
+
+	
+
+</list>
+
+
+
+
+</section>
+</section>
+</section>
+<section id="h11002">
+<title>
+<emphasis id="Introduction_to_the_string" effect="bold">
+
+Introduction to the string
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1003">
+The common interpretation of the word 
+
+<emphasis id="em1002" effect="italics">
+string
+
+</emphasis>
+ in computer programming is that a string is a sequence of characters that is treated as a unit. For 
+example, a person's first and last names are often treated as two different 
+strings.
+
+</para>
+
+
+
+
+<para id="p1004">
+A person's first name usually consists of several characters and these 
+characters are treated as a unit to produce a name. 
+
+</para>
+
+
+
+
+<section id="h21001">
+<title>
+<emphasis id="Literals" effect="bold">
+
+Literals
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1005">
+Perhaps the best way to describe a literal is to describe what it is not. 
+
+</para>
+
+
+
+
+<para id="p1006">
+A literal is not a variable. In other words, the value of a literal doesn't 
+change with time as the program executes. You might say that it is taken at face 
+value. 
+
+</para>
+
+
+
+
+<section id="h31001">
+<title>
+<emphasis id="An_expression_using_variables_" effect="bold">
+
+An expression using variables 
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1007">
+For example, the following expression describes the sum of two variables 
+named 
+
+<emphasis id="strong1000" effect="bold">
+var1
+
+</emphasis>
+ and 
+
+<emphasis id="strong1001" effect="bold">
+var2
+
+</emphasis>
+: 
+
+</para>
+
+
+
+
+<para id="p1008">
+<emphasis id="strong1002" effect="bold">
+sum = var1 + var2 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1009">
+The result of this expression can vary depending on the values stored in 
+
+
+<emphasis id="strong1003" effect="bold">
+var1
+
+</emphasis>
+ 
+and 
+
+<emphasis id="strong1004" effect="bold">
+var2
+
+</emphasis>
+ at the instant in time that the expression is evaluated. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31002">
+<title>
+<emphasis id="An_expression_using_literals" effect="bold">
+
+An expression using literals
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1010">
+On the other hand, the following expression describes the sum of two literal 
+numeric values: 
+
+</para>
+
+
+
+
+<para id="p1011">
+<emphasis id="strong1005" effect="bold">
+sum = 6 + 8
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1012">
+No matter when this expression is evaluated, it will always produce a sum of 
+14. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31003">
+<title>
+<emphasis id="String_literals" effect="bold">
+
+String literals
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1013">
+Literal values can also be used for strings. For example, the interactive code fragment in
+
+
+<link id="a1054" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ shows 
+
+</para>
+
+
+
+
+<list id="ul1015" list-type="bulleted">
+
+	
+
+<item id="li1054">
+My name entered three times, in three different ways, on the interactive 
+	command line. 
+
+</item>
+
+
+	
+
+<item id="li1055">
+The output from the interpreter for each entry.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+	
+
+<table id="table1000" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1000">
+
+			
+
+<row id="tr1000">
+
+				
+
+<entry id="th1000">
+<emphasis id="Figure_1" effect="bold">
+
+Figure 1
+
+</emphasis>
+
+. String literals.
+
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1000">
+
+			
+
+<row id="tr1001">
+
+				
+
+<entry id="td1000">
+
+
+
+<code id="pre1000" display="block">
+&gt;&gt;&gt; "Dick Baldwin"
+'Dick Baldwin'
+&gt;&gt;&gt; 'Dick Baldwin'
+'Dick Baldwin'
+&gt;&gt;&gt; Dick Baldwin
+SyntaxError: invalid syntax
+&gt;&gt;&gt;  
+</code>
+
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1014">
+The first two entries are valid string literals. As you can see, in the first 
+two cases, the interpreter displays my name in the output. 
+
+
+</para>
+
+
+
+
+<para id="p1015">
+Note that in the first two cases, my name is surrounded by either quotes 
+
+
+<emphasis id="em1003" effect="italics">
+(sometimes called double quotes)
+
+</emphasis>
+ or apostrophes 
+
+<emphasis id="em1004" effect="italics">
+(sometimes called single 
+quotes)
+
+</emphasis>
+. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31004">
+<title>
+<emphasis id="A_syntax_error" effect="bold">
+
+A syntax error
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1016">
+However, the third entry is not a valid string literal, and the interactive 
+interpreter produced a SyntaxError message. 
+
+<emphasis id="em1005" effect="italics">
+(Although not shown in 
+
+<link id="a1055" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, 
+the IDLE GUI interface highlighted my last name with a red background 
+immediately above the SyntaxError message.)
+
+</emphasis>
+ In the third case, my name is not 
+surrounded by either double quotes or single quotes, and that is what caused 
+the error. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31005">
+<title>
+<emphasis id="A_valid_string_literal" effect="bold">
+
+A valid string literal
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1017">
+<emphasis id="Referring_to_String_and_Bytes_literals" effect="bold">
+
+Referring to 
+
+<emphasis id="em1006" effect="italics">
+String
+
+</emphasis>
+ and 
+
+<emphasis id="em1007" effect="italics">
+Bytes
+
+</emphasis>
+ literals
+
+</emphasis>
+
+, the
+
+
+<link id="a1056" url="https://docs.python.org/3/reference/lexical_analysis.html#literals">
+
+
+Python Language Reference
+
+</link>
+
+ states:
+
+</para>
+
+
+
+	
+
+<quote id="blockquote1000" display="block">
+Both types of literals can be enclosed in matching single quotes 
+	(') or double quotes (").
+
+</quote>
+
+
+
+
+
+<para id="p1018">
+This explains why the first two input lines in the interactive code 
+fragment in 
+
+<link id="a1057" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+ were accepted and the third input line produced an error.
+
+</para>
+
+
+
+
+<section id="h41000">
+<title>
+<emphasis id="Proper_syntax" effect="bold">
+
+Proper syntax
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1019">
+In the first input line in 
+
+<link id="a1058" target-id="Figure_1">
+
+Figure 1
+
+</link>
+
+, my name was surrounded by matching double quotes. In the 
+second input line, my name was surrounded by matching single quotes. 
+
+</para>
+
+
+
+
+</section>
+<section id="h41001">
+<title>
+<emphasis id="Bad_syntax" effect="bold">
+
+Bad syntax
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1020">
+However, in the third input line, my name was not surrounded by quotes of 
+either type and this produced a syntax error. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h31006">
+<title>
+<emphasis id="More_examples" effect="bold">
+
+More examples
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1021">
+<link id="a1059" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ shows two more examples of valid string literals. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1001" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1001">
+
+			
+
+<row id="tr1002">
+
+				
+
+<entry id="th1001">
+<emphasis id="Figure_2" effect="bold">
+
+Figure 2
+
+</emphasis>
+
+. Triple-quoted 
+				strings.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1001">
+
+			
+
+<row id="tr1003">
+
+				
+
+<entry id="td1001">
+
+
+
+<code id="pre1001" display="block">
+&gt;&gt;&gt; """Dick Baldwin"""
+'Dick Baldwin'
+&gt;&gt;&gt; """Dick
+Baldwin"""
+'Dick\nBaldwin'
+&gt;&gt;&gt;
+
+===================================
+
+&gt;&gt;&gt; """Dick Baldwin"""
+'Dick Baldwin'
+&gt;&gt;&gt; """Dick
+... Baldwin"""
+'Dick \nBaldwin'
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+<para id="p1022">
+The top half of 
+
+<link id="a1060" target-id="Figure_2">
+
+Figure 2
+
+</link>
+
+ was produced by the IDLE GUI interface. The 
+	bottom half was independently produced by the Python command-line interface. 
+	I included both of them to show you the output format difference between the 
+	two interfaces. 
+
+<emphasis id="In_both_cases_I_pressed_the_Enter_key" effect="bold">
+
+In both cases, I pressed the Enter key
+
+</emphasis>
+
+ following the input 
+	that reads """Dick.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21002">
+<title>
+<emphasis id="Triple-quoted_strings" effect="bold">
+
+Triple-quoted strings
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1023">
+Referring again to 
+
+<emphasis id="em1008" effect="italics">
+String
+
+</emphasis>
+ and 
+
+<emphasis id="em1009" effect="italics">
+Bytes
+
+</emphasis>
+ literals, the
+
+
+<link id="a1061" target-id="Referring_to_String_and_Bytes_literals">
+
+earlier quotation
+
+</link>
+
+ from the
+
+
+<link id="a1062" url="https://docs.python.org/3/reference/lexical_analysis.html#literals">
+
+
+Python Language Reference
+
+</link>
+
+ goes on to state:
+
+</para>
+
+
+
+
+<quote id="blockquote1001" display="block">
+They can also be enclosed in matching groups of three single or double quotes 
+(these are generally referred to as 
+
+<emphasis id="em1010" effect="italics">
+triple-quoted strings
+
+</emphasis>
+). The 
+	backslash (\) character is used to escape characters that otherwise have a 
+	special meaning, such as newline, backslash itself, or the quote character.
+
+</quote>
+
+
+
+
+<para id="p1024">
+Further down that same page we find:
+
+</para>
+
+
+
+
+<quote id="blockquote1002" display="block">
+In triple-quoted strings, unescaped newlines and quotes are allowed 
+(and are retained), except that three unescaped quotes in a row terminate the 
+string. (A "quote" is the character used to open the string, i.e. either
+' or
+".)
+
+</quote>
+
+
+
+
+<para id="p1025">
+When I pressed the Enter key as described 
+
+
+<link id="a1063" target-id="In_both_cases_I_pressed_the_Enter_key">
+
+above
+
+</link>
+
+, I entered an 
+
+<emphasis id="em1011" effect="italics">
+unescaped 
+newline
+
+</emphasis>
+.
+
+</para>
+
+
+
+
+<para id="p1026">
+One of the main advantages of using triple-quoted strings is that this makes 
+it possible to 
+
+</para>
+
+
+
+
+<list id="ul1016" list-type="bulleted">
+
+	
+
+<item id="li1056">
+Deal with strings that occupy more than one line.
+
+</item>
+
+
+	
+
+<item id="li1057">
+Deal with all of the lines that make up the string as a unit.
+
+</item>
+
+
+	
+
+<item id="li1058">
+Preserve newline characters that separate the lines in the process.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<para id="p1027">
+This is illustrated in 
+
+<link id="a1064" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+, which 
+shows my name, surrounded by matching triple quotes and split onto two 
+consecutive lines of input.
+
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1002" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1002">
+
+			
+
+<row id="tr1004">
+
+				
+
+<entry id="th1002">
+<emphasis id="Figure_3" effect="bold">
+
+Figure 3
+
+</emphasis>
+
+. Triple-quoted 
+				strings with newlines.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1002">
+
+			
+
+<row id="tr1005">
+
+				
+
+<entry id="td1002">
+
+
+
+<code id="pre1002" display="block">
+&gt;&gt;&gt; """Dick
+Baldwin"""
+'Dick\nBaldwin'
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h21003">
+<title>
+<emphasis id="The_newline_character" effect="bold">
+
+The newline (\n) character
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1028">
+When this triple quoted, multiple-line input was displayed, by the 
+interpreter, the display included "\n". 
+
+</para>
+
+
+
+
+<para id="p1029">
+This is an "escape character" representation of the 
+
+<emphasis id="em1012" effect="italics">
+newline
+
+</emphasis>
+ character. It appeared in the output at the point 
+representing the end of the first line of input. This indicates that the 
+interpreter knows and remembers that the input string was split across two 
+lines. 
+
+</para>
+
+
+
+
+<para id="p1030">
+Numerically, the newline character is represented by the following:
+
+</para>
+
+
+
+
+<list id="ul1017" list-type="bulleted">
+
+	
+
+<item id="li1059">
+10 in decimal
+
+</item>
+
+
+	
+
+<item id="li1060">
+A in hexadecimal
+
+</item>
+
+
+	
+
+<item id="li1061">
+012 in octal
+
+</item>
+
+
+	
+
+<item id="li1062">
+00001010 in binary
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<note id="note1000" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1006" effect="bold">
+Historical note:
+
+</emphasis>
+
+
+
+<para id="p1031">
+In case you are interested, very early versions of Python produced the following output for the 
+input shown in 
+
+<link id="a1065" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+:
+
+</para>
+
+
+
+
+<para id="p1032">
+'Dick\012Baldwin'
+
+</para>
+
+
+				
+
+<para id="p1033">
+In those days, the newline character was represented by a backslash followed 
+by its octal representation. 
+
+<emphasis id="em1013" effect="italics">
+(If you don't know what octal means, don't 
+worry about it. It was effectively superseded by hexadecimal about twenty years 
+ago.)
+
+</emphasis>
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+<section id="h31007">
+<title>
+<emphasis id="Representing_the_newline_character_" effect="bold">
+
+Representing the newline 
+character 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1034">
+As the name implies, a 
+
+<emphasis id="em1014" effect="italics">
+newline
+
+</emphasis>
+ character is a character that means, 
+
+
+<emphasis id="em1015" effect="italics">
+"Go to 
+the beginning of the next line." 
+
+</emphasis>
+ 
+
+</para>
+
+
+
+
+<para id="p1035">
+The newline character is sort of like the wind. You can't see the wind, but 
+you can see the result of the wind blowing through a tree. 
+
+</para>
+
+
+
+
+<para id="p1036">
+Similarly, you can't normally see a newline character, but you can see what it does. 
+Therefore, we must represent it by something else, like \n if we want to be 
+able to see where it appears within a string. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31008">
+<title>
+<emphasis id="An_escape_sequence_" effect="bold">
+
+An escape sequence 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1037">
+The \n is what we call an 
+
+<emphasis id="em1016" effect="italics">
+escape sequence
+
+</emphasis>
+. I will discuss escape sequences 
+in detail a little later in this module. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21004">
+<title>
+<emphasis id="One_more_syntax_option_" effect="bold">
+
+One more syntax option 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1038">
+The 
+
+
+<link id="a1066" url="https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals">
+
+
+Python Language Reference -- 2.4.1. String and Bytes literals
+
+</link>
+
+ describes one more syntax option for strings as 
+shown below. I am going to let this one lie for the time being. I will come back 
+and address it in a future module if I have the time. I am including it here 
+simply for completeness. 
+
+</para>
+
+
+
+
+<quote id="blockquote1003" display="block">
+Both string and bytes literals may optionally be prefixed with a letter 'r' or 'R'; such strings are called raw strings and treat backslashes as literal characters. As a result, in string literals, '\U' and '\u' escapes in raw strings are not treated specially. Given that Python 2.x's raw unicode literals behave differently than Python 3.x's the 'ur' 
+	syntax is not supported.
+
+</quote>
+
+
+
+
+
+</section>
+</section>
+<section id="h11003">
+<title>
+<emphasis id="WhatAreEscapeSequences" effect="bold">
+
+Escape sequences
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1039">
+Escape sequences are special sequences of characters used to represent other 
+characters that
+
+</para>
+
+
+
+
+<list id="ul1018" list-type="bulleted">
+
+	
+
+<item id="li1063">
+cannot be entered directly into a string, or
+
+</item>
+
+
+	
+
+<item id="li1064">
+would cause a problem if entered directly into a string.
+
+</item>
+
+
+
+
+</list>
+
+
+
+
+<section id="h21005">
+<title>
+<emphasis id="secondNewlineCharacterBookmark" effect="bold">
+
+The newline character
+
+</emphasis>
+
+
+
+
+</title>
+
+
+
+
+<para id="p1040">
+An example of a character that cannot be entered directly into a string is the newline character. Except when using 
+triple quoted strings, you cannot enter the newline character directly into a 
+string. 
+
+</para>
+
+
+
+
+<para id="p1041">
+Why? Because when you press the 
+
+<emphasis id="em1017" effect="italics">
+Enter
+
+</emphasis>
+ key in an attempt to enter a 
+newline, that simply terminates your input for that line. It doesn't enter the 
+newline character into the string. 
+
+</para>
+
+
+
+
+<para id="p1042">
+The interactive code fragment in 
+
+<link id="a1067" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ illustrates the use of an escape sequence to enter the newline character 
+into a string. Note the \n between my first and last names. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1003" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1003">
+
+			
+
+<row id="tr1006">
+
+				
+
+<entry id="th1003">
+<emphasis id="Figure_4" effect="bold">
+
+Figure 4
+
+</emphasis>
+
+. Using the newline 
+				character.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1003">
+
+			
+
+<row id="tr1007">
+
+				
+
+<entry id="td1003">
+
+
+
+<code id="pre1003" display="block">
+&gt;&gt;&gt; print("Dick\nBaldwin")
+Dick
+Baldwin
+&gt;&gt;&gt;
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+	
+
+</section>
+<section id="h21006">
+<title>
+<emphasis id="The_built-in_print_function" effect="bold">
+
+The built-in print function
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1043">
+The Python interpreter has a number of functions built into it that are always available. They are listed 
+in 
+
+<link id="a1068" url="https://docs.python.org/3/library/functions.html">
+
+The Python Standard Library -- 2. Built-in Functions
+
+</link>
+
+ in alphabetical order. 
+One of those functions is the 
+
+<emphasis id="strong1007" effect="bold">
+print
+
+</emphasis>
+ function.
+
+</para>
+
+
+
+
+<para id="p1044">
+The code in 
+
+<link id="a1069" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+ calls the 
+
+<emphasis id="strong1008" effect="bold">
+print
+
+</emphasis>
+ function to display my 
+name on two output lines.
+
+</para>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<note id="note1001" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1009" effect="bold">
+Historical note:
+
+</emphasis>
+
+				
+
+<para id="p1045">
+Up until version 3, Python had a 
+
+<emphasis id="strong1010" effect="bold">
+print
+
+</emphasis>
+ statement that did not require parentheses. In version 3, the 
+				
+
+<emphasis id="strong1011" effect="bold">
+print
+
+</emphasis>
+ statement 
+				
+
+<link id="a1070" url="https://docs.python.org/dev/whatsnew/3.0.html#print-is-a-function">
+
+has been replaced
+
+</link>
+
+ with a 
+				
+
+<emphasis id="strong1012" effect="bold">
+print()
+
+</emphasis>
+ function, with keyword arguments to replace most of the special syntax of the old 
+				
+
+<emphasis id="strong1013" effect="bold">
+print
+
+</emphasis>
+ statement.
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+<para id="p1046">
+When the 
+
+<emphasis id="strong1014" effect="bold">
+print
+
+</emphasis>
+ function is used interactively, it is a request to have its 
+argument 
+
+<emphasis id="em1018" effect="italics">
+(the expression in parentheses)
+
+</emphasis>
+ printed on the next line. In 
+
+
+<link id="a1071" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, it is a 
+request to have my name printed on the next line. 
+
+</para>
+
+
+
+
+<section id="h31009">
+<title>
+<emphasis id="Including_the_newline_character" effect="bold">
+
+Including the newline character
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1047">
+In 
+
+<link id="a1072" target-id="Figure_4">
+
+Figure 4
+
+</link>
+
+, I entered the newline escape sequence between my first and 
+last names when I constructed the string. Then, when the string was printed, the 
+cursor advanced to a new line following my first name and printed my last name 
+on the new line. That is what escape sequences are all about. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31010">
+<title>
+<emphasis id="The_print_function_renders_according_to_meaning_" effect="bold">
+
+The print 
+function renders according to meaning 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1048">
+Note that the 
+
+<emphasis id="strong1015" effect="bold">
+print
+
+</emphasis>
+ function rendered the newline character according 
+to its meaning. 
+
+</para>
+
+
+
+
+<para id="p1049">
+By this, I mean that the 
+
+<emphasis id="strong1016" effect="bold">
+print
+
+</emphasis>
+ function did not print something that 
+represented the newline character (\n) as we saw in 
+
+<link id="a1073" target-id="Figure_3">
+
+Figure 3
+
+</link>
+
+. Instead, it 
+actually did what a newline character is supposed to do -- go to the beginning 
+of the next line. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21007">
+<title>
+<emphasis id="The_quote_character_" effect="bold">
+
+The quote character 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<section id="h31011">
+<title>
+<emphasis id="Escaping_the_quote_character" effect="bold">
+
+Escaping the quote character
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1050">
+Suppose that you are constructing a string that is surrounded by double 
+quotes, and you want to use a pair of double quotes inside the string. If you 
+were to simply enter the double quote when you construct the string, that quote 
+would terminate the string. 
+
+</para>
+
+
+
+
+<para id="p1051">
+The interactive code fragment in 
+
+<link id="a1074" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+ shows how to escape the double quote character -- precede it with a 
+backslash character. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1004" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1004">
+
+			
+
+<row id="tr1008">
+
+				
+
+<entry id="th1004">
+<emphasis id="Figure_5" effect="bold">
+
+Figure 5
+
+</emphasis>
+
+. Escaping the quote 
+				character.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1004">
+
+			
+
+<row id="tr1009">
+
+				
+
+<entry id="td1004">
+
+
+
+<code id="pre1004" display="block">
+&gt;&gt;&gt; print("Richard \"Dick\" Baldwin" )
+Richard "Dick" Baldwin
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1052">
+What I mean by this is that if you want to include a double quote inside a 
+string that is surrounded by double quotes, you must enter the double quote 
+inside the string as shown in 
+
+<link id="a1075" target-id="Figure_5">
+
+Figure 5
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+<section id="h31012">
+<title>
+<emphasis id="Avoiding_the_quote_problem_" effect="bold">
+
+Avoiding the quote problem 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1053">
+Because this is such a common problem, and because the 
+
+<emphasis id="em1019" effect="italics">
+escape solution
+
+</emphasis>
+ 
+is so ugly and difficult to read, Python gives us another way to deal with 
+quotes inside of quotes. This solution, shown in
+
+
+<link id="a1076" target-id="Figure_6">
+
+Figure 6
+
+</link>
+
+, is the use of single and 
+double quotes in combination. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1005" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1005">
+
+			
+
+<row id="tr1010">
+
+				
+
+<entry id="th1005">
+<emphasis id="Figure_6" effect="bold">
+
+Figure 6
+
+</emphasis>
+
+. Avoiding the quote problem.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1005">
+
+			
+
+<row id="tr1011">
+
+				
+
+<entry id="td1005">
+
+
+
+<code id="pre1005" display="block">
+&gt;&gt;&gt; print('Richard "Dick" Baldwin')
+Richard "Dick" Baldwin
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1054">
+In Python, double quotes can be included directly in strings that are 
+surrounded by single quotes, and single quotes can be included directly in 
+strings that are surrounded by double quotes. This is much easier to read than 
+the solution that requires you to place a lot of backslash characters inside 
+your string. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21008">
+<title>
+<emphasis id="List_of_escape_sequences_" effect="bold">
+
+List of escape sequences 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1055">
+Escape sequences are a staple of modern computer programming and there is a 
+lot of consistency from one language to the next. A list of the escape sequences 
+that are honored by Python 3 is available in the
+
+
+<link id="a1077" url="https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals">
+
+
+Python Language Reference -- 2.4.1. String and Bytes literals
+
+</link>
+
+.
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11004">
+<title>
+<emphasis id="MoreWaystoSpanLines" effect="bold">
+
+More ways to span lines
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1056">
+Just when you thought that you had seen it all, I am going to show you three 
+more ways 
+
+<emphasis id="em1020" effect="italics">
+(two new and one not so new)
+
+</emphasis>
+ to span multiple lines with strings. One of them is shown in 
+
+<link id="a1078" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<section id="h21009">
+<title>
+<emphasis id="End_the_line_with_a_backslash_" effect="bold">
+
+End the line with a backslash 
+
+</emphasis>
+
+
+
+
+</title>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+<table id="table1006" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1006">
+
+			
+
+<row id="tr1012">
+
+				
+
+<entry id="th1006">
+<emphasis id="Figure_7" effect="bold">
+
+Figure 7
+
+</emphasis>
+
+. End the line with a backslash.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1006">
+
+			
+
+<row id="tr1013">
+
+				
+
+<entry id="td1006">
+
+
+
+<code id="pre1006" display="block">
+&gt;&gt;&gt; print("Richard \
+Baldwin")
+Richard Baldwin
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1057">
+As shown in 
+
+<link id="a1079" target-id="Figure_7">
+
+Figure 7
+
+</link>
+
+, the use of a 
+backslash at the end of the line makes it possible to continue the string on a 
+new line. However, the backslash is not included in the output, and there is no 
+newline character in the output. 
+
+</para>
+
+
+
+
+<section id="h31013">
+<title>
+<emphasis id="Not_restricted_to_strings_" effect="bold">
+
+Not restricted to strings 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1058">
+The backslash can be used at the end of a line to cause that line 
+to be continued on the next line whether inside a string or not. This is 
+illustrated in the review module following this module. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31014">
+<title>
+<emphasis id="A_form_of_concatenation_" effect="bold">
+
+A form of concatenation 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1059">
+When used in this way with a string, the backslash at the end of the line 
+becomes a form of string concatenation. The portions of the strings on each of 
+the input lines are concatenated to produce a single line containing both parts 
+of the string in the output. 
+
+</para>
+
+
+
+
+<para id="p1060">
+I will have more to say about string concatenation later in this module. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21010">
+<title>
+<emphasis id="Use_the_backslash_n_escape_sequence_" effect="bold">
+
+Use the \n escape sequence 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1061">
+This isn't really new, but it so important that I decided to repeat it here 
+for emphasis. As shown in 
+
+<link id="a1080" target-id="Figure_8">
+
+Figure 8
+
+</link>
+
+, the inclusion of "\n" inside the string 
+caused the cursor to advance to a new line following my first name and printed 
+my last name on the new line.
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1007" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1007">
+
+			
+
+<row id="tr1014">
+
+				
+
+<entry id="th1007">
+<emphasis id="Figure_8" effect="bold">
+
+Figure 8
+
+</emphasis>
+
+. Use the \n escape sequence.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1007">
+
+			
+
+<row id="tr1015">
+
+				
+
+<entry id="td1007">
+
+
+
+<code id="pre1007" display="block">
+&gt;&gt;&gt; print("Richard \nBaldwin")
+Richard 
+Baldwin
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1062">
+This is the common form of the newline escape sequence typically used in C, 
+C++, and Java. 
+
+</para>
+
+
+
+
+</section>
+<section id="h21011">
+<title>
+<emphasis id="Combine_backslash_and_backslash_n_" effect="bold">
+
+Combine backslash and \n 
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1063">
+The code in 
+
+<link id="a1081" target-id="Figure_9">
+
+Figure 9
+
+</link>
+
+ shows how to 
+combine the backslash at the end of the line with a newline character placed 
+there to cause the output to closely resemble the input. 
+
+</para>
+
+
+
+
+	
+
+<table id="table1008" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1008">
+
+			
+
+<row id="tr1016">
+
+				
+
+<entry id="th1008">
+<emphasis id="Figure_9" effect="bold">
+
+Figure 9
+
+</emphasis>
+
+. Combine backslash and \n.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1008">
+
+			
+
+<row id="tr1017">
+
+				
+
+<entry id="td1008">
+
+
+
+<code id="pre1008" display="block">
+&gt;&gt;&gt; print("Richard \n\
+Baldwin")
+Richard 
+Baldwin
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+</section>
+<section id="h11005">
+<title>
+<emphasis id="StringConcatenation" effect="bold">
+
+String concatenation
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1064">
+To concatenate two strings means to hook them together end-to-end, thus 
+producing a new string that is the combination of the two.
+
+</para>
+
+
+
+
+<section id="h21012">
+<title>
+<emphasis id="Literal_string_concatenation" effect="bold">
+
+Literal string concatenation
+
+</emphasis>
+
+ 
+
+
+</title>
+
+
+
+
+<para id="p1065">
+You can cause literal strings to be concatenated just by writing one adjacent 
+to the other as shown in 
+
+<link id="a1082" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+.
+
+
+</para>
+
+
+	
+
+<section id="h31015">
+<title>
+<emphasis id="Concatenate_through_placement" effect="bold">
+
+Concatenate through placement
+
+</emphasis>
+
+
+</title>
+
+
+
+
+	
+
+<table id="table1009" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1009">
+
+			
+
+<row id="tr1018">
+
+				
+
+<entry id="th1009">
+<emphasis id="Figure_10" effect="bold">
+
+Figure 10
+
+</emphasis>
+
+. Concatenate 
+				through placement.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1009">
+
+			
+
+<row id="tr1019">
+
+				
+
+<entry id="td1009">
+
+
+
+<code id="pre1009" display="block">
+&gt;&gt;&gt; print("Dick"'Baldwin')
+DickBaldwin
+&gt;&gt;&gt; print('Joe'      "Smith")
+JoeSmith
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+<para id="p1066">
+Note that you can mix the different quote types. Also, it doesn't matter if 
+there is whitespace in between. The whitespace doesn't carry through to the 
+output. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31016">
+<title>
+<emphasis id="Creating_whitespace_" effect="bold">
+
+Creating whitespace 
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1067">
+If you want any space between the substrings in the output, you must 
+include that space inside the quotes that delimit the individual strings as 
+shown in 
+
+<link id="a1083" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+
+	
+
+<table id="table1010" summary="This is a table." pgwide="630">
+<tgroup cols="1">
+
+
+		
+
+<thead id="thead1010">
+
+			
+
+<row id="tr1020">
+
+				
+
+<entry id="th1010">
+<emphasis id="Figure_11" effect="bold">
+
+Figure 11
+
+</emphasis>
+
+. Creating 
+				whitespace.
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</thead>
+
+
+		
+
+<tbody id="tbody1010">
+
+			
+
+<row id="tr1021">
+
+				
+
+<entry id="td1010">
+
+
+
+<code id="pre1010" display="block">
+&gt;&gt;&gt; x = "Richard "
+&gt;&gt;&gt; y = " Baldwin"
+&gt;&gt;&gt; print(x + "G." + y)
+Richard G. Baldwin
+&gt;&gt;&gt; 
+</code>
+
+
+
+				
+
+</entry>
+
+			
+
+</row>
+
+		
+
+</tbody>
+
+
+	
+
+</tgroup>
+</table>
+
+
+
+
+
+
+</section>
+<section id="h31017">
+<title>
+<emphasis id="Using_plus_for_concatenation" effect="bold">
+
+Using + for concatenation
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1068">
+The plus operator (+) can be used to concatenate strings as also illustrated in
+
+
+<link id="a1084" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+. 
+
+</para>
+
+
+
+
+<para id="p1069">
+This fragment assigns string literal values to two variables, and then uses 
+the plus operator to concatenate the contents of those variables with another 
+string literal. 
+
+</para>
+
+
+
+
+<para id="p1070">
+Of course, it could also have been used to concatenate the contents of the 
+two variables without the string literal in between. 
+
+</para>
+
+
+
+
+</section>
+<section id="h31018">
+<title>
+<emphasis id="Whitespace_is_included_in_the_quotes_" effect="bold">
+
+Whitespace is included in the quotes 
+
+
+</emphasis>
+
+ 
+
+</title>
+
+
+
+
+<para id="p1071">
+Note that the string literals in 
+
+<link id="a1085" target-id="Figure_11">
+
+Figure 11
+
+</link>
+
+ contain space characters. There is a space 
+after the d in my first name and before the B in my last name. That is what I 
+meant earlier when I said that if you want any space between the substrings in 
+the output, you must include that space inside the quotes 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h21013">
+<title>
+<emphasis id="Visualizing_string_concatenation" effect="bold">
+
+Visualizing string concatenation
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1072">
+<link id="a1086" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ illustrates string concatenation through the use of the
+
+
+<link id="a1087" url="http://pythontutor.com/visualize.html#mode=display">
+
+code visualizer
+
+</link>
+
+ 
+that you learned about in an earlier module. 
+
+</para>
+
+
+
+
+
+<para id="p1073">
+<emphasis id="strong1017" effect="bold">
+<emphasis id="Figure_12" effect="bold">
+
+Figure 12.
+
+</emphasis>
+
+ Visualizing string concatenation.
+
+</emphasis>
+</para>
+
+
+
+
+<para id="p1074">
+<media id="media1000" alt="missing image" display="block">
+<image id="img1000" mime-type="image/jpeg" src="../../media/1359-1040-a.jpg" width="603" height="175"/>
+</media>
+
+
+</para>
+
+
+
+
+
+<para id="p1075">
+The code in the code block in 
+
+<link id="a1088" target-id="Figure_12">
+
+Figure 12
+
+</link>
+
+ is similar 
+to the code in 
+
+<link id="a1089" target-id="Figure_10">
+
+Figure 10
+
+</link>
+
+ and to the use of "+" operator 
+for string concatenation. The diagram on the right shows how the concatenation 
+of strings produces objects on the heap containing the concatenated strings.
+
+</para>
+
+
+
+
+<para id="p1076">
+The variable named 
+
+<emphasis id="strong1018" effect="bold">
+var1
+
+</emphasis>
+ points to an object of type 
+
+<emphasis id="strong1019" effect="bold">
+
+str
+
+</emphasis>
+ containing a string that was produced by concatenating two literal 
+strings 
+
+<link id="a1090" target-id="Concatenate_through_placement">
+
+through placement
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1077">
+Similarly, the variable named 
+
+<emphasis id="strong1020" effect="bold">
+var2
+
+</emphasis>
+ points to a different 
+object of type 
+
+<emphasis id="strong1021" effect="bold">
+str
+
+</emphasis>
+ containing a string that was produced by 
+concatenating two different literal strings
+
+
+<link id="a1091" target-id="Concatenate_through_placement">
+
+through placement
+
+</link>
+
+.
+
+</para>
+
+
+
+
+<para id="p1078">
+The variable named 
+
+<emphasis id="strong1022" effect="bold">
+var3
+
+</emphasis>
+ points to a third object of type
+
+
+<emphasis id="strong1023" effect="bold">
+str
+
+</emphasis>
+ containing a string that was produced by using the "+" 
+operator to concatenate the contents of two existing objects of type 
+
+<emphasis id="strong1024" effect="bold">
+str
+
+</emphasis>
+. Although it might not be 
+obvious at this point in the course, it is important to note that the contents 
+of the third object contains the concatenation of copies of the contents of the 
+first two objects. In particular, it doesn't simply contain pointers to the 
+other two objects. 
+
+</para>
+
+
+
+
+</section>
+</section>
+<section id="h11006">
+<title>
+<emphasis id="More_on_strings_later" effect="bold">
+
+More on strings later
+
+</emphasis>
+
+
+</title>
+
+
+
+
+<para id="p1079">
+I will have more to say about strings in a future module. Before that, however, 
+we need to learn how to create and execute script files, and we also need to 
+learn a little more about Python syntax.
+
+</para>
+
+
+	
+
+</section>
+<section id="h11007">
+<title>
+<emphasis id="Miscellaneous" effect="bold">
+
+Miscellaneous
+
+</emphasis>
+
+
+</title>
+
+
+	
+
+<para id="p1080">
+This section contains a variety of miscellaneous information.
+
+</para>
+
+
+
+
+
+	
+
+<note id="note1002" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1025" effect="bold">
+Housekeeping material
+
+</emphasis>
+
+				
+
+<list id="ul1019" list-type="bulleted">
+
+					
+
+<item id="li1065">
+Module name: Itse1359-1040-Strings Part 1
+
+</item>
+
+
+					
+
+<item id="li1066">
+File: Itse1359-1040.htm
+
+
+</item>
+
+
+					
+
+<item id="li1067">
+Published: 10/14/14
+
+</item>
+
+
+					
+
+<item id="li1068">
+Revised: 01/31/16
+
+</item>
+
+
+				
+
+</list>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+
+
+
+	
+
+<note id="note1003" type="">
+
+
+		
+
+
+			
+
+
+				
+
+<emphasis id="strong1026" effect="bold">
+Disclaimers:
+
+</emphasis>
+<para id="p1081">
+<emphasis id="strong1027" effect="bold">
+Financial
+
+</emphasis>
+: Although the Connexions
+site makes it possible for you to download a PDF file for this
+module at no charge, and also makes it possible for you to
+purchase a pre-printed version of the PDF file, you should be
+aware that some of the HTML elements in this module may not translate well into
+PDF.
+
+</para>
+
+
+				
+
+<para id="p1082">
+I also want you to know that, I receive no financial compensation from the Connexions website even if you purchase 
+	the PDF version of the module.
+
+</para>
+
+
+				
+
+<para id="p1083">
+In the past, unknown individuals have copied my modules from cnx.org, converted them to Kindle books, and 
+				placed them for sale on Amazon.com showing me as the author. I 
+				neither receive compensation for those sales nor do I know who does 
+				receive compensation. If you purchase such a book, please be 
+				aware that it is a copy of a module that is freely 
+				available on cnx.org and that it was made and published without 
+				my prior knowledge.
+
+</para>
+
+
+				
+
+<para id="p1084">
+<emphasis id="strong1028" effect="bold">
+Affiliation
+
+</emphasis>
+: I am a professor of Computer Information 
+	Technology at Austin Community College in Austin, TX.
+	
+
+</para>
+
+
+				
+
+</note>
+
+			
+
+
+		
+
+
+
+	
+
+
+
+	
+
+<para id="p1085">
+-end- 
+
+</para>
+
+
+
+
+
+
+</section>
+</content>
+
+
+
+
+</document>
