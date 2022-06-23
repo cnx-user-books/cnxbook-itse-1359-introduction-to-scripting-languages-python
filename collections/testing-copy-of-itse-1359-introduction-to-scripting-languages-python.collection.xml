@@ -1,11 +1,11 @@
 <col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
-    <md:content-id>col11713</md:content-id>
-    <md:title>ITSE 1359 Introduction to Scripting Languages: Python</md:title>
+    <md:content-id>col11957</md:content-id>
+    <md:title>Testing copy of ITSE 1359 Introduction to Scripting Languages: Python</md:title>
     <md:language>en</md:language>
     <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</md:license>
-    <md:uuid>96b34405-9562-406b-bafb-90c5fb70f39e</md:uuid>
-<md:slug>itse-1359-introduction-to-scripting-languages-python</md:slug>
+    <md:uuid>3585f261-c66c-4957-bb92-e455648e46f0</md:uuid>
+<md:slug>testing-copy-of-itse-1359-introduction-to-scripting-languages-python</md:slug>
 </metadata>
   <col:content>
     <col:subcollection>
@@ -87,10 +87,8 @@
             <col:module document="m51442"/>
             <col:module document="m51444"/>
             <col:module document="m51449"/>
-            <col:module document="m51447"/>
-            <col:module document="m51455"/>
+            <col:module document="m59580"/>
             <col:module document="m51459"/>
-            <col:module document="m51451"/>
             <col:module document="m51465"/>
             <col:module document="m51453"/>
             <col:module document="m53236"/>
@@ -112,16 +110,16 @@
       </col:content>
     </col:subcollection>
     <col:subcollection>
+      <md:title>Change in Presentation Format</md:title>
+      <col:content>
+        <col:module document="m51526"/>
+      </col:content>
+    </col:subcollection>
+    <col:subcollection>
       <md:title>Testing</md:title>
       <col:content>
         <col:module document="m51550"/>
         <col:module document="m51534"/>
-      </col:content>
-    </col:subcollection>
-    <col:subcollection>
-      <md:title>Change in Presentation Format</md:title>
-      <col:content>
-        <col:module document="m51526"/>
       </col:content>
     </col:subcollection>
     <col:subcollection>
