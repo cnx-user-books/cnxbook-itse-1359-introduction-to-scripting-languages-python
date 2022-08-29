@@ -1,12 +1,13 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" authors="Richard Baldwin">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
     <md:content-id>col11957</md:content-id>
     <md:title>Testing copy of ITSE 1359 Introduction to Scripting Languages: Python</md:title>
     <md:language>en</md:language>
     <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</md:license>
     <md:uuid>3585f261-c66c-4957-bb92-e455648e46f0</md:uuid>
-<md:slug>testing-copy-of-itse-1359-introduction-to-scripting-languages-python</md:slug>
-</metadata>
+    <md:slug>testing-copy-of-itse-1359-introduction-to-scripting-languages-python</md:slug>
+  </metadata>
   <col:content>
     <col:subcollection>
       <md:title>Preface</md:title>
